@@ -21,7 +21,7 @@ public class PopupController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Time.timeScale = 1;
+        Time.timeScale = 1;
         Setting.SetActive(false);
         //Book.SetActive(false);
         isPause = false;
@@ -90,6 +90,15 @@ public class PopupController : MonoBehaviour
                 rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 1920, rt.rect.width);
                 rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, rt.rect.height);
             }
+
+            if(Time.timeScale != 0)
+            {
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
         }
 
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -97,6 +106,15 @@ public class PopupController : MonoBehaviour
             isPause = !isPause;
             isOpen = !isOpen;
             Setting.SetActive(isOpen);
+
+            if (Time.timeScale != 0)
+            {
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
         }
     }
 }

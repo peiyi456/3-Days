@@ -12,9 +12,6 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         //Input
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -39,4 +38,15 @@ public class PlayerMovement : MonoBehaviour
         //Movement
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
+
+    
+
+    //private void OnControllerColliderHit(ControllerColliderHit hit)
+    //{
+    //    IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
+    //    if(item != null)
+    //    {
+    //        inventory.AddItem(item);
+    //    }
+    //}
 }
