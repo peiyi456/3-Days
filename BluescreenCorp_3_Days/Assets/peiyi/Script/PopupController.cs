@@ -14,7 +14,8 @@ public class PopupController : MonoBehaviour
     public float soundVolume;
     string newVolume = "VOLUME_SLIDER";
 
-    [SerializeField] GameObject Book;
+    [SerializeField] GameObject CharacterPage;
+    [SerializeField] GameObject InventoryPage;
     bool isPause;
     bool isOpen;
 
@@ -23,7 +24,8 @@ public class PopupController : MonoBehaviour
     {
         Time.timeScale = 1;
         Setting.SetActive(false);
-        //Book.SetActive(false);
+        InventoryPage.SetActive(false);
+        //CharacterPage.SetActive(false);
         isPause = false;
 
         ///This is use for volume setting part, but i not yet completed///
@@ -57,64 +59,86 @@ public class PopupController : MonoBehaviour
     void Update()
     {
         UIPopup();
+        PauseResumeGame();
 
-        //if (isPause)
-        //{
-        //    Time.timeScale = 0;
-        //}
+    }
 
-        //else
-        //{
-        //    Time.timeScale = 1;
-        //}
+    void PauseResumeGame()
+    {
+        if(isPause == true)
+        {
+            Time.timeScale = 0;
+        }
 
-
+        else
+        {
+            Time.timeScale = 1;
+        }
     }
 
     void UIPopup()
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
-            isPause = !isPause;
+            
             isOpen = !isOpen;
-            //Book.SetActive(isOpen);
+            //CharacterPage.SetActive(isOpen);
             if(isOpen)
             {
-                RectTransform rt = Book.GetComponent<RectTransform>();
+                isPause = true;
+                RectTransform rt = CharacterPage.GetComponent<RectTransform>();
                 rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 0, rt.rect.width);
                 rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, rt.rect.height);
+
             }
             else
             {
-                RectTransform rt = Book.GetComponent<RectTransform>();
+                isPause = false;
+                RectTransform rt = CharacterPage.GetComponent<RectTransform>();
                 rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 1920, rt.rect.width);
                 rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, rt.rect.height);
             }
 
-            if(Time.timeScale != 0)
+            //if (Time.timeScale != 0)
+            //{
+            //    Time.timeScale = 0;
+            //}
+            //else
+            //{
+            //    Time.timeScale = 1;
+            //}
+        }
+
+        if(Input.GetKeyDown(KeyCode.I))
+        {
+            isOpen = !isOpen;
+            if(isOpen)
             {
-                Time.timeScale = 0;
+                isPause = true;
+                InventoryPage.SetActive(true);
             }
+
             else
             {
-                Time.timeScale = 1;
+                isPause = false;
+                InventoryPage.SetActive(false);
             }
         }
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            isPause = !isPause;
+            //isPause = !isPause;
             isOpen = !isOpen;
             Setting.SetActive(isOpen);
 
-            if (Time.timeScale != 0)
-            {
-                Time.timeScale = 0;
-            }
-            else
-            {
-                Time.timeScale = 1;
-            }
+            //if (Time.timeScale != 0)
+            //{
+            //    Time.timeScale = 0;
+            //}
+            //else
+            //{
+            //    Time.timeScale = 1;
+            //}
         }
     }
 }
