@@ -4,14 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/MainPage.unity
-    guid: acc56f21d0af74143b28068757225c25
-  - enabled: 1
-    path: Assets/Scenes/MapSelection.unity
-    guid: 9621a981b244c3145a8679f981d3dc34
-  - enabled: 1
-    path: Assets/Scenes/Peiyi.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+  m_Scenes: []
   m_configObjects: {}

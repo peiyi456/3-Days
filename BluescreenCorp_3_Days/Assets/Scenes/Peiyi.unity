@@ -2039,7 +2039,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 290889247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3b9bf7a0c9571f438dc9c5b62057c65, type: 3}
+  m_Script: {fileID: 11500000, guid: cd14edd5b41f76a4a984c925128bfd35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _Image: {fileID: 21300000, guid: 4482bdec286e8bd4092629f4d6adeca8, type: 3}
@@ -2998,7 +2998,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 469682564}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a2416450b7e7c74cbf0810f3547838b, type: 3}
+  m_Script: {fileID: 11500000, guid: cd14edd5b41f76a4a984c925128bfd35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _Image: {fileID: 21300000, guid: 6bd3a0dac623d02449a6ba65c2d4dce4, type: 3}
@@ -3426,7 +3426,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 558994151}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a2416450b7e7c74cbf0810f3547838b, type: 3}
+  m_Script: {fileID: 11500000, guid: cd14edd5b41f76a4a984c925128bfd35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _Image: {fileID: 21300000, guid: 6bd3a0dac623d02449a6ba65c2d4dce4, type: 3}
@@ -11228,6 +11228,7 @@ GameObject:
   - component: {fileID: 1675944453}
   - component: {fileID: 1675944455}
   - component: {fileID: 1675944454}
+  - component: {fileID: 1675944456}
   m_Layer: 5
   m_Name: Books
   m_TagString: Untagged
@@ -11295,6 +11296,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675944452}
   m_CullTransparentMesh: 0
+--- !u!114 &1675944456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675944452}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a54e556f66ad78240947153455f53c69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 742353309}
+  messagePanel: {fileID: 572804340}
 --- !u!1 &1684138486
 GameObject:
   m_ObjectHideFlags: 0
@@ -13391,7 +13406,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1918481992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a2416450b7e7c74cbf0810f3547838b, type: 3}
+  m_Script: {fileID: 11500000, guid: cd14edd5b41f76a4a984c925128bfd35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _Image: {fileID: 21300000, guid: 6bd3a0dac623d02449a6ba65c2d4dce4, type: 3}
