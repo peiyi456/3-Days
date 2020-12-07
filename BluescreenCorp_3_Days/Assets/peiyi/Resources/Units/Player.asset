@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85afcb744dfd2574b9a12b5c40de7589, type: 3}
+  m_Name: Player
+  m_EditorClassIdentifier: 
+  UnitsName: You
+  description: 
+  UnitsSprite: {fileID: 5044450397378941176, guid: 4a466b0310eb79845ad87216358ee4f5,
+    type: 3}
+  type: 0
+  maxHP: 40
+  attack: 5
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: 2138416ad769a554e9f74f674e39d816, type: 2}

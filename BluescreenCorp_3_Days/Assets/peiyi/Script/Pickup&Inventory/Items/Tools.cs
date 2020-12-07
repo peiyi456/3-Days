@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tools : MonoBehaviour, IInventoryItem
+public class Tools : InventoryItemBase
 {
-    public string Name
+    public override string Name
     {
         get
         {
@@ -12,19 +12,13 @@ public class Tools : MonoBehaviour, IInventoryItem
         }
     }
 
-    public Sprite _Image = null;
-
-    public Sprite Image
+    public override void OnUse()
     {
-        get
-        {
-            return _Image;
-        }
+        base.OnUse();
     }
 
-    public void OnPickup()
+    public override void OnPickup()
     {
-        // TODO: Add logic what happens when axe is picked up by player
-        gameObject.SetActive(false);
+        base.OnPickup();
     }
 }

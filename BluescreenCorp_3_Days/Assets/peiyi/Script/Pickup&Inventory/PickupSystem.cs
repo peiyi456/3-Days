@@ -24,30 +24,40 @@ public class PickupSystem : MonoBehaviour
 
     private IInventoryItem mItemToPickup = null;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        IInventoryItem item = collision.collider.GetComponent<IInventoryItem>();
-        if (item != null)
+        if (collision.tag == "PickUpItem")
         {
-            mItemToPickup = item;
+            IInventoryItem item = collision.GetComponent<IInventoryItem>();
+            if (item != null)
+            {
+                mItemToPickup = item;
 
-            //inventory.AddItem(item);
-            inventoryPage.OpenMessagePanel("");
+                inventory.AddItem(item);
+                inventoryPage.OpenMessagePanel("");
+                Vector2 temp = collision.transform.position;
+                temp.y += 1.2f;
+                inventoryPage.messagePanel.transform.position = temp;
 
 
+
+            }
         }
 
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        IInventoryItem item = collision.collider.GetComponent<IInventoryItem>();
-        if (item != null)
+        if (collision.tag == "PickUpItem")
         {
+            IInventoryItem item = collision.GetComponent<IInventoryItem>();
+            if (item != null)
+            {
 
-            //inventory.AddItem(item);
-            inventoryPage.CloseMessagePanel();
-            mItemToPickup = null;
+                //inventory.AddItem(item);
+                inventoryPage.CloseMessagePanel();
+                mItemToPickup = null;
+            }
         }
     }
 }

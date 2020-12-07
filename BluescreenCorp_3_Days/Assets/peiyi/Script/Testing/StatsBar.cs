@@ -17,6 +17,9 @@ public class StatsBar : MonoBehaviour
     public Slider _statBars;
 
     public TextMeshProUGUI StatsWord;
+    public float loseValue;
+    public bool isTemperature;
+    [SerializeField] GameObject losePage;
 
     //public float expIncreasedPerSecond;
 
@@ -35,6 +38,13 @@ public class StatsBar : MonoBehaviour
         StatsWord.text = _statBars.value + "/" + _statBars.maxValue;
 
         testButton.onClick.AddListener(addStats);
+        if(isTemperature)
+        {
+            _statBars.value = 36f;
+            StatsWord.text = _statBars.value + "°C";
+        }
+
+        //losePage = GameObject.FindGameObjectWithTag("LosePage");
     }
 
     void Update()
@@ -52,6 +62,12 @@ public class StatsBar : MonoBehaviour
         }
         StatsWord.text = _statBars.value + "/" + _statBars.maxValue;
 
+        if (isTemperature)
+        {
+            StatsWord.text = _statBars.value + "°C";
+        }
+
+        loseCondition();
         //_statBars.value += expIncreasedPerSecond * Time.deltaTime;
         ////_statBars.value = updatedExp / maxStatsValue;
 
@@ -80,5 +96,23 @@ public class StatsBar : MonoBehaviour
     void addStats()
     {
         _statBars.value += 5.0f;
+    }
+
+    void loseCondition()
+    {
+        if(_statBars.value <= loseValue)
+        {
+            GameObject.FindGameObjectWithTag("LosePage").SetActive(true);
+            Time.timeScale = 0;
+        }
+
+        if(isTemperature == true)
+        {
+            if(_statBars.value > 45f)
+            {
+                //GameObject.FindGameObjectWithTag("LosePage").SetActive(true);
+                Time.timeScale = 0;
+            }
+        }
     }
 }
