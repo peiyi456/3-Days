@@ -55,61 +55,77 @@ public class UILayering : MonoBehaviour
         pageAnimals.GetComponent<SpriteRenderer>().sortingOrder = pageAnimalsSortingNumber;
         pageInformation.GetComponent<SpriteRenderer>().sortingOrder = pageInformationSortingNumber;
     }
+    void OnMouseDown()
+    {
+
+    }
     void TriggerChanging()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            isTriggerChangingNumber = true;
+            
+            if (GameObject.Find("pageStatusButton"))
             {
-                if (isTriggerChangingNumber == true)
+                isTriggerChangingNumber = true;
                 {
-                    if (pageStatusButton)
-                    {
-                        pageStatusSortingNumber = 6;
-                        pageInventorySortingNumber = 3;
-                        pageCraftingSortingNumber = 4;
-                        pageAnimalsSortingNumber = 5;
-                        pageInformationSortingNumber = 1;
-                        Debug.Log("OI");
-                        isTriggerChangingNumber = false;
-                    }
-                    if (pageInventoryButton)
-                    {
-                        pageStatusSortingNumber = 3;
-                        pageInventorySortingNumber = 6;
-                        pageCraftingSortingNumber = 4;
-                        pageAnimalsSortingNumber = 5;
-                        pageInformationSortingNumber = 1;
-                        Debug.Log("Bro");
-                        isTriggerChangingNumber = false;
-                    }
-                    if (pageCraftingButton)
-                    {
-                        pageStatusSortingNumber = 2;
-                        pageInventorySortingNumber = 3;
-                        pageCraftingSortingNumber = 6;
-                        pageAnimalsSortingNumber = 5;
-                        pageInformationSortingNumber = 1;
-                        isTriggerChangingNumber = false;
-                    }
-                    if (pageAnimalsButton)
-                    {
-                        pageStatusSortingNumber = 2;
-                        pageInventorySortingNumber = 3;
-                        pageCraftingSortingNumber = 4;
-                        pageAnimalsSortingNumber = 6;
-                        pageInformationSortingNumber = 1;
-                        isTriggerChangingNumber = false;
-                    }
-                    if (pageInformationButton)
-                    {
-                        pageStatusSortingNumber = 2;
-                        pageInventorySortingNumber = 3;
-                        pageCraftingSortingNumber = 4;
-                        pageAnimalsSortingNumber = 5;
-                        pageInformationSortingNumber = 6;
-                        isTriggerChangingNumber = false;
-                    }
+                    pageStatusSortingNumber = 7;
+                    pageInventorySortingNumber = 3;
+                    pageCraftingSortingNumber = 4;
+                    pageAnimalsSortingNumber = 5;
+                    pageInformationSortingNumber = 1;
+                    Debug.Log("OI");
+                    isTriggerChangingNumber = false;
+                }
+                
+            }
+            if (GameObject.Find("pageInventoryButton"))
+            {
+
+                isTriggerChangingNumber = true;
+                {
+                    pageStatusSortingNumber = 3;
+                    pageInventorySortingNumber = 6;
+                    pageCraftingSortingNumber = 4;
+                    pageAnimalsSortingNumber = 5;
+                    pageInformationSortingNumber = 1;
+                    Debug.Log("Bro");
+                    isTriggerChangingNumber = false;
+                }
+            }
+            if (GameObject.Find("pageCraftingButton"))
+            {
+                isTriggerChangingNumber = true;
+                {
+                    pageStatusSortingNumber = 2;
+                    pageInventorySortingNumber = 3;
+                    pageCraftingSortingNumber = 6;
+                    pageAnimalsSortingNumber = 5;
+                    pageInformationSortingNumber = 1;
+                    isTriggerChangingNumber = false;
+                }
+            }
+            if (GameObject.Find("pageAnimalsButton"))
+            {
+                isTriggerChangingNumber = true;
+                {
+                    pageStatusSortingNumber = 2;
+                    pageInventorySortingNumber = 3;
+                    pageCraftingSortingNumber = 4;
+                    pageAnimalsSortingNumber = 6;
+                    pageInformationSortingNumber = 1;
+                    isTriggerChangingNumber = false;
+                }
+            }
+            if (GameObject.Find("pageInformationButton"))
+            {
+                isTriggerChangingNumber = true;
+                {
+                    pageStatusSortingNumber = 2;
+                    pageInventorySortingNumber = 3;
+                    pageCraftingSortingNumber = 4;
+                    pageAnimalsSortingNumber = 5;
+                    pageInformationSortingNumber = 6;
+                    isTriggerChangingNumber = false;
                 }
             }
         }
@@ -139,8 +155,10 @@ public class UILayering : MonoBehaviour
             
         }
     }
+
     void Update()
     {
+        OnMouseDown();
         TriggerChanging();
         Debug.Log(pageStatusSortingNumber);
     }
@@ -150,4 +168,8 @@ public class UILayering : MonoBehaviour
         getSpiriteRendererUpdate();
     }
   
+    void Useless()
+    {
+        
+    }
 }
