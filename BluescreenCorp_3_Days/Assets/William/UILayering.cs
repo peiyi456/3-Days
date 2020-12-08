@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class UILayering : MonoBehaviour
 {
-    public GameObject pageStatusButton;
-    public GameObject pageInventoryButton;
-    public GameObject pageCraftingButton;
-    public GameObject pageAnimalsButton;
-    public GameObject pageInformationButton;
-
     public GameObject pageStatus;
     public GameObject pageInventory;
     public GameObject pageCrafting;
@@ -28,7 +22,12 @@ public class UILayering : MonoBehaviour
     int pageAnimalsSortingNumber;
     int pageInformationSortingNumber;
 
-    bool isTriggerChangingNumber;
+    public bool isTriggerStatus;
+    public bool isTriggerInventory;
+    public bool isTriggerCrafting;
+    public bool isTriggerAnimals;
+    public bool isTriggerInformation;
+
     void Start()
     {
         pageStatusSortingNumber = 6;
@@ -45,7 +44,12 @@ public class UILayering : MonoBehaviour
         pageInformation.GetComponent<SpriteRenderer>().sortingOrder = pageInformationSortingNumber;
         // put in the layer sequence into game object sprite renderer
 
-        isTriggerChangingNumber = false;
+        isTriggerStatus = false;
+        isTriggerInventory = false;
+        isTriggerCrafting = false;
+        isTriggerAnimals = false;
+        isTriggerInformation = false;
+
     }
     void getSpiriteRendererUpdate()
     {
@@ -55,121 +59,90 @@ public class UILayering : MonoBehaviour
         pageAnimals.GetComponent<SpriteRenderer>().sortingOrder = pageAnimalsSortingNumber;
         pageInformation.GetComponent<SpriteRenderer>().sortingOrder = pageInformationSortingNumber;
     }
-    void OnMouseDown()
+    void TriggerChangingStatus()
     {
-
+        if (isTriggerStatus == true)
+        {
+            pageStatusSortingNumber = 7;
+            pageInventorySortingNumber = 3;
+            pageCraftingSortingNumber = 4;
+            pageAnimalsSortingNumber = 5;
+            pageInformationSortingNumber = 1;
+            Debug.Log("OI");
+            isTriggerStatus = false;
+        }
+        else
+            return;
     }
-    void TriggerChanging()
+    void TriggerChangingInventory()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (isTriggerInventory == true)
         {
-            
-            if (GameObject.Find("pageStatusButton"))
-            {
-                isTriggerChangingNumber = true;
-                {
-                    pageStatusSortingNumber = 7;
-                    pageInventorySortingNumber = 3;
-                    pageCraftingSortingNumber = 4;
-                    pageAnimalsSortingNumber = 5;
-                    pageInformationSortingNumber = 1;
-                    Debug.Log("OI");
-                    isTriggerChangingNumber = false;
-                }
-                
-            }
-            if (GameObject.Find("pageInventoryButton"))
-            {
-
-                isTriggerChangingNumber = true;
-                {
-                    pageStatusSortingNumber = 3;
-                    pageInventorySortingNumber = 6;
-                    pageCraftingSortingNumber = 4;
-                    pageAnimalsSortingNumber = 5;
-                    pageInformationSortingNumber = 1;
-                    Debug.Log("Bro");
-                    isTriggerChangingNumber = false;
-                }
-            }
-            if (GameObject.Find("pageCraftingButton"))
-            {
-                isTriggerChangingNumber = true;
-                {
-                    pageStatusSortingNumber = 2;
-                    pageInventorySortingNumber = 3;
-                    pageCraftingSortingNumber = 6;
-                    pageAnimalsSortingNumber = 5;
-                    pageInformationSortingNumber = 1;
-                    isTriggerChangingNumber = false;
-                }
-            }
-            if (GameObject.Find("pageAnimalsButton"))
-            {
-                isTriggerChangingNumber = true;
-                {
-                    pageStatusSortingNumber = 2;
-                    pageInventorySortingNumber = 3;
-                    pageCraftingSortingNumber = 4;
-                    pageAnimalsSortingNumber = 6;
-                    pageInformationSortingNumber = 1;
-                    isTriggerChangingNumber = false;
-                }
-            }
-            if (GameObject.Find("pageInformationButton"))
-            {
-                isTriggerChangingNumber = true;
-                {
-                    pageStatusSortingNumber = 2;
-                    pageInventorySortingNumber = 3;
-                    pageCraftingSortingNumber = 4;
-                    pageAnimalsSortingNumber = 5;
-                    pageInformationSortingNumber = 6;
-                    isTriggerChangingNumber = false;
-                }
-            }
+            pageStatusSortingNumber = 3;
+            pageInventorySortingNumber = 6;
+            pageCraftingSortingNumber = 4;
+            pageAnimalsSortingNumber = 5;
+            pageInformationSortingNumber = 1;
+            Debug.Log("BRO");
+            isTriggerInventory = false;
         }
-      
+        else
+            return;
     }
-    void OnMouseEnter()
+    void TriggerChangingAnimals()
     {
-        if (pageStatusButton)
+        if (isTriggerAnimals == true)
         {
-        
-
+            pageStatusSortingNumber = 2;
+            pageInventorySortingNumber = 3;
+            pageCraftingSortingNumber = 4;
+            pageAnimalsSortingNumber = 6;
+            pageInformationSortingNumber = 1;
+            isTriggerAnimals = false;
         }
-        if (pageInventoryButton)
-        {
-           
-        }
-        if (pageCraftingButton)
-        {
-            
-        }
-        if (pageAnimalsButton)
-        {
-           
-        }
-        if (pageInformationButton)
-        {
-            
-        }
+        else
+            return;
     }
-
+    void TriggerChangingCrafting()
+    {
+        if (isTriggerCrafting == true)
+        {
+            pageStatusSortingNumber = 2;
+            pageInventorySortingNumber = 3;
+            pageCraftingSortingNumber = 6;
+            pageAnimalsSortingNumber = 5;
+            pageInformationSortingNumber = 1;
+            isTriggerCrafting = false;
+        }
+        else
+            return;
+    }
+    void TriggerChangingInformation()
+    {
+        if (isTriggerInformation == true)
+        {
+            pageStatusSortingNumber = 2;
+            pageInventorySortingNumber = 3;
+            pageCraftingSortingNumber = 4;
+            pageAnimalsSortingNumber = 5;
+            pageInformationSortingNumber = 6;
+            isTriggerInformation = false;
+        }
+        else
+            return;
+    }
     void Update()
     {
-        OnMouseDown();
-        TriggerChanging();
+        TriggerChangingStatus();
+        TriggerChangingInventory();
+        TriggerChangingAnimals();
+        TriggerChangingCrafting();
+        TriggerChangingInformation();
         Debug.Log(pageStatusSortingNumber);
     }
 
     void LateUpdate()
     {
         getSpiriteRendererUpdate();
-    }
-  
-    void Useless()
-    {
-        
     }
 }
