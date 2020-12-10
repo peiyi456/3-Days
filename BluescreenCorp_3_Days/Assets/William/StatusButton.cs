@@ -5,17 +5,22 @@ using UnityEngine;
 public class StatusButton : MonoBehaviour
 {
     public GameObject gettingComponent;
-    void Trigger()
+    public GameObject changeColour;
+    void Start()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            UILayering TriggerChangingStatus = gettingComponent.GetComponent<UILayering>();
-            TriggerChangingStatus.isTriggerStatus = true;
-        }
+        changeColour.gameObject.SetActive(false);
     }
-    // Update is called once per frame
-    void Update()
+    public void Trigger()
     {
-        Trigger();
+        UILayering TriggerChangingStatus = gettingComponent.GetComponent<UILayering>();
+        TriggerChangingStatus.isTriggerStatus = true;
+    }
+    void OnMouseEnter()
+    {
+        changeColour.gameObject.SetActive(true);
+    }
+    void OnMouseExit()
+    {
+        changeColour.gameObject.SetActive(false);
     }
 }

@@ -5,17 +5,22 @@ using UnityEngine;
 public class InventoryButton : MonoBehaviour
 {
     public GameObject gettingComponent;
-    void Trigger()
+    public GameObject changeColour;
+    void Start()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            UILayering TriggerChangingInventory = gettingComponent.GetComponent<UILayering>();
-            TriggerChangingInventory.isTriggerCrafting = true;
-        }
+        changeColour.gameObject.SetActive(false);
     }
-    // Update is called once per frame
-    void Update()
+    public void Trigger()
     {
-        Trigger();
+        UILayering TriggerChangingInventory = gettingComponent.GetComponent<UILayering>();
+        TriggerChangingInventory.isTriggerInventory = true;
+    }
+    public void OnMouseEnter()
+    {
+        changeColour.gameObject.SetActive(true);
+    }
+    public void OnMouseExit()
+    {
+        changeColour.gameObject.SetActive(false);
     }
 }

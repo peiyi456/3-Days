@@ -10,12 +10,6 @@ public class UILayering : MonoBehaviour
     public GameObject pageAnimals;
     public GameObject pageInformation;
 
-    public GameObject pageStatusTransform;
-    public GameObject pageInventoryTransform;
-    public GameObject pageCraftingTransform;
-    public GameObject pageAnimalsTransform;
-    public GameObject pageInformationTransform;
-
     int pageStatusSortingNumber;
     int pageInventorySortingNumber;
     int pageCraftingSortingNumber;
@@ -68,11 +62,9 @@ public class UILayering : MonoBehaviour
             pageCraftingSortingNumber = 4;
             pageAnimalsSortingNumber = 5;
             pageInformationSortingNumber = 1;
-            Debug.Log("OI");
             isTriggerStatus = false;
         }
-        else
-            return;
+
     }
     void TriggerChangingInventory()
     {
@@ -83,11 +75,9 @@ public class UILayering : MonoBehaviour
             pageCraftingSortingNumber = 4;
             pageAnimalsSortingNumber = 5;
             pageInformationSortingNumber = 1;
-            Debug.Log("BRO");
             isTriggerInventory = false;
         }
-        else
-            return;
+
     }
     void TriggerChangingAnimals()
     {
@@ -100,8 +90,7 @@ public class UILayering : MonoBehaviour
             pageInformationSortingNumber = 1;
             isTriggerAnimals = false;
         }
-        else
-            return;
+
     }
     void TriggerChangingCrafting()
     {
@@ -114,8 +103,7 @@ public class UILayering : MonoBehaviour
             pageInformationSortingNumber = 1;
             isTriggerCrafting = false;
         }
-        else
-            return;
+
     }
     void TriggerChangingInformation()
     {
@@ -128,21 +116,22 @@ public class UILayering : MonoBehaviour
             pageInformationSortingNumber = 6;
             isTriggerInformation = false;
         }
-        else
-            return;
     }
     void Update()
     {
-        TriggerChangingStatus();
-        TriggerChangingInventory();
-        TriggerChangingAnimals();
-        TriggerChangingCrafting();
-        TriggerChangingInformation();
         Debug.Log(pageStatusSortingNumber);
     }
 
     void LateUpdate()
     {
         getSpiriteRendererUpdate();
+    }
+    void FixedUpdate()
+    {
+        TriggerChangingStatus();
+        TriggerChangingInventory();
+        TriggerChangingAnimals();
+        TriggerChangingCrafting();
+        TriggerChangingInformation();
     }
 }

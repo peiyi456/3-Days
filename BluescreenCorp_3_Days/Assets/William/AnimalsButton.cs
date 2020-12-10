@@ -5,17 +5,22 @@ using UnityEngine;
 public class AnimalsButton : MonoBehaviour
 {
     public GameObject gettingComponent;
-    void Trigger()
+    public GameObject changeColour;
+    void Start()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            UILayering TriggerChangingAnimals = gettingComponent.GetComponent<UILayering>();
-            TriggerChangingAnimals.isTriggerAnimals = true;
-        }
+        changeColour.gameObject.SetActive(false);
     }
-    // Update is called once per frame
-    void Update()
+    public void Trigger()
     {
-        Trigger();
+        UILayering TriggerChangingAnimals = gettingComponent.GetComponent<UILayering>();
+        TriggerChangingAnimals.isTriggerAnimals = true;
+    }
+    void OnMouseEnter()
+    {
+        changeColour.gameObject.SetActive(true);
+    }
+    void OnMouseExit()
+    {
+        changeColour.gameObject.SetActive(false);
     }
 }
