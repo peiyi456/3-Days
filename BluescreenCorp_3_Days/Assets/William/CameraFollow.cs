@@ -9,7 +9,8 @@ public class CameraFollow : MonoBehaviour
     private Vector2 maxObject;
     private Rigidbody2D rbPlayer;
     public float speed = 9.5f;
-    bool activeFollow;
+    bool activeFollowX;
+    bool activeFollowY;
     float positionMinX = -58.0f;
     float positionMaxX = 19.9f;
     float positionMaxY = 48.0f;
@@ -17,18 +18,27 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
-        activeFollow = true;
+        activeFollowX = true;
+        activeFollowY = true;
         rbPlayer = objPlayer.GetComponent<Rigidbody2D>();
     }
     void limitRange()
     {
-        if (objPlayer.transform.position.x < positionMinX || objPlayer.transform.position.x > positionMaxX || objPlayer.transform.position.y < positionMinY || objPlayer.transform.position.y > positionMaxY)
+        if (objPlayer.transform.position.x < positionMinX || objPlayer.transform.position.x > positionMaxX)
         {
-            activeFollow = false;
+            activeFollowX = false;
         }
         else
         {
-            activeFollow = true;
+            activeFollowX = true;
+        }
+        if (objPlayer.transform.position.y < positionMinY || objPlayer.transform.position.y > positionMaxY)
+        {
+            activeFollowY = false;
+        }
+        else
+        {
+            activeFollowY = true;
         }
     }
     void LateUpdate()
@@ -46,7 +56,7 @@ public class CameraFollow : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (activeFollow == true)
+        
         {
             Vector2 Follow = objPlayer.transform.position;
             ///Check the difference of the moving player
@@ -55,13 +65,19 @@ public class CameraFollow : MonoBehaviour
 
             ///If difference more than ???, follow player
             Vector3 newPosition = transform.position;
-            if (Mathf.Abs(differenceX) >= maxObject.x)
+            if (activeFollowX == true)
             {
-                newPosition.x = Follow.x;
+                if (Mathf.Abs(differenceX) >= maxObject.x)
+                {
+                    newPosition.x = Follow.x;
+                }
             }
-            if (Mathf.Abs(differenceY) >= maxObject.y)
+            if (activeFollowY == true)
             {
-                newPosition.y = Follow.y;
+                if (Mathf.Abs(differenceY) >= maxObject.y)
+                {
+                    newPosition.y = Follow.y;
+                }
             }
 
             ///Rigidbody also follow character speed
