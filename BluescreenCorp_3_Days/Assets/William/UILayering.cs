@@ -24,19 +24,11 @@ public class UILayering : MonoBehaviour
 
     void Start()
     {
-        pageStatusSortingNumber = 6;
+        pageStatusSortingNumber = 7;
         pageInventorySortingNumber = 3;
         pageCraftingSortingNumber = 4;
         pageAnimalsSortingNumber = 5;
         pageInformationSortingNumber = 1;
-        //initialise staring layer sequece
-
-        pageStatus.GetComponent<Canvas>().sortingOrder = pageStatusSortingNumber;
-        pageInventory.GetComponent<Canvas>().sortingOrder = pageInventorySortingNumber;
-        pageCrafting.GetComponent<Canvas>().sortingOrder = pageCraftingSortingNumber;
-        pageAnimals.GetComponent<Canvas>().sortingOrder = pageAnimalsSortingNumber;
-        pageInformation.GetComponent<Canvas>().sortingOrder = pageInformationSortingNumber;
-        // put in the layer sequence into game object sprite renderer
 
         isTriggerStatus = false;
         isTriggerInventory = false;
@@ -119,19 +111,19 @@ public class UILayering : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(pageStatusSortingNumber);
+        getSpiriteRendererUpdate();
     }
 
     void LateUpdate()
-    {
-        getSpiriteRendererUpdate();
-    }
-    void FixedUpdate()
     {
         TriggerChangingStatus();
         TriggerChangingInventory();
         TriggerChangingAnimals();
         TriggerChangingCrafting();
         TriggerChangingInformation();
+    }
+    void FixedUpdate()
+    {
+
     }
 }
