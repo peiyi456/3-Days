@@ -11,10 +11,10 @@ public class CameraFollow : MonoBehaviour
     public float speed = 9.5f;
     bool activeFollowX;
     bool activeFollowY;
-    float positionMinX = -58.0f;
-    float positionMaxX = 19.9f;
-    float positionMaxY = 48.0f;
-    float positionMinY = -25.0f;
+    float positionMinX = -63.1f;
+    float positionMaxX = 24.4f;
+    float positionMaxY = 48.5f;
+    float positionMinY = -25.5f;
 
     void Start()
     {
@@ -44,10 +44,10 @@ public class CameraFollow : MonoBehaviour
     void LateUpdate()
     {
         limitRange();
-        Debug.Log(positionMinX);
-        Debug.Log(positionMaxX);
-        Debug.Log(objPlayer.transform.position.x);
-        Debug.Log(objPlayer.transform.position.y);
+        //Debug.Log(positionMinX);
+        //Debug.Log(positionMaxX);
+        //Debug.Log(objPlayer.transform.position.x);
+        //Debug.Log(objPlayer.transform.position.y);
 
     }
     void Update()

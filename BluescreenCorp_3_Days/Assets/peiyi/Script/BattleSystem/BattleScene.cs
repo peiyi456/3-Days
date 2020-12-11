@@ -45,6 +45,8 @@ public class BattleScene : MonoBehaviour
 
     public static string[] animals = new string[] { "Duck", "Chicken", "Monkey"};
     public static Vector2 charPosition = new Vector2(-22.02478f, 0f);
+    public AnimalSpawnerScript[] reference;
+
 
     private void Start()
     {
@@ -53,18 +55,56 @@ public class BattleScene : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        for (int i = 0; i < animals.Length; i++)
+        if (reference[0].No == 0)
         {
-            if (collision.CompareTag(animals[i]))
+            if (collision.CompareTag(animals[reference[0].No]))
             {
                 //combatCamera = Camera.main;
-                //AnimalSpawnerScript.animalNo--;
+                AnimalSpawnerScript.animalNo[0]--;
                 SceneManager.LoadScene("CombatScene");
                 Destroy(collision.gameObject);
-                
                 charPosition = this.transform.position;
             }
         }
+
+        else if (reference[1].No == 1)
+        {
+            if (collision.CompareTag(animals[reference[1].No]))
+            {
+                //combatCamera = Camera.main;
+                AnimalSpawnerScript.animalNo[1]--;
+                SceneManager.LoadScene("CombatScene1");
+                Destroy(collision.gameObject);
+
+                charPosition = this.transform.position;
+            }
+        }
+
+        else if (reference[2].No == 2)
+        {
+            if (collision.CompareTag(animals[reference[2].No]))
+            {
+                //combatCamera = Camera.main;
+                AnimalSpawnerScript.animalNo[2]--;
+                SceneManager.LoadScene("CombatScene2");
+                Destroy(collision.gameObject);
+
+                charPosition = this.transform.position;
+            }
+        }
+
+        //for (int i = 0; i < animals.Length; i++)
+        //{
+        //    if (collision.CompareTag(animals[i]))
+        //    {
+        //        //combatCamera = Camera.main;
+        //        //AnimalSpawnerScript.animalNo--;
+        //        SceneManager.LoadScene("CombatScene");
+        //        Destroy(collision.gameObject);
+                
+        //        charPosition = this.transform.position;
+        //    }
+        //}
     }
 
 

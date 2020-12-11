@@ -64,17 +64,17 @@ public class PlayerMovement : MonoBehaviour
     {
         switch (item.itemType_)
         {
-            case Item_.ItemType_.Axe:
-                inventory_.RemoveItem(new Item_ { itemType_ = Item_.ItemType_.Axe, amount_ = 1 });
-                break;
+            //case Item_.ItemType_.Axe:
+            //    inventory_.RemoveItem(new Item_ { itemType_ = Item_.ItemType_.Axe, amount_ = 1 });
+            //    break;
 
-            case Item_.ItemType_.Tools:
-                inventory_.RemoveItem(new Item_ { itemType_ = Item_.ItemType_.Tools, amount_ = 1 });
-                break;
+            //case Item_.ItemType_.CampingSite:
+            //    inventory_.RemoveItem(new Item_ { itemType_ = Item_.ItemType_.CampingSite, amount_ = 1 });
+            //    break;
 
-            case Item_.ItemType_.Woodsword:
-                inventory_.RemoveItem(new Item_ { itemType_ = Item_.ItemType_.Woodsword, amount_ = 1 });
-                break;
+            //case Item_.ItemType_.BluntKnife:
+            //    inventory_.RemoveItem(new Item_ { itemType_ = Item_.ItemType_.BluntKnife, amount_ = 1 });
+            //    break;
         }
     }
 

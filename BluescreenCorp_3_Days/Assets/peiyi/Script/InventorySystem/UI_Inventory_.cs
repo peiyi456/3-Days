@@ -21,6 +21,7 @@ public class UI_Inventory_ : MonoBehaviour
     public TextMeshProUGUI itemDetails_itemName;
     public TextMeshProUGUI itemDetails_itemFunc;
     public TextMeshProUGUI itemDetails_itemHints;
+    public Button button;
 
 
     private void Awake()
@@ -72,12 +73,18 @@ public class UI_Inventory_ : MonoBehaviour
                 itemDetails_itemName.text = item.GetItemName();
                 itemDetails_itemFunc.text = item.GetItemFunc();
                 itemDetails_itemHints.text = item.GetItemHints();
+                //button = item.GetButtonOn();
             };
+
+            //button.GetComponent<Button_UI>().MouseRightClickFunc = () =>
+            //{
+            //    //Use item
+            //    inventory_.UseItem(item);
+            //};
 
             itemSlotRectTransform.GetComponent<Button_UI>().MouseRightClickFunc = () =>
             {
                 //Use item
-                //inventory_.RemoveItem(item);
                 inventory_.UseItem(item);
             };
 

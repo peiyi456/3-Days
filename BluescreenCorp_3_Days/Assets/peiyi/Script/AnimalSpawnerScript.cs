@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class AnimalSpawnerScript : MonoBehaviour
 {
-    public GameObject[] animal;
-    public float[] minX, maxX, minY, maxY;
+    public GameObject animal;
+    public float minX, maxX, minY, maxY;
     float randX;
     float randY;
     Vector2 whereToSpawn;
     public float spawnRate = 2f;
     float nextSpawn = 0.0f;
-    public static int[] animalNo;
+    public static int[] animalNo = new int[] { 0, 0, 0};
+    public int No;
 
     // Start is called before the first frame update
     void Start()
@@ -39,5 +40,22 @@ public class AnimalSpawnerScript : MonoBehaviour
         //}
 
         //Debug.Log(animalNo);
+        if (Time.time > nextSpawn)
+        {
+
+
+            if (animalNo[No] < 3)
+            {
+                nextSpawn = Time.time + spawnRate;
+                randX = Random.Range(minX, maxX);
+                randY = Random.Range(minY, maxY);
+                whereToSpawn = new Vector2(randX, randY);
+                Instantiate(animal, whereToSpawn, Quaternion.identity);
+                animalNo[No]++;
+            }
+            
+
+
+        }
     }
 }

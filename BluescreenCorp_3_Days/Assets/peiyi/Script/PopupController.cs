@@ -19,6 +19,7 @@ public class PopupController : MonoBehaviour
     [SerializeField] GameObject Books;
     [SerializeField] GameObject CharacterPage;
     [SerializeField] GameObject InventoryPage;
+    [SerializeField] GameObject CraftingPage;
     [SerializeField] GameObject MapPage;
 
     bool isPause;
@@ -133,12 +134,14 @@ public class PopupController : MonoBehaviour
                         CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
                         InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
                         MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+                        CraftingPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
                     }
                     else
                     {
                         InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
                         CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
                         MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+                        CraftingPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
                     }
                 }
 
@@ -153,12 +156,37 @@ public class PopupController : MonoBehaviour
                         MapPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
                         InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
                         CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+                        CraftingPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
                     }
                     else
                     {
                         MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
                         InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
                         CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
+                        CraftingPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+                    }
+
+                }
+
+            }
+
+            else if (Input.GetKeyDown(KeyCode.C))
+            {
+                if (isPause)
+                {
+                    if (MapPage.gameObject.GetComponent<Canvas>().sortingOrder != 0)
+                    {
+                        MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+                        InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+                        CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+                        CraftingPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
+                    }
+                    else
+                    {
+                        MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+                        InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+                        CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+                        CraftingPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
                     }
 
                 }
@@ -169,7 +197,6 @@ public class PopupController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Debug.Log("Hi");
                 if (Time.timeScale == 1)
                 {
                     isPausePageOpen = true;
