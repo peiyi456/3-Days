@@ -7,6 +7,7 @@ public class BattleUnit : MonoBehaviour
 {
     [SerializeField] AnimalBase _base;
     [SerializeField] int level;
+    [SerializeField] string[] tags = new string[] { "Duck", "Chicken", "Monkey" };
 
     [SerializeField] PlayerBase _PlayerBase;
 

@@ -67,7 +67,7 @@ public class PopupController : MonoBehaviour
     {
         //checkingPauseGame(isBookOpen);
         UIPopup();
-        PauseResumeGame();
+        //PauseResumeGame();
 
     }
 
@@ -95,6 +95,15 @@ public class PopupController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.B))
             {
+                if (Time.timeScale == 1)
+                {
+                    Time.timeScale = 0;
+                }
+
+                else
+                {
+                    Time.timeScale = 1;
+                }
 
                 isBookOpen = !isBookOpen;
                 checkingPauseGame(isBookOpen);
@@ -156,13 +165,25 @@ public class PopupController : MonoBehaviour
 
             }
         }
-        else if (!isBookOpen)
+        if (!isBookOpen)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                isPausePageOpen = !isPausePageOpen;
-                PausePage.SetActive(isPausePageOpen);
-                checkingPauseGame(isPausePageOpen);
+                Debug.Log("Hi");
+                if (Time.timeScale == 1)
+                {
+                    isPausePageOpen = true;
+                    PausePage.SetActive(isPausePageOpen);
+                    Time.timeScale = 0;
+                }
+
+                else
+                {
+                    isPausePageOpen = false;
+                    PausePage.SetActive(isPausePageOpen);
+                    Time.timeScale = 1;
+                }
+                //checkingPauseGame(isPausePageOpen);
             }
         }
     }
@@ -171,7 +192,7 @@ public class PopupController : MonoBehaviour
     {
         isPausePageOpen = false;
         PausePage.SetActive(isPausePageOpen);
-        checkingPauseGame(isPausePageOpen);
+        //checkingPauseGame(isPausePageOpen);
     }
 
     public void OnClickSetting()

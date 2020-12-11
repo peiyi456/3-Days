@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { Start, PlayerAction, PlayerMove, EnemyMove, Busy};
 
@@ -17,8 +18,8 @@ public class BattleSystem : MonoBehaviour
     int currentAction;
     int currentMove;
 
-    [SerializeField] GameObject combatScene;
-    [SerializeField] GameObject mainScene;
+    //[SerializeField] GameObject combatScene;
+    //[SerializeField] GameObject mainScene;
 
     public Animator playerUnitAnim;
     public Animator animalUnitAnim;
@@ -116,8 +117,9 @@ public class BattleSystem : MonoBehaviour
             else if (currentAction == 1)
             {
                 //Run
-                combatScene.SetActive(false);
-                mainScene.SetActive(true);
+                //combatScene.SetActive(false);
+                //mainScene.SetActive(true);
+                SceneManager.LoadScene("Peiyi");
             }
         }
     }
@@ -222,9 +224,9 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.Busy;
         animalUnitAnim.Play("Animal_Fainted");
         yield return new WaitForSeconds(1f);
-        combatScene.SetActive(false);
-        mainScene.SetActive(true);
-
+        //combatScene.SetActive(false);
+        //mainScene.SetActive(true);
+        SceneManager.LoadScene("Peiyi");
         Debug.Log("Get feather, meat");
     }
 }

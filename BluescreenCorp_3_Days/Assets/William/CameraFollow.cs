@@ -42,5 +42,8 @@ public class CameraFollow : MonoBehaviour
 
         ///Camera movement same as player
         transform.position = Vector3.MoveTowards(transform.position, newPosition, moveSpeed * Time.deltaTime);
+        //transform.position = new Vector3(Mathf.Clamp(transform.position.x, -63.3f, 24.2f), Mathf.Clamp(transform.position.y, 48.6f, -25.2f), transform.position.z);
     }
+
+
 }

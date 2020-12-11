@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //public static PlayerMovement Instance { get; private set; }
-
     public float moveSpeed = 5f;
 
     public Rigidbody2D rb;
@@ -14,55 +12,81 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
-    //[SerializeField] private InventoryPage inventoryPage;
+    public Inventory_ inventory_;
 
-    //private Inventory inventory;
+    [SerializeField] private UI_Inventory_ uiInventory_;
 
-    public InventorySystem inventory;
+    public AudioSource soundSource;
+    public AudioClip pickupSound;
 
-    //public Inventory_ inventory_;
+    //public GameObject pickupReminder;
 
-    //[SerializeField] private UI_Inventory_ uiInventory_;
-
-    //public GameObject Hand;
+    private void Awake()
+    {
+        inventory_ = new Inventory_(UseItem);
+        uiInventory_.SetInventory_(inventory_);
+    }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        inventory.ItemUsed += Inventory_ItemUsed;
+
     }
 
-    private void Inventory_ItemUsed(object sender, InventoryEventArgs e)
+    
+
+    private ItemWorld itemToPickup = null;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        IInventoryItem item = e.Item;
+        ItemWorld itemWorld = collision.GetComponent<ItemWorld>();
+        itemWorld.OpenMessagePanel();
 
-        //Do sth with the item 
+        if (itemWorld != null)
+        {
+
+            itemToPickup = itemWorld; 
+        }
     }
 
-    //private void Awake()
-    //{
-    //    inventory_ = new Inventory_();
-    //    uiInventory_.SetInventory_(inventory_);
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        ItemWorld itemWorld = collision.GetComponent<ItemWorld>();
+        if (itemWorld != null)
+        {
+            itemWorld.CloseMessagePanel();
 
-    //}
+        }
+    }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    ItemWorld itemWorld = collision.GetComponent<ItemWorld>();
-    //    if (itemWorld != null)
-    //    {
-    //        //Touching Item
-    //        inventory.AddItem(itemWorld.GetItem());
-    //        itemWorld.DestroySelf();
-    //    }
-    //}
+    private void UseItem(Item_ item)
+    {
+        switch (item.itemType_)
+        {
+            case Item_.ItemType_.Axe:
+                inventory_.RemoveItem(new Item_ { itemType_ = Item_.ItemType_.Axe, amount_ = 1 });
+                break;
 
+            case Item_.ItemType_.Tools:
+                inventory_.RemoveItem(new Item_ { itemType_ = Item_.ItemType_.Tools, amount_ = 1 });
+                break;
+
+            case Item_.ItemType_.Woodsword:
+                inventory_.RemoveItem(new Item_ { itemType_ = Item_.ItemType_.Woodsword, amount_ = 1 });
+                break;
+        }
+    }
 
     // Update is called once per frame
     private void Update()
     {
-        
+        if (itemToPickup != null && Input.GetKeyDown(KeyCode.E))
+        {
+            inventory_.AddItem_(itemToPickup.GetItem());
+            itemToPickup.DestroySelf();
+            soundSource.PlayOneShot(pickupSound);
+        }
 
         //Input
         movement.x = Input.GetAxisRaw("Horizontal");
@@ -80,14 +104,14 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
-
-
-    //private void OnControllerColliderHit(ControllerColliderHit hit)
+    //public void OpenMessagePanel()
     //{
-    //    IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
-    //    if (item != null)
-    //    {
-    //        inventory.AddItem(item);
-    //    }
+    //    pickupReminder.SetActive(true);
     //}
+
+    //public void CloseMessagePanel()
+    //{
+    //    pickupReminder.SetActive(false);
+    //}
+
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class AnimalBase : ScriptableObject
 {
     [SerializeField] string AnimalName;
+    [SerializeField] string AnimalTag;
 
     [TextArea]
     [SerializeField] string description;
@@ -29,6 +30,11 @@ public class AnimalBase : ScriptableObject
     public string Name
     {
         get { return AnimalName; }
+    }
+
+    public string Tag
+    {
+        get { return AnimalTag; }
     }
 
     public string Description

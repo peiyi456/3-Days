@@ -8,6 +8,9 @@ TagManager:
   - PickUpItem
   - Animal
   - LosePage
+  - Duck
+  - Chicken
+  - Monkey
   layers:
   - Default
   - TransparentFX

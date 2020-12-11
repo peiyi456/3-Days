@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class BattleScene : MonoBehaviour
 {
+    /* first ver with change the camera
     [SerializeField] GameObject mainScene;
     [SerializeField] GameObject combatScene;
     [SerializeField] Camera combatCamera;
     [SerializeField] Camera maincamera;
+
     //AnimalSpawnerScript animalSpawn;
 
     // Start is called before the first frame update
@@ -38,4 +41,31 @@ public class BattleScene : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+    */
+
+    public static string[] animals = new string[] { "Duck", "Chicken", "Monkey"};
+    public static Vector2 charPosition = new Vector2(-22.02478f, 0f);
+
+    private void Start()
+    {
+        this.transform.position = charPosition;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        for (int i = 0; i < animals.Length; i++)
+        {
+            if (collision.CompareTag(animals[i]))
+            {
+                //combatCamera = Camera.main;
+                //AnimalSpawnerScript.animalNo--;
+                SceneManager.LoadScene("CombatScene");
+                Destroy(collision.gameObject);
+                
+                charPosition = this.transform.position;
+            }
+        }
+    }
+
+
 }
