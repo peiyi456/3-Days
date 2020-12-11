@@ -68,9 +68,9 @@ public class BattleDialogBox : MonoBehaviour
 
     public void UpdateMoveSelection(int selectedMove/*, PlayerMove move*/)
     {
-        //for(int i = 0; i < moveText.Count; i++)
+        //for (int i = 0; i < moveText.Count; i++)
         //{
-        //    if(i == selectedMove)
+        //    if (i == selectedMove)
         //    {
         //        moveText[i].color = highlighedColor;
         //    }

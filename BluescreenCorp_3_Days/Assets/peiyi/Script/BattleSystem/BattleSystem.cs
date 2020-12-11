@@ -26,10 +26,13 @@ public class BattleSystem : MonoBehaviour
 
     bool isDead;
 
+    public static bool isDrop;
+
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(SetupBattle());
+        isDrop = false;
         //anim = GetComponent<Animator>();
     }
 
@@ -120,6 +123,7 @@ public class BattleSystem : MonoBehaviour
                 //combatScene.SetActive(false);
                 //mainScene.SetActive(true);
                 SceneManager.LoadScene("Peiyi");
+                isDrop = false;
             }
         }
     }
@@ -182,8 +186,8 @@ public class BattleSystem : MonoBehaviour
                 dialogBox.EnableMoveSelector(false);
                 dialogBox.EnableDialogText(true);
                 StartCoroutine(PerfromPlayerMove());
-                
-                
+                isDrop = true;
+
             }
 
             else if (currentMove == 1)
@@ -191,8 +195,8 @@ public class BattleSystem : MonoBehaviour
                 //No Action
             }
         }
-    }  
-    
+    }
+
     IEnumerator PerfromPlayerMove()
     {
         state = BattleState.Busy;

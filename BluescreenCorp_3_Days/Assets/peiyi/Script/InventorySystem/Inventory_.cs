@@ -15,9 +15,15 @@ public class Inventory_
         this.useItemAction = useItemAction;
         itemList_ = new List<Item_>();
 
-        AddItem_(new Item_ { itemType_ = Item_.ItemType_.Axe, amount_ = 1 });
-        AddItem_(new Item_ { itemType_ = Item_.ItemType_.Tools, amount_ = 1 });
-        AddItem_(new Item_ { itemType_ = Item_.ItemType_.Woodsword, amount_ = 1 });
+        //AddItem_(new Item_ { itemType_ = Item_.ItemType_.Axe, amount_ = 0 });
+        //AddItem_(new Item_ { itemType_ = Item_.ItemType_.Tools, amount_ = 0 });
+        //AddItem_(new Item_ { itemType_ = Item_.ItemType_.Woodsword, amount_ = 0 });
+        AddItem_(new Item_ { itemType_ = Item_.ItemType_.Leave, amount_ = 5 });
+        AddItem_(new Item_ { itemType_ = Item_.ItemType_.Meat, amount_ = 5 });
+        AddItem_(new Item_ { itemType_ = Item_.ItemType_.Stone, amount_ = 5 });
+        AddItem_(new Item_ { itemType_ = Item_.ItemType_.Banana, amount_ = 5 });
+        AddItem_(new Item_ { itemType_ = Item_.ItemType_.Mango, amount_ = 5 });
+        AddItem_(new Item_ { itemType_ = Item_.ItemType_.Log, amount_ = 5 });
     }
 
     public void AddItem_(Item_ item_)
@@ -74,7 +80,10 @@ public class Inventory_
 
     public void UseItem(Item_ item_)
     {
-        useItemAction(item_);
+        if (item_.IsUsable())
+        {
+            useItemAction(item_);
+        }
     }
 
     public List<Item_> GetItemList_()

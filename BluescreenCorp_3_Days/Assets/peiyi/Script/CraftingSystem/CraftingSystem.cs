@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CraftingSystem : MonoBehaviour
+public class CraftingSystem
 {
-    private const int GRID_SIZE = 3;
+    public const int GRID_SIZE = 3;
 
     private Item_[,] itemArray;
 
@@ -13,37 +13,37 @@ public class CraftingSystem : MonoBehaviour
         itemArray = new Item_[GRID_SIZE, GRID_SIZE];
     }
 
-    private bool IsEmpty(int x, int y)
+    public bool IsEmpty(int x, int y)
     {
         return itemArray[x, y] == null;
     }
 
-    private Item_ GetItem (int x, int y)
+    public Item_ GetItem (int x, int y)
     {
         return itemArray[x, y];
     }
 
-    private void SetItem(Item_ item_, int x, int y)
+    public void SetItem(Item_ item_, int x, int y)
     {
         itemArray[x, y] = item_;
     }
 
-    private void IncreaseItemAmount(int x, int y)
+    public void IncreaseItemAmount(int x, int y)
     {
         GetItem(x, y).amount_++;
     }
 
-    private void DecreaseItemAmount(int x, int y)
+    public void DecreaseItemAmount(int x, int y)
     {
         GetItem(x, y).amount_--;
     }
 
-    private void RemoveItem(int x, int y)
+    public void RemoveItem(int x, int y)
     {
         SetItem(null, x, y);
     }
 
-    private bool TryAddItem(Item_ item_, int x, int y)
+    public bool TryAddItem(Item_ item_, int x, int y)
     {
         if(IsEmpty(x,y))
         {
