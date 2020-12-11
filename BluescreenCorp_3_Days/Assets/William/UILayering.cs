@@ -31,11 +31,11 @@ public class UILayering : MonoBehaviour
         pageInformationSortingNumber = 1;
         //initialise staring layer sequece
 
-        pageStatus.GetComponent<SpriteRenderer>().sortingOrder = pageStatusSortingNumber;
-        pageInventory.GetComponent<SpriteRenderer>().sortingOrder = pageInventorySortingNumber;
-        pageCrafting.GetComponent<SpriteRenderer>().sortingOrder = pageCraftingSortingNumber;
-        pageAnimals.GetComponent<SpriteRenderer>().sortingOrder = pageAnimalsSortingNumber;
-        pageInformation.GetComponent<SpriteRenderer>().sortingOrder = pageInformationSortingNumber;
+        pageStatus.GetComponent<Canvas>().sortingOrder = pageStatusSortingNumber;
+        pageInventory.GetComponent<Canvas>().sortingOrder = pageInventorySortingNumber;
+        pageCrafting.GetComponent<Canvas>().sortingOrder = pageCraftingSortingNumber;
+        pageAnimals.GetComponent<Canvas>().sortingOrder = pageAnimalsSortingNumber;
+        pageInformation.GetComponent<Canvas>().sortingOrder = pageInformationSortingNumber;
         // put in the layer sequence into game object sprite renderer
 
         isTriggerStatus = false;
@@ -47,11 +47,11 @@ public class UILayering : MonoBehaviour
     }
     void getSpiriteRendererUpdate()
     {
-        pageStatus.GetComponent<SpriteRenderer>().sortingOrder = pageStatusSortingNumber;
-        pageInventory.GetComponent<SpriteRenderer>().sortingOrder = pageInventorySortingNumber;
-        pageCrafting.GetComponent<SpriteRenderer>().sortingOrder = pageCraftingSortingNumber;
-        pageAnimals.GetComponent<SpriteRenderer>().sortingOrder = pageAnimalsSortingNumber;
-        pageInformation.GetComponent<SpriteRenderer>().sortingOrder = pageInformationSortingNumber;
+        pageStatus.GetComponent<Canvas>().sortingOrder = pageStatusSortingNumber;
+        pageInventory.GetComponent<Canvas>().sortingOrder = pageInventorySortingNumber;
+        pageCrafting.GetComponent<Canvas>().sortingOrder = pageCraftingSortingNumber;
+        pageAnimals.GetComponent<Canvas>().sortingOrder = pageAnimalsSortingNumber;
+        pageInformation.GetComponent<Canvas>().sortingOrder = pageInformationSortingNumber;
     }
     void TriggerChangingStatus()
     {
