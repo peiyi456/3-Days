@@ -5477,7 +5477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0560ec5fa06aa74a93b5c5f5950e0b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
+  moveSpeed: 7
   rb: {fileID: 408235996}
   animator: {fileID: 408235999}
   uiInventory_: {fileID: 8282032915279580547}
