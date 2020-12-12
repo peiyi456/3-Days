@@ -13,7 +13,7 @@ public class CameraFollow : MonoBehaviour
     bool activeFollowY;
     float positionMinX = -63.32f;
     float positionMaxX = 24.4f;
-    float positionMaxY = 48.65f;
+    float positionMaxY = 48.6f;
     float positionMinY = -25.30f;
 
     void Start()
