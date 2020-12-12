@@ -11,6 +11,8 @@ TagManager:
   - Duck
   - Chicken
   - Monkey
+  - BananaTree
+  - MangoTree
   layers:
   - Default
   - TransparentFX

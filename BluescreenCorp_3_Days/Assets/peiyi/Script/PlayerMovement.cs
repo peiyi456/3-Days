@@ -20,7 +20,9 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource soundSource;
     public AudioClip pickupSound;
 
-    //public GameObject pickupReminder;
+    public GameObject pickupReminder;
+
+    public GameObject fruit;
 
     private void Awake()
     {
@@ -54,6 +56,14 @@ public class PlayerMovement : MonoBehaviour
 
             }
         }
+
+        if(collision.CompareTag("BananaTree"))
+        {
+            if(Input.GetKeyDown(KeyCode.Q))
+            {
+                fruit.SetActive(true);
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -62,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
         if (itemWorld != null)
         {
             itemWorld.CloseMessagePanel();
+            CloseMessagePanel();
 
         }
     }
@@ -111,14 +122,14 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
-    //public void OpenMessagePanel()
-    //{
-    //    pickupReminder.SetActive(true);
-    //}
+    public void OpenMessagePanel()
+    {
+        pickupReminder.SetActive(true);
+    }
 
-    //public void CloseMessagePanel()
-    //{
-    //    pickupReminder.SetActive(false);
-    //}
+    public void CloseMessagePanel()
+    {
+        pickupReminder.SetActive(false);
+    }
 
 }

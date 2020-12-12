@@ -17,8 +17,8 @@ public class SpecialItemWorldSpawner : MonoBehaviour
     {
         if(BattleSystem.isDrop == true)
         {
-            //dropMeat.SetActive(true);
-            ItemWorld.SpawnItemWorld(this.transform.position, item);
+            dropMeat.SetActive(true);
+            //ItemWorld.SpawnItemWorld(this.transform.position, item);
             BattleSystem.isDrop = false;
         }
     }

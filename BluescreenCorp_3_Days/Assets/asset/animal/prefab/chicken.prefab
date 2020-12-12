@@ -122,6 +122,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c014f2963f9e8764f976d908ed83be0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 3
+  startWaitTime: 0
+  moveSpots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &5484569907096460015
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +144,7 @@ GameObject:
   - component: {fileID: 6887834278161293146}
   - component: {fileID: 8787614267601715757}
   m_Layer: 8
-  m_Name: New Sprite
+  m_Name: MapIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -102,7 +102,7 @@ public class StatsBar : MonoBehaviour
     {
         if(_statBars.value <= loseValue)
         {
-            GameObject.FindGameObjectWithTag("LosePage").SetActive(true);
+            losePage.SetActive(true);
             Time.timeScale = 0;
         }
 

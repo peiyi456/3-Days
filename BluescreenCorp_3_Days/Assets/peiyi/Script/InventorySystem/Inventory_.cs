@@ -21,9 +21,9 @@ public class Inventory_
         //AddItem_(new Item_ { itemType_ = Item_.ItemType_.Leave, amount_ = 5 });
         //AddItem_(new Item_ { itemType_ = Item_.ItemType_.Meat, amount_ = 5 });
         //AddItem_(new Item_ { itemType_ = Item_.ItemType_.Stone, amount_ = 5 });
-        AddItem_(new Item_ { itemType_ = Item_.ItemType_.Banana, amount_ = 5 });
-        AddItem_(new Item_ { itemType_ = Item_.ItemType_.Mango, amount_ = 5 });
-        AddItem_(new Item_ { itemType_ = Item_.ItemType_.Log, amount_ = 5 });
+        //additem_(new item_ { itemtype_ = item_.itemtype_.banana, amount_ = 5 });
+        //additem_(new item_ { itemtype_ = item_.itemtype_.mango, amount_ = 5 });
+        //additem_(new item_ { itemtype_ = item_.itemtype_.log, amount_ = 5 });
     }
 
     public void AddItem_(Item_ item_)
