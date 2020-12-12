@@ -31,7 +31,7 @@ public class MainPageButtonController : MonoBehaviour
 
     IEnumerator changeScene()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene(1);
     }
 
