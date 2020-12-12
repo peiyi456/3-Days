@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
 
     Vector2 movement;
+    Vector2 oriPosition;
 
     public Inventory_ inventory_;
 
@@ -31,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        //this.oriPosition = new Vector2(-24.2f, -0.7f);
     }
 
     
@@ -40,13 +41,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        ItemWorld itemWorld = collision.GetComponent<ItemWorld>();
-        itemWorld.OpenMessagePanel();
-
-        if (itemWorld != null)
+        if (collision.CompareTag("PickUpItem"))
         {
+            ItemWorld itemWorld = collision.GetComponent<ItemWorld>();
+            itemWorld.OpenMessagePanel();
 
-            itemToPickup = itemWorld; 
+
+            if (itemWorld != null)
+            {
+
+                itemToPickup = itemWorld;
+
+            }
         }
     }
 
@@ -64,17 +70,17 @@ public class PlayerMovement : MonoBehaviour
     {
         switch (item.itemType_)
         {
-            //case Item_.ItemType_.Axe:
-            //    inventory_.RemoveItem(new Item_ { itemType_ = Item_.ItemType_.Axe, amount_ = 1 });
-            //    break;
+            case Item_.ItemType_.Meat:
+                inventory_.RemoveItem(new Item_ { itemType_ = Item_.ItemType_.Meat, amount_ = 1 });
+                break;
 
-            //case Item_.ItemType_.CampingSite:
-            //    inventory_.RemoveItem(new Item_ { itemType_ = Item_.ItemType_.CampingSite, amount_ = 1 });
-            //    break;
+            case Item_.ItemType_.Mango:
+                inventory_.RemoveItem(new Item_ { itemType_ = Item_.ItemType_.Banana, amount_ = 1 });
+                break;
 
-            //case Item_.ItemType_.BluntKnife:
-            //    inventory_.RemoveItem(new Item_ { itemType_ = Item_.ItemType_.BluntKnife, amount_ = 1 });
-            //    break;
+            case Item_.ItemType_.Banana:
+                inventory_.RemoveItem(new Item_ { itemType_ = Item_.ItemType_.Mango, amount_ = 1 });
+                break;
         }
     }
 
@@ -83,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (itemToPickup != null && Input.GetKeyDown(KeyCode.E))
         {
+            Debug.Log("HI");
             inventory_.AddItem_(itemToPickup.GetItem());
             itemToPickup.DestroySelf();
             soundSource.PlayOneShot(pickupSound);

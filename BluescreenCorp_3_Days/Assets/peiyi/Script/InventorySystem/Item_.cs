@@ -10,16 +10,16 @@ public class Item_
     public enum ItemType_
 
     {
-        //Axe,
-        //CampingSite,
-        //BluntKnife,
-        //Spear,
-        Banana = 1,
-        Mango = 2,
-        Meat = 3,
-        Log = 4,
-        Leave = 5,
-        Stone = 6,
+        Axe,
+        CampingSite,
+        BluntKnife,
+        Spear,
+        Banana ,
+        Mango,
+        Meat,
+        Log,
+        Leave,
+        Stone,
     }
 
     public ItemType_ itemType_;
@@ -30,13 +30,13 @@ public class Item_
         switch (itemType_)
         {
             default:
-            //case ItemType_.Axe: return ItemAssets_.Instance.axeSprite;
+            case ItemType_.Axe: return ItemAssets_.Instance.axeSprite;
 
-            //case ItemType_.CampingSite: return ItemAssets_.Instance.campingSiteSprite;
+            case ItemType_.CampingSite: return ItemAssets_.Instance.campingSiteSprite;
 
-            //case ItemType_.BluntKnife: return ItemAssets_.Instance.bluntKnifeSprite;
+            case ItemType_.BluntKnife: return ItemAssets_.Instance.bluntKnifeSprite;
 
-            //case ItemType_.Spear: return ItemAssets_.Instance.spearSprite;
+            case ItemType_.Spear: return ItemAssets_.Instance.spearSprite;
 
             case ItemType_.Stone: return ItemAssets_.Instance.stoneSprite;
 
@@ -57,13 +57,13 @@ public class Item_
         switch (itemType_)
         {
             default:
-            //case ItemType_.Axe: return ItemAssets_.Instance.axeName;
+            case ItemType_.Axe: return ItemAssets_.Instance.axeName;
 
-            //case ItemType_.CampingSite: return ItemAssets_.Instance.campingSiteName;
+            case ItemType_.CampingSite: return ItemAssets_.Instance.campingSiteName;
 
-            //case ItemType_.BluntKnife: return ItemAssets_.Instance.bluntKnifeName;
+            case ItemType_.BluntKnife: return ItemAssets_.Instance.bluntKnifeName;
 
-            //case ItemType_.Spear: return ItemAssets_.Instance.spearName;
+            case ItemType_.Spear: return ItemAssets_.Instance.spearName;
 
             case ItemType_.Stone: return ItemAssets_.Instance.stoneName;
 
@@ -85,13 +85,13 @@ public class Item_
         switch (itemType_)
         {
             default:
-            //case ItemType_.Axe: return ItemAssets_.Instance.axeFunc;
+            case ItemType_.Axe: return ItemAssets_.Instance.axeFunc;
 
-            //case ItemType_.CampingSite: return ItemAssets_.Instance.campingSiteFunc;
+            case ItemType_.CampingSite: return ItemAssets_.Instance.campingSiteFunc;
 
-            //case ItemType_.BluntKnife: return ItemAssets_.Instance.bluntKnifeFunc;
+            case ItemType_.BluntKnife: return ItemAssets_.Instance.bluntKnifeFunc;
 
-            //case ItemType_.Spear: return ItemAssets_.Instance.spearFunc;
+            case ItemType_.Spear: return ItemAssets_.Instance.spearFunc;
 
             case ItemType_.Stone: return ItemAssets_.Instance.stoneFunc;
 
@@ -113,13 +113,13 @@ public class Item_
         switch (itemType_)
         {
             default:
-            //case ItemType_.Axe: return ItemAssets_.Instance.axeHints;
+            case ItemType_.Axe: return ItemAssets_.Instance.axeHints;
 
-            //case ItemType_.CampingSite: return ItemAssets_.Instance.campingSiteHints;
+            case ItemType_.CampingSite: return ItemAssets_.Instance.campingSiteHints;
 
-            //case ItemType_.BluntKnife: return ItemAssets_.Instance.bluntKnifeHints;
+            case ItemType_.BluntKnife: return ItemAssets_.Instance.bluntKnifeHints;
 
-            //case ItemType_.Spear: return ItemAssets_.Instance.spearHints;
+            case ItemType_.Spear: return ItemAssets_.Instance.spearHints;
 
             case ItemType_.Stone: return ItemAssets_.Instance.stoneSkinHints;
 
@@ -155,10 +155,10 @@ public class Item_
         switch (itemType_)
         {
             default:
-            //case ItemType_.Axe:
-            //case ItemType_.CampingSite:
-            //case ItemType_.BluntKnife:
-            //case ItemType_.Spear:
+            case ItemType_.Axe:
+            case ItemType_.CampingSite:
+            case ItemType_.BluntKnife:
+            case ItemType_.Spear:
             case ItemType_.Banana:
             case ItemType_.Leave:
             case ItemType_.Log:
@@ -181,9 +181,10 @@ public class Item_
             case ItemType_.Meat:
                 return true;
 
-            //case ItemType_.BluntKnife:
-            //case ItemType_.Axe:
-            //case ItemType_.CampingSite:
+            case ItemType_.BluntKnife:
+            case ItemType_.Axe:
+            case ItemType_.CampingSite:
+            case ItemType_.Spear:
             case ItemType_.Leave:
             case ItemType_.Log:
             case ItemType_.Stone:
@@ -201,9 +202,10 @@ public class Item_
             case ItemType_.Banana:
             case ItemType_.Mango:
             case ItemType_.Meat:
-            //case ItemType_.BluntKnife:
-            //case ItemType_.Axe:
-            //case ItemType_.CampingSite:
+            case ItemType_.BluntKnife:
+            case ItemType_.Axe:
+            case ItemType_.CampingSite:
+            case ItemType_.Spear:
                 return false;
 
             case ItemType_.Leave:

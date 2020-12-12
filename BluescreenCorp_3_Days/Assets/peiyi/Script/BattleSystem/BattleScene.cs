@@ -55,43 +55,43 @@ public class BattleScene : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (reference[0].No == 0)
-        {
-            if (collision.CompareTag(animals[reference[0].No]))
-            {
-                //combatCamera = Camera.main;
-                AnimalSpawnerScript.animalNo[0]--;
-                SceneManager.LoadScene("CombatScene");
-                Destroy(collision.gameObject);
-                charPosition = this.transform.position;
-            }
-        }
+        //if (reference[0].No == 0)
+        //{
+        //    if (collision.CompareTag(animals[reference[0].No]))
+        //    {
+        //        //combatCamera = Camera.main;
+        //        AnimalSpawnerScript.animalNo[0]--;
+        //        SceneManager.LoadScene("CombatScene");
+        //        Destroy(collision.gameObject);
+        //        charPosition = this.transform.position;
+        //    }
+        //}
 
-        else if (reference[1].No == 1)
-        {
-            if (collision.CompareTag(animals[reference[1].No]))
-            {
-                //combatCamera = Camera.main;
-                AnimalSpawnerScript.animalNo[1]--;
-                SceneManager.LoadScene("CombatScene1");
-                Destroy(collision.gameObject);
+        //else if (reference[1].No == 1)
+        //{
+        //    if (collision.CompareTag(animals[reference[1].No]))
+        //    {
+        //        //combatCamera = Camera.main;
+        //        AnimalSpawnerScript.animalNo[1]--;
+        //        SceneManager.LoadScene("CombatScene1");
+        //        Destroy(collision.gameObject);
 
-                charPosition = this.transform.position;
-            }
-        }
+        //        charPosition = this.transform.position;
+        //    }
+        //}
 
-        else if (reference[2].No == 2)
-        {
-            if (collision.CompareTag(animals[reference[2].No]))
-            {
-                //combatCamera = Camera.main;
-                AnimalSpawnerScript.animalNo[2]--;
-                SceneManager.LoadScene("CombatScene2");
-                Destroy(collision.gameObject);
+        //else if (reference[2].No == 2)
+        //{
+        //    if (collision.CompareTag(animals[reference[2].No]))
+        //    {
+        //        //combatCamera = Camera.main;
+        //        AnimalSpawnerScript.animalNo[2]--;
+        //        SceneManager.LoadScene("CombatScene2");
+        //        Destroy(collision.gameObject);
 
-                charPosition = this.transform.position;
-            }
-        }
+        //        charPosition = this.transform.position;
+        //    }
+        //}
 
         //for (int i = 0; i < animals.Length; i++)
         //{
@@ -105,6 +105,37 @@ public class BattleScene : MonoBehaviour
         //        charPosition = this.transform.position;
         //    }
         //}
+
+        if(collision.CompareTag("Duck"))
+        {
+            DuckSpawnerScript.duckAnimalNo--;
+            SceneManager.LoadScene(3);
+            Destroy(collision.gameObject);
+
+            charPosition = this.transform.position;
+        }
+
+        else if (collision.CompareTag("Chicken"))
+        {
+            ChickenSpawnerScript.chickenAnimalNo--;
+            SceneManager.LoadScene(4);
+            Destroy(collision.gameObject);
+
+            charPosition = this.transform.position;
+        }
+
+        else if (collision.CompareTag("Monkey"))
+        {
+            MonkeySpawnerScript.monkeyAnimalNo--;
+            SceneManager.LoadScene(5);
+            Destroy(collision.gameObject);
+
+            charPosition = this.transform.position;
+        }
+
+        //Destroy(collision.gameObject);
+
+        //charPosition = this.transform.position;
     }
 
 

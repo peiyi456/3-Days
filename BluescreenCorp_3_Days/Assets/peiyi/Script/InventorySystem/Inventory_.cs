@@ -18,9 +18,9 @@ public class Inventory_
         //AddItem_(new Item_ { itemType_ = Item_.ItemType_.Axe, amount_ = 0 });
         //AddItem_(new Item_ { itemType_ = Item_.ItemType_.Tools, amount_ = 0 });
         //AddItem_(new Item_ { itemType_ = Item_.ItemType_.Woodsword, amount_ = 0 });
-        AddItem_(new Item_ { itemType_ = Item_.ItemType_.Leave, amount_ = 5 });
-        AddItem_(new Item_ { itemType_ = Item_.ItemType_.Meat, amount_ = 5 });
-        AddItem_(new Item_ { itemType_ = Item_.ItemType_.Stone, amount_ = 5 });
+        //AddItem_(new Item_ { itemType_ = Item_.ItemType_.Leave, amount_ = 5 });
+        //AddItem_(new Item_ { itemType_ = Item_.ItemType_.Meat, amount_ = 5 });
+        //AddItem_(new Item_ { itemType_ = Item_.ItemType_.Stone, amount_ = 5 });
         AddItem_(new Item_ { itemType_ = Item_.ItemType_.Banana, amount_ = 5 });
         AddItem_(new Item_ { itemType_ = Item_.ItemType_.Mango, amount_ = 5 });
         AddItem_(new Item_ { itemType_ = Item_.ItemType_.Log, amount_ = 5 });

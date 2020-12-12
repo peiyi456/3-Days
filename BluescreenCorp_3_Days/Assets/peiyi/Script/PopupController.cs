@@ -17,14 +17,15 @@ public class PopupController : MonoBehaviour
     string newVolume = "VOLUME_SLIDER";
 
     [SerializeField] GameObject Books;
-    [SerializeField] GameObject CharacterPage;
-    [SerializeField] GameObject InventoryPage;
-    [SerializeField] GameObject CraftingPage;
+    //[SerializeField] GameObject CharacterPage;
+    //[SerializeField] GameObject InventoryPage;
+    //[SerializeField] GameObject CraftingPage;
     [SerializeField] GameObject MapPage;
 
     bool isPause;
     bool isBookOpen;
     bool isPausePageOpen;
+    bool isMapOpen;
 
     // Start is called before the first frame update
     void Start()
@@ -74,7 +75,7 @@ public class PopupController : MonoBehaviour
 
     void PauseResumeGame()
     {
-        if(isPause == true)
+        if (isPause == true)
         {
             Time.timeScale = 0;
         }
@@ -92,7 +93,7 @@ public class PopupController : MonoBehaviour
 
     void UIPopup()
     {
-        if (!isPausePageOpen)
+        if (!isPausePageOpen && !isMapOpen)
         {
             if (Input.GetKeyDown(KeyCode.B))
             {
@@ -114,7 +115,7 @@ public class PopupController : MonoBehaviour
                     RectTransform rt = Books.GetComponent<RectTransform>();
                     rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 0, rt.rect.width);
                     rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, rt.rect.height);
-                    CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
+                    //CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
 
                 }
                 else
@@ -125,94 +126,148 @@ public class PopupController : MonoBehaviour
                 }
             }
 
-            else if (Input.GetKeyDown(KeyCode.I))
-            {
-                if (isPause)
-                {
-                    if (InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder != 0)
-                    {
-                        CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-                        InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
-                        MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-                        CraftingPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-                    }
-                    else
-                    {
-                        InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-                        CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
-                        MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-                        CraftingPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-                    }
-                }
+            //else if (Input.GetKeyDown(KeyCode.I))
+            //{
+            //    if (isPause)
+            //    {
+            //        if (InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder != 0)
+            //        {
+            //            CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+            //            InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
+            //            MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+            //            CraftingPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+            //        }
+            //        else
+            //        {
+            //            InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+            //            CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
+            //            MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+            //            CraftingPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+            //        }
+            //    }
 
-            }
+            //}
 
-            else if (Input.GetKeyDown(KeyCode.M))
-            {
-                if (isPause)
-                {
-                    if (MapPage.gameObject.GetComponent<Canvas>().sortingOrder != 0)
-                    {
-                        MapPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
-                        InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-                        CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-                        CraftingPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-                    }
-                    else
-                    {
-                        MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-                        InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-                        CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
-                        CraftingPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-                    }
+            //else if (Input.GetKeyDown(KeyCode.M))
+            //{
+            //    if (isPause)
+            //    {
+            //        if (MapPage.gameObject.GetComponent<Canvas>().sortingOrder != 0)
+            //        {
+            //            MapPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
 
-                }
+            //        }
+            //        else
+            //        {
+            //            MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
 
-            }
+            //        }
 
-            else if (Input.GetKeyDown(KeyCode.C))
-            {
-                if (isPause)
-                {
-                    if (MapPage.gameObject.GetComponent<Canvas>().sortingOrder != 0)
-                    {
-                        MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-                        InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-                        CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-                        CraftingPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
-                    }
-                    else
-                    {
-                        MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-                        InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-                        CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-                        CraftingPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
-                    }
+            //    }
 
-                }
+            //}
 
-            }
+            //else if (Input.GetKeyDown(KeyCode.C))
+            //{
+            //    if (isPause)
+            //    {
+            //        if (MapPage.gameObject.GetComponent<Canvas>().sortingOrder != 0)
+            //        {
+            //            MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+            //            InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+            //            CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+            //            CraftingPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
+            //        }
+            //        else
+            //        {
+            //            MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+            //            InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+            //            CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+            //            CraftingPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
+            //        }
+
+            //    }
+
+            //}
         }
-        if (!isBookOpen)
+
+        if (!isBookOpen && !isBookOpen)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.M))
             {
+
                 if (Time.timeScale == 1)
                 {
-                    isPausePageOpen = true;
-                    PausePage.SetActive(isPausePageOpen);
+                    isMapOpen = true;
                     Time.timeScale = 0;
+                    MapPage.SetActive(isMapOpen);
+                    //RectTransform rt = MapPage.GetComponent<RectTransform>();
+                    //rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, -100, rt.rect.width);
+                    //rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, -20, rt.rect.height);
+                    //MapPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
                 }
 
                 else
                 {
-                    isPausePageOpen = false;
-                    PausePage.SetActive(isPausePageOpen);
+                    isMapOpen = false;
                     Time.timeScale = 1;
+                    MapPage.SetActive(isMapOpen);
+                    //RectTransform rt = MapPage.GetComponent<RectTransform>();
+                    //rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 1920, rt.rect.width);
+                    //rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, rt.rect.height);
+                    //MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
                 }
-                //checkingPauseGame(isPausePageOpen);
+
+                //isMapOpen = !isMapOpen;
+                
+
+                //if (isMapOpen)
+                //{
+                //    if (MapPage.gameObject.GetComponent<Canvas>().sortingOrder != 0)
+                //    {
+                //        RectTransform rt = MapPage.GetComponent<RectTransform>();
+                //        rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 0, rt.rect.width);
+                //        rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, rt.rect.height);
+                //        MapPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
+
+                //    }
+                //    else
+                //    {
+                //        RectTransform rt = MapPage.GetComponent<RectTransform>();
+                //        rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 1920, rt.rect.width);
+                //        rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, rt.rect.height);
+                //        MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
+
+                //    }
+
+                //}
+
+
+            }
+
+            if (!isBookOpen && !isMapOpen)
+            {
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    if (Time.timeScale == 1)
+                    {
+                        isPausePageOpen = true;
+                        PausePage.SetActive(isPausePageOpen);
+                        Time.timeScale = 0;
+                    }
+
+                    else
+                    {
+                        isPausePageOpen = false;
+                        PausePage.SetActive(isPausePageOpen);
+                        Time.timeScale = 1;
+                    }
+                    //checkingPauseGame(isPausePageOpen);
+                }
             }
         }
+
+        
     }
 
     public void OnClickResume()

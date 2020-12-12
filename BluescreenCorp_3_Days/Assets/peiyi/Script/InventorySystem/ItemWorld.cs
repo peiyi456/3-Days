@@ -17,17 +17,19 @@ public class ItemWorld : MonoBehaviour
     private Item_ item;
     private SpriteRenderer spriteRenderer;
     public GameObject pickupReminder;
-
+    public SpriteRenderer mapIcon;
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        
     }
 
     public void SetItem(Item_ item)
     {
         this.item = item;
         spriteRenderer.sprite = item.GetSprite();
+        mapIcon.sprite = item.GetSprite();
     }
 
     public Item_ GetItem()

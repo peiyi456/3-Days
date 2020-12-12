@@ -122,7 +122,7 @@ public class BattleSystem : MonoBehaviour
                 //Run
                 //combatScene.SetActive(false);
                 //mainScene.SetActive(true);
-                SceneManager.LoadScene("Peiyi");
+                SceneManager.LoadScene(2);
                 isDrop = false;
             }
         }
@@ -226,11 +226,11 @@ public class BattleSystem : MonoBehaviour
     IEnumerator AnimalFainted()
     {
         state = BattleState.Busy;
-        animalUnitAnim.Play("Animal_Fainted");
+        //animalUnitAnim.Play("Animal_Fainted");
         yield return new WaitForSeconds(1f);
         //combatScene.SetActive(false);
         //mainScene.SetActive(true);
-        SceneManager.LoadScene("Peiyi");
-        Debug.Log("Get feather, meat");
+        SceneManager.LoadScene(2);
+        //Debug.Log("Get feather, meat");
     }
 }
