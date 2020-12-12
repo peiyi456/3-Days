@@ -216,6 +216,7 @@ MonoBehaviour:
   itemDetails_itemName: {fileID: 356383561963547772}
   itemDetails_itemFunc: {fileID: 356383562821680291}
   itemDetails_itemHints: {fileID: 356383562466262073}
+  button: {fileID: 0}
 --- !u!223 &4737785
 Canvas:
   m_ObjectHideFlags: 0
@@ -1179,8 +1180,6 @@ MonoBehaviour:
   SoundToggle: {fileID: 2027282199}
   soundVolume: 0
   Books: {fileID: 1675944452}
-  CharacterPage: {fileID: 107789121}
-  InventoryPage: {fileID: 4737780}
   MapPage: {fileID: 596486543}
 --- !u!1 &82724526
 GameObject:
@@ -4318,7 +4317,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &275921324
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5970,6 +5969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847a7785b78ff847bfbe81390388393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reference: []
 --- !u!1001 &421932994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7028,27 +7028,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfcfaf9bca1b6a7499432602ac794d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animal:
-  - {fileID: 9053521220816766329, guid: b04204ec2ad947945b7d5d87d01374bc, type: 3}
-  - {fileID: 64587900823791064, guid: 591a9bc8e2b67ff4c985d7559d67ed29, type: 3}
-  - {fileID: 5768005696735794769, guid: 26bf8dcd98448aa41a8c096273bfccf5, type: 3}
-  minX:
-  - -10.5
-  - -8.8
-  - -76.9
-  maxX:
-  - 12.1
-  - 35.3
-  - -26.2
-  minY:
-  - 19.7
-  - -22.6
-  - -10.4
-  maxY:
-  - 44.3
-  - 7.6
-  - 29.8
+  animal: {fileID: 0}
+  minX: 0
+  maxX: 0
+  minY: 0
+  maxY: 0
   spawnRate: 2
+  No: 0
 --- !u!4 &499215317 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8475798584848165565, guid: 7fb7a11454e501543824405acfaeed28,
@@ -8516,7 +8502,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &593310410
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11963,7 +11949,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &755880791
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18056,27 +18042,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfcfaf9bca1b6a7499432602ac794d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animal:
-  - {fileID: 9053521220816766329, guid: b04204ec2ad947945b7d5d87d01374bc, type: 3}
-  - {fileID: 64587900823791064, guid: 591a9bc8e2b67ff4c985d7559d67ed29, type: 3}
-  - {fileID: 5768005696735794769, guid: 26bf8dcd98448aa41a8c096273bfccf5, type: 3}
-  minX:
-  - -10.5
-  - -8.8
-  - -76.9
-  maxX:
-  - 12.1
-  - 35.3
-  - -26.2
-  minY:
-  - 19.7
-  - -22.6
-  - -10.4
-  maxY:
-  - 44.3
-  - 7.6
-  - 29.8
+  animal: {fileID: 0}
+  minX: 0
+  maxX: 0
+  minY: 0
+  maxY: 0
   spawnRate: 2
+  No: 0
 --- !u!1 &1259052172
 GameObject:
   m_ObjectHideFlags: 0
@@ -28913,7 +28885,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &1917646910
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29501,27 +29473,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfcfaf9bca1b6a7499432602ac794d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animal:
-  - {fileID: 9053521220816766329, guid: b04204ec2ad947945b7d5d87d01374bc, type: 3}
-  - {fileID: 64587900823791064, guid: 591a9bc8e2b67ff4c985d7559d67ed29, type: 3}
-  - {fileID: 5768005696735794769, guid: 26bf8dcd98448aa41a8c096273bfccf5, type: 3}
-  minX:
-  - -10.5
-  - -8.8
-  - -76.9
-  maxX:
-  - 12.1
-  - 35.3
-  - -26.2
-  minY:
-  - 19.7
-  - -22.6
-  - -10.4
-  maxY:
-  - 44.3
-  - 7.6
-  - 29.8
+  animal: {fileID: 0}
+  minX: 0
+  maxX: 0
+  minY: 0
+  maxY: 0
   spawnRate: 2
+  No: 0
 --- !u!1 &1981141094
 GameObject:
   m_ObjectHideFlags: 0
@@ -33498,17 +33456,48 @@ MonoBehaviour:
   pfItemWorld: {fileID: 8661163105603816372, guid: 4a18f40137799734e9d962f8729e26fa,
     type: 3}
   axeSprite: {fileID: 21300000, guid: c4930f13ed4352a4ea46ec86e3f27b26, type: 3}
-  toolsSprite: {fileID: 21300000, guid: 4482bdec286e8bd4092629f4d6adeca8, type: 3}
-  woodswordSprite: {fileID: 21300000, guid: 6bd3a0dac623d02449a6ba65c2d4dce4, type: 3}
+  campingSiteSprite: {fileID: 0}
+  bluntKnifeSprite: {fileID: 0}
+  spearSprite: {fileID: 0}
+  stoneSprite: {fileID: 0}
+  meatSprite: {fileID: 0}
+  bananaSprite: {fileID: 0}
+  leaveSprite: {fileID: 0}
+  mangoSprite: {fileID: 0}
+  logSprite: {fileID: 0}
   axeName: Axe
-  toolsName: Tools
-  woodswordName: Woodsword
+  campingSiteName: 
+  bluntKnifeName: 
+  spearName: 
+  stoneName: 
+  meatName: 
+  bananaName: 
+  leaveName: 
+  mangoName: 
+  logName: 
   axeFunc: ad
-  toolsFunc: asd
-  woodswordFunc: asdf
+  campingSiteFunc: 
+  bluntKnifeFunc: 
+  spearFunc: 
+  stoneFunc: 
+  meatFunc: 
+  bananaFunc: 
+  leave: 
+  mangoFunc: 
+  logFunc: 
   axeHints: aaa
-  toolsHints: bbb
-  woodswordHints: ccc
+  campingSiteHints: 
+  bluntKnifeHints: 
+  spearHints: 
+  stoneSkinHints: 
+  meatHints: 
+  bananaHints: 
+  leaveHints: 
+  mangoHints: 
+  logHints: 
+  axeButton: {fileID: 0}
+  toolsButton: {fileID: 0}
+  woodswordButton: {fileID: 0}
 --- !u!4 &4575958899044141350
 Transform:
   m_ObjectHideFlags: 0

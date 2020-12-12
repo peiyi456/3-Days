@@ -38514,7 +38514,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!224 &8282032913970741063
 RectTransform:
   m_ObjectHideFlags: 0
@@ -39406,7 +39406,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -826, y: 325}
+  m_AnchoredPosition: {x: -826, y: 446}
   m_SizeDelta: {x: 161.14185, y: 48.27604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8282032914123726523
@@ -39804,7 +39804,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -836.4, y: 9}
+  m_AnchoredPosition: {x: -836.4, y: 130.00002}
   m_SizeDelta: {x: 161.14185, y: 48.27604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8282032914150107574
@@ -42484,7 +42484,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!224 &8282032914520118318
 RectTransform:
   m_ObjectHideFlags: 0
@@ -44441,7 +44441,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!224 &8282032914758137267
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48613,7 +48613,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -842, y: -157}
+  m_AnchoredPosition: {x: -842, y: -35.999992}
   m_SizeDelta: {x: 161.14185, y: 48.27604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8282032915191376185
@@ -48834,7 +48834,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -836.4, y: 164}
+  m_AnchoredPosition: {x: -836.4, y: 285}
   m_SizeDelta: {x: 161.14185, y: 48.27604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8282032915203504285
@@ -50977,7 +50977,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!224 &8282032915549748945
 RectTransform:
   m_ObjectHideFlags: 0
