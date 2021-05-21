@@ -24,6 +24,7 @@ public class Item_
 
     public ItemType_ itemType_;
     public int amount_;
+    public int maxSlotAmount_;
 
     public Sprite GetSprite()
     {
