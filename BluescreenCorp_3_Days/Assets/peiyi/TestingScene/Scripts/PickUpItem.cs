@@ -43,18 +43,21 @@ public class PickUpItem : MonoBehaviour
             speed * Time.deltaTime
             );
 
-        if(distance < 0.1f)
+        if (distance < 0.1f)
         {
-            //*TODO* shoud be moved into specific controller rather than being checked here.
-            if (GameManager.instance.inventoryContainer != null)
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                GameManager.instance.inventoryContainer.Add(item, count);
+                //*TODO* shoud be moved into specific controller rather than being checked here.
+                if (GameManager.instance.inventoryContainer != null)
+                {
+                    GameManager.instance.inventoryContainer.Add(item, count);
+                }
+                else
+                {
+                    Debug.LogWarning("No inventory container attached to the game manager");
+                }
+                Destroy(gameObject);
             }
-            else
-            {
-                Debug.LogWarning("No inventory container attached to the game manager");
-            }
-            Destroy(gameObject);
         }
     }
 }
