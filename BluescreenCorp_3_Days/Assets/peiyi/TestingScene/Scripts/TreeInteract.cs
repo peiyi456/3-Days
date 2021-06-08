@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeCuttable : ToolHit
+public class TreeInteract : ToolHit
 {
+    [SerializeField] bool cuttable;
     [SerializeField] GameObject pickUpDrop;
     [SerializeField] float spread = 0.7f;
 
@@ -13,6 +14,7 @@ public class TreeCuttable : ToolHit
 
     public override void Hit()
     {
+        Debug.Log("Hit");
         while (dropCount > 0)
         {
             dropCount -= 1;
@@ -24,6 +26,9 @@ public class TreeCuttable : ToolHit
             ItemSpawnManager.instance.SpawnItem(position, item, itemCountInOneDrop);
         }
 
-        Destroy(gameObject);
+        if (cuttable)
+        {
+            Destroy(gameObject);
+        }
     }
 }
