@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8475798584848165565}
   - component: {fileID: 8475798584848165566}
   - component: {fileID: 6337745510288346589}
-  - component: {fileID: 3946941029579257515}
   m_Layer: 0
   m_Name: tree
   m_TagString: Untagged
@@ -52,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,25 +117,6 @@ PolygonCollider2D:
       - {x: -0.6803503, y: -0.49829865}
       - {x: -0.9054785, y: -0.2998886}
       - {x: -0.92359257, y: 0.12619019}
---- !u!114 &3946941029579257515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8475798584848165564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aba94a02d4059c2408afbe7fc22b2389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cuttable: 1
-  pickUpDrop: {fileID: 716102805806877556, guid: 9242fbfc1bccc1145845a0c6473c612d,
-    type: 3}
-  spread: 5
-  item: {fileID: 11400000, guid: 63f903534266fab47845640d3cfdf7b5, type: 2}
-  itemCountInOneDrop: 1
-  dropCount: 5
 --- !u!1 &8591207218024756346
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +166,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
