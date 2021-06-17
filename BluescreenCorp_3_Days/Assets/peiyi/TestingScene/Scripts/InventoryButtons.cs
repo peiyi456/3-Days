@@ -9,7 +9,7 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
     [SerializeField] Image icon;
     [SerializeField] Text text;
 
-    int myIndex;
+    [SerializeField] int myIndex;
 
     public void SetIndex(int index)
     {
@@ -36,7 +36,6 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
     {
         icon.sprite = null;
         icon.gameObject.SetActive(false);
-
         text.gameObject.SetActive(false);
     }
 

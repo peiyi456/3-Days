@@ -10,23 +10,29 @@ public class InventoryPanel : MonoBehaviour
 
     private void Start()
     {
-        //Clear();
+        GameManager.instance.inventoryContainer.ClearContainer();
         SetIndex();
         Show();
-        GameManager.instance.inventoryContainer.ClearContainer();
-
     }
+
+    //private void Start()
+    //{
+    //    SetIndex();
+    //    Show();
+
+    //}
 
     private void Update()
     {
-        SetIndex();
+        //SetIndex();
         Show();
     }
 
-    private void OnEnable()
-    {
-        Show();
-    }
+    //private void OnEnable()
+    //{
+    //    Show();
+    //}
+
 
     private void SetIndex()
     {
@@ -42,21 +48,27 @@ public class InventoryPanel : MonoBehaviour
         {
             if(inventory.slots[i].item == null)
             {
+                Debug.Log("222");
                 buttons[i].Clean();
 
             }
             else
             {
+                Debug.Log("111");
                 buttons[i].Set(inventory.slots[i]);
             }
         }
     }
 
-    private void Clear()
-    {
-        for (int i = 0; i < inventory.slots.Count; i++)
-        {
-            buttons[i].Clean();
-        }
-    }
+    //private void ClearContainer()
+    //{
+    //    //ItemContainer container = FindObjectOfType<ItemContainer>();
+
+    //    for (int i = 0; i < inventory.slots.Count; i++)
+    //    {
+    //        Debug.Log("000");
+    //        inventory.slots[i].Clear();
+    //    }
+
+    //}
 }
