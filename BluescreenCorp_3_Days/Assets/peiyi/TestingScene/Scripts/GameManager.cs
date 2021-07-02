@@ -14,4 +14,5 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public ItemContainer inventoryContainer;
     public ItemDragAndDropController itemDragAndDropController;
+    public bool hasAxe, hasCampsite, hasKnife, hasSpear;
 }

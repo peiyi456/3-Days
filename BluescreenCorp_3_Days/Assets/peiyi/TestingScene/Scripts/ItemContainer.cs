@@ -33,7 +33,7 @@ public class ItemContainer : ScriptableObject , IItemContainer
 {
     public List<ItemSlot> slots;
 
-    public void Add(Item item, int count = 1)
+    public bool AddItem(Item item, int count = 1)
     {
         if (item.stackable == true)
         {
@@ -62,10 +62,11 @@ public class ItemContainer : ScriptableObject , IItemContainer
             }
         }
 
+        return false;
     }
 
     //Checking
-    public void Remove(Item item, int count = 1)
+    public bool RemoveItem(Item item, int count = 1)
     {
         if (item.stackable == true)
         {
@@ -73,11 +74,13 @@ public class ItemContainer : ScriptableObject , IItemContainer
             if (itemSlot.count >= 0)
             {
                 itemSlot.count -= 1;
+                return true;
             }
 
             else
             {
                 itemSlot.Clear();
+                return true;
             }
         }
         else
@@ -87,18 +90,44 @@ public class ItemContainer : ScriptableObject , IItemContainer
             if (itemSlot != null)
             {
                 itemSlot.item = item;
+                return true;
             }
         }
+        return false;
     }
 
-    //public void IsFull()
+    public bool IsFull()
+    {
+        for (int i = 0; i < slots.Count; i++)
+        {
+            //ItemSlot itemSlot = slots.Find(x => x.item == null);
+            if (slots[i].item == null)
+            {
+                return false;
+            }
+
+        }
+            return true;
+    }
+
+    //public bool ContainsItem(Item item, int count = 1)
     //{
-    //    for(int i = 0; i < slots.Count; i++)
-    //    {
-    //        ItemSlot itemSlot = slots.Find(x => x.item == null);
-    //        if(itemSlot )
-    //    }
+        
     //}
+
+    public int ItemCount(Item item)
+    {
+        int number = 0;
+
+        for(int i = 0; i < slots.Count; i++)
+        {
+            if(slots[i].item == item)
+            {
+                number++;
+            }
+        }
+        return number;
+    }
 
     public void ClearContainer()
     {
@@ -112,23 +141,23 @@ public class ItemContainer : ScriptableObject , IItemContainer
 
 
     /**** Do checking for this!!!! Important ****/
-    public bool ContainsItem(Item item)
-    {
-        throw new NotImplementedException();
-    }
+    //public bool ContainsItem(Item item)
+    //{
+    //    throw new NotImplementedException();
+    //}
 
-    public bool RemoveItem(Item item)
-    {
-        throw new NotImplementedException();
-    }
+    //public bool RemoveItem(Item item)
+    //{
+    //    throw new NotImplementedException();
+    //}
 
-    public bool AddItem(Item item)
-    {
-        throw new NotImplementedException();
-    }
+    //public bool AddItem(Item item)
+    //{
+    //    throw new NotImplementedException();
+    //}
 
-    public bool IsFull()
-    {
-        throw new NotImplementedException();
-    }
+    //public bool IsFull()
+    //{
+    //    throw new NotImplementedException();
+    //}
 }

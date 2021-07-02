@@ -24,7 +24,7 @@ public class ItemDragAndDropController : MonoBehaviour
         {
             iconTransform.position = Input.mousePosition;
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(1))
             {
                 if (EventSystem.current.IsPointerOverGameObject() == false)
                 {

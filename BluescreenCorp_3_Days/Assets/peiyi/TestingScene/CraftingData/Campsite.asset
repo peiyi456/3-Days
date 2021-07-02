@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9392f939a3ad11e429a61dca67992707, type: 3}
-  m_Name: Axe
+  m_Name: Campsite
   m_EditorClassIdentifier: 
   elements:
-  - item: {fileID: 11400000, guid: 71ac0577db6fb6c41841de4671e6ff41, type: 2}
-    count: 3
   - item: {fileID: 11400000, guid: 63f903534266fab47845640d3cfdf7b5, type: 2}
-    count: 5
+    count: 6
   output:
-    item: {fileID: 11400000, guid: da48cb335d6038248944c1f8f31d8eef, type: 2}
-    count: 1
+    item: {fileID: 0}
+    count: 0

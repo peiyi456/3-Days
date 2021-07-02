@@ -50,7 +50,7 @@ public class PickUpItem : MonoBehaviour
                 //*TODO* shoud be moved into specific controller rather than being checked here.
                 if (GameManager.instance.inventoryContainer != null)
                 {
-                    GameManager.instance.inventoryContainer.Add(item, count);
+                    GameManager.instance.inventoryContainer.AddItem(item, count);
                 }
                 else
                 {
