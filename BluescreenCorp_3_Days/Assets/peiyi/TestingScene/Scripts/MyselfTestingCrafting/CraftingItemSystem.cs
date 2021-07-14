@@ -172,7 +172,7 @@ public class CraftingItemSystem : MonoBehaviour
         }
     }
 
-    public void CraftAxe()
+    public void CraftAxe(Image img)
     {
 
         if (isAxe)
