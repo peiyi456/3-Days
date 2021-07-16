@@ -27,39 +27,56 @@ public class CharacterController2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-
-        motionVector = new Vector2(
-            horizontal, 
-            vertical
-            );
-
-        animator.SetFloat("Horizontal", horizontal);
-        animator.SetFloat("Vertical", vertical);
-
-        moving = horizontal != 0 || vertical != 0;
-        animator.SetBool("Moving", moving); 
-
-        if (horizontal != 0 || vertical != 0)
+        if (GameManager.instance.isPause == false)
         {
-            lastMotionVector = new Vector2(
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            float vertical = Input.GetAxisRaw("Vertical");
+
+            motionVector = new Vector2(
                 horizontal,
                 vertical
-                ).normalized;
+                );
 
-            animator.SetFloat("LastHorizontal", horizontal);
-            animator.SetFloat("LastVertical", vertical);
+            animator.SetFloat("Horizontal", horizontal);
+            animator.SetFloat("Vertical", vertical);
+
+            moving = horizontal != 0 || vertical != 0;
+            animator.SetBool("Moving", moving);
+
+            if (horizontal != 0 || vertical != 0)
+            {
+                lastMotionVector = new Vector2(
+                    horizontal,
+                    vertical
+                    ).normalized;
+
+                animator.SetFloat("LastHorizontal", horizontal);
+                animator.SetFloat("LastVertical", vertical);
+            }
+        }
+        else
+        {
+            moving = false;
+            animator.SetBool("Moving", moving);
         }
     }
 
     private void FixedUpdate()
     {
-        Move();
+        
+            Move();
+        
     }
 
     private void Move()
     {
-        rb2D.velocity = motionVector * speed;
+        if (GameManager.instance.isPause == false)
+        {
+            rb2D.velocity = motionVector * speed;
+        }
+        else
+        {
+            rb2D.velocity = Vector2.zero;
+        }
     }
 }

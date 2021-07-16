@@ -5,7 +5,7 @@ using UnityEngine;
 public class TreeInteract : ToolHit
 {
     [SerializeField] bool cuttable;
-    [SerializeField] GameObject pickUpDrop;
+    //[SerializeField] GameObject pickUpDrop;
     [SerializeField] float spread = 0.7f;
 
     [SerializeField] Item item;

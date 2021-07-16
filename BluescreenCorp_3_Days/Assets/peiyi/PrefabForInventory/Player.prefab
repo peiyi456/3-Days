@@ -253,7 +253,7 @@ MonoBehaviour:
   soundSource: {fileID: 0}
   pickupSound: {fileID: 8300000, guid: e5c6490d4e0184346ada7a330f8e3c8b, type: 3}
   pickupReminder: {fileID: 0}
-  fruit: {fileID: 5689554257896141225}
+  fruit: {fileID: 0}
 --- !u!114 &5689554256884771786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,10 +266,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847a7785b78ff847bfbe81390388393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reference:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  mainScene: {fileID: 0}
+  combatScene: {fileID: 0}
+  combatCamera: {fileID: 0}
+  maincamera: {fileID: 0}
 --- !u!1 &5689554256921625189
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +286,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5689554256921625190
 Transform:
   m_ObjectHideFlags: 0
@@ -299,7 +299,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5689554257245588965}
-  - {fileID: 5689554257896141226}
   m_Father: {fileID: 5689554256884771830}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -316,7 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    itemType_: 0
+    itemType_: 6
     amount_: 0
     maxSlotAmount_: 0
   dropMeat: {fileID: 5689554257245588964}
@@ -448,7 +447,7 @@ MonoBehaviour:
   item:
     itemType_: 6
     amount_: 5
-    maxSlotAmount_: 0
+    maxSlotAmount_: 9
 --- !u!1 &5689554257635805964
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,50 +498,3 @@ MonoBehaviour:
     maxSlotAmount_: 0
   dropMeat: {fileID: 5689554255949516030}
   pfItem: {fileID: 6912340985812412275, guid: 4a18f40137799734e9d962f8729e26fa, type: 3}
---- !u!1 &5689554257896141225
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5689554257896141226}
-  - component: {fileID: 5689554257896141227}
-  m_Layer: 0
-  m_Name: Fruit
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &5689554257896141226
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5689554257896141225}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.21, y: -2.51, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5689554256921625190}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5689554257896141227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5689554257896141225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea5fcb3ebca972b47be12cbde3941098, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item:
-    itemType_: 4
-    amount_: 3
-    maxSlotAmount_: 0

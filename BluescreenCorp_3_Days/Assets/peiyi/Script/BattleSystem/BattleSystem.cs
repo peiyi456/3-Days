@@ -18,8 +18,9 @@ public class BattleSystem : MonoBehaviour
     int currentAction;
     int currentMove;
 
-    //[SerializeField] GameObject combatScene;
-    //[SerializeField] GameObject mainScene;
+    [SerializeField] GameObject combatScene;
+    [SerializeField] GameObject mainScene;
+    [SerializeField] Camera mainCamera;
 
     public Animator playerUnitAnim;
     public Animator animalUnitAnim;
@@ -31,10 +32,13 @@ public class BattleSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SetupBattle());
+
+        //StartCoroutine(SetupBattle());
         isDrop = false;
         //anim = GetComponent<Animator>();
     }
+
+    
 
     public IEnumerator SetupBattle()
     {
@@ -75,18 +79,31 @@ public class BattleSystem : MonoBehaviour
 
     private void Update()
     {
-        if (state == BattleState.PlayerAction)
+        if (GameManager.instance.isPause == true)
         {
-            HandleActionSelection();
-        }
-        else if (state == BattleState.PlayerMove)
-        {
-            HandleMoveSelection();
-        }
+            if (GameManager.instance.isBattle == true)
+            {
+                if (state == BattleState.PlayerAction)
+                {
+                    HandleActionSelection();
+                }
+                else if (state == BattleState.PlayerMove)
+                {
+                    HandleMoveSelection();
+                }
 
-        if(isDead)
-        {
-            StartCoroutine(AnimalFainted());
+                if (isDead)
+                {
+                    GameManager.instance.isPause = false;
+                    StartCoroutine(AnimalFainted());
+                    GameManager.instance.isBattle = false;
+                }
+            }
+            else
+            {
+                StartCoroutine(SetupBattle());
+                GameManager.instance.isBattle = true;
+            }
         }
     }
 
@@ -120,9 +137,9 @@ public class BattleSystem : MonoBehaviour
             else if (currentAction == 1)
             {
                 //Run
-                //combatScene.SetActive(false);
-                //mainScene.SetActive(true);
-                SceneManager.LoadScene(2);
+                combatScene.SetActive(false);
+                mainScene.SetActive(true);
+                //SceneManager.LoadScene(2);
                 isDrop = false;
             }
         }
@@ -228,9 +245,10 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.Busy;
         //animalUnitAnim.Play("Animal_Fainted");
         yield return new WaitForSeconds(1f);
-        //combatScene.SetActive(false);
-        //mainScene.SetActive(true);
-        SceneManager.LoadScene(2);
+        mainScene.SetActive(true);
+        //mainCamera.gameObject.SetActive(true);
+        combatScene.SetActive(false);
+        //SceneManager.LoadScene(2);
         //Debug.Log("Get feather, meat");
     }
 }

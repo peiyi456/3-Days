@@ -26,12 +26,18 @@ public class BattleUnit : MonoBehaviour
     //    GetComponent<Image>().sprite = units.Base.Sprite;
     //}
 
+    private void Update()
+    {
+        //_base = BattleScene.thisAnimal;
+    }
+
     public void AnimalSetup()
     {
+        _base = GameManager.instance.thisAnimal;
+
         Animal = new Animal(_base);
 
         GetComponent<Image>().sprite = Animal.Base.AnimalSprite;
-
     }
 
     public void PlayerSetup()

@@ -15,4 +15,10 @@ public class GameManager : MonoBehaviour
     public ItemContainer inventoryContainer;
     public ItemDragAndDropController itemDragAndDropController;
     public bool hasAxe, hasCampsite, hasKnife, hasSpear;
+    public bool isPause;
+    public bool isBattle;
+    public Vector2 specialItemDropPos;
+    public AnimalBase thisAnimal;
+
+    public bool isPutCamp1, isPutCamp2;
 }

@@ -17,9 +17,12 @@ public class ToolsCharacterController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if (GameManager.instance.isPause == false)
         {
-            UseTool();
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                UseTool();
+            }
         }
     }
 

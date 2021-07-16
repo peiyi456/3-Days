@@ -20,6 +20,7 @@ public class DayTimeManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] TextMeshProUGUI dayText;
     [SerializeField] Light2D globalLight;
+    [SerializeField] Image DayNightPanel;
 
     float Hours
     {
@@ -33,19 +34,27 @@ public class DayTimeManager : MonoBehaviour
 
     private void Update()
     {
-        time += Time.deltaTime * timeScale;
-        int hh = (int)Hours;
-        int mm = (int)Minutes;
-        timeText.text = hh.ToString("00") + ":" + mm.ToString("0") + "0";
-        dayText.text = "Day " + days;
-
-        float v = nightTimeCurve.Evaluate(Hours);
-        Color c = Color.Lerp(dayLightColor, nightLightColor, v);
-        globalLight.color = c;
-        if(time > secondsInDay)
+        if (GameManager.instance.isPause == false)
         {
-            NextDay();
+            time += Time.deltaTime * timeScale;
+            int hh = (int)Hours;
+            int mm = (int)Minutes;
+            timeText.text = hh.ToString("00") + ":" + mm.ToString("0") + "0";
+            dayText.text = "Day " + days;
+
+            float v = nightTimeCurve.Evaluate(Hours);
+            Color c = Color.Lerp(dayLightColor, nightLightColor, v);
+            //globalLight.color = c;
+            DayNightPanel.color = c;
+            if (time > secondsInDay)
+            {
+                NextDay();
+            }
         }
+        //else
+        //{
+        //    DayNightPanel.gameObject.SetActive(false);
+        //}
     }
 
     private void NextDay()

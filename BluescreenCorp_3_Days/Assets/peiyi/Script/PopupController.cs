@@ -30,7 +30,7 @@ public class PopupController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1;
+         GameManager.instance.isPause = false;
         PausePage.SetActive(false);
         //InventoryPage.SetActive(false);
         //CharacterPage.SetActive(false);
@@ -77,12 +77,12 @@ public class PopupController : MonoBehaviour
     {
         if (isPause == true)
         {
-            Time.timeScale = 0;
+             GameManager.instance.isPause = true;
         }
 
         else
         {
-            Time.timeScale = 1;
+             GameManager.instance.isPause = false;
         }
     }
 
@@ -97,14 +97,14 @@ public class PopupController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.B))
             {
-                if (Time.timeScale == 1)
+                if ( GameManager.instance.isPause == false)
                 {
-                    Time.timeScale = 0;
+                     GameManager.instance.isPause = true;
                 }
 
                 else
                 {
-                    Time.timeScale = 1;
+                     GameManager.instance.isPause = false;
                 }
 
                 isBookOpen = !isBookOpen;
@@ -196,10 +196,10 @@ public class PopupController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.M))
             {
 
-                if (Time.timeScale == 1)
+                if ( GameManager.instance.isPause == false)
                 {
                     isMapOpen = true;
-                    Time.timeScale = 0;
+                     GameManager.instance.isPause = true;
                     MapPage.SetActive(isMapOpen);
                     //RectTransform rt = MapPage.GetComponent<RectTransform>();
                     //rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, -100, rt.rect.width);
@@ -210,7 +210,7 @@ public class PopupController : MonoBehaviour
                 else
                 {
                     isMapOpen = false;
-                    Time.timeScale = 1;
+                     GameManager.instance.isPause = false;
                     MapPage.SetActive(isMapOpen);
                     //RectTransform rt = MapPage.GetComponent<RectTransform>();
                     //rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 1920, rt.rect.width);
@@ -249,18 +249,18 @@ public class PopupController : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    if (Time.timeScale == 1)
+                    if ( GameManager.instance.isPause == false)
                     {
                         isPausePageOpen = true;
                         PausePage.SetActive(isPausePageOpen);
-                        Time.timeScale = 0;
+                         GameManager.instance.isPause = true;
                     }
 
                     else
                     {
                         isPausePageOpen = false;
                         PausePage.SetActive(isPausePageOpen);
-                        Time.timeScale = 1;
+                         GameManager.instance.isPause = false;
                     }
                     //checkingPauseGame(isPausePageOpen);
                 }
