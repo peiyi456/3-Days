@@ -7,6 +7,7 @@ using TMPro;
 public class StatsBar : MonoBehaviour
 {
     //Use for deduct the player stats
+    [SerializeField] bool isHP; 
     float StartCountDown;
     [SerializeField] float DelayedTime;
     float temp;
@@ -49,36 +50,45 @@ public class StatsBar : MonoBehaviour
 
     void Update()
     {
-
-        //statsBarFunction()
-        if (Time.time >= StartCountDown + DelayedTime)
+        if (GameManager.instance.isPause == false)
         {
-            if (_statBars.value != 0 || _statBars.value == _statBars.maxValue)
+            if (isHP == false)
             {
-                _statBars.value -= 1.0f;
+                //statsBarFunction()
+                if (Time.time >= StartCountDown + DelayedTime)
+                {
+                    if (_statBars.value != 0 || _statBars.value == _statBars.maxValue)
+                    {
+                        _statBars.value -= 1.0f;
 
-                StartCountDown = Time.time;
+                        StartCountDown = Time.time;
+                    }
+                }
+                StatsWord.text = _statBars.value + "/" + _statBars.maxValue;
+
+                if (isTemperature)
+                {
+                    StatsWord.text = _statBars.value + "°C";
+                }
+
+                loseCondition();
+                //_statBars.value += expIncreasedPerSecond * Time.deltaTime;
+                ////_statBars.value = updatedExp / maxStatsValue;
+
+                //levelText.text = "Level: " + playerLevel;
+
+                //if (_statBars.value >= _statBars.maxValue)
+                //{
+                //    playerLevel++;
+                //    _statBars.value = 0;
+                //    _statBars.maxValue += _statBars.maxValue;
+                //}
             }
         }
-        StatsWord.text = _statBars.value + "/" + _statBars.maxValue;
-
-        if (isTemperature)
+        else
         {
-            StatsWord.text = _statBars.value + "°C";
+            StartCountDown = Time.time;
         }
-
-        loseCondition();
-        //_statBars.value += expIncreasedPerSecond * Time.deltaTime;
-        ////_statBars.value = updatedExp / maxStatsValue;
-
-        //levelText.text = "Level: " + playerLevel;
-
-        //if (_statBars.value >= _statBars.maxValue)
-        //{
-        //    playerLevel++;
-        //    _statBars.value = 0;
-        //    _statBars.maxValue += _statBars.maxValue;
-        //}
     }
 
     //public void statsBarFunction(int statNo)

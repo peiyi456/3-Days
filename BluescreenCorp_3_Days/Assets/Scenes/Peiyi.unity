@@ -496,6 +496,7 @@ MonoBehaviour:
   item:
     itemType_: 4
     amount_: 5
+    maxSlotAmount_: 10
 --- !u!212 &9996606
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4727,6 +4728,7 @@ MonoBehaviour:
   item:
     itemType_: 6
     amount_: 5
+    maxSlotAmount_: 0
 --- !u!4 &308508156 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 950621692817841654, guid: 41cb4c276ec03e34db9d768ef8c52826,
@@ -5955,7 +5957,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item:
     itemType_: 5
-    amount_: 3
+    amount_: 4
+    maxSlotAmount_: 10
 --- !u!212 &410746514
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7249,6 +7252,7 @@ MonoBehaviour:
   item:
     itemType_: 0
     amount_: 0
+    maxSlotAmount_: 0
   dropMeat: {fileID: 1926744524}
   pfItem: {fileID: 6912340985812412275, guid: fe63f7c3edc366b4ba5d60eb9343e516, type: 3}
 --- !u!4 &499215317 stripped
@@ -8174,6 +8178,7 @@ MonoBehaviour:
   item:
     itemType_: 6
     amount_: 5
+    maxSlotAmount_: 0
 --- !u!1 &563587347
 GameObject:
   m_ObjectHideFlags: 0
@@ -10538,6 +10543,7 @@ MonoBehaviour:
   item:
     itemType_: 6
     amount_: 5
+    maxSlotAmount_: 0
 --- !u!1 &665919954
 GameObject:
   m_ObjectHideFlags: 0
@@ -10585,6 +10591,7 @@ MonoBehaviour:
   item:
     itemType_: 4
     amount_: 5
+    maxSlotAmount_: 10
 --- !u!212 &665919957
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13529,7 +13536,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item:
     itemType_: 5
-    amount_: 3
+    amount_: 4
+    maxSlotAmount_: 10
 --- !u!212 &820879638
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16592,6 +16600,7 @@ MonoBehaviour:
   item:
     itemType_: 4
     amount_: 5
+    maxSlotAmount_: 10
 --- !u!212 &1018038557
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18793,6 +18802,7 @@ MonoBehaviour:
   item:
     itemType_: 0
     amount_: 0
+    maxSlotAmount_: 0
   dropMeat: {fileID: 664160470}
   pfItem: {fileID: 6912340985812412275, guid: 4a18f40137799734e9d962f8729e26fa, type: 3}
 --- !u!1 &1258952370
@@ -20057,7 +20067,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item:
     itemType_: 5
-    amount_: 3
+    amount_: 4
+    maxSlotAmount_: 10
 --- !u!212 &1304157902
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23625,6 +23636,7 @@ MonoBehaviour:
   item:
     itemType_: 4
     amount_: 3
+    maxSlotAmount_: 0
 --- !u!1 &1551546138
 GameObject:
   m_ObjectHideFlags: 0
@@ -29870,6 +29882,7 @@ MonoBehaviour:
   item:
     itemType_: 6
     amount_: 5
+    maxSlotAmount_: 0
 --- !u!1 &1929265384
 GameObject:
   m_ObjectHideFlags: 0
@@ -34933,7 +34946,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item:
     itemType_: 3
-    amount_: 5
+    amount_: 1
+    maxSlotAmount_: 10
 --- !u!114 &4575958899044141349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35089,7 +35103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item:
     itemType_: 2
-    amount_: 4
+    amount_: 1
+    maxSlotAmount_: 10
 --- !u!1 &5107793533970078382
 GameObject:
   m_ObjectHideFlags: 0
@@ -35218,7 +35233,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item:
     itemType_: 1
-    amount_: 6
+    amount_: 1
+    maxSlotAmount_: 10
 --- !u!1 &7815219880460716017
 GameObject:
   m_ObjectHideFlags: 0
