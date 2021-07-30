@@ -9,6 +9,8 @@ public class TriggerEvent : MonoBehaviour
     [SerializeField] bool doAction = false;
     [SerializeField] bool camp1, camp2;
     [SerializeField] GameObject ply;
+    [SerializeField] GameObject spawnPrefab;
+    [SerializeField] Sprite campsiteSprite;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +27,8 @@ public class TriggerEvent : MonoBehaviour
             {
                 doAction = false;
                 Debug.Log("Put campsite at " + ply.transform.position);
-
+                spawnPrefab.GetComponent<SpriteRenderer>().sprite = campsiteSprite;
+                GameObject campsite = Instantiate(spawnPrefab, new Vector2(ply.transform.position.x, ply.transform.position.y - 0.5f), Quaternion.identity);
             }
         }
     }

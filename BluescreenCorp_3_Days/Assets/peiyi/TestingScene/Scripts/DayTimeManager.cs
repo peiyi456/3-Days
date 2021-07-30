@@ -13,14 +13,16 @@ public class DayTimeManager : MonoBehaviour
     [SerializeField] AnimationCurve nightTimeCurve;
     [SerializeField] Color dayLightColor = Color.white;
 
-    float time;
-    int days = 1;
+    public float time;
+    public int days = 1;
     [SerializeField] float timeScale = 60f;
 
     [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] TextMeshProUGUI dayText;
     [SerializeField] Light2D globalLight;
     [SerializeField] Image DayNightPanel;
+
+    [SerializeField] GameObject winPage;
 
     float Hours
     {
@@ -51,6 +53,7 @@ public class DayTimeManager : MonoBehaviour
                 NextDay();
             }
         }
+        EndGame();
         //else
         //{
         //    DayNightPanel.gameObject.SetActive(false);
@@ -61,6 +64,15 @@ public class DayTimeManager : MonoBehaviour
     {
         time = 0;
         days += 1;
+    }
+
+    void EndGame()
+    {
+        if(days > 3)
+        {
+            GameManager.instance.isPause = true;
+            winPage.gameObject.SetActive(true);
+        }
     }
 
 }

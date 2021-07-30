@@ -94,9 +94,9 @@ public class BattleSystem : MonoBehaviour
 
                 if (isDead)
                 {
-                    GameManager.instance.isPause = false;
                     StartCoroutine(AnimalFainted());
-                    GameManager.instance.isBattle = false;
+                    //GameManager.instance.isBattle = false;
+                    GameManager.instance.isPause = false;
                 }
             }
             else
@@ -104,6 +104,11 @@ public class BattleSystem : MonoBehaviour
                 StartCoroutine(SetupBattle());
                 GameManager.instance.isBattle = true;
             }
+        }
+
+        else
+        {
+            GameManager.instance.isBattle = false;
         }
     }
 
@@ -141,6 +146,8 @@ public class BattleSystem : MonoBehaviour
                 mainScene.SetActive(true);
                 //SceneManager.LoadScene(2);
                 isDrop = false;
+                GameManager.instance.isBattle = false;
+                GameManager.instance.isPause = false;
             }
         }
     }

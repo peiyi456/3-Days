@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ToolsCharacterController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class ToolsCharacterController : MonoBehaviour
     Rigidbody2D rgbd2d;
     [SerializeField] float offsetDistance = 1f;
     [SerializeField] float sizeOfInteractableArea = 1.2f;
+    [SerializeField] Slider stamina;
 
     private void Awake()
     {
@@ -41,5 +43,7 @@ public class ToolsCharacterController : MonoBehaviour
                 break;
             }
         }
+
+        stamina.value -= 10f;
     }
 }

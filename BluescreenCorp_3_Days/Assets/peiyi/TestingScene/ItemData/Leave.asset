@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c86fb76e45368a478f87b33f9de9cce, type: 3}
-  m_Name: Banana
+  m_Name: Leave
   m_EditorClassIdentifier: 
-  Name: Banana
+  Name: Leaves
   stackable: 1
-  icon: {fileID: 21300000, guid: f7b5b0fe1a2af204eb1f6914323853db, type: 3}
+  icon: {fileID: 0}
   Description: 
   Hint: 
-  itemType: Food
+  itemType: 

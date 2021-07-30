@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3946941029579257515}
   m_Layer: 0
   m_Name: tree
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,11 +130,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba94a02d4059c2408afbe7fc22b2389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTree: 0
   cuttable: 1
-  pickUpDrop: {fileID: 716102805806877556, guid: 9242fbfc1bccc1145845a0c6473c612d,
-    type: 3}
   spread: 5
-  item: {fileID: 11400000, guid: 63f903534266fab47845640d3cfdf7b5, type: 2}
+  item:
+  - {fileID: 11400000, guid: 63f903534266fab47845640d3cfdf7b5, type: 2}
+  - {fileID: 11400000, guid: 771af6fc0066a96499a4fd3f3e65be83, type: 2}
   itemCountInOneDrop: 1
   dropCount: 5
 --- !u!1 &8591207218024756346
