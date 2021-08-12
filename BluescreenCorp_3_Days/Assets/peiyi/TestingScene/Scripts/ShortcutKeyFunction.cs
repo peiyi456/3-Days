@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShortcutKeyFunction : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class ShortcutKeyFunction : MonoBehaviour
     //[SerializeField] InventoryButton buttons;
     ItemContainer inventory;
     bool press;
+    [SerializeField] Slider hungryStat;
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +23,27 @@ public class ShortcutKeyFunction : MonoBehaviour
         inventory = GameManager.instance.inventoryContainer;
         if (Input.GetKey(KeyCode.Alpha5))
         {
-            inventory.RemoveItem(inventory.slots[9].item, 1);
+            StartCoroutine(eatingCDTime(2.0f));
+            //if (press == false)
+            //{
+            //    inventory.RemoveItem(inventory.slots[9].item, 1);
+            //    press = true;
+            //}
+
         }
         
+    }
+
+    IEnumerator eatingCDTime(float time)
+    {
+        if (press == false)
+        {
+            inventory.RemoveItem(inventory.slots[9].item, 1);
+            press = true;
+            hungryStat.value += 5f;
+        }
+
+        yield return new WaitForSeconds(time);
+        press = false;
     }
 }

@@ -32,7 +32,7 @@ public class CraftTargetItem : MonoBehaviour
         if(craftAxe == true && craftKnife == true)
         {
             objectiveText.fontStyle = FontStyles.Strikethrough | FontStyles.Bold | FontStyles.Italic;
-            objectiveText.color = Color.green;
+            objectiveText.color = Color.blue;
             GameManager.instance.Objective2 = true;
         }
 

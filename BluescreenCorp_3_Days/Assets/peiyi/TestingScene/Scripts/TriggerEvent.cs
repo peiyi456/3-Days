@@ -25,10 +25,14 @@ public class TriggerEvent : MonoBehaviour
         {
             if (Input.GetKey(keyCode))
             {
-                doAction = false;
-                Debug.Log("Put campsite at " + ply.transform.position);
-                spawnPrefab.GetComponent<SpriteRenderer>().sprite = campsiteSprite;
-                GameObject campsite = Instantiate(spawnPrefab, new Vector2(ply.transform.position.x, ply.transform.position.y - 0.5f), Quaternion.identity);
+                if (GameManager.instance.hasCampsite == true)
+                {
+                    doAction = false;
+                    Debug.Log("Put campsite at " + ply.transform.position);
+                    spawnPrefab.GetComponent<SpriteRenderer>().sprite = campsiteSprite;
+                    GameObject campsite = Instantiate(spawnPrefab, new Vector2(ply.transform.position.x, ply.transform.position.y - 0.5f), Quaternion.identity);
+                    GameManager.instance.hasCampsite = false;
+                }
             }
         }
     }

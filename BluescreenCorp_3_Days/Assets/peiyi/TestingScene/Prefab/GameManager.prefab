@@ -1,0 +1,214 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2603315654733508243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2603315654733508245}
+  - component: {fileID: 2603315654733508242}
+  - component: {fileID: 2603315654733508244}
+  - component: {fileID: 2603315654733508247}
+  - component: {fileID: 2603315654733508246}
+  - component: {fileID: 2603315654733508249}
+  - component: {fileID: 2603315654733508248}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2603315654733508245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603315654733508243}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 989.4639, y: 136.60513, z: -31.09375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2603315654733508242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603315654733508243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0883e1a153b4cc844b5dd85bf4108dfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  inventoryContainer: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
+  itemDragAndDropController: {fileID: 2603315654733508244}
+  hasAxe: 0
+  hasCampsite: 0
+  hasKnife: 0
+  hasSpear: 0
+  isPause: 0
+  isBattle: 0
+  specialItemDropPos: {x: 0, y: 0}
+  thisAnimal: {fileID: 0}
+  isPutCamp1: 0
+  isPutCamp2: 0
+  Objective1: 0
+  Objective2: 0
+  Objective3: 0
+--- !u!114 &2603315654733508244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603315654733508243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b34928f70003f144b31c27c98016ce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSlot:
+    item: {fileID: 0}
+    count: 0
+  dragItemIcon: {fileID: 0}
+--- !u!114 &2603315654733508247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603315654733508243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f83b9614bc74e48841514ab54bfbae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpItemPrefab: {fileID: 716102805806877556, guid: 9242fbfc1bccc1145845a0c6473c612d,
+    type: 3}
+--- !u!114 &2603315654733508246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603315654733508243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32407bfa9c225f4dac4af04bbf171e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nightLightColor: {r: 0, g: 0, b: 0, a: 0.78431374}
+  nightTimeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 3.5
+      value: 1
+      inSlope: 0.0003431256
+      outSlope: 0.0003431256
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.1826474
+      outWeight: 0.4047463
+    - serializedVersion: 3
+      time: 5.5
+      value: 0
+      inSlope: 0.0002094654
+      outSlope: 0.0002094654
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.51615024
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 18.5
+      value: 0
+      inSlope: -0.00026563252
+      outSlope: -0.00026563252
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.40756625
+    - serializedVersion: 3
+      time: 19.7
+      value: 1
+      inSlope: -0.0008943251
+      outSlope: -0.0008943251
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.64870316
+      outWeight: 0.20500994
+    - serializedVersion: 3
+      time: 24
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  dayLightColor: {r: 0, g: 0, b: 0, a: 0}
+  time: 0
+  days: 1
+  timeScale: 254
+  timeText: {fileID: 0}
+  dayText: {fileID: 0}
+  globalLight: {fileID: 0}
+  DayNightPanel: {fileID: 0}
+  winPage: {fileID: 0}
+--- !u!114 &2603315654733508249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603315654733508243}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 108f5d1b27afe3a4c85a724a4c64bc51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectiveList:
+  - Kill five animals
+  - HP more than 50%
+  - Collect 50 logs
+  - Craft an axe
+  - Sleep in campsite
+  TargetObjectives: []
+  targetObjectiveNo: 3
+  ObjectiveTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &2603315654733508248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603315654733508243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a049bc251c2eb9146ac6227fe218290b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -22,7 +22,7 @@ public class MaintainStats : MonoBehaviour
         if(FoodStat.value > 100 && WaterStat.value > 100)
         {
             objectiveText.fontStyle = FontStyles.Strikethrough | FontStyles.Bold | FontStyles.Italic;
-            objectiveText.color = Color.green;
+            objectiveText.color = Color.blue;
             GameManager.instance.Objective1 = true;
         }
         else

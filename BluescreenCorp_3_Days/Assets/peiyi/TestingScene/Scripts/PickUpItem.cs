@@ -45,6 +45,7 @@ public class PickUpItem : MonoBehaviour
 
         if (distance < 0.1f)
         {
+            Debug.Log("Pick up");
             if (Input.GetKeyDown(KeyCode.E))
             {
                 //*TODO* shoud be moved into specific controller rather than being checked here.

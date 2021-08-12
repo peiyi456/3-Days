@@ -9,15 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85afcb744dfd2574b9a12b5c40de7589, type: 3}
+  m_Script: {fileID: 11500000, guid: 9fd0362dc21e7554eb3a3729e6c1ea6a, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  UnitsName: You
+  UnitName: Player
+  UnitTag: Player
   description: 
-  UnitsSprite: {fileID: 5044450397378941176, guid: 4a466b0310eb79845ad87216358ee4f5,
+  unitSprite: {fileID: 5044450397378941176, guid: 4a466b0310eb79845ad87216358ee4f5,
     type: 3}
-  type: 0
-  maxHP: 40
-  attack: 5
+  maxHP: 30
+  attack: 3
   learnableMoves:
-  - moveBase: {fileID: 11400000, guid: 2138416ad769a554e9f74f674e39d816, type: 2}
+  - moveBase: {fileID: 11400000, guid: bc9982b7f0d6f204faa069e146d2177a, type: 2}
+    toolLevel: 0
+  - moveBase: {fileID: 11400000, guid: fe55d073887c5234a9a27cb81cb308d2, type: 2}
+    toolLevel: 0
