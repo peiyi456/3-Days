@@ -174,6 +174,7 @@ GameObject:
   - component: {fileID: 7652469553711263888}
   - component: {fileID: 759109370299268400}
   - component: {fileID: 759109370299268407}
+  - component: {fileID: 4190949536391329982}
   m_Layer: 0
   m_Name: Player (1)
   m_TagString: Player
@@ -371,6 +372,21 @@ MonoBehaviour:
   speed: 8
   lastMotionVector: {x: 0, y: 0}
   moving: 0
+--- !u!114 &4190949536391329982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7652469553711263912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c9287238f5eb3647b6e9a17a77049cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerObj: {fileID: 7652469553711263912}
+  animalObj: {fileID: 0}
+  animalTag: []
 --- !u!1 &7652469553766471999
 GameObject:
   m_ObjectHideFlags: 0

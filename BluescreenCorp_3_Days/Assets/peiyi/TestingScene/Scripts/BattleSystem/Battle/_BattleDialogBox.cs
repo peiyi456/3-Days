@@ -95,8 +95,8 @@ public class _BattleDialogBox : MonoBehaviour
                 moveText[i].color = Color.black;
             }
 
-            damageText.text = $"Damage { move.Base.Power}";
-            efficiencyText.text = move.Base.Efficiency.ToString();
+            damageText.text = $"Damage: { move.Base.Power}";
+            efficiencyText.text = $"Accuracy: { move.Base.Accuracy.ToString()}";
         }
     }
 

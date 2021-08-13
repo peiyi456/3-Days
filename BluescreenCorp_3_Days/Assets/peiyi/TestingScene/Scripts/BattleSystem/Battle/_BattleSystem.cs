@@ -13,12 +13,14 @@ public class _BattleSystem : MonoBehaviour
     [SerializeField] _BattleHUD enemyHUD;
     [SerializeField] _BattleDialogBox dialogBox;
 
+    public event Action<bool> OnBattleOver;
+
     _BattleState state;
     int currentAction;
     int currentMove;
 
     // Start is called before the first frame update
-    void Start()
+    public void StartBattle()
     {
         StartCoroutine(SetupBattle());
     }
@@ -60,14 +62,22 @@ public class _BattleSystem : MonoBehaviour
         var move = playerUnit.units.Moves[currentMove];
         yield return dialogBox.TypeDialog($"{playerUnit.units.Base.Name} used {move.Base.MoveName}");
 
-        //yield return new WaitForSeconds(1f);
+        playerUnit.PlayAttackAnimation();
+        yield return new WaitForSeconds(1f);
+
+        enemyUnit.PlayHitAnimation();
 
         bool isFainted = enemyUnit.units.TakeDamage(move, playerUnit.units);
         yield return enemyHUD.UpdateHP();
 
         if(isFainted)
         {
+            GameManager.instance.enemyFainted = true;
             yield return dialogBox.TypeDialog($"{enemyUnit.units.Base.Name} fainted");
+            enemyUnit.PlayFaintAnimation();
+
+            yield return new WaitForSeconds(2f);
+            OnBattleOver(true);
         }
         else
         {
@@ -83,14 +93,20 @@ public class _BattleSystem : MonoBehaviour
         var move = enemyUnit.units.GetRandomMove();
         yield return dialogBox.TypeDialog($"{enemyUnit.units.Base.Name} used {move.Base.MoveName}");
 
-        //yield return new WaitForSeconds(1f);
+        enemyUnit.PlayAttackAnimation();
+        yield return new WaitForSeconds(1f);
 
+        playerUnit.PlayHitAnimation();
         bool isFainted = playerUnit.units.TakeDamage(move, playerUnit.units);
         yield return playerHUD.UpdateHP();
 
         if (isFainted)
         {
-            yield return dialogBox.TypeDialog($"{enemyUnit.units.Base.Name} fainted");
+            yield return dialogBox.TypeDialog($"{playerUnit.units.Base.Name} fainted");
+            playerUnit.PlayFaintAnimation();
+
+            yield return new WaitForSeconds(2f);
+            OnBattleOver(false);
         }
         else
         {
@@ -98,7 +114,7 @@ public class _BattleSystem : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void HandleUpdate()
     {
         if(state == _BattleState.PlayerAction)
         {

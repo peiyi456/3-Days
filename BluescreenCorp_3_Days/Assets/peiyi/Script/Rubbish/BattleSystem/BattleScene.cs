@@ -49,7 +49,7 @@ public class BattleScene : MonoBehaviour
                 //AnimalSpawnerScript.animalNo--;
                 GameManager.instance.specialItemDropPos = collision.transform.position;
                 //thisAnimalTag = collision.tag;
-                GameManager.instance.thisAnimal = animal[i];
+                //GameManager.instance.thisAnimal = animal[i];
                 Destroy(collision.gameObject); // dont destroy straight
                 position = this.transform.position;
             }

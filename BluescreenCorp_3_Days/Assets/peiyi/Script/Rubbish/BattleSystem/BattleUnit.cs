@@ -33,7 +33,7 @@ public class BattleUnit : MonoBehaviour
 
     public void AnimalSetup()
     {
-        _base = GameManager.instance.thisAnimal;
+        
 
         Animal = new Animal(_base);
 

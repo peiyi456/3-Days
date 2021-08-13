@@ -18,13 +18,14 @@ public class SpecialItemWorldSpawner : MonoBehaviour
 
     private void Update()
     {
-        if(BattleSystem.isDrop == true)
+        if(GameManager.instance.enemyFainted == true)
         {
+            //pickUpDrop.SetActive(true);
             //dropMeat.SetActive(true);
             //ItemWorld.SpawnItemWorld(BattleScene.position.position, item);
             //ItemSpawnManager.instance.SpawnItem(GameManager.instance.specialItemDropPos, item, itemCountInOneDrop);
-            BattleSystem.isDrop = false;
-            GameManager.instance.isPause = true;
+            //BattleSystem.isDrop = false;
+            //GameManager.instance.isPause = true;
         }
     }
 }

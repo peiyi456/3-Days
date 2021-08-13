@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fd0362dc21e7554eb3a3729e6c1ea6a, type: 3}
-  m_Name: Chicken
+  m_Name: Player
   m_EditorClassIdentifier: 
-  UnitName: Chicken
-  UnitTag: Chicken
+  UnitName: Player
+  UnitTag: Player
   description: 
-  unitSprite: {fileID: 8813184250309692743, guid: 410de1a2cc9d4fb448a215421253e4ac,
+  unitSprite: {fileID: 5044450397378941176, guid: 4a466b0310eb79845ad87216358ee4f5,
     type: 3}
-  maxHP: 10
-  attack: 2
-  learnableMoves: []
+  maxHP: 30
+  attack: 3
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: bc9982b7f0d6f204faa069e146d2177a, type: 2}
+    toolLevel: 0

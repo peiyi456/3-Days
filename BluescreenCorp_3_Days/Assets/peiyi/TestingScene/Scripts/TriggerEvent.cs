@@ -43,7 +43,7 @@ public class TriggerEvent : MonoBehaviour
         {
             if(interactToTrigger)
             {
-                Debug.Log("11");
+                //Debug.Log("11");
                 //if (GameManager.instance.isPutCamp1 == false)
                 //{
                     doAction = true;

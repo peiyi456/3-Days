@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveName: Punch
   description: 
-  power: 2
+  power: 5
   accuracy: 90
   efficiency: 2.8
