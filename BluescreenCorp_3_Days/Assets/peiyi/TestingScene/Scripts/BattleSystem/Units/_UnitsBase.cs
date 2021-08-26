@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum UnitTypes { Animals, Player};
+
 [CreateAssetMenu(fileName = "Units", menuName = "Units/Create new unit")]
 public class _UnitsBase : ScriptableObject
 {
@@ -21,6 +23,8 @@ public class _UnitsBase : ScriptableObject
     //[SerializeField] int spAttack;
     //[SerializeField] int spDefense;
     //[SerializeField] int speed;
+
+    [SerializeField] UnitTypes unitTypes;
 
     [SerializeField] List<LearnableMove> learnableMoves;
 
@@ -58,6 +62,11 @@ public class _UnitsBase : ScriptableObject
     public int Attack
     {
         get { return attack; }
+    }
+
+    public UnitTypes UnitTypes
+    {
+        get { return unitTypes; }
     }
 
     public List<LearnableMove> LearnableMoves

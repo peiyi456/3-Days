@@ -15,3 +15,6 @@ MonoBehaviour:
   Name: Spear
   stackable: 0
   icon: {fileID: 21300000, guid: 53063c168835457468d4fbaf8faba3ac, type: 3}
+  Description: 
+  Hint: 
+  itemTypes: 2

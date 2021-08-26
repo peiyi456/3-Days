@@ -15,3 +15,6 @@ MonoBehaviour:
   Name: Wood
   stackable: 1
   icon: {fileID: 21300000, guid: e6f7c09d512eed8479e083306af330e2, type: 3}
+  Description: 
+  Hint: 
+  itemTypes: 1

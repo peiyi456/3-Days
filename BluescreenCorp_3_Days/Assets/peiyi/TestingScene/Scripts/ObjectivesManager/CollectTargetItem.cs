@@ -9,7 +9,14 @@ public class CollectTargetItem : MonoBehaviour
     [SerializeField] string Description;
     [SerializeField] TextMeshProUGUI objectiveText;
     [SerializeField] int targetAmount;
-    [SerializeField] int currentCollectAmount;
+    public int currentCollectAmount;
+
+    public static CollectTargetItem instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -20,19 +27,19 @@ public class CollectTargetItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //for(int i = 0; i < inventory.slots.Count; i++)
+        //for (int i = 0; i < inventory.slots.Count; i++)
         //{
-        //    if(inventory.slots[i].item.itemType == "Food")
+        //    if (inventory.slots[i].item.itemTypes == ItemTypes.Food)
         //    {
-        //        currentCollectAmount +=1;
+        //        currentCollectAmount += 1;
         //        break;
         //    }
         //}
 
-        if(currentCollectAmount >= targetAmount)
+        if (currentCollectAmount >= targetAmount)
         {
             objectiveText.fontStyle = FontStyles.Strikethrough | FontStyles.Bold | FontStyles.Italic;
-            objectiveText.color = Color.green;
+            objectiveText.color = Color.blue;
             GameManager.instance.Objective3 = true;
         }
 
@@ -43,4 +50,9 @@ public class CollectTargetItem : MonoBehaviour
             GameManager.instance.Objective3 = false;
         }
     }
+
+    //public void FoodAmountChecker(int foodCount)
+    //{
+    //    currentCollectAmount += foodCount;
+    //}
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class _BattleDialogBox : MonoBehaviour
@@ -14,6 +15,7 @@ public class _BattleDialogBox : MonoBehaviour
     [SerializeField] GameObject moveDetails;
 
     [SerializeField] List<TextMeshProUGUI> actionText;
+    [SerializeField] List<Image> actionTextBorder;
     [SerializeField] List<TextMeshProUGUI> moveText;
 
     [SerializeField] TextMeshProUGUI damageText;
@@ -72,11 +74,13 @@ public class _BattleDialogBox : MonoBehaviour
             if(i == selectedAction)
             {
                 actionText[i].color = highlightColor;
+                actionTextBorder[i].color = new Color(255,255,255,255);
             }
 
             else
             {
                 actionText[i].color = Color.black;
+                actionTextBorder[i].color = new Color(255, 255, 255, 0);
             }
         }
     }

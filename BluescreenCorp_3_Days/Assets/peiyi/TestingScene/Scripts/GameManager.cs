@@ -25,4 +25,5 @@ public class GameManager : MonoBehaviour
     public bool isPutCamp1, isPutCamp2;
 
     public bool Objective1, Objective2, Objective3;
+
 }

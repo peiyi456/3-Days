@@ -33,6 +33,11 @@ public class _Units
         }
     }
 
+    public UnitTypes UnitTypes
+    {
+        get{ return Base.UnitTypes; }
+    }
+
     public int Attack
     {
         get { return Base.Attack; }

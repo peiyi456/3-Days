@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour
         if(state == GameState.FreeRoam)
         {
             //triggerBattle.HandleUpdate();
-            GameManager.instance.isPause = false;
+            //GameManager.instance.isPause = false;
         }
 
         else if(state == GameState.Battle)

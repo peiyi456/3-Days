@@ -19,6 +19,7 @@ MonoBehaviour:
     type: 3}
   maxHP: 30
   attack: 3
+  unitTypes: 1
   learnableMoves:
   - moveBase: {fileID: 11400000, guid: bc9982b7f0d6f204faa069e146d2177a, type: 2}
     toolLevel: 0

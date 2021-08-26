@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 [Serializable]
 public class ItemSlot
 {
@@ -41,6 +43,11 @@ public class ItemContainer : ScriptableObject , IItemContainer
             if(itemSlot != null)
             {
                 itemSlot.count += count;
+
+                if(item.itemTypes == ItemTypes.Food)
+                {
+                    CollectTargetItem.instance.currentCollectAmount += count;
+                }
             }
             else
             {
@@ -49,6 +56,11 @@ public class ItemContainer : ScriptableObject , IItemContainer
                 {
                     itemSlot.item = item;
                     itemSlot.count = count;
+
+                    if (item.itemTypes == ItemTypes.Food)
+                    {
+                        CollectTargetItem.instance.currentCollectAmount += count;
+                    }
                 }
             }
         }
@@ -59,6 +71,7 @@ public class ItemContainer : ScriptableObject , IItemContainer
             if(itemSlot != null)
             {
                 itemSlot.item = item;
+                
             }
         }
 
@@ -74,12 +87,21 @@ public class ItemContainer : ScriptableObject , IItemContainer
             if (itemSlot.count >= 0)
             {
                 itemSlot.count -= 1;
+                if (item.itemTypes == ItemTypes.Food)
+                {
+                    CollectTargetItem.instance.currentCollectAmount -= count;
+                }
+
                 return true;
             }
 
             else
             {
                 itemSlot.Clear();
+                if (item.itemTypes == ItemTypes.Food)
+                {
+                    CollectTargetItem.instance.currentCollectAmount -= count;
+                }
                 return true;
             }
         }

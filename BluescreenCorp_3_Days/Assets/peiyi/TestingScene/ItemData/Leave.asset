@@ -17,4 +17,4 @@ MonoBehaviour:
   icon: {fileID: 0}
   Description: 
   Hint: 
-  itemType: 
+  itemTypes: 1

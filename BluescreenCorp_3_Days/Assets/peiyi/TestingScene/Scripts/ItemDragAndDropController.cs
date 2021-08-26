@@ -26,6 +26,7 @@ public class ItemDragAndDropController : MonoBehaviour
 
             if (Input.GetMouseButtonDown(1))
             {
+                Debug.Log("Click");
                 if (EventSystem.current.IsPointerOverGameObject() == false)
                 {
                     Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

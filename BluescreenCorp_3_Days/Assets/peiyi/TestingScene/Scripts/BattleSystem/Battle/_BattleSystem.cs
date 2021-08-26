@@ -2,11 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum _BattleState { Start, PlayerAction, PlayerMove, EnemyMove, Busy}
 
 public class _BattleSystem : MonoBehaviour
 {
+    [SerializeField] Slider playerHP;
     [SerializeField] _BattleUnit playerUnit;
     [SerializeField] _BattleUnit enemyUnit;
     [SerializeField] _BattleHUD playerHUD;
@@ -72,12 +74,15 @@ public class _BattleSystem : MonoBehaviour
 
         if(isFainted)
         {
+            /****HP thing****/
+            playerHP.value = playerUnit.units.HP;
             GameManager.instance.enemyFainted = true;
             yield return dialogBox.TypeDialog($"{enemyUnit.units.Base.Name} fainted");
             enemyUnit.PlayFaintAnimation();
 
             yield return new WaitForSeconds(2f);
             OnBattleOver(true);
+            GameManager.instance.isPause = false;
         }
         else
         {
@@ -107,6 +112,7 @@ public class _BattleSystem : MonoBehaviour
 
             yield return new WaitForSeconds(2f);
             OnBattleOver(false);
+            GameManager.instance.isPause = false;
         }
         else
         {

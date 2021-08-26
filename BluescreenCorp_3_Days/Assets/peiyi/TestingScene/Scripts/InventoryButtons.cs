@@ -19,6 +19,8 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
 
     Button bttn;
 
+    public bool isShortKey;
+
     private void Start()
     {
         bttn = GetComponent<Button>();
@@ -59,6 +61,7 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
         GameManager.instance.itemDragAndDropController.OnClick(inventory.slots[myIndex]);
         transform.parent.GetComponent<InventoryPanel>().Show();
     }
+
 
     public void ButtonClicked(/*int buttonNo*/)
     {
