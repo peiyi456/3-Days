@@ -15,6 +15,8 @@ MonoBehaviour:
   elements:
   - item: {fileID: 11400000, guid: 63f903534266fab47845640d3cfdf7b5, type: 2}
     count: 6
+    itemTypes: 1
   output:
-    item: {fileID: 0}
-    count: 0
+    item: {fileID: 11400000, guid: 52de033c1f46b5940a19a9be8f3530ec, type: 2}
+    count: 1
+    itemTypes: 2

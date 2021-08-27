@@ -15,3 +15,6 @@ MonoBehaviour:
   Name: Campsite
   stackable: 0
   icon: {fileID: 21300000, guid: 17f5bf0d453882a4fb0d9a7ec615f6ea, type: 3}
+  Description: 
+  Hint: 
+  itemTypes: 2

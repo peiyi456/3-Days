@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5191246108251552631}
   - component: {fileID: 6690235555684600799}
   m_Layer: 8
-  m_Name: New Sprite
+  m_Name: MinimapIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -375,8 +375,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba94a02d4059c2408afbe7fc22b2389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTree: 0
   cuttable: 0
   spread: 5
-  item: {fileID: 11400000, guid: b285af44db52b6d4ba077308c536539c, type: 2}
+  item:
+  - {fileID: 11400000, guid: b285af44db52b6d4ba077308c536539c, type: 2}
   itemCountInOneDrop: 5
   dropCount: 1

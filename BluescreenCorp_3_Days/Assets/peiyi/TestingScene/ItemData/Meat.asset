@@ -15,3 +15,6 @@ MonoBehaviour:
   Name: Meat
   stackable: 1
   icon: {fileID: 21300000, guid: 9f48ec6292966b94982b94c9c47d4551, type: 3}
+  Description: 
+  Hint: 
+  itemType: Food

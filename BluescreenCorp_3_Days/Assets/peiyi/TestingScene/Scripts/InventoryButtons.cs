@@ -8,7 +8,7 @@ using TMPro;
 public class InventoryButtons : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] Image icon;
-    [SerializeField] Text text;
+    [SerializeField] TextMeshProUGUI noText;
     [SerializeField] string name;
 
     [SerializeField] int myIndex;
@@ -18,6 +18,8 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
     [SerializeField] bool selected = false;
 
     Button bttn;
+
+    public bool isShortKey;
 
     private void Start()
     {
@@ -37,12 +39,12 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
 
         if(slot.item.stackable == true)
         {
-            text.gameObject.SetActive(true);
-            text.text = slot.count.ToString();
+            noText.gameObject.SetActive(true);
+            noText.text = slot.count.ToString();
         }
         else
         {
-            text.gameObject.SetActive(false);
+            noText.gameObject.SetActive(false);
         }
     }
 
@@ -50,15 +52,23 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
     {
         icon.sprite = null;
         icon.gameObject.SetActive(false);
-        text.gameObject.SetActive(false);
+        noText.gameObject.SetActive(false);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         ItemContainer inventory = GameManager.instance.inventoryContainer;
-        GameManager.instance.itemDragAndDropController.OnClick(inventory.slots[myIndex]);
+        if (isShortKey)
+        {
+            GameManager.instance.itemDragAndDropController.OnClickShortKey(inventory.slots[myIndex]);
+        }
+        else
+        {
+            GameManager.instance.itemDragAndDropController.OnClick(inventory.slots[myIndex]);
+        }
         transform.parent.GetComponent<InventoryPanel>().Show();
     }
+
 
     public void ButtonClicked(/*int buttonNo*/)
     {
