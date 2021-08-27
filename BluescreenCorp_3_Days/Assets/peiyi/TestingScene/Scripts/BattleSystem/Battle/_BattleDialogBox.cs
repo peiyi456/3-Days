@@ -17,6 +17,7 @@ public class _BattleDialogBox : MonoBehaviour
     [SerializeField] List<TextMeshProUGUI> actionText;
     [SerializeField] List<Image> actionTextBorder;
     [SerializeField] List<TextMeshProUGUI> moveText;
+    [SerializeField] List<Image> moveTextBorder;
 
     [SerializeField] TextMeshProUGUI damageText;
     [SerializeField] TextMeshProUGUI efficiencyText;
@@ -92,15 +93,17 @@ public class _BattleDialogBox : MonoBehaviour
             if(i == selectedMove)
             {
                 moveText[i].color = highlightColor;
+                moveTextBorder[i].color = new Color(255, 255, 255, 255);
             }
 
             else
             {
                 moveText[i].color = Color.black;
+                moveTextBorder[i].color = new Color(255, 255, 255, 0);
             }
 
             damageText.text = $"Damage: { move.Base.Power}";
-            efficiencyText.text = $"Accuracy: { move.Base.Accuracy.ToString()}";
+            //efficiencyText.text = $"Accuracy: { move.Base.Accuracy.ToString()}";
         }
     }
 

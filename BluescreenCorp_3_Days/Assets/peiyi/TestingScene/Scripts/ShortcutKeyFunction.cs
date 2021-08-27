@@ -10,6 +10,8 @@ public class ShortcutKeyFunction : MonoBehaviour
     ItemContainer inventory;
     bool press;
     [SerializeField] Slider hungryStat;
+    [SerializeField] Slider waterStat;
+    [SerializeField] Slider hpStat;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +43,8 @@ public class ShortcutKeyFunction : MonoBehaviour
             inventory.RemoveItem(inventory.slots[9].item, 1);
             press = true;
             hungryStat.value += 5f;
+            waterStat.value += 5f;
+            hpStat.value += 1f;
         }
 
         yield return new WaitForSeconds(time);

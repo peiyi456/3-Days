@@ -8,6 +8,7 @@ public class StatsBar : MonoBehaviour
 {
     //Use for deduct the player stats
     [SerializeField] bool isHP; 
+    [SerializeField] bool isStamina; 
     float StartCountDown;
     [SerializeField] float DelayedTime;
     float temp;
@@ -16,6 +17,7 @@ public class StatsBar : MonoBehaviour
     //public float updatedExp;
 
     public Slider _statBars;
+    public float deductValue;
 
     public TextMeshProUGUI StatsWord;
     public float loseValue;
@@ -59,7 +61,7 @@ public class StatsBar : MonoBehaviour
                 {
                     if (_statBars.value != 0 || _statBars.value == _statBars.maxValue)
                     {
-                        _statBars.value -= 1.0f;
+                        _statBars.value -= deductValue;
 
                         StartCountDown = Time.time;
                     }
@@ -83,6 +85,21 @@ public class StatsBar : MonoBehaviour
                 //    _statBars.value = 0;
                 //    _statBars.maxValue += _statBars.maxValue;
                 //}
+            }
+
+            else if (isStamina)
+            {
+                if (Time.time >= StartCountDown + DelayedTime)
+                {
+                    if (_statBars.value != 0 || _statBars.value <= _statBars.maxValue)
+                    {
+                        _statBars.value += deductValue;
+
+                        StartCountDown = Time.time;
+                    }
+                }
+                StatsWord.text = _statBars.value + "/" + _statBars.maxValue;
+                loseCondition();
             }
         }
         else

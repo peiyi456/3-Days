@@ -35,7 +35,10 @@ public class AbnormalReminder : MonoBehaviour
         }
         else
         {
-            Destroy(theObject.gameObject);
+            if (theObject != null)
+            {
+                Destroy(theObject.gameObject);
+            }
         }
     }
 }

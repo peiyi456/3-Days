@@ -8,14 +8,14 @@ public class TriggerEvent : MonoBehaviour
     [SerializeField] KeyCode keyCode;
     [SerializeField] bool doAction = false;
     [SerializeField] bool camp1, camp2;
-    [SerializeField] GameObject ply;
+    [SerializeField] GameObject player;
     [SerializeField] GameObject spawnPrefab;
     [SerializeField] Sprite campsiteSprite;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
@@ -28,9 +28,9 @@ public class TriggerEvent : MonoBehaviour
                 if (GameManager.instance.hasCampsite == true)
                 {
                     doAction = false;
-                    Debug.Log("Put campsite at " + ply.transform.position);
+                    Debug.Log("Put campsite at " + player.transform.position);
                     spawnPrefab.GetComponent<SpriteRenderer>().sprite = campsiteSprite;
-                    GameObject campsite = Instantiate(spawnPrefab, new Vector2(ply.transform.position.x, ply.transform.position.y - 0.5f), Quaternion.identity);
+                    GameObject campsite = Instantiate(spawnPrefab, new Vector2(player.transform.position.x, player.transform.position.y - 0.5f), Quaternion.identity);
                     GameManager.instance.hasCampsite = false;
                 }
             }
@@ -41,19 +41,19 @@ public class TriggerEvent : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            if(interactToTrigger)
-            {
+            //if(interactToTrigger)
+            //{
                 //Debug.Log("11");
                 //if (GameManager.instance.isPutCamp1 == false)
                 //{
                     doAction = true;
                 //}
-            }
+            //}
 
-            else
-            {
+           // else
+            //{
                 //transfer to other position
-            }
+            //}
         }
     }
 

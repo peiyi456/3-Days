@@ -58,7 +58,14 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         ItemContainer inventory = GameManager.instance.inventoryContainer;
-        GameManager.instance.itemDragAndDropController.OnClick(inventory.slots[myIndex]);
+        if (isShortKey)
+        {
+            GameManager.instance.itemDragAndDropController.OnClickShortKey(inventory.slots[myIndex]);
+        }
+        else
+        {
+            GameManager.instance.itemDragAndDropController.OnClick(inventory.slots[myIndex]);
+        }
         transform.parent.GetComponent<InventoryPanel>().Show();
     }
 

@@ -142,11 +142,9 @@ MonoBehaviour:
   cuttable: 1
   spread: 0.7
   item:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  itemCountInOneDrop: 1
-  dropCount: 10
+  - {fileID: 11400000, guid: 71ac0577db6fb6c41841de4671e6ff41, type: 2}
+  itemCountInOneDrop: 5
+  dropCount: 5
 --- !u!1 &5059679733536215882
 GameObject:
   m_ObjectHideFlags: 0

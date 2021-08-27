@@ -10,17 +10,20 @@ public class ItemSlot
 {
     public Item item;
     public int count;
+    public ItemTypes itemTypes;
 
     public void Copy(ItemSlot slot)
     {
         item = slot.item;
         count = slot.count;
+        itemTypes = slot.itemTypes;
     }
 
-    public void Set(Item item, int count)
+    public void Set(Item item, int count, ItemTypes itemTypes)
     {
         this.item = item;
         this.count = count;
+        this.itemTypes = itemTypes;
     }
 
     public void Clear()
