@@ -18,7 +18,12 @@ public class GameManager : MonoBehaviour
     public bool isPause;
     public bool isBattle;
     public Vector2 specialItemDropPos;
-    public AnimalBase thisAnimal;
+    public _UnitsBase thisAnimal;
+
+    public bool enemyFainted;
 
     public bool isPutCamp1, isPutCamp2;
+
+    public bool Objective1, Objective2, Objective3;
+
 }

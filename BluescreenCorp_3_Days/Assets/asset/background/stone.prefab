@@ -138,13 +138,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba94a02d4059c2408afbe7fc22b2389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTree: 0
   cuttable: 1
-  pickUpDrop: {fileID: 716102805806877556, guid: 9242fbfc1bccc1145845a0c6473c612d,
-    type: 3}
   spread: 0.7
-  item: {fileID: 11400000, guid: 71ac0577db6fb6c41841de4671e6ff41, type: 2}
-  itemCountInOneDrop: 1
-  dropCount: 10
+  item:
+  - {fileID: 11400000, guid: 71ac0577db6fb6c41841de4671e6ff41, type: 2}
+  itemCountInOneDrop: 5
+  dropCount: 5
 --- !u!1 &5059679733536215882
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 8745785834982711694}
   - component: {fileID: 5565305927002409903}
   m_Layer: 8
-  m_Name: New Sprite
+  m_Name: MinimapIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

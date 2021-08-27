@@ -5,22 +5,22 @@ using TMPro;
 
 public class PlayerObjective : MonoBehaviour
 {
-    //assign task no according map no, the first array is map 1
-    int[] objNo = new int[] { 2, 2, 3, 3, 5 };
+    [SerializeField] List<string> ObjectiveList;
+    [SerializeField] List<string> TargetObjectives;
+    [SerializeField] int targetObjectiveNo;
+    [SerializeField] TextMeshProUGUI[] ObjectiveTexts;
 
-    string[] Map1_TaskList = new string[] { "Combat with animals", "Collect all items"};
-    TextMeshProUGUI TaskList;
-
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
-    }
+        //TargetObjectives = new List<string>(targetObjectiveNo);
+        for(int i = 0; i < targetObjectiveNo; i++)
+        {
+            int index = Random.Range(1, ObjectiveList.Count);
+            TargetObjectives.Add(ObjectiveList[index]);
+            ObjectiveList.RemoveAt(index);
+            ObjectiveTexts[i].text = TargetObjectives[i];
+            Debug.Log(TargetObjectives[i]);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
     }
 }

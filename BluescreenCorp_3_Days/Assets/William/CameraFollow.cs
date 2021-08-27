@@ -11,10 +11,10 @@ public class CameraFollow : MonoBehaviour
     public float speed = 9.5f;
     bool activeFollowX;
     bool activeFollowY;
-    float positionMinX = -63.32f;
-    float positionMaxX = 24.4f;
-    float positionMaxY = 48.6f;
-    float positionMinY = -25.30f;
+    [SerializeField] float positionMinX = -176f;
+    [SerializeField] float positionMaxX = 90f;
+    [SerializeField] float positionMaxY = 98.3f;
+    [SerializeField] float positionMinY = -54.6f;
 
     void Start()
     {

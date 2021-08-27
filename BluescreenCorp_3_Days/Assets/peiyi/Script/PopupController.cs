@@ -30,7 +30,7 @@ public class PopupController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         GameManager.instance.isPause = false;
+        GameManager.instance.isPause = false;
         PausePage.SetActive(false);
         //InventoryPage.SetActive(false);
         //CharacterPage.SetActive(false);
@@ -97,15 +97,19 @@ public class PopupController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.B))
             {
-                if ( GameManager.instance.isPause == false)
-                {
-                     GameManager.instance.isPause = true;
-                }
+                //if ( GameManager.instance.isPause == false)
+                //{
+                //     GameManager.instance.isPause = true;
+                //    Debug.Log("0");
+                //}
 
-                else
-                {
-                     GameManager.instance.isPause = false;
-                }
+                //else
+                //{
+                //     GameManager.instance.isPause = false;
+                //    Debug.Log("1");
+                //}
+
+                GameManager.instance.isPause = !GameManager.instance.isPause;
 
                 isBookOpen = !isBookOpen;
                 checkingPauseGame(isBookOpen);
