@@ -39019,7 +39019,7 @@ PrefabInstance:
     - target: {fileID: 64587900823791062, guid: dac0ca09f1842c9419a7cf5fc32ba44d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.812706
+      value: -1.24
       objectReference: {fileID: 0}
     - target: {fileID: 64587900823791062, guid: dac0ca09f1842c9419a7cf5fc32ba44d,
         type: 3}
@@ -39079,6 +39079,11 @@ PrefabInstance:
     - target: {fileID: 2841843670736884997, guid: dac0ca09f1842c9419a7cf5fc32ba44d,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5484569907096460015, guid: dac0ca09f1842c9419a7cf5fc32ba44d,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -44731,7 +44736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da6e4590421cb704d86cfcab70a73cd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WanderingArea: {fileID: 0}
+  WanderingArea: {fileID: 2081827778}
 --- !u!195 &1403934661
 NavMeshAgent:
   m_ObjectHideFlags: 0
