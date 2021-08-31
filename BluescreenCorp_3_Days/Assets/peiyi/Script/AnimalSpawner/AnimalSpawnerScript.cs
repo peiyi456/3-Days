@@ -11,8 +11,11 @@ public class AnimalSpawnerScript : MonoBehaviour
     Vector2 whereToSpawn;
     public float spawnRate = 2f;
     float nextSpawn = 0.0f;
-    public static int[] animalNo = new int[] { 0, 0, 0};
-    public int No;
+    //public static int[] animalNo = new int[] { 0, 0, 0};
+    public int No = 0;
+
+    public Transform WanderingArea;
+    public float Radius;
 
     // Start is called before the first frame update
     void Start()
@@ -40,22 +43,29 @@ public class AnimalSpawnerScript : MonoBehaviour
         //}
 
         //Debug.Log(animalNo);
-        if (Time.time > nextSpawn)
+        if (GameManager.instance.isPause == false)
         {
-
-
-            if (animalNo[No] < 3)
+            if (Time.time > nextSpawn)
             {
-                nextSpawn = Time.time + spawnRate;
-                randX = Random.Range(minX, maxX);
-                randY = Random.Range(minY, maxY);
-                whereToSpawn = new Vector2(randX, randY);
-                Instantiate(animal, whereToSpawn, Quaternion.identity);
-                animalNo[No]++;
+
+
+                if (No < 3)
+                {
+                    Vector2 randomInCircle = new Vector2(WanderingArea.position.x, WanderingArea.position.y) + Random.insideUnitCircle * Radius;
+                    //Vector3 Destination = new Vector3(randomInCiecle.x, randomInCiecle.y, 0f);
+                    nextSpawn = Time.time + spawnRate;
+                    //randX = Random.Range(minX, maxX);
+                    //randY = Random.Range(minY, maxY);
+                    //whereToSpawn = new Vector2(randX, randY);
+                    GameObject spawnAnimal = Instantiate(animal, randomInCircle, Quaternion.identity) as GameObject;
+                    spawnAnimal.transform.SetParent(this.transform, false);
+                    
+                    No++;
+                }
+
+
+
             }
-            
-
-
         }
     }
 }

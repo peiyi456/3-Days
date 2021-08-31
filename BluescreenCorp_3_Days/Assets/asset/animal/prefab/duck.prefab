@@ -70,7 +70,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7407bdd019670e64b91467dc7e9b44d0, type: 3}
+  m_Sprite: {fileID: -7014647072283987094, guid: 5b5d388f2dc46de4c8ccd973753d696a,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,11 +93,12 @@ GameObject:
   - component: {fileID: 5768005696735794783}
   - component: {fileID: 5768005696735794768}
   - component: {fileID: 5312551878556860793}
-  - component: {fileID: 1938290194589670690}
-  - component: {fileID: 157217227900105962}
-  - component: {fileID: 260678079034546481}
+  - component: {fileID: 2609999937467056885}
+  - component: {fileID: 4474971546009258423}
+  - component: {fileID: 8319229396772274245}
+  - component: {fileID: 7932330788078267809}
   m_Layer: 0
-  m_Name: monkey
+  m_Name: duck
   m_TagString: Monkey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +158,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 7407bdd019670e64b91467dc7e9b44d0, type: 3}
+  m_Sprite: {fileID: -7014647072283987094, guid: 5b5d388f2dc46de4c8ccd973753d696a,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -174,7 +177,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5768005696735794769}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -183,8 +186,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5384614, y: 0.040923998}
-    oldSize: {x: 4.34, y: 4.15}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 2.88, y: 3.4}
     newSize: {x: 4.34, y: 4.15}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -349,7 +352,33 @@ PolygonCollider2D:
       - {x: -1.2041991, y: 0.5774419}
       - {x: -1.2041991, y: 0.5674419}
       - {x: -1.1941991, y: 0.5674419}
---- !u!195 &1938290194589670690
+--- !u!61 &2609999937467056885
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5768005696735794769}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.09919429, y: 1.6149802}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 2.88, y: 3.4}
+    newSize: {x: 4.34, y: 4.15}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.6816115, y: 3.2299604}
+  m_EdgeRadius: 0
+--- !u!195 &4474971546009258423
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -358,7 +387,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 5768005696735794769}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 2.01
+  m_Radius: 1.35
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
@@ -371,7 +400,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &157217227900105962
+--- !u!114 &8319229396772274245
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -389,7 +418,7 @@ MonoBehaviour:
   player: {fileID: 0}
   radius: 10
   distanceBtwPlayer: 10
---- !u!95 &260678079034546481
+--- !u!95 &7932330788078267809
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -399,7 +428,7 @@ Animator:
   m_GameObject: {fileID: 5768005696735794769}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 19d56b775f06dcb41923c0d1c90da314, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8bf363e26f25f33489e2dde510e507c6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

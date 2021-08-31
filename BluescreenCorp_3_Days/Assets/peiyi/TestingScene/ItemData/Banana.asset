@@ -15,6 +15,10 @@ MonoBehaviour:
   Name: Banana
   stackable: 1
   icon: {fileID: 21300000, guid: f7b5b0fe1a2af204eb1f6914323853db, type: 3}
-  Description: 
+  Function: 
   Hint: 
-  itemType: Food
+  itemTypes: 0
+  FoodValue: 5
+  WaterValue: 5
+  HPValue: 1
+  TemperatureValue: 0

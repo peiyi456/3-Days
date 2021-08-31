@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c86fb76e45368a478f87b33f9de9cce, type: 3}
-  m_Name: Meat
+  m_Name: BirdMeat_Uncook
   m_EditorClassIdentifier: 
-  Name: Meat
+  Name: BirdMeat_Uncook
   stackable: 1
-  icon: {fileID: 21300000, guid: 9f48ec6292966b94982b94c9c47d4551, type: 3}
-  Description: 
+  icon: {fileID: 21300000, guid: 4ec6266016cac1644ba2b6857581d4f3, type: 3}
+  Function: 
   Hint: 
-  itemType: Food
+  itemTypes: 0
+  FoodValue: 10
+  WaterValue: -2
+  HPValue: 2
+  TemperatureValue: 0

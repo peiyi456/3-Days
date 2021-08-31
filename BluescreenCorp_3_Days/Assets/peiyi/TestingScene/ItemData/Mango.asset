@@ -15,6 +15,10 @@ MonoBehaviour:
   Name: Mango
   stackable: 1
   icon: {fileID: 21300000, guid: 15d847ef85a6a7247988b9125a392777, type: 3}
-  Description: 
+  Function: 
   Hint: 
-  itemType: Food
+  itemTypes: 0
+  FoodValue: 5
+  WaterValue: 5
+  HPValue: 1
+  TemperatureValue: 0

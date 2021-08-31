@@ -48,13 +48,11 @@ public class InventoryPanel : MonoBehaviour
         {
             if(inventory.slots[i].item == null)
             {
-                //Debug.Log("222");
                 buttons[i].Clean();
 
             }
             else
             {
-                //Debug.Log("111");
                 buttons[i].Set(inventory.slots[i]);
             }
         }

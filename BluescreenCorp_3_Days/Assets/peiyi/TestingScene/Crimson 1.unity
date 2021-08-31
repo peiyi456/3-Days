@@ -3538,7 +3538,9 @@ MonoBehaviour:
   minY: -10.4
   maxY: 29.8
   spawnRate: 2
-  No: 2
+  No: 0
+  WanderingArea: {fileID: 1949644753}
+  Radius: 10
 --- !u!1001 &119447081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5698,6 +5700,8 @@ MonoBehaviour:
   maxY: 44.3
   spawnRate: 2
   No: 0
+  WanderingArea: {fileID: 1985445143}
+  Radius: 10
 --- !u!1001 &185980201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7762,7 +7766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &245561470
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10840,7 +10844,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &331322106
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29879,7 +29883,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &932784575
 PrefabInstance:
@@ -32122,6 +32126,7 @@ GameObject:
   - component: {fileID: 1009199436}
   - component: {fileID: 1009199438}
   - component: {fileID: 1009199437}
+  - component: {fileID: 1009199439}
   m_Layer: 5
   m_Name: FunctionPic
   m_TagString: Untagged
@@ -32186,6 +32191,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009199435}
   m_CullTransparentMesh: 0
+--- !u!95 &1009199439
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009199435}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a1741a7c9fbb38e4ea0d8edd0bc0239a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1010400311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39076,6 +39100,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestingAI
       objectReference: {fileID: 0}
+    - target: {fileID: 64587900823791064, guid: dac0ca09f1842c9419a7cf5fc32ba44d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2841843670736884997, guid: dac0ca09f1842c9419a7cf5fc32ba44d,
         type: 3}
       propertyPath: m_Enabled
@@ -39172,6 +39201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1225086299}
+  - component: {fileID: 1225086300}
   m_Layer: 5
   m_Name: TimeStatsPart
   m_TagString: Untagged
@@ -39202,6 +39232,27 @@ RectTransform:
   m_AnchoredPosition: {x: -614, y: 464}
   m_SizeDelta: {x: 694.9077, y: 198.65517}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &1225086300
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225086298}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
 --- !u!1001 &1229010573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44737,6 +44788,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WanderingArea: {fileID: 2081827778}
+  isArrive: 1
+  isSeek: 0
+  player: {fileID: 0}
+  radius: 10
+  distanceBtwPlayer: 10
 --- !u!195 &1403934661
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -45014,7 +45070,9 @@ MonoBehaviour:
   minY: -22.6
   maxY: 7.6
   spawnRate: 2
-  No: 1
+  No: 0
+  WanderingArea: {fileID: 2081827778}
+  Radius: 10
 --- !u!1001 &1412389969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58920,6 +58978,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monkey (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5768005696735794769, guid: 26bf8dcd98448aa41a8c096273bfccf5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5768005696735794783, guid: 26bf8dcd98448aa41a8c096273bfccf5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -59505,6 +59568,36 @@ MonoBehaviour:
   m_Spacing: {x: 27.7, y: 21.1}
   m_Constraint: 2
   m_ConstraintCount: 3
+--- !u!1 &1949644752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1949644753}
+  m_Layer: 0
+  m_Name: WanderingArea (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1949644753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949644752}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -49, y: -3.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1957424158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60185,6 +60278,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1977611539}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1985445142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1985445143}
+  m_Layer: 0
+  m_Name: WanderingArea (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1985445143
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985445142}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -120.5, y: -14.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1987652061
 GameObject:
   m_ObjectHideFlags: 0
@@ -65108,6 +65231,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: chicken
+      objectReference: {fileID: 0}
+    - target: {fileID: 64587900823791064, guid: 591a9bc8e2b67ff4c985d7559d67ed29,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 591a9bc8e2b67ff4c985d7559d67ed29, type: 3}
@@ -76372,12 +76500,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff9a01467998484e84238853024504b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   icon: {fileID: 7578325888367964684}
   noText: {fileID: 1338165507162800243}
-  name: 
   myIndex: 0
   itemImg: {fileID: 7254851834261131447}
   itemName: {fileID: 7254851834649175836}
+  itemFunction: {fileID: 7254851833623803843}
+  itemHint: {fileID: 7254851835153626969}
   selected: 0
   isShortKey: 0
 --- !u!224 &1567819351214019720
@@ -76948,6 +77078,7 @@ GameObject:
   - component: {fileID: 6871179644847262869}
   - component: {fileID: 4656163627689404088}
   - component: {fileID: 7810786720796827840}
+  - component: {fileID: 2509545466073289219}
   m_Layer: 5
   m_Name: InventoryButton
   m_TagString: Untagged
@@ -76955,6 +77086,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2509545466073289219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2509545466073289218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a049bc251c2eb9146ac6227fe218290b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonNo: 9
+  foodShortKey1: 53
+  press: 0
 --- !u!1 &2509545466538284965
 GameObject:
   m_ObjectHideFlags: 0
@@ -77105,6 +77251,7 @@ GameObject:
   - component: {fileID: 6871179643717299926}
   - component: {fileID: 4656163626542646523}
   - component: {fileID: 7810786721808827011}
+  - component: {fileID: 2509545467068788802}
   m_Layer: 5
   m_Name: InventoryButton (2)
   m_TagString: Untagged
@@ -77112,6 +77259,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2509545467068788802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2509545467068788801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a049bc251c2eb9146ac6227fe218290b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonNo: 11
+  foodShortKey1: 55
+  press: 0
 --- !u!1 &2509545467260909647
 GameObject:
   m_ObjectHideFlags: 0
@@ -77125,6 +77287,7 @@ GameObject:
   - component: {fileID: 6871179643525703384}
   - component: {fileID: 4656163626736930037}
   - component: {fileID: 7810786721952713357}
+  - component: {fileID: 2509545467260909648}
   m_Layer: 5
   m_Name: InventoryButton (1)
   m_TagString: Untagged
@@ -77132,6 +77295,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2509545467260909648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2509545467260909647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a049bc251c2eb9146ac6227fe218290b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonNo: 10
+  foodShortKey1: 54
+  press: 0
 --- !u!1 &2509545467412138664
 GameObject:
   m_ObjectHideFlags: 0
@@ -77923,9 +78101,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1469702743277274406}
+      - m_Target: {fileID: 7810786720526319784}
         m_MethodName: ButtonClicked
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -77995,13 +78173,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7810786721261921639}
+      - m_Target: {fileID: 7810786720526319784}
         m_MethodName: ButtonClicked
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -78178,13 +78356,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7810786721616730553}
+      - m_Target: {fileID: 7810786720526319784}
         m_MethodName: ButtonClicked
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -78232,13 +78410,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7810786721652682836}
+      - m_Target: {fileID: 7810786720526319784}
         m_MethodName: ButtonClicked
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -78286,13 +78464,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7810786721705369159}
+      - m_Target: {fileID: 7810786720526319784}
         m_MethodName: ButtonClicked
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -78426,13 +78604,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7810786722137618538}
+      - m_Target: {fileID: 7810786720526319784}
         m_MethodName: ButtonClicked
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -78525,11 +78703,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7810786720526319784}
         m_MethodName: ButtonClicked
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -78577,13 +78755,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7810786720725845225}
+      - m_Target: {fileID: 7810786720526319784}
         m_MethodName: ButtonClicked
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -78631,13 +78809,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7810786720763949723}
+      - m_Target: {fileID: 7810786720526319784}
         m_MethodName: ButtonClicked
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -79360,6 +79538,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monkey
+      objectReference: {fileID: 0}
+    - target: {fileID: 5768005696735794769, guid: 26bf8dcd98448aa41a8c096273bfccf5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5768005696735794783, guid: 26bf8dcd98448aa41a8c096273bfccf5,
         type: 3}
@@ -96354,7 +96537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7254851833782474249
 RectTransform:
   m_ObjectHideFlags: 0
@@ -96431,7 +96614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &7254851834261131446
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -96625,7 +96808,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &7254851835153626968
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -96782,7 +96965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &7578325888367964684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98173,12 +98356,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff9a01467998484e84238853024504b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   icon: {fileID: 1237237306007189378}
   noText: {fileID: 7679215194503136765}
-  name: 
   myIndex: 0
   itemImg: {fileID: 7254851834261131447}
   itemName: {fileID: 7254851834649175836}
+  itemFunction: {fileID: 7254851833623803843}
+  itemHint: {fileID: 7254851835153626969}
   selected: 0
   isShortKey: 0
 --- !u!114 &7810786720725845225
@@ -98193,12 +98378,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff9a01467998484e84238853024504b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   icon: {fileID: 1237237306739913667}
   noText: {fileID: 7679215193634161084}
-  name: 
   myIndex: 0
   itemImg: {fileID: 7254851834261131447}
   itemName: {fileID: 7254851834649175836}
+  itemFunction: {fileID: 7254851833623803843}
+  itemHint: {fileID: 7254851835153626969}
   selected: 0
   isShortKey: 0
 --- !u!114 &7810786720763949723
@@ -98213,12 +98400,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff9a01467998484e84238853024504b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   icon: {fileID: 1237237306710885809}
   noText: {fileID: 7679215193595983822}
-  name: 
   myIndex: 0
   itemImg: {fileID: 7254851834261131447}
   itemName: {fileID: 7254851834649175836}
+  itemFunction: {fileID: 7254851833623803843}
+  itemHint: {fileID: 7254851835153626969}
   selected: 0
   isShortKey: 0
 --- !u!114 &7810786720796827840
@@ -98233,12 +98422,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff9a01467998484e84238853024504b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   icon: {fileID: 1237237306810357738}
   noText: {fileID: 7679215193695839637}
-  name: 
   myIndex: 0
-  itemImg: {fileID: 0}
-  itemName: {fileID: 0}
+  itemImg: {fileID: 7254851834261131447}
+  itemName: {fileID: 7254851834649175836}
+  itemFunction: {fileID: 7254851833623803843}
+  itemHint: {fileID: 7254851835153626969}
   selected: 0
   isShortKey: 1
 --- !u!114 &7810786721261921639
@@ -98253,12 +98444,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff9a01467998484e84238853024504b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   icon: {fileID: 1237237305127965261}
   noText: {fileID: 7679215193096495154}
-  name: 
   myIndex: 0
   itemImg: {fileID: 7254851834261131447}
   itemName: {fileID: 7254851834649175836}
+  itemFunction: {fileID: 7254851833623803843}
+  itemHint: {fileID: 7254851835153626969}
   selected: 0
   isShortKey: 0
 --- !u!114 &7810786721616730553
@@ -98273,12 +98466,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff9a01467998484e84238853024504b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   icon: {fileID: 1237237304882998931}
   noText: {fileID: 7679215193412771052}
-  name: 
   myIndex: 0
   itemImg: {fileID: 7254851834261131447}
   itemName: {fileID: 7254851834649175836}
+  itemFunction: {fileID: 7254851833623803843}
+  itemHint: {fileID: 7254851835153626969}
   selected: 0
   isShortKey: 0
 --- !u!114 &7810786721652682836
@@ -98293,12 +98488,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff9a01467998484e84238853024504b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   icon: {fileID: 1237237304713938814}
   noText: {fileID: 7679215193244120321}
-  name: 
   myIndex: 0
   itemImg: {fileID: 7254851834261131447}
   itemName: {fileID: 7254851834649175836}
+  itemFunction: {fileID: 7254851833623803843}
+  itemHint: {fileID: 7254851835153626969}
   selected: 0
   isShortKey: 0
 --- !u!114 &7810786721705369159
@@ -98313,12 +98510,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff9a01467998484e84238853024504b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   icon: {fileID: 1237237304703199597}
   noText: {fileID: 7679215193208724242}
-  name: 
   myIndex: 0
   itemImg: {fileID: 7254851834261131447}
   itemName: {fileID: 7254851834649175836}
+  itemFunction: {fileID: 7254851833623803843}
+  itemHint: {fileID: 7254851835153626969}
   selected: 0
   isShortKey: 0
 --- !u!114 &7810786721808827011
@@ -98333,12 +98532,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff9a01467998484e84238853024504b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   icon: {fileID: 1237237305679607209}
   noText: {fileID: 7679215192565860310}
-  name: 
   myIndex: 0
-  itemImg: {fileID: 3180427208663564478, guid: ea6205d85ac39ce438aad9adcfcf84d5, type: 3}
-  itemName: {fileID: 0}
+  itemImg: {fileID: 7254851834261131447}
+  itemName: {fileID: 7254851834649175836}
+  itemFunction: {fileID: 7254851833623803843}
+  itemHint: {fileID: 7254851835153626969}
   selected: 0
   isShortKey: 1
 --- !u!114 &7810786721952713357
@@ -98353,12 +98554,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff9a01467998484e84238853024504b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   icon: {fileID: 1237237305487424935}
   noText: {fileID: 7679215192407756760}
-  name: 
   myIndex: 0
-  itemImg: {fileID: 3180427208663564478, guid: ea6205d85ac39ce438aad9adcfcf84d5, type: 3}
-  itemName: {fileID: 0}
+  itemImg: {fileID: 7254851834261131447}
+  itemName: {fileID: 7254851834649175836}
+  itemFunction: {fileID: 7254851833623803843}
+  itemHint: {fileID: 7254851835153626969}
   selected: 0
   isShortKey: 1
 --- !u!114 &7810786722137618538
@@ -98373,12 +98576,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff9a01467998484e84238853024504b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   icon: {fileID: 1237237305471504192}
   noText: {fileID: 7679215192893472063}
-  name: 
   myIndex: 0
   itemImg: {fileID: 7254851834261131447}
   itemName: {fileID: 7254851834649175836}
+  itemFunction: {fileID: 7254851833623803843}
+  itemHint: {fileID: 7254851835153626969}
   selected: 0
   isShortKey: 0
 --- !u!224 &7908902160134476038
