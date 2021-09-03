@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -24,11 +25,11 @@ public class GameManager : MonoBehaviour
     public bool hasCampsite;
     public bool hasKnife;
     public bool hasSpear;
+    public bool hasFishingRod;
 
     [Header("Animal Checking")]
-    public bool meetAnimal1;
-    public bool meetAnimal2;
-    public bool meetAnimal3;
+    public bool[] meetAnimal;
+    public _UnitsBase[] Animals;
 
     [Header("Game Controller")]
     public bool isPause;

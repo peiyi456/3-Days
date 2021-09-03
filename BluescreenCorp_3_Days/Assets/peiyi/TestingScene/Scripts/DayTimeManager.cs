@@ -27,6 +27,8 @@ public class DayTimeManager : MonoBehaviour
     [SerializeField] AnimationCurve nightTimeCurve;
     [SerializeField] Color dayLightColor = Color.white;
 
+    public int hours;
+    public int minutes;
     public float time;
     public int days = 1;
     [SerializeField] float timeScale = 60f;
@@ -61,9 +63,9 @@ public class DayTimeManager : MonoBehaviour
         if (GameManager.instance.isPause == false)
         {
             time += Time.deltaTime * timeScale;
-            int hh = (int)Hours;
-            int mm = (int)Minutes;
-            timeText.text = hh.ToString("00") + ":" + mm.ToString("0") + "0";
+            hours = (int)Hours;
+            minutes = (int)Minutes;
+            timeText.text = hours.ToString("00") + ":" + minutes.ToString("0") + "0";
             dayText.text = "Day " + days;
 
             float v = nightTimeCurve.Evaluate(Hours);
@@ -75,11 +77,11 @@ public class DayTimeManager : MonoBehaviour
                 NextDay();
             }
 
-            if(hh >= 22 && hh < 24)
+            if(hours >= 22 && hours < 24)
             {
                 canSleep = CanSleepOrNot.CanSleep;
             }
-            else if(hh >= 00 && hh < 02)
+            else if(hours >= 00 && hours < 02)
             {
                 canSleep = CanSleepOrNot.CanSleep;
             }

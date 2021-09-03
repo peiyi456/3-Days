@@ -9,7 +9,7 @@ public class AbnormalReminder : MonoBehaviour
     [SerializeField] Slider statusSliders;
     [SerializeField] int sliderValue;
     [SerializeField] Image abnormalReminder;
-    Image theObject;
+    [SerializeField] Image theObject;
     //[SerializeField] bool outReminder;
 
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class AbnormalReminder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(statusSliders.value < sliderValue)
+        if (statusSliders.value < sliderValue)
         {
             if (theObject == null)
             {
@@ -31,7 +31,7 @@ public class AbnormalReminder : MonoBehaviour
                 //theObject.transform.parent = this.transform;
                 //outReminder = true;
             }
-            
+
         }
         else
         {
@@ -40,5 +40,6 @@ public class AbnormalReminder : MonoBehaviour
                 Destroy(theObject.gameObject);
             }
         }
+
     }
 }

@@ -15,7 +15,7 @@ public class TriggerEvent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
+        player = GameManager.instance.player;
     }
 
     // Update is called once per frame

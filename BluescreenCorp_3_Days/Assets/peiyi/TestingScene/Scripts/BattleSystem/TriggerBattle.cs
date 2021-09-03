@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class TriggerBattle : MonoBehaviour
 {
     public event Action onTriggerBattle;
@@ -62,27 +63,53 @@ public class TriggerBattle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        for (int i = 0; i < animalTag.Count; i++)
+        for(int i = 0; i < units.Count; i++)
         {
-            if (other.CompareTag(animalTag[i]))
+            if (other.tag == units[i].Tag)
             {
-                //Debug.Log("3");
-                //animalObj = other.gameObject;
-                //animalCol = other;
-                if (!GameManager.instance.enemyFainted)
+                Debug.Log("111");
+                GameManager.instance.thisAnimal = units[i];
+                GameManager.instance.specialItemDropPos = other.transform.position;
+                onTriggerBattle();
+                Destroy(other.gameObject);
+            }
+
+            
+        }
+
+        for (int j = 0; j < GameManager.instance.Animals.Length; j++)
+        {
+            if (GameManager.instance.thisAnimal == GameManager.instance.Animals[j])
+            {
+                if (GameManager.instance.meetAnimal[j] == false)
                 {
-                    GameManager.instance.specialItemDropPos = other.transform.position;
-                    GameManager.instance.thisAnimal = units[i];
-                    onTriggerBattle();
-                    Destroy(other.gameObject);
+                    GameManager.instance.meetAnimal[j] = true;
                 }
-                else
-                {
-                    Destroy(other.gameObject);
-                    GameManager.instance.enemyFainted = false;
-                }
-                    //Destroy(other.gameObject);
             }
         }
+
+        //for (int i = 0; i < animalTag.Count; i++)
+        //{
+        //    if (other.CompareTag(animalTag[i]))
+        //    {
+        //        //Debug.Log("3");
+        //        //animalObj = other.gameObject;
+        //        //animalCol = other;
+        //        if (!GameManager.instance.enemyFainted)
+        //        {
+        //            GameManager.instance.specialItemDropPos = other.transform.position;
+        //            GameManager.instance.thisAnimal = units[i];
+        //            onTriggerBattle();
+        //            Destroy(other.gameObject);
+        //        }
+        //        else
+        //        {
+        //            Destroy(other.gameObject);
+        //            GameManager.instance.enemyFainted = false;
+        //        }
+        //            //Destroy(other.gameObject);
+
+        //    }
+        //}
     }
 }
