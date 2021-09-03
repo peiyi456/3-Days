@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: Chicken
   UnitTag: Chicken
-  description: 
+  characteristics: Chicken
+  appearIn: xxx
   unitSprite: {fileID: 8813184250309692743, guid: 410de1a2cc9d4fb448a215421253e4ac,
     type: 3}
   maxHP: 10
   attack: 2
+  unitTypes: 0
   learnableMoves:
   - moveBase: {fileID: 11400000, guid: fe55d073887c5234a9a27cb81cb308d2, type: 2}
     toolLevel: 0

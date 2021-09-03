@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum _BattleState { Start, PlayerAction, PlayerMove, EnemyMove, Busy}
+public enum _BattleState { Start, PlayerAction, PlayerMove, EnemyMove, Busy, RunFromBattle}
 
 public class _BattleSystem : MonoBehaviour
 {
@@ -17,7 +17,7 @@ public class _BattleSystem : MonoBehaviour
 
     public event Action<bool> OnBattleOver;
 
-    _BattleState state;
+    public _BattleState state;
     int currentAction;
     int currentMove;
 
@@ -25,6 +25,9 @@ public class _BattleSystem : MonoBehaviour
     public void StartBattle()
     {
         StartCoroutine(SetupBattle());
+        currentAction = 0;
+        currentMove = 0;
+        GameManager.instance.isPause = true;
     }
 
     public IEnumerator SetupBattle()
@@ -165,9 +168,18 @@ public class _BattleSystem : MonoBehaviour
             else if (currentAction == 1)
             {
                 // Run
-
+                //RunFromBattle();
+                OnBattleOver(false);
+                //state = _BattleState.RunFromBattle;
+                GameManager.instance.isPause = false;
+                Debug.Log(GameManager.instance.isPause);
             }
         }
+    }
+
+    void RunFromBattle()
+    {
+        state = _BattleState.Busy;
     }
 
     private void HandleMoveSelection()

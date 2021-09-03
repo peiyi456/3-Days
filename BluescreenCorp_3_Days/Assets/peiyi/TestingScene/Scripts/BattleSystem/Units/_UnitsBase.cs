@@ -7,15 +7,17 @@ public enum UnitTypes { Animals, Player};
 [CreateAssetMenu(fileName = "Units", menuName = "Units/Create new unit")]
 public class _UnitsBase : ScriptableObject
 {
+    [Header("Animal Details")]
     [SerializeField] string UnitName;
     [SerializeField] string UnitTag;
 
     [TextArea]
-    [SerializeField] string description;
-
+    [SerializeField] string characteristics;
+    [SerializeField] string appearIn;
     [SerializeField] Sprite unitSprite;
 
 
+    [Header("Animal Base Stats")]
     //Base Stats
     [SerializeField] int maxHP;
     [SerializeField] int attack;
@@ -26,6 +28,7 @@ public class _UnitsBase : ScriptableObject
 
     [SerializeField] UnitTypes unitTypes;
 
+    [Header("Animal Learnable Moves")]
     [SerializeField] List<LearnableMove> learnableMoves;
 
     //public string GetName()
@@ -44,9 +47,14 @@ public class _UnitsBase : ScriptableObject
         get { return UnitTag; }
     }
 
-    public string Description
+    public string Characteristics
     {
-        get { return description; }
+        get { return characteristics; }
+    }
+
+    public string AppearIn
+    {
+        get { return appearIn; }
     }
 
     public Sprite UnitSprite

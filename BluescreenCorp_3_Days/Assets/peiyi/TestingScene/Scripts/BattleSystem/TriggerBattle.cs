@@ -74,12 +74,14 @@ public class TriggerBattle : MonoBehaviour
                     GameManager.instance.specialItemDropPos = other.transform.position;
                     GameManager.instance.thisAnimal = units[i];
                     onTriggerBattle();
+                    Destroy(other.gameObject);
                 }
                 else
                 {
                     Destroy(other.gameObject);
                     GameManager.instance.enemyFainted = false;
                 }
+                    //Destroy(other.gameObject);
             }
         }
     }

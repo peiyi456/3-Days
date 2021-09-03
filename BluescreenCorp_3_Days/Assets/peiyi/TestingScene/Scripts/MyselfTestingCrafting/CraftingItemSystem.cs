@@ -8,8 +8,8 @@ public class CraftingItemSystem : MonoBehaviour
     [SerializeField] bool isAxe, isCampsite, isKnife, isSpear;
 
     [SerializeField] bool craft = false;
-    [SerializeField] bool hasElement1, hasElement2;
-    [SerializeField] Image element1, element2, output;
+    [SerializeField] bool hasElement1, hasElement2, hasElement3;
+    [SerializeField] Image element1, element2, element3, output;
     [SerializeField] Button craftBttn;
     [SerializeField] int CraftItemBttnNo;
     [SerializeField] CraftingItemRecipe recipe;
@@ -24,7 +24,7 @@ public class CraftingItemSystem : MonoBehaviour
         CanCraft(container);
     }
 
-    
+
 
     public void CanCraft(ItemContainer inventory)
     {
@@ -54,7 +54,7 @@ public class CraftingItemSystem : MonoBehaviour
             //    element1.color = Color.black;
             //}
 
-            if(inventory.slots[i].item == recipe.elements[1].item)
+            if (inventory.slots[i].item == recipe.elements[1].item)
             {
                 //element2.sprite = inventory.slots[i].item.icon;
                 //element2.color = Color.white;
@@ -72,60 +72,105 @@ public class CraftingItemSystem : MonoBehaviour
             //{
             //    element2.color = Color.black;
             //}
+
+            if (recipe.elements.Count > 2)
+            {
+                if (inventory.slots[i].item == recipe.elements[2].item)
+                {
+                    //element2.sprite = inventory.slots[i].item.icon;
+                    //element2.color = Color.white;
+                    if (inventory.slots[i].count >= recipe.elements[2].count)
+                    {
+                        hasElement3 = true;
+                        //element2.color = Color.white;
+                    }
+                    else
+                    {
+                        hasElement3 = false;
+                    }
+                }
+            }
+            //else
+            //{
+            //    element2.color = Color.black;
+            //}
+
         }
 
-        if(hasElement1 == true && hasElement2 == true)
+        if (recipe.elements.Count < 3)
         {
-            //if (isAxe)
-            //{
-            //    if (!craft)
-            //    {
-            //        craftBttn.interactable = true;
-            //        output.color = Color.white;
-            //        this.craft = true;
-            //    }
-            //}
-
-            //if (isCampsite)
-            //{
-            //    if (!craft)
-            //    {
-            //        craftBttn.interactable = true;
-            //        output.color = Color.white;
-            //        this.craft = true;
-            //    }
-            //}
-            //if (isKnife)
-            //{
-            //    if (!craft)
-            //    {
-            //        craftBttn.interactable = true;
-            //        output.color = Color.white;
-            //        this.craft = true;
-            //    }
-            //}
-            //if (isSpear)
-            //{
-            //    if (!craft)
-            //    {
-            //        craftBttn.interactable = true;
-            //        output.color = Color.white;
-            //        this.craft = true;
-            //    }
-            //}
-
-            if (!craft)
+            if (hasElement1 == true && hasElement2 == true)
             {
-                craftBttn.interactable = true;
-                output.color = Color.white;
-                this.craft = true;
+                //if (isAxe)
+                //{
+                //    if (!craft)
+                //    {
+                //        craftBttn.interactable = true;
+                //        output.color = Color.white;
+                //        this.craft = true;
+                //    }
+                //}
+
+                //if (isCampsite)
+                //{
+                //    if (!craft)
+                //    {
+                //        craftBttn.interactable = true;
+                //        output.color = Color.white;
+                //        this.craft = true;
+                //    }
+                //}
+                //if (isKnife)
+                //{
+                //    if (!craft)
+                //    {
+                //        craftBttn.interactable = true;
+                //        output.color = Color.white;
+                //        this.craft = true;
+                //    }
+                //}
+                //if (isSpear)
+                //{
+                //    if (!craft)
+                //    {
+                //        craftBttn.interactable = true;
+                //        output.color = Color.white;
+                //        this.craft = true;
+                //    }
+                //}
+
+                if (!craft)
+                {
+                    craftBttn.interactable = true;
+                    output.color = Color.white;
+                    this.craft = true;
+                }
+            }
+
+            else
+            {
+                //craftBttn.interactable = false;
+                output.color = Color.black;
             }
         }
-
         else
         {
-            //craftBttn.interactable = false;
-            output.color = Color.black;
+            if (hasElement1 == true && hasElement2 == true && hasElement3 == true)
+            {
+                if (!craft)
+                {
+                    craftBttn.interactable = true;
+                    output.color = Color.white;
+                    this.craft = true;
+                }
+            }
+
+            else
+            {
+                //craftBttn.interactable = false;
+                output.color = Color.black;
+            }
+
         }
     }
 
@@ -136,6 +181,7 @@ public class CraftingItemSystem : MonoBehaviour
         {
             element1.gameObject.SetActive(true);
             element2.gameObject.SetActive(true);
+            element3.gameObject.SetActive(true);
             output.gameObject.SetActive(true);
             craftBttn.gameObject.SetActive(true);
             element1.sprite = recipe.elements[0].item.icon;
@@ -158,6 +204,25 @@ public class CraftingItemSystem : MonoBehaviour
             {
                 element2.color = Color.black;
             }
+
+            if (recipe.elements.Count > 2)
+            {
+                element3.sprite = recipe.elements[2].item.icon;
+                if (hasElement3)
+                {
+                    element3.color = Color.white;
+                }
+                else
+                {
+                    element3.color = Color.black;
+                }
+            }
+
+            else
+            {
+                element3.sprite = null;
+                element3.gameObject.SetActive(false) ;
+            }
             //element1.sprite = icon.sprite;
             //itemName.text = name;
             selected = true;
@@ -166,10 +231,12 @@ public class CraftingItemSystem : MonoBehaviour
         {
             element1.gameObject.SetActive(false);
             element2.gameObject.SetActive(false);
+            element3.gameObject.SetActive(false);
             output.gameObject.SetActive(false);
             craftBttn.gameObject.SetActive(false);
             selected = false;
         }
+        Debug.Log("lll");
     }
 
     public void CraftAxe(Image img)

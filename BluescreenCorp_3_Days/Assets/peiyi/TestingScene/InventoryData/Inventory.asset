@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Inventory
   m_EditorClassIdentifier: 
   slots:
-  - item: {fileID: 11400000, guid: b285af44db52b6d4ba077308c536539c, type: 2}
-    count: 5
+  - item: {fileID: 0}
+    count: 0
     itemTypes: 1
   - item: {fileID: 0}
     count: 0

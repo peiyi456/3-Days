@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TreeInteract : ToolHit
 {
@@ -13,7 +14,9 @@ public class TreeInteract : ToolHit
     [SerializeField] int itemCountInOneDrop = 1;
     [SerializeField] int dropCount = 5;
     public static float time;
-    bool doneProgress;
+    bool doneProgress = true;
+
+    [SerializeField] Slider Slider;
 
     private void Start()
     {
@@ -22,6 +25,19 @@ public class TreeInteract : ToolHit
 
     private void Update()
     {
+        if(!doneProgress)
+        {
+            if (Slider.value > Slider.minValue)
+            {
+                Slider.value -= 1.0f * Time.deltaTime;
+                //percentageNumber = slider.value * 100.0f;
+            }
+            else if(Slider.value <= 0)
+            {
+                doneProgress = true;
+
+            }
+        }
         //if(isTree)
         //{
         //    if
@@ -51,6 +67,14 @@ public class TreeInteract : ToolHit
 
     IEnumerator ProgressionTime(float time)
     {
+
+        //progressPercentage.text = "Loading...  " + percentageNumber.ToString("F0") + "%";
+
+        //if (percentageNumber >= 100)
+        //{
+        //    StartCoroutine(LoadScene());
+        //}
+        doneProgress = false;
         yield return new WaitForSeconds(time);
         Debug.Log("Hit");
         while (dropCount > 0)

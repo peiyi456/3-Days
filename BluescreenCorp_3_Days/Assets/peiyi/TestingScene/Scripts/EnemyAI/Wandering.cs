@@ -15,7 +15,7 @@ public class Wandering : MonoBehaviour
 
     public GameObject player;
     public float radius;
-    public float distanceBtwPlayer = 3f;
+    public float distanceBtwPlayer;
     float oriSpeed;
 
     // Start is called before the first frame update
@@ -27,6 +27,7 @@ public class Wandering : MonoBehaviour
         navMesh.updateUpAxis = false;
         WanderingArea = GetComponentInParent<AnimalSpawnerScript>().WanderingArea;
         radius = GetComponentInParent<AnimalSpawnerScript>().Radius;
+        distanceBtwPlayer = GetComponentInParent<AnimalSpawnerScript>().seekingPlayerRadius;
 
         oriSpeed = navMesh.speed;
     }
@@ -34,7 +35,7 @@ public class Wandering : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameManager.instance.isPause)
+        if (GameManager.instance.isPause == false)
         {
             if (Vector2.Distance(this.transform.position, player.transform.position) <= distanceBtwPlayer)
             {
@@ -87,21 +88,28 @@ public class Wandering : MonoBehaviour
                 GetComponent<SpriteRenderer>().flipY = false;
             }
 
-            Debug.Log(isSeek);
         }
+    }
+
+    private void OnEnable()
+    {
+        isArrive = true;
+        isSeek = false;
     }
 
     IEnumerator WanderingFunc()
     {
-        float dist = Vector3.Distance(this.transform.position, Destination);
+        
+            float dist = Vector3.Distance(this.transform.position, Destination);
 
-        while(dist >= 0.1f)
-        {
-            dist = Vector3.Distance(this.transform.position, Destination);
-            yield return null;
-        }
-        yield return new WaitForSeconds(3f);
-        isArrive = true;
+            while (dist >= 0.1f)
+            {
+                dist = Vector3.Distance(this.transform.position, Destination);
+                yield return null;
+            }
+            yield return new WaitForSeconds(3f);
+            isArrive = true;
+        
     }
 
 

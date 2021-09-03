@@ -5,17 +5,20 @@ using UnityEngine;
 public class AnimalSpawnerScript : MonoBehaviour
 {
     public GameObject animal;
-    public float minX, maxX, minY, maxY;
-    float randX;
-    float randY;
-    Vector2 whereToSpawn;
+    //public float minX, maxX, minY, maxY;
+    //float randX;
+    //float randY;
+    //Vector2 whereToSpawn;
     public float spawnRate = 2f;
     float nextSpawn = 0.0f;
     //public static int[] animalNo = new int[] { 0, 0, 0};
+    public List<GameObject> AnimalList;
     public int No = 0;
+    public int MaxNo;
 
     public Transform WanderingArea;
     public float Radius;
+    public float seekingPlayerRadius;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +52,7 @@ public class AnimalSpawnerScript : MonoBehaviour
             {
 
 
-                if (No < 3)
+                if (AnimalList.Count < MaxNo)
                 {
                     Vector2 randomInCircle = new Vector2(WanderingArea.position.x, WanderingArea.position.y) + Random.insideUnitCircle * Radius;
                     //Vector3 Destination = new Vector3(randomInCiecle.x, randomInCiecle.y, 0f);
@@ -59,12 +62,20 @@ public class AnimalSpawnerScript : MonoBehaviour
                     //whereToSpawn = new Vector2(randX, randY);
                     GameObject spawnAnimal = Instantiate(animal, randomInCircle, Quaternion.identity) as GameObject;
                     spawnAnimal.transform.SetParent(this.transform, false);
-                    
+                    AnimalList.Add(spawnAnimal);
                     No++;
                 }
 
 
 
+            }
+
+            for(int i = 0; i < AnimalList.Count; i++)
+            {
+                if(AnimalList[i] == null)
+                {
+                    AnimalList.RemoveAt(i);
+                }
             }
         }
     }
