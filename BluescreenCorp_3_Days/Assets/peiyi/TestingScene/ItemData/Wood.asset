@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Wood
   stackable: 1
-  icon: {fileID: 21300000, guid: e6f7c09d512eed8479e083306af330e2, type: 3}
-  Description: 
+  icon: {fileID: 21300000, guid: b463cc57c50985b4a8f8bdd0ebf0c7af, type: 3}
+  Function: 
   Hint: 
   itemTypes: 1
+  FoodValue: 0
+  WaterValue: 0
+  HPValue: 0
+  TemperatureValue: 0
