@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0c925169dfa74c4dacf1070cbaca8cd, type: 3}
-  m_Name: Punch
+  m_Name: Counter_Chicken&Duck
   m_EditorClassIdentifier: 
-  moveName: Punch
+  moveName: Counter
   description: 
-  power: 2
-  accuracy: 90
-  efficiency: 2.8
+  power: 3
+  accuracy: 0
+  efficiency: 0

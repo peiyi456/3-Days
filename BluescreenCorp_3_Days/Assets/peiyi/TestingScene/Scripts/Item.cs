@@ -17,6 +17,8 @@ public class Item : ScriptableObject
 
     [Header("Item Types")]
     public ItemTypes itemTypes;
+    public bool isMeat;
+    public bool canCook;
 
     [Header("Adding Status Value When Use")]
     public float FoodValue;

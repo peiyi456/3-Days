@@ -28,6 +28,7 @@ public class TemperatureReminder : MonoBehaviour
                 {
                     theObject = Instantiate(temperatureReminder, this.transform);
                     theObject.name = abnormalName;
+                    TemperatureManager.instance.isCold = true;
                     //theObject.transform.parent = this.transform;
                     //outReminder = true;
                 }
@@ -38,6 +39,7 @@ public class TemperatureReminder : MonoBehaviour
                 if (theObject != null)
                 {
                     Destroy(theObject.gameObject);
+                    TemperatureManager.instance.isCold = false;
                 }
             }
         }
@@ -52,6 +54,7 @@ public class TemperatureReminder : MonoBehaviour
                     theObject.name = abnormalName;
                     //theObject.transform.parent = this.transform;
                     //outReminder = true;
+                    TemperatureManager.instance.isHot = true;
                 }
             }
 
@@ -60,6 +63,7 @@ public class TemperatureReminder : MonoBehaviour
                 if (theObject != null)
                 {
                     Destroy(theObject.gameObject);
+                    TemperatureManager.instance.isHot = false;
                 }
             }
         }

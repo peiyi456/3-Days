@@ -7,7 +7,7 @@ public class TriggerEvent : MonoBehaviour
     [SerializeField] bool interactToTrigger;
     [SerializeField] KeyCode keyCode;
     [SerializeField] bool doAction = false;
-    [SerializeField] bool camp1, camp2;
+    [SerializeField] bool camp1/*, camp2*/;
     [SerializeField] GameObject player;
     [SerializeField] GameObject spawnPrefab;
     [SerializeField] Sprite campsiteSprite;
@@ -27,11 +27,25 @@ public class TriggerEvent : MonoBehaviour
             {
                 if (GameManager.instance.hasCampsite == true)
                 {
-                    doAction = false;
-                    Debug.Log("Put campsite at " + player.transform.position);
-                    spawnPrefab.GetComponent<SpriteRenderer>().sprite = campsiteSprite;
-                    GameObject campsite = Instantiate(spawnPrefab, new Vector2(player.transform.position.x, player.transform.position.y - 0.5f), Quaternion.identity);
-                    GameManager.instance.hasCampsite = false;
+                    if (camp1 == false)
+                    {
+                        doAction = false;
+                        Debug.Log("Put campsite at " + player.transform.position);
+                        spawnPrefab.GetComponent<SpriteRenderer>().sprite = campsiteSprite;
+                        GameObject campsite = Instantiate(spawnPrefab, new Vector2(player.transform.position.x, player.transform.position.y - 0.5f), Quaternion.identity);
+                        GameManager.instance.hasCampsite = false;
+                        camp1 = true;
+                    }
+
+                    //else if(camp2 == false)
+                    //{
+                    //    doAction = false;
+                    //    Debug.Log("Put campsite at " + player.transform.position);
+                    //    spawnPrefab.GetComponent<SpriteRenderer>().sprite = campsiteSprite;
+                    //    GameObject campsite = Instantiate(spawnPrefab, new Vector2(player.transform.position.x, player.transform.position.y - 0.5f), Quaternion.identity);
+                    //    GameManager.instance.hasCampsite = false;
+                    //    camp2 = true;
+                    //}
                 }
             }
         }

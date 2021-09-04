@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveName: Blunt Knife
   description: Use blunt knife to attack enemy
-  power: 35
+  power: 3
   accuracy: 80
   efficiency: 2.8

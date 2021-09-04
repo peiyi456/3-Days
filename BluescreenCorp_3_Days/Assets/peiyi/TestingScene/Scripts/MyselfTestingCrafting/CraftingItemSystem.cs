@@ -342,10 +342,10 @@ public class CraftingItemSystem : MonoBehaviour
     {
         if (isSpear)
         {
-            if (GameManager.instance.hasSpear == false)
+            if (GameManager.instance.hasLance == false)
             {
                 toolsButtonShortKeyImage.color = Color.white;
-                GameManager.instance.hasSpear = true;
+                GameManager.instance.hasLance = true;
             }
             else
             {

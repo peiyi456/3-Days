@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    [Header("Sound Manager")]
+    public AudioSource soundEffect;
+    public AudioSource BGM;
+
     [Header("Player")]
     public GameObject player;
     public GameObject playerLoadingBar;
@@ -24,7 +28,7 @@ public class GameManager : MonoBehaviour
     public bool hasAxe;
     public bool hasCampsite;
     public bool hasKnife;
-    public bool hasSpear;
+    public bool hasLance;
     public bool hasFishingRod;
 
     [Header("Animal Checking")]
@@ -33,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Game Controller")]
     public bool isPause;
+    public GameObject TextReminder;
 
     [Header("Battle and Drop Item")]
     public bool isBattle;

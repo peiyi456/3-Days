@@ -10,6 +10,8 @@ public class TemperatureManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI temperatureTxt;
     public int temperatureValue;
     public int hoursNum;
+    public bool isHot;
+    public bool isCold;
 
     private void Awake()
     {
@@ -35,8 +37,8 @@ public class TemperatureManager : MonoBehaviour
         {
             if (DayTimeManager.instance.hours > hoursNum)
             {
-                //temperatureValue = Random.Range(36, 40);
-                temperatureValue = 38;
+                temperatureValue = Random.Range(36, 41);
+                //temperatureValue = 38;
                 hoursNum = DayTimeManager.instance.hours;
             }
         }
@@ -50,7 +52,7 @@ public class TemperatureManager : MonoBehaviour
         {
             if (DayTimeManager.instance.hours > hoursNum)
             {
-                temperatureValue = Random.Range(36, 40);
+                temperatureValue = Random.Range(36, 41);
                 hoursNum = DayTimeManager.instance.hours;
             }
         }
@@ -59,7 +61,7 @@ public class TemperatureManager : MonoBehaviour
         {
             if (DayTimeManager.instance.hours > hoursNum)
             {
-                temperatureValue = Random.Range(34, 36);
+                temperatureValue = Random.Range(32, 36);
                 hoursNum = DayTimeManager.instance.hours;
             }
         }
@@ -68,11 +70,11 @@ public class TemperatureManager : MonoBehaviour
         {
             if (DayTimeManager.instance.hours > hoursNum)
             {
-                temperatureValue = Random.Range(32, 34);
+                temperatureValue = Random.Range(32, 36);
                 hoursNum = DayTimeManager.instance.hours;
             }
         }
 
-        temperatureTxt.text = temperatureValue.ToString();
+        temperatureTxt.text = temperatureValue.ToString() + "°C";
     }
 }

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PickUpItem : MonoBehaviour
 {
+    public AudioSource soundSource;
+    public AudioClip pickupSound;
+
     Transform player;
     [SerializeField] float speed = 5f;
     [SerializeField] float pickUpDistance = 1.5f;
@@ -15,6 +18,7 @@ public class PickUpItem : MonoBehaviour
     private void Start()
     {
         player = GameManager.instance.player.transform;
+        soundSource = player.GetComponent<AudioSource>();
     }
 
     public void Set(Item item, int count)
@@ -37,13 +41,13 @@ public class PickUpItem : MonoBehaviour
             return; 
         }
 
-        transform.position = Vector3.MoveTowards(
-            transform.position,
-            player.position,
-            speed * Time.deltaTime
-            );
+        //transform.position = Vector3.MoveTowards(
+        //    transform.position,
+        //    player.position,
+        //    speed * Time.deltaTime
+        //    );
 
-        if (distance < 0.1f)
+        if (distance < pickUpDistance)
         {
             Debug.Log("Pick up");
             if (Input.GetKeyDown(KeyCode.F))
@@ -52,6 +56,7 @@ public class PickUpItem : MonoBehaviour
                 if (GameManager.instance.inventoryContainer != null)
                 {
                     GameManager.instance.inventoryContainer.AddItem(item, count);
+                    GameManager.instance.soundEffect.PlayOneShot(pickupSound);
                 }
                 else
                 {

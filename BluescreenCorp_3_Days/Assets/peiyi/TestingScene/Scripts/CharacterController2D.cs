@@ -11,6 +11,7 @@ public class CharacterController2D : MonoBehaviour
     public Vector2 lastMotionVector;
     Animator animator;
     public bool moving;
+    [SerializeField] AudioClip walkSound;
 
     private void Awake()
     {
@@ -78,5 +79,10 @@ public class CharacterController2D : MonoBehaviour
         {
             rb2D.velocity = Vector2.zero;
         }
+    }
+
+    public void PlayWalkSound()
+    {
+        GameManager.instance.soundEffect.PlayOneShot(walkSound);
     }
 }

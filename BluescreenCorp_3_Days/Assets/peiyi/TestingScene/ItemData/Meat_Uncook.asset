@@ -18,6 +18,8 @@ MonoBehaviour:
   Function: 
   Hint: 
   itemTypes: 0
+  isMeat: 1
+  canCook: 1
   FoodValue: 10
   WaterValue: -2
   HPValue: 2
