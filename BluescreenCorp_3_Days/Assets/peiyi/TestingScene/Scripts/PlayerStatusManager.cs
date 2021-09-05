@@ -44,10 +44,20 @@ public class PlayerStatusManager : MonoBehaviour
         timeForTemperature = DelayedTimeForTemperature;
         timeForStats = DelayedTimeForStats;
 
+        InitializeStatsValue();
+    }
+
+    void InitializeStatsValue()
+    {
         PlayerHP.maxValue = hpMax;
         PlayerStamina.maxValue = staminaMax;
         PlayerWater.maxValue = waterMax;
         PlayerFood.maxValue = foodMax;
+
+        PlayerHP.value = PlayerHP.maxValue;
+        PlayerStamina.value = PlayerStamina.maxValue;
+        PlayerWater.value = PlayerWater.maxValue;
+        PlayerFood.value = PlayerFood.maxValue;
     }
 
     /// <summary>

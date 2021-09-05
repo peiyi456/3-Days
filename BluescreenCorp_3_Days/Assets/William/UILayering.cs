@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class UILayering : MonoBehaviour
 {
+    [SerializeField] GameObject pausePage;
+
     public GameObject pageStatus;
     public GameObject pageInventory;
     public GameObject pageCrafting;
@@ -111,6 +113,7 @@ public class UILayering : MonoBehaviour
     }
     void Update()
     {
+        IfPausePageOn();
         getSpiriteRendererUpdate();
     }
 
@@ -125,5 +128,26 @@ public class UILayering : MonoBehaviour
     void FixedUpdate()
     {
 
+    }
+
+    void IfPausePageOn()
+    {
+        if(pausePage.activeSelf == true)
+        {
+            pageStatusSortingNumber = -2;
+            pageInventorySortingNumber = -2;
+            pageCraftingSortingNumber = -2;
+            pageAnimalsSortingNumber = -2;
+            pageInformationSortingNumber = -2;
+        }
+
+        else
+        {
+            pageStatusSortingNumber = 7;
+            pageInventorySortingNumber = 3;
+            pageCraftingSortingNumber = 4;
+            pageAnimalsSortingNumber = 5;
+            pageInformationSortingNumber = 1;
+        }
     }
 }

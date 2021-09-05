@@ -139,12 +139,13 @@ public class PopupController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPause == false)
+            if (Time.timeScale == 1)
             {
                 isPausePageOpen = true;
                 PausePage.SetActive(isPausePageOpen);
                 isPause = true;
                 Time.timeScale = 0;
+                Debug.Log("open");
             }
 
             else
@@ -153,6 +154,7 @@ public class PopupController : MonoBehaviour
                 PausePage.SetActive(isPausePageOpen);
                 isPause = false;
                 Time.timeScale = 1;
+                Debug.Log("close");
             }
             //checkingPauseGame(isPausePageOpen);
         }

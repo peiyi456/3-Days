@@ -32,15 +32,15 @@ public class CampFireInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isPressButton)
-        {
-            Time.timeScale = 0;
-        }
+        //if(isPressButton)
+        //{
+        //    Time.timeScale = 0;
+        //}
 
-        else
-        {
-            Time.timeScale = 1;
-        }
+        //else
+        //{
+        //    Time.timeScale = 1;
+        //}
 
         if (Vector2.Distance(this.gameObject.transform.position, player.transform.position) < distance)
         {
