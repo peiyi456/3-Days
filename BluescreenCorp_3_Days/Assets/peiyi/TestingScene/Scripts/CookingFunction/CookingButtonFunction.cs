@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CookingButtonFunction : MonoBehaviour
 {
@@ -16,7 +17,8 @@ public class CookingButtonFunction : MonoBehaviour
     void Start()
     {
         progressBar = CampFireInteract.instace.ProgressBar.GetComponentInChildren<Slider>();
-        buttons.image.sprite = cookResult.icon;
+        buttons.transform.GetChild(0).GetComponent<Image>().sprite = cookResult.icon;
+        buttons.GetComponentInChildren<TextMeshProUGUI>().text = cookResult.Name;
     }
 
     // Update is called once per frame

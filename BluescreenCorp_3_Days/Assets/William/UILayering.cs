@@ -5,6 +5,8 @@ using UnityEngine;
 public class UILayering : MonoBehaviour
 {
     [SerializeField] GameObject pausePage;
+    [SerializeField] GameObject losePage;
+    [SerializeField] GameObject winPage;
 
     public GameObject pageStatus;
     public GameObject pageInventory;
@@ -132,7 +134,7 @@ public class UILayering : MonoBehaviour
 
     void IfPausePageOn()
     {
-        if(pausePage.activeSelf == true)
+        if(pausePage.activeSelf || losePage.activeSelf || winPage.activeSelf)
         {
             pageStatusSortingNumber = -2;
             pageInventorySortingNumber = -2;

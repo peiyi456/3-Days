@@ -102403,7 +102403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5803922}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -107361,6 +107361,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6340946bdc6288948a4988780f101dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pausePage: {fileID: 6943505780380975136}
+  losePage: {fileID: 6943505781416532518}
+  winPage: {fileID: 1347694175207982475}
   pageStatus: {fileID: 6943505781708189729}
   pageInventory: {fileID: 6943505781609365908}
   pageCrafting: {fileID: 876359880470766274}
@@ -108639,7 +108642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5803922}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -109101,6 +109104,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6340946bdc6288948a4988780f101dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pausePage: {fileID: 0}
+  losePage: {fileID: 0}
+  winPage: {fileID: 0}
   pageStatus: {fileID: 6943505781927717617}
   pageInventory: {fileID: 6943505782142565801}
   pageCrafting: {fileID: 6943505780964716870}
