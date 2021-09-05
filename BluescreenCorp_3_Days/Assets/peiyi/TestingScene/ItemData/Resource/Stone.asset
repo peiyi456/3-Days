@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c86fb76e45368a478f87b33f9de9cce, type: 3}
-  m_Name: Knife
+  m_Name: Stone
   m_EditorClassIdentifier: 
-  Name: Knife
-  stackable: 0
-  icon: {fileID: 21300000, guid: 85ea587ed70ba31419b2d6e5c9ebf8d8, type: 3}
-  Description: 
+  Name: Stone
+  stackable: 1
+  icon: {fileID: 21300000, guid: 37de4b8f238497a4ea457ee63f2492bc, type: 3}
+  Function: 
   Hint: 
-  itemTypes: 2
+  itemTypes: 1
+  FoodValue: 0
+  WaterValue: 0
+  HPValue: 0
+  TemperatureValue: 0
