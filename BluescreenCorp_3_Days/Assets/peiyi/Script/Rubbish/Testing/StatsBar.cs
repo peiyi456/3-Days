@@ -9,7 +9,8 @@ public class StatsBar : MonoBehaviour
     //Use for deduct the player stats
     [SerializeField] bool isHP; 
     [SerializeField] bool isStamina; 
-    float StartCountDown;
+    [SerializeField] float StartCountDown;
+    [SerializeField] float time;
     [SerializeField] float DelayedTime;
     float temp;
 
@@ -33,6 +34,7 @@ public class StatsBar : MonoBehaviour
 
     private void Start()
     {
+        time = DelayedTime;
         StartCountDown = Time.time;
         //playerLevel = 1;
         //expIncreasedPerSecond = 5f;
@@ -52,18 +54,24 @@ public class StatsBar : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.instance.isPause == false)
-        {
-            if (isHP == false)
+
+
+        //if (GameManager.instance.isPause == false)
+        ////if (Time.deltaTime == 1)
+        //{
+            if (!isStamina)
             {
                 //statsBarFunction()
-                if (Time.time >= StartCountDown + DelayedTime)
+                time -= Time.deltaTime;
+                if (time <= 0)
                 {
+                    Debug.Log("ddd");
                     if (_statBars.value != 0 || _statBars.value == _statBars.maxValue)
                     {
                         _statBars.value -= deductValue;
 
-                        StartCountDown = Time.time;
+                        //StartCountDown = Time.time;
+                        time = DelayedTime;
                     }
                 }
                 StatsWord.text = _statBars.value + "/" + _statBars.maxValue;
@@ -89,23 +97,27 @@ public class StatsBar : MonoBehaviour
 
             else if (isStamina)
             {
-                if (Time.time >= StartCountDown + DelayedTime)
+                time -= Time.deltaTime;
+                if (time <= 0)
                 {
                     if (_statBars.value != 0 || _statBars.value <= _statBars.maxValue)
                     {
                         _statBars.value += deductValue;
 
-                        StartCountDown = Time.time;
+                        //StartCountDown = Time.time;
+                        time = DelayedTime;
                     }
                 }
                 StatsWord.text = _statBars.value + "/" + _statBars.maxValue;
                 loseCondition();
             }
-        }
-        else
-        {
-            StartCountDown = Time.time;
-        }
+        //}
+        //else
+        //{
+        //    StartCountDown = Time.time;
+        //}
+
+        Debug.Log(GameManager.instance.isPause);
     }
 
     //public void statsBarFunction(int statNo)

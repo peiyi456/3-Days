@@ -9,7 +9,7 @@ public class TreeInteract : ToolHit
 
     [SerializeField] bool isFruitTree;
     [SerializeField] GameObject[] fruitsOnTree;
-    [SerializeField] bool ableToInteract;
+    public bool ableToInteract;
 
     [SerializeField] bool isTree;
     [SerializeField] bool cuttable;
@@ -20,61 +20,25 @@ public class TreeInteract : ToolHit
     [SerializeField] int itemCountInOneDrop = 1;
     [SerializeField] int dropCount = 5;
     int oriDropCount;
-    public static float time;
+    public float time;
     bool doneProgress = true;
 
     [SerializeField] Slider Slider;
 
     private void Start()
     {
-        time = 5.0f;
         ableToInteract = true;
         oriDropCount = dropCount;
     }
 
     private void Update()
     {
-        //if(!doneProgress)
-        //{
-        //    if (Slider.value > Slider.minValue)
-        //    {
-        //        Slider.value -= 1.0f * Time.deltaTime;
-        //        //percentageNumber = slider.value * 100.0f;
-        //    }
-        //    else if(Slider.value <= 0)
-        //    {
-        //        doneProgress = true;
 
-        //    }
-        //}
-        //if(isTree)
-        //{
-        //    if
-        //}
     }
 
     public override void Hit()
     {
-        //Debug.Log("Hit");
-        //while (dropCount > 0)
-        //{
-        //    dropCount -= 1;
-
-        //    Vector3 position = transform.position;
-        //    position.x += spread * UnityEngine.Random.value - spread / 2;
-        //    position.y += spread * UnityEngine.Random.value - spread / 2;
-
-        //    ItemSpawnManager.instance.SpawnItem(position, item, itemCountInOneDrop);
-        //}
-
-        //if (cuttable)
-        //{
-        //    Destroy(gameObject);
-        //}
-
         DropItem();
-
-        //StartCoroutine(ProgressionTime(time));
     }
 
     //IEnumerator ProgressionTime(float time)

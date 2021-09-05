@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerStatusManager : MonoBehaviour
 {
     public static PlayerStatusManager instance;
 
     public float StartCountDown;
-    [SerializeField] float DelayedTime;
+    public float timeForTemperature;
+    public float timeForStats;
+    [SerializeField] float DelayedTimeForTemperature;
+    [SerializeField] float DelayedTimeForStats;
     bool startToCountDown;
 
     private void Awake()
@@ -21,9 +25,29 @@ public class PlayerStatusManager : MonoBehaviour
     public Slider PlayerFood;
     public Slider PlayerWater;
 
+    [SerializeField] float hpMax;
+    [SerializeField] float foodMax;
+    [SerializeField] float waterMax;
+    [SerializeField] float staminaMax;
+
+    [SerializeField] float foodDeductValue;
+    [SerializeField] float foodDeductValue_Cold;
+    [SerializeField] float waterDeductValue;
+    [SerializeField] float waterDeductValue_Hot;
+    [SerializeField] float staminaAddValue;
+
+    [SerializeField] GameObject losePage;
+
     private void Start()
     {
         StartCountDown = Time.time;
+        timeForTemperature = DelayedTimeForTemperature;
+        timeForStats = DelayedTimeForStats;
+
+        PlayerHP.maxValue = hpMax;
+        PlayerStamina.maxValue = staminaMax;
+        PlayerWater.maxValue = waterMax;
+        PlayerFood.maxValue = foodMax;
     }
 
     /// <summary>
@@ -31,50 +55,127 @@ public class PlayerStatusManager : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        if(TemperatureManager.instance.isCold)
+        TextUpdating();
+        if (GameManager.instance.isPause == false)
         {
-            if (startToCountDown == true)
+            if (TemperatureManager.instance.isCold)
             {
-                if (Time.time >= StartCountDown + DelayedTime)
+                if (startToCountDown == true)
                 {
-                    PlayerFood.value -= 30;
-                    StartCountDown = Time.time;
-                    startToCountDown = false;
+                    timeForTemperature -= Time.deltaTime;
+                    if (timeForTemperature <= 0)
+                    {
+                        timeForTemperature = DelayedTimeForTemperature;
+                        PlayerFood.value -= foodDeductValue_Cold;
+                        //PlayerFood.GetComponentInChildren<TextMeshProUGUI>().text = PlayerFood.value + "/" + PlayerFood.maxValue;
+                        //StartCountDown = Time.time;
+                        startToCountDown = false;
+                    }
+                }
+                else
+                {
+                    startToCountDown = true;
+                    //StartCountDown = Time.time;
+                    timeForTemperature = DelayedTimeForTemperature;
                 }
             }
-            else
-            {
-                startToCountDown = true;
-                StartCountDown = Time.time;
-            }
-        }
 
-        else
-        {
-            startToCountDown = false;
-        }
+            //else
+            //{
+            //    startToCountDown = false;
+            //}
 
-        if(TemperatureManager.instance.isHot)
-        {
-            if (startToCountDown == true)
+            else if (TemperatureManager.instance.isHot)
             {
-                if (Time.time >= StartCountDown + DelayedTime)
+                if (startToCountDown == true)
                 {
-                    PlayerWater.value -= 30;
-                    StartCountDown = Time.time;
-                    startToCountDown = false;
+                    timeForTemperature -= Time.deltaTime;
+                    if (timeForTemperature <= 0)
+                    {
+                        PlayerWater.value -= waterDeductValue_Hot;
+                        //StartCountDown = Time.time;
+                        timeForTemperature = DelayedTimeForTemperature;
+                        startToCountDown = false;
+                    }
+                }
+                else
+                {
+                    startToCountDown = true;
+                    //StartCountDown = Time.time;
+                    timeForTemperature = DelayedTimeForTemperature;
                 }
             }
+
             else
             {
-                startToCountDown = true;
-                StartCountDown = Time.time;
+                startToCountDown = false;
+                timeForTemperature = DelayedTimeForTemperature;
             }
         }
 
-        else
+        StatsUpdateFunc();
+        LoseCondition();
+        //else
+        //{
+        //    startToCountDown = false;
+        //    //StartCountDown = Time.time;
+        //    //time = DelayedTime;
+        //}
+    }
+
+    void StatsUpdateFunc()
+    {
+        timeForStats -= Time.deltaTime;
+        if (timeForStats <= 0)
         {
-            startToCountDown = false;
+            Debug.Log("ddd");
+            if (PlayerFood.value > 0)
+            {
+                PlayerFood.value -= foodDeductValue;
+
+                //StartCountDown = Time.time;
+
+                //PlayerFood.GetComponentInChildren<TextMeshProUGUI>().text = PlayerFood.value + "/" + PlayerFood.maxValue;
+            }
+
+            if (PlayerWater.value > 0)
+            {
+                PlayerWater.value -= waterDeductValue;
+
+                //StartCountDown = Time.time;
+
+                //PlayerWater.GetComponentInChildren<TextMeshProUGUI>().text = PlayerWater.value + "/" + PlayerWater.maxValue;
+            }
+
+            if (PlayerStamina.value < PlayerStamina.maxValue)
+            {
+                PlayerStamina.value += staminaAddValue;
+
+                //StartCountDown = Time.time;
+
+                //PlayerStamina.GetComponentInChildren<TextMeshProUGUI>().text = PlayerStamina.value + "/" + PlayerStamina.maxValue;
+            }
+                timeForStats = DelayedTimeForStats;
         }
+
+        //PlayerHP.GetComponentInChildren<TextMeshProUGUI>().text = PlayerHP.value + "/" + PlayerHP.maxValue;
+    }
+
+    void LoseCondition()
+    {
+        if(PlayerFood.value <= 0 || PlayerWater.value <= 0 || PlayerStamina.value <= 0 || PlayerHP.value <= 0)
+        {
+            losePage.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
+
+    void TextUpdating()
+    {
+        PlayerFood.GetComponentInChildren<TextMeshProUGUI>().text = PlayerFood.value + "/" + PlayerFood.maxValue;
+        PlayerWater.GetComponentInChildren<TextMeshProUGUI>().text = PlayerWater.value + "/" + PlayerWater.maxValue;
+        PlayerStamina.GetComponentInChildren<TextMeshProUGUI>().text = PlayerStamina.value + "/" + PlayerStamina.maxValue;
+        PlayerHP.GetComponentInChildren<TextMeshProUGUI>().text = PlayerHP.value + "/" + PlayerHP.maxValue;
+
     }
 }

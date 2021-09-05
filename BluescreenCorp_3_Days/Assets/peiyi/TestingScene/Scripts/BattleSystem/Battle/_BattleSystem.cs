@@ -172,7 +172,7 @@ public class _BattleSystem : MonoBehaviour
                 OnBattleOver(false);
                 //state = _BattleState.RunFromBattle;
                 GameManager.instance.isPause = false;
-                Debug.Log(GameManager.instance.isPause);
+                //Debug.Log(GameManager.instance.isPause);
             }
         }
     }

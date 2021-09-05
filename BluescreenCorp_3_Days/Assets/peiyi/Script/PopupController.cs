@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class PopupController : MonoBehaviour
 {
+    [SerializeField] AudioClip mouseEnterSound;
+    [SerializeField] AudioClip mouseClickSound;
     [SerializeField] GameObject PausePage;
     [SerializeField] GameObject SettingPage;
     [SerializeField] Slider volumeSlider;
@@ -30,7 +32,8 @@ public class PopupController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.instance.isPause = false;
+        //GameManager.instance.isPause = false;
+        Time.timeScale = 1;
         PausePage.SetActive(false);
         //InventoryPage.SetActive(false);
         //CharacterPage.SetActive(false);
@@ -77,12 +80,14 @@ public class PopupController : MonoBehaviour
     {
         if (isPause == true)
         {
-             GameManager.instance.isPause = true;
+            //GameManager.instance.isPause = true;
+            Time.timeScale = 0;
         }
 
         else
         {
-             GameManager.instance.isPause = false;
+            //GameManager.instance.isPause = false;
+            Time.timeScale = 1;
         }
     }
 
@@ -93,33 +98,17 @@ public class PopupController : MonoBehaviour
 
     void UIPopup()
     {
-        if (!isPausePageOpen && !isMapOpen)
+        if (!isMapOpen)
         {
             if (Input.GetKeyDown(KeyCode.B))
             {
-                //if ( GameManager.instance.isPause == false)
-                //{
-                //     GameManager.instance.isPause = true;
-                //    Debug.Log("0");
-                //}
-
-                //else
-                //{
-                //     GameManager.instance.isPause = false;
-                //    Debug.Log("1");
-                //}
-
-                GameManager.instance.isPause = !GameManager.instance.isPause;
-
+                
                 isBookOpen = !isBookOpen;
-                checkingPauseGame(isBookOpen);
-                //CharacterPage.SetActive(isOpen);
                 if (isBookOpen)
                 {
                     RectTransform rt = Books.GetComponent<RectTransform>();
                     rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 0, rt.rect.width);
                     rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, rt.rect.height);
-                    //CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
 
                 }
                 else
@@ -129,153 +118,51 @@ public class PopupController : MonoBehaviour
                     rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, rt.rect.height);
                 }
             }
-
-            //else if (Input.GetKeyDown(KeyCode.I))
-            //{
-            //    if (isPause)
-            //    {
-            //        if (InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder != 0)
-            //        {
-            //            CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-            //            InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
-            //            MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-            //            CraftingPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-            //        }
-            //        else
-            //        {
-            //            InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-            //            CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
-            //            MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-            //            CraftingPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-            //        }
-            //    }
-
-            //}
-
-            //else if (Input.GetKeyDown(KeyCode.M))
-            //{
-            //    if (isPause)
-            //    {
-            //        if (MapPage.gameObject.GetComponent<Canvas>().sortingOrder != 0)
-            //        {
-            //            MapPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
-
-            //        }
-            //        else
-            //        {
-            //            MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-
-            //        }
-
-            //    }
-
-            //}
-
-            //else if (Input.GetKeyDown(KeyCode.C))
-            //{
-            //    if (isPause)
-            //    {
-            //        if (MapPage.gameObject.GetComponent<Canvas>().sortingOrder != 0)
-            //        {
-            //            MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-            //            InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-            //            CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-            //            CraftingPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
-            //        }
-            //        else
-            //        {
-            //            MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-            //            InventoryPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-            //            CharacterPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-            //            CraftingPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
-            //        }
-
-            //    }
-
-            //}
         }
 
-        if (!isBookOpen && !isBookOpen)
+        if (!isBookOpen)
         {
             if (Input.GetKeyDown(KeyCode.M))
             {
-
-                if ( GameManager.instance.isPause == false)
+                if (isMapOpen == false)
                 {
                     isMapOpen = true;
-                     GameManager.instance.isPause = true;
                     MapPage.SetActive(isMapOpen);
-                    //RectTransform rt = MapPage.GetComponent<RectTransform>();
-                    //rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, -100, rt.rect.width);
-                    //rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, -20, rt.rect.height);
-                    //MapPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
                 }
 
                 else
                 {
                     isMapOpen = false;
-                     GameManager.instance.isPause = false;
                     MapPage.SetActive(isMapOpen);
-                    //RectTransform rt = MapPage.GetComponent<RectTransform>();
-                    //rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 1920, rt.rect.width);
-                    //rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, rt.rect.height);
-                    //MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-                }
-
-                //isMapOpen = !isMapOpen;
-                
-
-                //if (isMapOpen)
-                //{
-                //    if (MapPage.gameObject.GetComponent<Canvas>().sortingOrder != 0)
-                //    {
-                //        RectTransform rt = MapPage.GetComponent<RectTransform>();
-                //        rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 0, rt.rect.width);
-                //        rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, rt.rect.height);
-                //        MapPage.gameObject.GetComponent<Canvas>().sortingOrder = 0;
-
-                //    }
-                //    else
-                //    {
-                //        RectTransform rt = MapPage.GetComponent<RectTransform>();
-                //        rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 1920, rt.rect.width);
-                //        rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, rt.rect.height);
-                //        MapPage.gameObject.GetComponent<Canvas>().sortingOrder = -1;
-
-                //    }
-
-                //}
-
-
-            }
-
-            if (!isBookOpen && !isMapOpen)
-            {
-                if (Input.GetKeyDown(KeyCode.Escape))
-                {
-                    if ( GameManager.instance.isPause == false)
-                    {
-                        isPausePageOpen = true;
-                        PausePage.SetActive(isPausePageOpen);
-                         GameManager.instance.isPause = true;
-                    }
-
-                    else
-                    {
-                        isPausePageOpen = false;
-                        PausePage.SetActive(isPausePageOpen);
-                         GameManager.instance.isPause = false;
-                    }
-                    //checkingPauseGame(isPausePageOpen);
                 }
             }
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPause == false)
+            {
+                isPausePageOpen = true;
+                PausePage.SetActive(isPausePageOpen);
+                isPause = true;
+                Time.timeScale = 0;
+            }
 
-        
+            else
+            {
+                isPausePageOpen = false;
+                PausePage.SetActive(isPausePageOpen);
+                isPause = false;
+                Time.timeScale = 1;
+            }
+            //checkingPauseGame(isPausePageOpen);
+        }
+
     }
 
     public void OnClickResume()
     {
+        isPause = false;
+        Time.timeScale = 1;
         isPausePageOpen = false;
         PausePage.SetActive(isPausePageOpen);
         //checkingPauseGame(isPausePageOpen);
@@ -289,10 +176,27 @@ public class PopupController : MonoBehaviour
     public void OnClickBachHome()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1;
     }
 
     public void CloseSetting()
     {
         SettingPage.SetActive(false);
+    }
+
+    public void OnMouseEnterFunc(Button buttons)
+    {
+        GameManager.instance.soundEffect.PlayOneShot(mouseEnterSound);
+        buttons.GetComponentInChildren<TextMeshProUGUI>().color = Color.yellow;
+    }
+
+    public void OnMouseExitFunc(Button buttons)
+    {
+        buttons.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
+    }
+
+    public void OnMouseClickFunc()
+    {
+        GameManager.instance.soundEffect.PlayOneShot(mouseClickSound);
     }
 }

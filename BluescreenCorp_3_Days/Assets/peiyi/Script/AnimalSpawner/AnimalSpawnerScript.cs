@@ -46,8 +46,9 @@ public class AnimalSpawnerScript : MonoBehaviour
         //}
 
         //Debug.Log(animalNo);
-        if (GameManager.instance.isPause == false)
-        {
+        //if (GameManager.instance.isPause == false)
+        //if (Time.timeScale == 1)
+        //{
             if (Time.time > nextSpawn)
             {
 
@@ -77,6 +78,6 @@ public class AnimalSpawnerScript : MonoBehaviour
                     AnimalList.RemoveAt(i);
                 }
             }
-        }
+        //}
     }
 }

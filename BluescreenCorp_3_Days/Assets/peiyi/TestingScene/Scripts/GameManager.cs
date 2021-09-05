@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     [Header("Game Controller")]
     public bool isPause;
     public GameObject TextReminder;
+    public bool isNight;
 
     [Header("Battle and Drop Item")]
     public bool isBattle;

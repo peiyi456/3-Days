@@ -28,7 +28,7 @@ public class CharacterController2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.isPause == false)
+        if (Time.timeScale == 1)
         {
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
@@ -71,7 +71,7 @@ public class CharacterController2D : MonoBehaviour
 
     private void Move()
     {
-        if (GameManager.instance.isPause == false)
+        if (Time.timeScale == 1)
         {
             rb2D.velocity = motionVector * speed;
         }

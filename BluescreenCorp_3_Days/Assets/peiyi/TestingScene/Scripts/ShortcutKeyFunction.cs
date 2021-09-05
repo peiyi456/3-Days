@@ -74,4 +74,9 @@ public class ShortcutKeyFunction : MonoBehaviour, IPointerClickHandler
     //{
     //    throw new System.NotImplementedException();
     //}
+
+    public void ShowToolTip()
+    {
+
+    }
 }

@@ -42,12 +42,12 @@ public class TimeSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.instance.isPause == false)
-        {
+        //if(GameManager.instance.isPause == false)
+        //{
             TimeCalculation();
 
             Debug.Log(minute);
-        }
+        //}
     }
 
     void TimeCalculation()

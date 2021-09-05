@@ -5,8 +5,15 @@ using UnityEngine;
 
 public class InventoryPanel : MonoBehaviour
 {
+    public static InventoryPanel instance;
+
     [SerializeField] ItemContainer inventory;
     [SerializeField] List<InventoryButtons> buttons;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {

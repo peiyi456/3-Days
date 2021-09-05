@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
         battleSystem.gameObject.SetActive(false);
         worldCamera.gameObject.SetActive(true);
         worldScene.gameObject.SetActive(true);
-        GameManager.instance.isPause = false;
+        //GameManager.instance.isPause = false;
     }
 
     // Update is called once per frame

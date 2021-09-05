@@ -74,7 +74,8 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
                 GameManager.instance.itemDragAndDropController.OnClick(inventory.slots[myIndex]);
             }
         }
-            transform.parent.GetComponent<InventoryPanel>().Show();
+
+            InventoryPanel.instance.Show();
     }
 
 
