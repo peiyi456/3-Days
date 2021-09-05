@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c86fb76e45368a478f87b33f9de9cce, type: 3}
-  m_Name: Axe
+  m_Name: FishMeat_Uncook
   m_EditorClassIdentifier: 
-  Name: Axe
-  stackable: 0
-  icon: {fileID: 21300000, guid: cac217932ea19574e83ff058f8d7f2af, type: 3}
-  Description: 
+  Name: FishMeat_Uncook
+  stackable: 1
+  icon: {fileID: 21300000, guid: 9d648449b5d05a34fb4f122a378d2a9c, type: 3}
+  Function: 
   Hint: 
-  itemTypes: 2
+  itemTypes: 0
+  FoodValue: 8
+  WaterValue: 3
+  HPValue: 2
+  TemperatureValue: 0

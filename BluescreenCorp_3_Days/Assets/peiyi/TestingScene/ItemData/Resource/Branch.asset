@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c86fb76e45368a478f87b33f9de9cce, type: 3}
-  m_Name: Leave
+  m_Name: Branch
   m_EditorClassIdentifier: 
-  Name: Leaves
+  Name: Branch
   stackable: 1
   icon: {fileID: 0}
-  Description: 
+  Function: 
   Hint: 
   itemTypes: 1
+  FoodValue: 0
+  WaterValue: 0
+  HPValue: 0
+  TemperatureValue: 0

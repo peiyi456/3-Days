@@ -385,6 +385,7 @@ MonoBehaviour:
   - {fileID: 0}
   itemCountInOneDrop: 1
   dropCount: 3
+  Slider: {fileID: 0}
 --- !u!1 &6936084908510915925
 GameObject:
   m_ObjectHideFlags: 0
