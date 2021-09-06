@@ -35,7 +35,7 @@ public class ItemDragAndDropController : MonoBehaviour
                     ItemSpawnManager.instance.SpawnItem(
                         worldPosition,
                         itemSlot.item,
-                        itemSlot.count
+                        itemSlot.itemCount
                         );
 
                     itemSlot.Clear();
@@ -55,7 +55,7 @@ public class ItemDragAndDropController : MonoBehaviour
         else
         {
             Item item = itemSlot.item;
-            int count = itemSlot.count;
+            int count = itemSlot.itemCount;
             ItemTypes itemTypes = itemSlot.itemTypes;
 
             itemSlot.Copy(this.itemSlot);
@@ -77,7 +77,7 @@ public class ItemDragAndDropController : MonoBehaviour
             if (this.itemSlot.item.itemTypes == ItemTypes.Food)
             {
                 Item item = itemSlot.item;
-                int count = itemSlot.count;
+                int count = itemSlot.itemCount;
                 ItemTypes itemTypes = itemSlot.itemTypes;
 
                 itemSlot.Copy(this.itemSlot);

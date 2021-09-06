@@ -9,27 +9,27 @@ using UnityEngine;
 public class ItemSlot
 {
     public Item item;
-    public int count;
+    public int itemCount;
     public ItemTypes itemTypes;
 
     public void Copy(ItemSlot slot)
     {
         item = slot.item;
-        count = slot.count;
+        itemCount = slot.itemCount;
         itemTypes = slot.itemTypes;
     }
 
     public void Set(Item item, int count, ItemTypes itemTypes)
     {
         this.item = item;
-        this.count = count;
+        this.itemCount = count;
         this.itemTypes = itemTypes;
     }
 
     public void Clear()
     {
         item = null;
-        count = 0;
+        itemCount = 0;
     }
 }
 
@@ -45,7 +45,7 @@ public class ItemContainer : ScriptableObject , IItemContainer
             ItemSlot itemSlot = slots.Find(x => x.item == item);
             if(itemSlot != null)
             {
-                itemSlot.count += count;
+                itemSlot.itemCount += count;
 
                 if(item.itemTypes == ItemTypes.Food)
                 {
@@ -58,7 +58,7 @@ public class ItemContainer : ScriptableObject , IItemContainer
                 if(itemSlot != null)
                 {
                     itemSlot.item = item;
-                    itemSlot.count = count;
+                    itemSlot.itemCount = count;
 
                     if (item.itemTypes == ItemTypes.Food)
                     {
@@ -87,9 +87,9 @@ public class ItemContainer : ScriptableObject , IItemContainer
         if (item.stackable == true)
         {
             ItemSlot itemSlot = slots.Find(x => x.item == item);
-            if (itemSlot.count >= 0)
+            if (itemSlot.itemCount > 0)
             {
-                itemSlot.count -= 1;
+                itemSlot.itemCount -= 1;
                 if (item.itemTypes == ItemTypes.Food)
                 {
                     CollectTargetItem.instance.currentCollectAmount -= count;
@@ -98,25 +98,27 @@ public class ItemContainer : ScriptableObject , IItemContainer
                 return true;
             }
 
-            else
-            {
-                itemSlot.Clear();
-                if (item.itemTypes == ItemTypes.Food)
-                {
-                    CollectTargetItem.instance.currentCollectAmount -= count;
-                }
-                return true;
-            }
+            //else if(itemSlot.itemCount <= 0)
+            //{
+            //    Debug.Log("clear");
+            //    itemSlot.Clear();
+            //    //if (item.itemTypes == ItemTypes.Food)
+            //    //{
+            //    //    CollectTargetItem.instance.currentCollectAmount -= count;
+            //    //}
+            //    return true;
+            //}
         }
         else
         {
             //add non stackable item to ours item container
-            ItemSlot itemSlot = slots.Find(x => x.item == null);
-            if (itemSlot != null)
-            {
-                itemSlot.item = item;
-                return true;
-            }
+            ItemSlot itemSlot = slots.Find(x => x.item == item);
+            itemSlot.Clear();
+            //if (itemSlot != null)
+            //{
+            //    itemSlot.item = item;
+            //    return true;
+            //}
         }
         return false;
     }

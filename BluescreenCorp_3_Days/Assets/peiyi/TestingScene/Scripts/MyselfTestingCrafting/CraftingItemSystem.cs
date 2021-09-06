@@ -39,7 +39,7 @@ public class CraftingItemSystem : MonoBehaviour
             {
                 //element1.sprite = inventory.slots[i].item.icon;
                 //element1.color = Color.white;
-                if (inventory.slots[i].count >= recipe.elements[0].count)
+                if (inventory.slots[i].itemCount >= recipe.elements[0].itemCount)
                 {
                     hasElement1 = true;
                     //element1.color = Color.white;
@@ -58,7 +58,7 @@ public class CraftingItemSystem : MonoBehaviour
             {
                 //element2.sprite = inventory.slots[i].item.icon;
                 //element2.color = Color.white;
-                if (inventory.slots[i].count >= recipe.elements[1].count)
+                if (inventory.slots[i].itemCount >= recipe.elements[1].itemCount)
                 {
                     hasElement2 = true;
                     //element2.color = Color.white;
@@ -79,7 +79,7 @@ public class CraftingItemSystem : MonoBehaviour
                 {
                     //element2.sprite = inventory.slots[i].item.icon;
                     //element2.color = Color.white;
-                    if (inventory.slots[i].count >= recipe.elements[2].count)
+                    if (inventory.slots[i].itemCount >= recipe.elements[2].itemCount)
                     {
                         hasElement3 = true;
                         //element2.color = Color.white;
@@ -253,12 +253,12 @@ public class CraftingItemSystem : MonoBehaviour
                 {
                     if (container.slots[i].item == recipe.elements[0].item)
                     {
-                        container.slots[i].count -= recipe.elements[0].count;
+                        container.slots[i].itemCount -= recipe.elements[0].itemCount;
                     }
 
                     if (container.slots[i].item == recipe.elements[1].item)
                     {
-                        container.slots[i].count -= recipe.elements[1].count;
+                        container.slots[i].itemCount -= recipe.elements[1].itemCount;
                     }
                 }
             }

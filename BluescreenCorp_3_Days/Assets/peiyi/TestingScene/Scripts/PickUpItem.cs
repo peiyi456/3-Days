@@ -18,7 +18,7 @@ public class PickUpItem : MonoBehaviour
     private void Start()
     {
         player = GameManager.instance.player.transform;
-        soundSource = player.GetComponent<AudioSource>();
+        //soundSource = player.GetComponent<AudioSource>();
     }
 
     public void Set(Item item, int count)
@@ -28,6 +28,9 @@ public class PickUpItem : MonoBehaviour
 
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
         renderer.sprite = item.icon;
+
+        SpriteRenderer miniMapRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        miniMapRenderer.sprite = item.icon;
     }
 
     private void Update()

@@ -142,14 +142,5 @@ public class UILayering : MonoBehaviour
             pageAnimalsSortingNumber = -2;
             pageInformationSortingNumber = -2;
         }
-
-        else
-        {
-            pageStatusSortingNumber = 7;
-            pageInventorySortingNumber = 3;
-            pageCraftingSortingNumber = 4;
-            pageAnimalsSortingNumber = 5;
-            pageInformationSortingNumber = 1;
-        }
     }
 }

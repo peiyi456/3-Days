@@ -45,7 +45,7 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
         if(slot.item.stackable == true)
         {
             noText.gameObject.SetActive(true);
-            noText.text = slot.count.ToString();
+            noText.text = slot.itemCount.ToString();
         }
         else
         {
@@ -55,6 +55,7 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
 
     public void Clean()
     {
+        Debug.Log("00");
         icon.sprite = null;
         icon.gameObject.SetActive(false);
         noText.gameObject.SetActive(false);

@@ -53,13 +53,15 @@ public class InventoryPanel : MonoBehaviour
     {
         for (int i = 0; i < inventory.slots.Count; i++)
         {
-            if(inventory.slots[i].item == null)
+            if(inventory.slots[i].item == null || inventory.slots[i].itemCount <= 0)
             {
+                Debug.Log("11");
                 buttons[i].Clean();
-
+                inventory.slots[i].Clear();
             }
             else
             {
+                Debug.Log("22");
                 buttons[i].Set(inventory.slots[i]);
             }
         }

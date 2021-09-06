@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1839430322136276434}
   - component: {fileID: 1397676814557265927}
   m_Layer: 8
-  m_Name: New Sprite
+  m_Name: MapIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,7 +215,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 9
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &463658645601792365
 MonoBehaviour:
@@ -533,7 +533,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7461461854937219718}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7006614425485579842}
+        m_MethodName: ButtonFunction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7006614425485579842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -722,13 +733,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d1a49621e568314cbe6869d7f78ae88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doneCookSoundEffect: {fileID: 8300000, guid: 65e8088a96287bf44bdd17f60dc01f32, type: 3}
   PopupMessage: {fileID: 8868367815379437299}
   distance: 2.5
   keycode: 99
   isPressButton: 0
   CookingPanel: {fileID: 6115116552649606961}
   ProgressBar: {fileID: 5384590601949035881}
-  doneCooking: 0
+  Cooking: 0
+  spread: 0
 --- !u!1 &3162189260602510627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1793,7 +1806,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3296782410312899175}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 391064950485220073}
+        m_MethodName: ButtonFunction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &391064950485220073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2078,7 +2102,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7214894332474509575}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 515928622051640921}
+        m_MethodName: ButtonFunction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &515928622051640921
 MonoBehaviour:
   m_ObjectHideFlags: 0

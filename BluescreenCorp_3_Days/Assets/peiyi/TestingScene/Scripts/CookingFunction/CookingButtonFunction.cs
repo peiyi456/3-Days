@@ -6,12 +6,15 @@ using TMPro;
 
 public class CookingButtonFunction : MonoBehaviour
 {
+
     [SerializeField] Button buttons;
     [SerializeField] Item cookItem;
 
     [SerializeField] Item cookResult;
 
     [SerializeField] Slider progressBar;
+
+    ItemSlot itemSlot;
 
     // Start is called before the first frame update
     void Start()
@@ -24,33 +27,67 @@ public class CookingButtonFunction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ItemSlot itemSlot = GameManager.instance.inventoryContainer.slots.Find(x => x.item == cookItem);
+        itemSlot = GameManager.instance.inventoryContainer.slots.Find(x => x.item == cookItem);
 
         if (itemSlot != null)
         {
-            buttons.interactable = true;
+            if (itemSlot.itemCount > 0)
+            {
+                buttons.interactable = true;
+            }
+            else
+            {
+                buttons.interactable = false ;
+            }
         }
         else
         {
             buttons.interactable = false;
         }
         
+        //if(CampFireInteract.instace.Cooking == true)
+        //{
+        //    if (progressBar.value > 0)
+        //    {
+        //        progressBar.value -= Time.deltaTime;
+        //    }
+
+        //    else if (progressBar.value <= 0)
+        //    {
+        //        dropCookedItem();
+        //        CampFireInteract.instace.Cooking = false;
+        //    }
+        //}
+
+        //else
+        //{
+        //    progressBar.value = progressBar.maxValue;
+        //}
+
     }
 
     public void ButtonFunction()
     {
-        if(CampFireInteract.instace.doneCooking == false)
+        if(CampFireInteract.instace.Cooking == false)
         {
+            CampFireInteract.instace.cookResult = cookResult;
+            //CampFireInteract.instace.cookItem = cookItem;
             CampFireInteract.instace.CookingPanel.SetActive(false);
-            if(progressBar.value > progressBar.minValue)
-            {
-                progressBar.value -= 1.0f * Time.deltaTime;
-            }
+            CampFireInteract.instace.ProgressBar.SetActive(true);
+            GameManager.instance.inventoryContainer.RemoveItem(itemSlot.item, 1);
+            Debug.Log("1");
+            CampFireInteract.instace.Cooking = true;
+            //if (progressBar.value > progressBar.minValue)
+            //{
+            //    CampFireInteract.instace.Cooking = true;
+            //    progressBar.value -= 1.0f * Time.deltaTime;
+            //}
 
-            else if(progressBar.value <= 0)
-            {
-                CampFireInteract.instace.doneCooking = true;
-            }
+            //else if(progressBar.value <= 0)
+            //{
+            //    dropCookedItem();
+            //    CampFireInteract.instace.Cooking = false;
+            //}
 
         }
 
@@ -67,5 +104,19 @@ public class CookingButtonFunction : MonoBehaviour
 
         //    }
         //}
+    }
+
+    void dropCookedItem()
+    {
+
+        Vector3 position = transform.position;
+        position.x += (CampFireInteract.instace.spread * UnityEngine.Random.value - CampFireInteract.instace.spread / 2) + 0.5f;
+        position.y += (CampFireInteract.instace.spread * UnityEngine.Random.value - CampFireInteract.instace.spread / 2) + 0.5f;
+        position.z = -36.34118f;
+
+        ItemSpawnManager.instance.SpawnItem(position, cookResult, 1);
+        
+        GameManager.instance.soundEffect.PlayOneShot(CampFireInteract.instace.doneCookSoundEffect);
+
     }
 }
