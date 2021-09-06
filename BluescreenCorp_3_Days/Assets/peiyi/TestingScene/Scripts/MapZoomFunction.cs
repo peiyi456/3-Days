@@ -33,6 +33,11 @@ public class MapZoomFunction : MonoBehaviour, IScrollHandler
         return desiredScale;
     }
 
+    private void OnDisable()
+    {
+        transform.localScale = initialScale;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

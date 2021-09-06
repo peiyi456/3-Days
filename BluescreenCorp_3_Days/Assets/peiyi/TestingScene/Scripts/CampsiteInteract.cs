@@ -1,19 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 
 public class CampsiteInteract : MonoBehaviour
 {
     GameObject player;
     [SerializeField] GameObject PopupMessage;
     [SerializeField] float distance;
+    [SerializeField] KeyCode sleepKey;
     CanSleepOrNot sleepStatus;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        PopupMessage.GetComponentInChildren<TextMeshProUGUI>().text = "Do you want to sleep? \nPress '" + sleepKey + "' to sleep.";
     }
 
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class CampsiteInteract : MonoBehaviour
                 if (DayTimeManager.instance.sleepStatus == PlayerSleepingStatus.Wake)
                 {
                     PopupMessage.SetActive(true);
-                    if (Input.GetKeyDown(KeyCode.O))
+                    if (Input.GetKeyDown(sleepKey))
                     {
                         Debug.Log("Sleep");
                         DayTimeManager.instance.sleepStatus = PlayerSleepingStatus.Sleep;

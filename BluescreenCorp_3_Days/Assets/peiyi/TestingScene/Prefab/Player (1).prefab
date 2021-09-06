@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 0.51, y: 0.57, z: 1}
   m_Children: []
   m_Father: {fileID: 7652469553711263916}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2576469910601960247
 SpriteRenderer:
@@ -458,7 +458,7 @@ RectTransform:
   m_Children:
   - {fileID: 1600643873561180557}
   m_Father: {fileID: 7652469553711263916}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -555,7 +555,7 @@ Transform:
   m_Children:
   - {fileID: 7730048639589144285}
   m_Father: {fileID: 7652469553711263916}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4714721453838340317
 SpriteRenderer:
@@ -607,83 +607,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &7652469552792524708
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7652469552792524709}
-  - component: {fileID: 7652469552792524714}
-  m_Layer: 0
-  m_Name: ItemWorldSpawner_Meat
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &7652469552792524709
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7652469552792524708}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.16, y: 0.41999996, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7652469554461773911}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7652469552792524714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7652469552792524708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea5fcb3ebca972b47be12cbde3941098, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item:
-    itemType_: 6
-    amount_: 5
-    maxSlotAmount_: 0
---- !u!1 &7652469553663357430
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7652469553663357431}
-  m_Layer: 0
-  m_Name: ChickenDropItem (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &7652469553663357431
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7652469553663357430}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.18, y: 0.85, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7652469553711263916}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7652469553711263912
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,9 +644,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7652469553816793187}
-  - {fileID: 7652469553766471996}
-  - {fileID: 7652469553663357431}
-  - {fileID: 7652469554461773911}
   - {fileID: 3823723617140599235}
   - {fileID: 719439620103260002}
   - {fileID: 1941721038841990349}
@@ -901,6 +821,7 @@ MonoBehaviour:
   speed: 8
   lastMotionVector: {x: 0, y: 0}
   moving: 0
+  stopMove: 0
   walkSound: {fileID: 8300000, guid: 93fef9961ff2e18458d008d54a733ecf, type: 3}
 --- !u!114 &4190949536391329982
 MonoBehaviour:
@@ -1012,54 +933,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &7652469553766471999
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7652469553766471996}
-  - component: {fileID: 7652469553766471997}
-  m_Layer: 0
-  m_Name: GooseDropItem (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7652469553766471996
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7652469553766471999}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.07, y: -0.16, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 7652469554088597183}
-  m_Father: {fileID: 7652469553711263916}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7652469553766471997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7652469553766471999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfc2efd6d6fe41e47a57046e53536890, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickUpDrop: {fileID: 716102805806877556, guid: 9242fbfc1bccc1145845a0c6473c612d,
-    type: 3}
-  item: {fileID: 11400000, guid: c274f4282b16da84398d118388b7025a, type: 2}
-  itemCountInOneDrop: 1
 --- !u!1 &7652469553816793186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1142,100 +1015,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &7652469554088597182
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7652469554088597183}
-  - component: {fileID: 7652469554088597180}
-  m_Layer: 0
-  m_Name: ItemWorldSpawner_Meat
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &7652469554088597183
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7652469554088597182}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.26, y: -3.19, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7652469553766471996}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7652469554088597180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7652469554088597182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea5fcb3ebca972b47be12cbde3941098, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item:
-    itemType_: 6
-    amount_: 5
-    maxSlotAmount_: 9
---- !u!1 &7652469554461773910
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7652469554461773911}
-  - component: {fileID: 7652469554461773908}
-  m_Layer: 0
-  m_Name: DropMeat
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &7652469554461773911
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7652469554461773910}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3299999, y: -2.39, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 7652469552792524709}
-  m_Father: {fileID: 7652469553711263916}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7652469554461773908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7652469554461773910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfc2efd6d6fe41e47a57046e53536890, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickUpDrop: {fileID: 0}
-  item: {fileID: 0}
-  itemCountInOneDrop: 1
 --- !u!1 &7736812030885939651
 GameObject:
   m_ObjectHideFlags: 0

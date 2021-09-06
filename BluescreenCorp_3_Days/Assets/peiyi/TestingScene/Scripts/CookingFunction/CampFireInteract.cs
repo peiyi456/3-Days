@@ -64,10 +64,11 @@ public class CampFireInteract : MonoBehaviour
                 }
             }
 
-            //else
-            //{
-            //    Cooking = false;
-            //}
+            else
+            {
+                //Cooking = false;
+                PopupMessage.SetActive(false) ;
+            }
 
         }
 

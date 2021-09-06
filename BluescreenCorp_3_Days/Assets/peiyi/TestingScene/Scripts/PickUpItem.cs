@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PickUpItem : MonoBehaviour
 {
-    public AudioSource soundSource;
     public AudioClip pickupSound;
 
     Transform player;
