@@ -163,8 +163,8 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.6
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.7
+  m_Color: {r: 1, g: 0.65882355, b: 0, a: 1}
+  m_Intensity: 1
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
@@ -885,7 +885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offsetDistance: 1
   sizeOfInteractableArea: 1.2
-  stamina: {fileID: 0}
+  ableToInteract: 0
 --- !u!114 &759109370299268407
 MonoBehaviour:
   m_ObjectHideFlags: 0

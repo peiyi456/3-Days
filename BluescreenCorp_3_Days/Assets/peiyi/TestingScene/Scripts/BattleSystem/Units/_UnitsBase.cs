@@ -8,8 +8,10 @@ public enum UnitTypes { Animals, Player};
 public class _UnitsBase : ScriptableObject
 {
     [Header("Details")]
+    [SerializeField] bool isPlayer;
     [SerializeField] string UnitName;
     [SerializeField] string UnitTag;
+    [SerializeField] Item dropItem;
 
     [TextArea]
     [SerializeField] string characteristics;
@@ -45,6 +47,16 @@ public class _UnitsBase : ScriptableObject
     public string Tag
     {
         get { return UnitTag; }
+    }
+
+    public bool IsPlayer
+    {
+        get { return isPlayer; }
+    }
+
+    public Item DropItem
+    {
+        get { return dropItem; }
     }
 
     public string Characteristics

@@ -121,10 +121,10 @@ public class PlayerStatusManager : MonoBehaviour
                 startToCountDown = false;
                 timeForTemperature = DelayedTimeForTemperature;
             }
+            StatsUpdateFunc();
+            LoseCondition();
         }
 
-        StatsUpdateFunc();
-        LoseCondition();
         //else
         //{
         //    startToCountDown = false;

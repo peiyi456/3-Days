@@ -86,7 +86,7 @@ public class TreeInteract : ToolHit
                 Vector3 position = transform.position;
                 position.x += spread * UnityEngine.Random.value - spread / 2;
                 position.y += spread * UnityEngine.Random.value - spread / 2;
-                position.z = -36.34118f;
+                position.z = GameManager.instance.zPositionForPickUp;
 
                 for (int i = 0; i < item.Length; i++)
                 {

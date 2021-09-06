@@ -42,9 +42,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Battle and Drop Item")]
     public bool isBattle;
-    public Vector2 specialItemDropPos;
+    public Vector3 enemyDropPosition;
     public _UnitsBase thisAnimal;
-
     public bool enemyFainted;
 
     [Header("Tools using checking")]
@@ -56,4 +55,6 @@ public class GameManager : MonoBehaviour
     public bool Objective2;
     public bool Objective3;
 
+    [Header("Pick up item's z position")]
+    public float zPositionForPickUp;
 }

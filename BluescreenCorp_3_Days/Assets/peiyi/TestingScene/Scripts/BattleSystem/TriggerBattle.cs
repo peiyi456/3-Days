@@ -69,7 +69,7 @@ public class TriggerBattle : MonoBehaviour
             {
                 Debug.Log("111");
                 GameManager.instance.thisAnimal = units[i];
-                GameManager.instance.specialItemDropPos = other.transform.position;
+                GameManager.instance.enemyDropPosition = other.transform.position;
                 onTriggerBattle();
                 Destroy(other.gameObject);
             }

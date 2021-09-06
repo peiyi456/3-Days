@@ -86,6 +86,7 @@ public class _BattleSystem : MonoBehaviour
             yield return new WaitForSeconds(2f);
             OnBattleOver(true);
             PlayerStatusManager.instance.PlayerStamina.value -= 20f;
+            GameManager.instance.enemyFainted = true;
             GameManager.instance.isPause = false;
         }
         else

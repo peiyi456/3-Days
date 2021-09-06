@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd0362dc21e7554eb3a3729e6c1ea6a, type: 3}
   m_Name: Duck
   m_EditorClassIdentifier: 
+  isPlayer: 0
   UnitName: Duck
   UnitTag: Duck
+  dropItem: {fileID: 11400000, guid: 834130dc19cf48f439b1c8c112479ca9, type: 2}
   characteristics: It is a duck
   appearIn: xxx
   unitSprite: {fileID: -7014647072283987094, guid: 7ec645021015c8f4e9769a155080abea,
