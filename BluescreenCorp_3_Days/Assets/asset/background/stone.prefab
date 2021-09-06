@@ -138,6 +138,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba94a02d4059c2408afbe7fc22b2389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemDropSound: {fileID: 0}
+  isFruitTree: 0
+  fruitsOnTree: []
+  ableToInteract: 0
   isTree: 0
   cuttable: 1
   spread: 0.7
@@ -145,6 +149,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 71ac0577db6fb6c41841de4671e6ff41, type: 2}
   itemCountInOneDrop: 5
   dropCount: 5
+  Slider: {fileID: 0}
 --- !u!1 &5059679733536215882
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +199,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

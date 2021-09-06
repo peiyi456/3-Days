@@ -39,7 +39,8 @@ public class BattleScene : MonoBehaviour
         {
             if (collision.CompareTag(animalTag[i]))
             {
-                GameManager.instance.isPause = true;
+                //GameManager.instance.isPause = true;
+                //Time.timeScale = 0;
                 //Debug.Log(collision.tag);
                 mainScene.SetActive(false);
                 combatScene.SetActive(true);
