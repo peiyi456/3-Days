@@ -47,7 +47,18 @@ public class TreeInteract : ToolHit
 
     public override void Hit()
     {
-        DropItem();
+        if (!iscuttableTree)
+        {
+            DropItem();
+        }
+
+        else
+        {
+            if(GameManager.instance.hasAxe)
+            {
+                DropItem();
+            }
+        }
     }
 
     //IEnumerator ProgressionTime(float time)
