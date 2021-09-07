@@ -157,6 +157,7 @@ MonoBehaviour:
     type: 3}
   spawnItem: {fileID: 11400000, guid: b827b883789c9f84e817baea35b49ab8, type: 2}
   respawnTime: 86400
+  countDownTime: 0
 --- !u!1 &4923703749624017223
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,6 +287,7 @@ MonoBehaviour:
     type: 3}
   spawnItem: {fileID: 11400000, guid: b827b883789c9f84e817baea35b49ab8, type: 2}
   respawnTime: 86400
+  countDownTime: 0
 --- !u!1 &8475798584848165564
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +423,7 @@ MonoBehaviour:
   isFruitTree: 0
   fruitsOnTree: []
   ableToInteract: 0
-  isTree: 0
+  isTree: 1
   cuttable: 1
   item:
   - {fileID: 11400000, guid: 63f903534266fab47845640d3cfdf7b5, type: 2}

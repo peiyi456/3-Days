@@ -13,8 +13,10 @@ public class TreeInteract : ToolHit
     [SerializeField] bool isFruitTree;
     [SerializeField] GameObject[] fruitsOnTree;
     public bool ableToInteract;
-    [SerializeField] bool isTree;
     [SerializeField] bool cuttable;
+
+    [Header("Checking for use axe to chop")]
+    [SerializeField] bool iscuttableTree;
     //[SerializeField] GameObject pickUpDrop;
 
     [Header("Drop item details")]
