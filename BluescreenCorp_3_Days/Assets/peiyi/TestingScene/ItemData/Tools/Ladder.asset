@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Ladder
   stackable: 0
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: ff74fa3d348b7f74183f5bf0ac709838, type: 3}
   Function: 
   Hint: 
   itemTypes: 2

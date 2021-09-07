@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Vine
   stackable: 1
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 1420e6a82ca58ed43969ed360be38f13, type: 3}
   Function: 
   Hint: 
   itemTypes: 1
