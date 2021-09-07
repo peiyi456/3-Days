@@ -20,23 +20,28 @@ public class PlayerStatusManager : MonoBehaviour
         instance = this;
     }
 
+    [Header("Player status bar")]
     public Slider PlayerHP;
     public Slider PlayerStamina;
     public Slider PlayerFood;
     public Slider PlayerWater;
 
+    [Header("Player status max value")]
     [SerializeField] float hpMax;
     [SerializeField] float foodMax;
     [SerializeField] float waterMax;
     [SerializeField] float staminaMax;
 
+    [Header("Player status deduct/add value per min")]
     [SerializeField] float foodDeductValue;
     [SerializeField] float foodDeductValue_Cold;
     [SerializeField] float waterDeductValue;
     [SerializeField] float waterDeductValue_Hot;
     [SerializeField] float staminaAddValue;
 
+    [Header("Pages related to the player status")]
     [SerializeField] GameObject losePage;
+    [SerializeField] GameObject lowHPEffect;
 
     private void Start()
     {
@@ -121,6 +126,12 @@ public class PlayerStatusManager : MonoBehaviour
                 startToCountDown = false;
                 timeForTemperature = DelayedTimeForTemperature;
             }
+
+            if(PlayerHP.value < 5)
+            {
+                lowHPEffect.SetActive(true);
+            }
+
             StatsUpdateFunc();
             LoseCondition();
         }
