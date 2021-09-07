@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elements:
   - item: {fileID: 11400000, guid: b827b883789c9f84e817baea35b49ab8, type: 2}
-    count: 1
+    itemCount: 1
     itemTypes: 1
   - item: {fileID: 11400000, guid: 771af6fc0066a96499a4fd3f3e65be83, type: 2}
-    count: 2
+    itemCount: 2
     itemTypes: 1
   output:
     item: {fileID: 11400000, guid: d3ccc592b1d55fd4f8851c964f21c067, type: 2}
-    count: 1
+    itemCount: 1
     itemTypes: 2
