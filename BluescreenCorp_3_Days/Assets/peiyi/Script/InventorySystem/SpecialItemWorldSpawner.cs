@@ -20,6 +20,9 @@ public class SpecialItemWorldSpawner : MonoBehaviour
     {
         if(GameManager.instance.enemyFainted == true)
         {
+            item = GameManager.instance.thisAnimal.DropItem;
+            ItemSpawnManager.instance.SpawnItem(new Vector3(GameManager.instance.enemyDropPosition.x, GameManager.instance.enemyDropPosition.y, GameManager.instance.zPositionForPickUp), item, itemCountInOneDrop);
+            GameManager.instance.enemyFainted = false;
             //pickUpDrop.SetActive(true);
             //dropMeat.SetActive(true);
             //ItemWorld.SpawnItemWorld(BattleScene.position.position, item);

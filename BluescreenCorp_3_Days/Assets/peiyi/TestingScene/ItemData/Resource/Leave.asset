@@ -22,3 +22,4 @@ MonoBehaviour:
   WaterValue: 0
   HPValue: 0
   TemperatureValue: 0
+  soundEffect: {fileID: 0}

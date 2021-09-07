@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd0362dc21e7554eb3a3729e6c1ea6a, type: 3}
   m_Name: Monkey
   m_EditorClassIdentifier: 
+  isPlayer: 0
   UnitName: Monkey
   UnitTag: Monkey
+  dropItem: {fileID: 11400000, guid: c274f4282b16da84398d118388b7025a, type: 2}
   characteristics: "Monkey\t"
   appearIn: xxx
   unitSprite: {fileID: 21300000, guid: 56d78d5d491e615479e31234a48385d1, type: 3}
@@ -22,4 +24,6 @@ MonoBehaviour:
   unitTypes: 0
   learnableMoves:
   - moveBase: {fileID: 11400000, guid: b98ed75f6f883904c866ca61e879c3f6, type: 2}
+    toolLevel: 0
+  - moveBase: {fileID: 11400000, guid: 71b31a40b2ee7a948826f77c588b5a5f, type: 2}
     toolLevel: 0

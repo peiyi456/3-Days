@@ -27,6 +27,8 @@ public class DayTimeManager : MonoBehaviour
     [SerializeField] AnimationCurve nightTimeCurve;
     [SerializeField] Color dayLightColor = Color.white;
 
+    public int hours;
+    public int minutes;
     public float time;
     public int days = 1;
     [SerializeField] float timeScale = 60f;
@@ -58,43 +60,58 @@ public class DayTimeManager : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.isPause == false)
+        if (Time.timeScale == 1)
         {
-            time += Time.deltaTime * timeScale;
-            int hh = (int)Hours;
-            int mm = (int)Minutes;
-            timeText.text = hh.ToString("00") + ":" + mm.ToString("0") + "0";
-            dayText.text = "Day " + days;
+            if (GameManager.instance.isPause == false)
+            {
+                time += Time.deltaTime * timeScale;
+                hours = (int)Hours;
+                minutes = (int)Minutes;
+                timeText.text = hours.ToString("00") + ":" + minutes.ToString("0") + "0";
+                dayText.text = "Day " + days;
 
-            float v = nightTimeCurve.Evaluate(Hours);
-            Color c = Color.Lerp(dayLightColor, nightLightColor, v);
-            //globalLight.color = c;
-            DayNightPanel.color = c;
-            if (time > secondsInDay)
-            {
-                NextDay();
-            }
+                float v = nightTimeCurve.Evaluate(Hours);
+                Color c = Color.Lerp(dayLightColor, nightLightColor, v);
+                globalLight.color = c;
+                //DayNightPanel.color = c;
+                if (time > secondsInDay)
+                {
+                    NextDay();
+                }
 
-            if(hh >= 22 && hh < 24)
-            {
-                canSleep = CanSleepOrNot.CanSleep;
-            }
-            else if(hh >= 00 && hh < 02)
-            {
-                canSleep = CanSleepOrNot.CanSleep;
-            }
-            else
-            {
-                canSleep = CanSleepOrNot.CannotSleep;
-            }
+                if (hours >= 22 && hours < 24)
+                {
+                    canSleep = CanSleepOrNot.CanSleep;
+                }
+                else if (hours >= 00 && hours < 02)
+                {
+                    canSleep = CanSleepOrNot.CanSleep;
+                }
+                else
+                {
+                    canSleep = CanSleepOrNot.CannotSleep;
+                }
 
-            CheckingSleepingStatus();
+                CheckingSleepingStatus();
+            }
         }
         EndGame();
         //else
         //{
         //    DayNightPanel.gameObject.SetActive(false);
         //}
+    }
+
+    void CheckingNightfunction()
+    {
+        if(hours > 6 && hours < 8)
+        {
+            GameManager.instance.isNight = false;
+        }
+        else
+        {
+            GameManager.instance.isNight = true;
+        }
     }
 
     private void NextDay()
@@ -119,7 +136,8 @@ public class DayTimeManager : MonoBehaviour
     {
         if(days > 3)
         {
-            GameManager.instance.isPause = true;
+            //GameManager.instance.isPause = true;
+            Time.timeScale = 0;
             winPage.gameObject.SetActive(true);
         }
     }

@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd0362dc21e7554eb3a3729e6c1ea6a, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
+  isPlayer: 1
   UnitName: Player
   UnitTag: Player
-  description: 
-  unitSprite: {fileID: 5044450397378941176, guid: 4a466b0310eb79845ad87216358ee4f5,
+  dropItem: {fileID: 0}
+  characteristics: 
+  appearIn: 
+  unitSprite: {fileID: -3861952770410913445, guid: 4a466b0310eb79845ad87216358ee4f5,
     type: 3}
   maxHP: 30
   attack: 3

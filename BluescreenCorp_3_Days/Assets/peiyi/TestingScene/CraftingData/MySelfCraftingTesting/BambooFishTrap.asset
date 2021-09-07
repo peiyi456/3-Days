@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7719e77bdeb43684095c5578c51b1411, type: 3}
+  m_Name: BambooFishTrap
+  m_EditorClassIdentifier: 
+  elements:
+  - item: {fileID: 11400000, guid: 5f96fb4c12e16624d979b254c5436028, type: 2}
+    itemCount: 1
+    itemTypes: 1
+  - item: {fileID: 11400000, guid: 71ac0577db6fb6c41841de4671e6ff41, type: 2}
+    itemCount: 1
+    itemTypes: 1
+  output:
+    item: {fileID: 11400000, guid: adf97a187bcdd1e498f70f0d745778bd, type: 2}
+    itemCount: 1
+    itemTypes: 2

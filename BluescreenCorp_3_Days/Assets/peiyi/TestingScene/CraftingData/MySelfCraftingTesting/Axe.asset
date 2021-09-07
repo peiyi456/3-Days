@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: Axe
   m_EditorClassIdentifier: 
   elements:
-  - item: {fileID: 11400000, guid: 63f903534266fab47845640d3cfdf7b5, type: 2}
-    count: 1
+  - item: {fileID: 11400000, guid: b827b883789c9f84e817baea35b49ab8, type: 2}
+    itemCount: 3
+    itemTypes: 1
   - item: {fileID: 11400000, guid: 71ac0577db6fb6c41841de4671e6ff41, type: 2}
-    count: 1
+    itemCount: 1
+    itemTypes: 1
   output:
     item: {fileID: 11400000, guid: da48cb335d6038248944c1f8f31d8eef, type: 2}
-    count: 1
+    itemCount: 1
+    itemTypes: 2

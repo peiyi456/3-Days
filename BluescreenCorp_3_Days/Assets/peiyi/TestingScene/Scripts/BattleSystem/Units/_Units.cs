@@ -56,9 +56,15 @@ public class _Units
 
         HP -= damage;
 
+        if (Base.IsPlayer)
+        {
+            PlayerStatusManager.instance.PlayerHP.value = HP;
+        }
+
         if(HP <= 0)
         {
             HP = 0;
+            PlayerStatusManager.instance.PlayerHP.value = HP;
             return true;
         }
 

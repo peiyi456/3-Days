@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveName: Blunt Axe
   description: Use blunt axe to attack enemy
-  power: 5
+  power: 3
   accuracy: 60
   efficiency: 3

@@ -17,10 +17,15 @@ public class Item : ScriptableObject
 
     [Header("Item Types")]
     public ItemTypes itemTypes;
+    //public bool isMeat;
+    //public bool canCook;
 
     [Header("Adding Status Value When Use")]
     public float FoodValue;
     public float WaterValue;
     public float HPValue;
     public float TemperatureValue;
+
+    [Header("Audio clip when use")]
+    public AudioClip soundEffect;
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -10,6 +11,10 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
     }
+
+    [Header("Sound Manager")]
+    public AudioSource soundEffect;
+    public AudioSource BGM;
 
     [Header("Player")]
     public GameObject player;
@@ -23,21 +28,23 @@ public class GameManager : MonoBehaviour
     public bool hasAxe;
     public bool hasCampsite;
     public bool hasKnife;
-    public bool hasSpear;
+    public bool hasLance;
+    public bool hasFishingRod;
+    public bool hasTorch;
 
     [Header("Animal Checking")]
-    public bool meetAnimal1;
-    public bool meetAnimal2;
-    public bool meetAnimal3;
+    public bool[] meetAnimal;
+    public _UnitsBase[] Animals;
 
     [Header("Game Controller")]
     public bool isPause;
+    public GameObject TextReminder;
+    public bool isNight;
 
     [Header("Battle and Drop Item")]
     public bool isBattle;
-    public Vector2 specialItemDropPos;
+    public Vector3 enemyDropPosition;
     public _UnitsBase thisAnimal;
-
     public bool enemyFainted;
 
     [Header("Tools using checking")]
@@ -49,4 +56,6 @@ public class GameManager : MonoBehaviour
     public bool Objective2;
     public bool Objective3;
 
+    [Header("Pick up item's z position")]
+    public float zPositionForPickUp;
 }

@@ -7,9 +7,11 @@ public enum UnitTypes { Animals, Player};
 [CreateAssetMenu(fileName = "Units", menuName = "Units/Create new unit")]
 public class _UnitsBase : ScriptableObject
 {
-    [Header("Animal Details")]
+    [Header("Details")]
+    [SerializeField] bool isPlayer;
     [SerializeField] string UnitName;
     [SerializeField] string UnitTag;
+    [SerializeField] Item dropItem;
 
     [TextArea]
     [SerializeField] string characteristics;
@@ -17,7 +19,7 @@ public class _UnitsBase : ScriptableObject
     [SerializeField] Sprite unitSprite;
 
 
-    [Header("Animal Base Stats")]
+    [Header("Base Stats")]
     //Base Stats
     [SerializeField] int maxHP;
     [SerializeField] int attack;
@@ -28,7 +30,7 @@ public class _UnitsBase : ScriptableObject
 
     [SerializeField] UnitTypes unitTypes;
 
-    [Header("Animal Learnable Moves")]
+    [Header("Learnable Moves")]
     [SerializeField] List<LearnableMove> learnableMoves;
 
     //public string GetName()
@@ -45,6 +47,16 @@ public class _UnitsBase : ScriptableObject
     public string Tag
     {
         get { return UnitTag; }
+    }
+
+    public bool IsPlayer
+    {
+        get { return isPlayer; }
+    }
+
+    public Item DropItem
+    {
+        get { return dropItem; }
     }
 
     public string Characteristics
@@ -85,8 +97,8 @@ public class _UnitsBase : ScriptableObject
     [System.Serializable]
     public class LearnableMove
     {
-        [SerializeField] _MoveBase moveBase;
-        [SerializeField] int toolLevel;
+        public _MoveBase moveBase;
+        public int toolLevel;
 
         public _MoveBase  Base
         {

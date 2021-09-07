@@ -22,3 +22,4 @@ MonoBehaviour:
   WaterValue: 5
   HPValue: 1
   TemperatureValue: 0
+  soundEffect: {fileID: 8300000, guid: 2ce26bc9ab0d6bd4d92e1ba5779d5b87, type: 3}
