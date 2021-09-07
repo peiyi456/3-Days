@@ -139,16 +139,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDropSound: {fileID: 0}
+  staminaUsed: 5
   isFruitTree: 0
   fruitsOnTree: []
   ableToInteract: 0
   isTree: 0
   cuttable: 1
-  spread: 0.7
   item:
   - {fileID: 11400000, guid: 71ac0577db6fb6c41841de4671e6ff41, type: 2}
+  spread: 0.7
   itemCountInOneDrop: 5
   dropCount: 5
+  time: 0
   Slider: {fileID: 0}
 --- !u!1 &5059679733536215882
 GameObject:

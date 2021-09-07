@@ -9,19 +9,20 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] ItemContainer inventory;
 
-    [SerializeField] Image icon;
-    [SerializeField] TextMeshProUGUI noText;
+    public Image icon;
+    public TextMeshProUGUI noText;
     //[SerializeField] string name;
 
     [SerializeField] int myIndex;
 
-    [SerializeField] Image itemImg;
-    [SerializeField] TextMeshProUGUI itemName;
-    [SerializeField] TextMeshProUGUI itemFunction;
-    [SerializeField] TextMeshProUGUI itemHint;
-    [SerializeField] bool selected = false;
+    public Image itemImg;
+    public TextMeshProUGUI itemName;
+    public TextMeshProUGUI itemFunction;
+    public TextMeshProUGUI itemHint;
+    public bool selected = false;
+    public bool IsThrow = false;
 
-    Button bttn;
+    [SerializeField] Button bttn;
 
     public bool isShortKey;
 
@@ -30,6 +31,15 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
         bttn = GetComponent<Button>();
         inventory = GameManager.instance.inventoryContainer;
     }
+
+    //private void Update()
+    //{
+    //    if(inventory.slots[myIndex] == null)
+    //    {
+    //        HideDetail(myIndex);
+    //        selected = false;
+    //    }
+    //}
 
     public void SetIndex(int index)
     {
@@ -59,6 +69,9 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
         icon.sprite = null;
         icon.gameObject.SetActive(false);
         noText.gameObject.SetActive(false);
+        //InventoryPanel.instance.ShowButtons(false);
+        //InventoryPanel.instance.IsHideDetails = true;
+        //HideDetail(myIndex);
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -91,7 +104,10 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
                 //itemImg.sprite = inventory.slots[buttonNo].item.icon;
                 //itemName.text = inventory.slots[buttonNo].item.Name;
                 //selected = true;
+                InventoryPanel.instance.SelectedButtonNo = buttonNo;
                 ShowDetail(buttonNo);
+                //InventoryPanel.instance.ShowButtons(true);
+                //InventoryPanel.instance.IsSelectedButton = selected;
             }
 
             else
@@ -102,6 +118,7 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
                 //itemName.gameObject.SetActive(false);
                 //selected = false;
                 HideDetail(buttonNo);
+                //InventoryPanel.instance.ShowButtons(false);
             }
         }
 
@@ -116,6 +133,11 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    //void ThrowItem(int no)
+    //{
+
+    //}
+
     void ShowDetail(int no)
     {
         itemImg.gameObject.SetActive(true);
@@ -127,9 +149,12 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
         itemFunction.text = inventory.slots[no].item.Function;
         itemHint.text = inventory.slots[no].item.Hint;
         selected = true;
+        InventoryPanel.instance.ShowButtons(selected);
+
+        //InventoryPanel.instance.IsHideDetails = false;
     }
 
-    void HideDetail(int no)
+    public void HideDetail(int no)
     {
         itemImg.sprite = null;
         itemName.text = "";
@@ -140,5 +165,7 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
         itemFunction.gameObject.SetActive(false);
         itemHint.gameObject.SetActive(false);
         selected = false;
+        //InventoryPanel.instance.ShowButtons(false);
+        //InventoryPanel.instance.IsHideDetails = true;
     }
 }

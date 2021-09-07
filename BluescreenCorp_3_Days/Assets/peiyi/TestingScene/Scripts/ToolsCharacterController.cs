@@ -31,7 +31,7 @@ public class ToolsCharacterController : MonoBehaviour
             {
                 UseTool();
                 ableToInteract = false;
-                PlayerStatusManager.instance.PlayerStamina.value -= 10f;
+                //PlayerStatusManager.instance.PlayerStamina.value -= 10f;
             }
         }
         //}

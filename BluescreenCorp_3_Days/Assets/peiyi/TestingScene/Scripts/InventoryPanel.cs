@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryPanel : MonoBehaviour
 {
@@ -9,6 +10,12 @@ public class InventoryPanel : MonoBehaviour
 
     [SerializeField] ItemContainer inventory;
     [SerializeField] List<InventoryButtons> buttons;
+
+    public bool IsSelectedButton;
+    public int SelectedButtonNo;
+    public Button ThrowButton;
+    public Button UseButton;
+    //public bool IsThrow;
 
     private void Awake()
     {
@@ -40,6 +47,35 @@ public class InventoryPanel : MonoBehaviour
     //    Show();
     //}
 
+    public void ShowButtons(bool showButton)
+    {
+        if(showButton)
+        {
+            ThrowButton.gameObject.SetActive(true);
+            //IsHideDetails = false;
+        }
+
+        else
+        {
+            ThrowButton.gameObject.SetActive(false);
+            //IsHideDetails = true;
+        }
+    }
+
+    public void ThrowItem()
+    {
+        inventory.slots[SelectedButtonNo].Clear();
+        ThrowButton.gameObject.SetActive(false);
+        buttons[SelectedButtonNo].Clean();
+
+        buttons[SelectedButtonNo].itemImg.gameObject.SetActive(false);
+        buttons[SelectedButtonNo].itemName.gameObject.SetActive(false);
+        buttons[SelectedButtonNo].itemFunction.gameObject.SetActive(false);
+        buttons[SelectedButtonNo].itemHint.gameObject.SetActive(false);
+        //IsThrow = true;
+        //SelectedButton.Clean();
+        //inventory.slots
+    }
 
     private void SetIndex()
     {
@@ -56,7 +92,8 @@ public class InventoryPanel : MonoBehaviour
             if(inventory.slots[i].item == null || inventory.slots[i].itemCount <= 0)
             {
                 Debug.Log("11");
-                buttons[i].Clean();
+                //buttons[i].Clean();
+                CleanButton(i);
                 inventory.slots[i].Clear();
             }
             else
@@ -67,6 +104,16 @@ public class InventoryPanel : MonoBehaviour
         }
     }
 
+    public void CleanButton(int i)
+    {
+        buttons[i].icon.sprite = null;
+        buttons[i].icon.gameObject.SetActive(false);
+        buttons[i].noText.gameObject.SetActive(false);
+        //buttons[i].itemName.text = "";
+        //buttons[i].itemFunction.text = "";
+        //buttons[i].itemHint.text = "";
+        buttons[i].selected = false;
+    }
     //private void ClearContainer()
     //{
     //    //ItemContainer container = FindObjectOfType<ItemContainer>();

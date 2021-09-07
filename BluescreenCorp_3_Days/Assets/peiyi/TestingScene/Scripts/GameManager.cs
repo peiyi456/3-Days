@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public bool hasKnife;
     public bool hasLance;
     public bool hasFishingRod;
+    public bool hasTorch;
 
     [Header("Animal Checking")]
     public bool[] meetAnimal;

@@ -13,6 +13,7 @@ public class FishingSystem : MonoBehaviour
     [SerializeField] float distance;
 
     [Header("Assign")]
+    [SerializeField] float staminaUsed;
     [SerializeField] GameObject player;
     [SerializeField] GameObject ProgressBar;
     [SerializeField] GameObject FishingPanel;
@@ -80,6 +81,7 @@ public class FishingSystem : MonoBehaviour
             else if (ProgressBar.GetComponentInChildren<Slider>().value <= 0)
             {
                 GameManager.instance.inventoryContainer.AddItem(Fish, 1);
+                PlayerStatusManager.instance.PlayerStamina.value -= staminaUsed;
                 fishing = false;
                 ProgressBar.GetComponentInChildren<Slider>().value = ProgressBar.GetComponentInChildren<Slider>().maxValue;
                 CharacterController2D.instance.stopMove = false;

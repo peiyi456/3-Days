@@ -734,14 +734,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doneCookSoundEffect: {fileID: 8300000, guid: 65e8088a96287bf44bdd17f60dc01f32, type: 3}
+  staminaUsed: 10
   PopupMessage: {fileID: 8868367815379437299}
   distance: 2.5
-  keycode: 99
-  isPressButton: 0
   CookingPanel: {fileID: 6115116552649606961}
   ProgressBar: {fileID: 5384590601949035881}
-  Cooking: 0
   spread: 0
+  keycode: 99
+  isPressButton: 0
+  Cooking: 0
   cookResult: {fileID: 0}
   cookItem: {fileID: 0}
 --- !u!1 &3162189260602510627

@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class CraftingItemSystem : MonoBehaviour
 {
-    [SerializeField] bool isAxe, isCampsite, isKnife, isSpear;
+    [Header("For shortkey tools used")]
+    [SerializeField] bool isAxe, isCampsite, isKnife, isSpear, isFishingRod, isTorch;
 
     [SerializeField] bool craft = false;
     [SerializeField] bool hasElement1, hasElement2, hasElement3;
@@ -54,18 +55,21 @@ public class CraftingItemSystem : MonoBehaviour
             //    element1.color = Color.black;
             //}
 
-            if (inventory.slots[i].item == recipe.elements[1].item)
+            if (recipe.elements.Count > 1)
             {
-                //element2.sprite = inventory.slots[i].item.icon;
-                //element2.color = Color.white;
-                if (inventory.slots[i].itemCount >= recipe.elements[1].itemCount)
+                if (inventory.slots[i].item == recipe.elements[1].item)
                 {
-                    hasElement2 = true;
+                    //element2.sprite = inventory.slots[i].item.icon;
                     //element2.color = Color.white;
-                }
-                else
-                {
-                    hasElement2 = false;
+                    if (inventory.slots[i].itemCount >= recipe.elements[1].itemCount)
+                    {
+                        hasElement2 = true;
+                        //element2.color = Color.white;
+                    }
+                    else
+                    {
+                        hasElement2 = false;
+                    }
                 }
             }
             //else
@@ -97,48 +101,29 @@ public class CraftingItemSystem : MonoBehaviour
 
         }
 
-        if (recipe.elements.Count < 3)
+        if (recipe.elements.Count < 2)
+        {
+            if (hasElement1 == true)
+            {
+                if (!craft)
+                {
+                    craftBttn.interactable = true;
+                    output.color = Color.white;
+                    this.craft = true;
+                }
+            }
+
+            else
+            {
+                //craftBttn.interactable = false;
+                output.color = Color.black;
+            }
+        }
+
+        else if (recipe.elements.Count < 3)
         {
             if (hasElement1 == true && hasElement2 == true)
             {
-                //if (isAxe)
-                //{
-                //    if (!craft)
-                //    {
-                //        craftBttn.interactable = true;
-                //        output.color = Color.white;
-                //        this.craft = true;
-                //    }
-                //}
-
-                //if (isCampsite)
-                //{
-                //    if (!craft)
-                //    {
-                //        craftBttn.interactable = true;
-                //        output.color = Color.white;
-                //        this.craft = true;
-                //    }
-                //}
-                //if (isKnife)
-                //{
-                //    if (!craft)
-                //    {
-                //        craftBttn.interactable = true;
-                //        output.color = Color.white;
-                //        this.craft = true;
-                //    }
-                //}
-                //if (isSpear)
-                //{
-                //    if (!craft)
-                //    {
-                //        craftBttn.interactable = true;
-                //        output.color = Color.white;
-                //        this.craft = true;
-                //    }
-                //}
-
                 if (!craft)
                 {
                     craftBttn.interactable = true;
@@ -185,7 +170,6 @@ public class CraftingItemSystem : MonoBehaviour
             output.gameObject.SetActive(true);
             craftBttn.gameObject.SetActive(true);
             element1.sprite = recipe.elements[0].item.icon;
-            element2.sprite = recipe.elements[1].item.icon;
             output.sprite = recipe.output.item.icon;
             if(hasElement1)
             {
@@ -196,13 +180,17 @@ public class CraftingItemSystem : MonoBehaviour
                 element1.color = Color.black;
             }
 
-            if (hasElement2)
+            if (recipe.elements.Count > 1)
             {
-                element2.color = Color.white;
-            }
-            else
-            {
-                element2.color = Color.black;
+                element2.sprite = recipe.elements[1].item.icon;
+                if (hasElement2)
+                {
+                    element2.color = Color.white;
+                }
+                else
+                {
+                    element2.color = Color.black;
+                }
             }
 
             if (recipe.elements.Count > 2)
@@ -236,37 +224,82 @@ public class CraftingItemSystem : MonoBehaviour
             craftBttn.gameObject.SetActive(false);
             selected = false;
         }
-        Debug.Log("lll");
     }
 
-    public void CraftAxe(Image img)
+    public void CraftItem(Item item)
     {
+        for (int i = 0; i < container.slots.Count; i++)
+        {
+            for (int j = 0; j < recipe.elements.Count; j++)
+            {
+                //if (container.slots[i].item == recipe.elements[0].item)
+                //{
+                //    container.slots[i].itemCount -= recipe.elements[0].itemCount;
+                //}
 
+                //if (container.slots[i].item == recipe.elements[1].item)
+                //{
+                //    container.slots[i].itemCount -= recipe.elements[1].itemCount;
+                //}
+
+                if (container.slots[i].item == recipe.elements[j].item)
+                {
+                    container.slots[i].itemCount -= recipe.elements[j].itemCount;
+                }
+            }
+        }
+
+        GameManager.instance.inventoryContainer.AddItem(item, 1);
+    }
+
+
+    public void CraftAxe(/*Image img*/)
+    {
         if (isAxe)
         {
             if (GameManager.instance.hasAxe == false)
             {
                 toolsButtonShortKeyImage.color = Color.white;
                 GameManager.instance.hasAxe = true;
-
-                for (int i = 0; i < container.slots.Count; i++)
-                {
-                    if (container.slots[i].item == recipe.elements[0].item)
-                    {
-                        container.slots[i].itemCount -= recipe.elements[0].itemCount;
-                    }
-
-                    if (container.slots[i].item == recipe.elements[1].item)
-                    {
-                        container.slots[i].itemCount -= recipe.elements[1].itemCount;
-                    }
-                }
             }
             else
             {
                 craftBttn.interactable = false;
             }
         }
+        //if (isAxe)
+        //{
+        //    if (GameManager.instance.hasAxe == false)
+        //    {
+        //        toolsButtonShortKeyImage.color = Color.white;
+        //        GameManager.instance.hasAxe = true;
+
+        //        for (int i = 0; i < container.slots.Count; i++)
+        //        {
+        //            if (container.slots[i].item == recipe.elements[0].item)
+        //            {
+        //                container.slots[i].itemCount -= recipe.elements[0].itemCount;
+        //            }
+
+        //            if (container.slots[i].item == recipe.elements[1].item)
+        //            {
+        //                container.slots[i].itemCount -= recipe.elements[1].itemCount;
+        //            }
+
+        //            if (recipe.elements.Count > 2)
+        //            {
+        //                if (container.slots[i].item == recipe.elements[2].item)
+        //                {
+        //                    container.slots[i].itemCount -= recipe.elements[2].itemCount;
+        //                }
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        craftBttn.interactable = false;
+        //    }
+        //}
         //else if (isCampsite)
         //{
         //    if (GameManager.instance.hasCampsite == false)
@@ -303,7 +336,7 @@ public class CraftingItemSystem : MonoBehaviour
         //        craftBttn.interactable = false;
         //    }
         //}
-       
+
     }
 
     public void CraftCampsite()
@@ -346,6 +379,38 @@ public class CraftingItemSystem : MonoBehaviour
             {
                 toolsButtonShortKeyImage.color = Color.white;
                 GameManager.instance.hasLance = true;
+            }
+            else
+            {
+                craftBttn.interactable = false;
+            }
+        }
+    }
+
+    public void CraftFishingRod()
+    {
+        if (isFishingRod)
+        {
+            if (GameManager.instance.hasFishingRod == false)
+            {
+                toolsButtonShortKeyImage.color = Color.white;
+                GameManager.instance.hasFishingRod = true;
+            }
+            else
+            {
+                craftBttn.interactable = false;
+            }
+        }
+    }
+
+    public void CraftTorch()
+    {
+        if (isTorch)
+        {
+            if (GameManager.instance.hasTorch == false)
+            {
+                toolsButtonShortKeyImage.color = Color.white;
+                GameManager.instance.hasTorch = true;
             }
             else
             {

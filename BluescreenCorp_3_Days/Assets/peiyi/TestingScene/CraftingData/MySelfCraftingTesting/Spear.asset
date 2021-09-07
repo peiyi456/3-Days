@@ -13,16 +13,13 @@ MonoBehaviour:
   m_Name: Spear
   m_EditorClassIdentifier: 
   elements:
+  - item: {fileID: 11400000, guid: b827b883789c9f84e817baea35b49ab8, type: 2}
+    itemCount: 1
+    itemTypes: 1
   - item: {fileID: 11400000, guid: 71ac0577db6fb6c41841de4671e6ff41, type: 2}
-    count: 3
-    itemTypes: 0
-  - item: {fileID: 11400000, guid: 63f903534266fab47845640d3cfdf7b5, type: 2}
-    count: 3
-    itemTypes: 0
-  - item: {fileID: 11400000, guid: b285af44db52b6d4ba077308c536539c, type: 2}
-    count: 3
-    itemTypes: 0
+    itemCount: 1
+    itemTypes: 1
   output:
     item: {fileID: 11400000, guid: 552c090ac5a7a014b9c01aa3a5c1d601, type: 2}
-    count: 1
-    itemTypes: 0
+    itemCount: 1
+    itemTypes: 2

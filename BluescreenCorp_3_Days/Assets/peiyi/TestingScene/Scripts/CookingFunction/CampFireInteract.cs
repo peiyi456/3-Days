@@ -8,17 +8,24 @@ public class CampFireInteract : MonoBehaviour
 {
     public static CampFireInteract instace;
 
+    [Header("Audio clip")]
     public AudioClip doneCookSoundEffect;
 
+    [Header("Assign")]
+    [SerializeField] float staminaUsed;
     GameObject player;
     public GameObject PopupMessage;
     public float distance;
-    public KeyCode keycode;
-    public bool isPressButton;
     public GameObject CookingPanel;
     public GameObject ProgressBar;
-    public bool Cooking;
     public float spread;
+
+    [Header("Keycode")]
+    public KeyCode keycode;
+
+    [Header("Checking Used")]
+    public bool isPressButton;
+    public bool Cooking;
 
     public Item cookResult;
     public Item cookItem;
@@ -110,7 +117,7 @@ public class CampFireInteract : MonoBehaviour
         position.z = -36.34118f;
 
         ItemSpawnManager.instance.SpawnItem(position, cookResult, 1);
-
+        PlayerStatusManager.instance.PlayerStamina.value -= staminaUsed;
         GameManager.instance.soundEffect.PlayOneShot(doneCookSoundEffect);
 
     }

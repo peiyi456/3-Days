@@ -5,25 +5,32 @@ using UnityEngine.UI;
 
 public class TreeInteract : ToolHit
 {
+    [Header("Audio clip")]
     [SerializeField] AudioClip itemDropSound;
 
+    [Header("Details")]
+    [SerializeField] float staminaUsed;
     [SerializeField] bool isFruitTree;
     [SerializeField] GameObject[] fruitsOnTree;
     public bool ableToInteract;
-
     [SerializeField] bool isTree;
     [SerializeField] bool cuttable;
     //[SerializeField] GameObject pickUpDrop;
-    [SerializeField] float spread = 0.7f;
 
+    [Header("Drop item details")]
     [SerializeField] Item[] item;
+    [SerializeField] float spread = 0.7f;
     [SerializeField] int itemCountInOneDrop = 1;
     [SerializeField] int dropCount = 5;
     int oriDropCount;
+
+    [Header("Respawn time")]
     public float time;
+
+    [Header("Progress time (if have) and checking")]
+    [SerializeField] Slider Slider;
     bool doneProgress = true;
 
-    [SerializeField] Slider Slider;
 
     private void Start()
     {
@@ -104,6 +111,8 @@ public class TreeInteract : ToolHit
             {
                 Destroy(gameObject);
             }
+            Debug.Log("Dedd");
+            PlayerStatusManager.instance.PlayerStamina.value -= staminaUsed;
         }
     }
 

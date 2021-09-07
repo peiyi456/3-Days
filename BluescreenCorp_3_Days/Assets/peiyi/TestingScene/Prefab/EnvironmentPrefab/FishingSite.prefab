@@ -352,9 +352,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 3
+  staminaUsed: 10
+  player: {fileID: 0}
   ProgressBar: {fileID: 0}
   FishingPanel: {fileID: 8868367815379437299}
   Fish: {fileID: 11400000, guid: 5909bf42fe023e9459dd67e15e4401bd, type: 2}
+  sprite: {fileID: 0}
   FishingKey: 101
 --- !u!1 &3826500043725763212
 GameObject:

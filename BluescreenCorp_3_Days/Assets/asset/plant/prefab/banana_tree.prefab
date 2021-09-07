@@ -376,15 +376,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDropSound: {fileID: 8300000, guid: e835621a99dc4cc4884777cae8ac385f, type: 3}
+  staminaUsed: 5
   isFruitTree: 1
   fruitsOnTree:
   - {fileID: 5140905766775696295}
   ableToInteract: 0
   isTree: 0
   cuttable: 0
-  spread: 5
   item:
   - {fileID: 11400000, guid: b285af44db52b6d4ba077308c536539c, type: 2}
+  spread: 5
   itemCountInOneDrop: 5
   dropCount: 1
   time: 172800
