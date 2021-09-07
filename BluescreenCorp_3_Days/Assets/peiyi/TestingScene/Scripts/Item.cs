@@ -25,4 +25,7 @@ public class Item : ScriptableObject
     public float WaterValue;
     public float HPValue;
     public float TemperatureValue;
+
+    [Header("Audio clip when use")]
+    public AudioClip soundEffect;
 }

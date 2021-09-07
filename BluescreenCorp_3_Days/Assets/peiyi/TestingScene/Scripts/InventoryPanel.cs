@@ -9,12 +9,14 @@ public class InventoryPanel : MonoBehaviour
     public static InventoryPanel instance;
 
     [SerializeField] ItemContainer inventory;
-    [SerializeField] List<InventoryButtons> buttons;
+    public List<InventoryButtons> buttons;
 
+    public bool[] selected;
     public bool IsSelectedButton;
     public int SelectedButtonNo;
     public Button ThrowButton;
     public Button UseButton;
+    public bool isPressUse;
     //public bool IsThrow;
 
     private void Awake()
@@ -24,8 +26,11 @@ public class InventoryPanel : MonoBehaviour
 
     private void Start()
     {
+        selected = new bool[GameManager.instance.inventoryContainer.slots.Count];
+        isPressUse = false;
+        inventory = GameManager.instance.inventoryContainer;
         GameManager.instance.inventoryContainer.ClearContainer();
-        SetIndex();
+        //SetIndex();
         Show();
     }
 
@@ -40,6 +45,15 @@ public class InventoryPanel : MonoBehaviour
     {
         //SetIndex();
         Show();
+
+        if(isPressUse)
+        {
+            UseButton.interactable = !isPressUse;
+        }
+        else
+        {
+            UseButton.interactable = !isPressUse;
+        }
     }
 
     //private void OnEnable()
@@ -47,17 +61,39 @@ public class InventoryPanel : MonoBehaviour
     //    Show();
     //}
 
-    public void ShowButtons(bool showButton)
+    public void ShowButtons(bool showButton, ItemSlot slots)
     {
-        if(showButton)
+        if (slots != null)
         {
-            ThrowButton.gameObject.SetActive(true);
-            //IsHideDetails = false;
-        }
+            if (showButton)
+            {
+                ThrowButton.gameObject.SetActive(true);
+                //IsHideDetails = false;
 
+                Debug.Log(slots.item.itemTypes);
+
+                if (slots.item.itemTypes == ItemTypes.Food)
+                {
+                    UseButton.gameObject.SetActive(true);
+                    Debug.Log("DDD");
+                }
+
+                //else
+                //{
+                //    UseButton.gameObject.SetActive(false);
+                //}
+            }
+            else
+            {
+                ThrowButton.gameObject.SetActive(false);
+                UseButton.gameObject.SetActive(false);
+                //IsHideDetails = true;
+            }
+        }
         else
         {
             ThrowButton.gameObject.SetActive(false);
+            UseButton.gameObject.SetActive(false);
             //IsHideDetails = true;
         }
     }
@@ -66,6 +102,7 @@ public class InventoryPanel : MonoBehaviour
     {
         inventory.slots[SelectedButtonNo].Clear();
         ThrowButton.gameObject.SetActive(false);
+        UseButton.gameObject.SetActive(false);
         buttons[SelectedButtonNo].Clean();
 
         buttons[SelectedButtonNo].itemImg.gameObject.SetActive(false);
@@ -77,11 +114,46 @@ public class InventoryPanel : MonoBehaviour
         //inventory.slots
     }
 
+    public void UseItem()
+    {
+        StartCoroutine(eatingCDTime(SelectedButtonNo, 2.0f));
+    }
+
+    IEnumerator eatingCDTime(int buttonNo, float time)
+    {
+        if (isPressUse == false)
+        {
+            inventory.RemoveItem(inventory.slots[buttonNo].item, 1);
+            GameManager.instance.soundEffect.PlayOneShot(inventory.slots[buttonNo].item.soundEffect);
+            isPressUse = true;
+            PlayerStatusManager.instance.PlayerFood.value += inventory.slots[buttonNo].item.FoodValue;
+            PlayerStatusManager.instance.PlayerWater.value += inventory.slots[buttonNo].item.WaterValue;
+            PlayerStatusManager.instance.PlayerHP.value += inventory.slots[buttonNo].item.HPValue;
+        }
+
+        if(inventory.slots[buttonNo].itemCount <= 0)
+        {
+            ThrowButton.gameObject.SetActive(false);
+            UseButton.gameObject.SetActive(false);
+
+            buttons[SelectedButtonNo].Clean();
+
+            buttons[SelectedButtonNo].itemImg.gameObject.SetActive(false);
+            buttons[SelectedButtonNo].itemName.gameObject.SetActive(false);
+            buttons[SelectedButtonNo].itemFunction.gameObject.SetActive(false);
+            buttons[SelectedButtonNo].itemHint.gameObject.SetActive(false);
+        }
+
+        yield return new WaitForSeconds(time);
+        isPressUse = false;
+    }
+
     private void SetIndex()
     {
         for(int i = 0; i < inventory.slots.Count; i++)
         {
             buttons[i].SetIndex(i);
+            Debug.Log(buttons[i].gameObject.name + i);
         }
     }
 
@@ -112,7 +184,7 @@ public class InventoryPanel : MonoBehaviour
         //buttons[i].itemName.text = "";
         //buttons[i].itemFunction.text = "";
         //buttons[i].itemHint.text = "";
-        buttons[i].selected = false;
+        //buttons[i].selected = false;
     }
     //private void ClearContainer()
     //{

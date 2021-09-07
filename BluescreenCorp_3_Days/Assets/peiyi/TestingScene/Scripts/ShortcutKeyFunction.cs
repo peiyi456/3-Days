@@ -8,6 +8,7 @@ public class ShortcutKeyFunction : MonoBehaviour, IPointerClickHandler
 {
     //[SerializeField] KeyCode keyCode;
     //[SerializeField] InventoryButton buttons;
+
     ItemContainer inventory;
 
     [Header("Inventory Button No")]
@@ -43,7 +44,14 @@ public class ShortcutKeyFunction : MonoBehaviour, IPointerClickHandler
             StartCoroutine(eatingCDTime(ButtonNo, 2.0f));
         }
         
-        
+        if(press)
+        {
+            InventoryPanel.instance.buttons[ButtonNo].GetComponent<Button>().interactable = !press;
+        }
+        else
+        {
+            InventoryPanel.instance.buttons[ButtonNo].GetComponent<Button>().interactable = !press;
+        }
     }
 
     public void OnPointerClick(PointerEventData eventDate)
@@ -60,6 +68,8 @@ public class ShortcutKeyFunction : MonoBehaviour, IPointerClickHandler
         if (press == false)
         {
             inventory.RemoveItem(inventory.slots[buttonNo].item, 1);
+            GameManager.instance.soundEffect.PlayOneShot(inventory.slots[buttonNo].item.soundEffect);
+            
             press = true;
             PlayerStatusManager.instance.PlayerFood.value += inventory.slots[buttonNo].item.FoodValue;
             PlayerStatusManager.instance.PlayerWater.value += inventory.slots[buttonNo].item.WaterValue;

@@ -19,7 +19,7 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
     public TextMeshProUGUI itemName;
     public TextMeshProUGUI itemFunction;
     public TextMeshProUGUI itemHint;
-    public bool selected = false;
+    public bool thisButton;
     public bool IsThrow = false;
 
     [SerializeField] Button bttn;
@@ -28,22 +28,23 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
 
     private void Start()
     {
+        //selected = false;
         bttn = GetComponent<Button>();
         inventory = GameManager.instance.inventoryContainer;
     }
 
-    //private void Update()
-    //{
-    //    if(inventory.slots[myIndex] == null)
-    //    {
-    //        HideDetail(myIndex);
-    //        selected = false;
-    //    }
-    //}
+    private void Update()
+    {
+        //if(selected)
+        //{
+        //    if()
+        //}
+    }
 
     public void SetIndex(int index)
     {
         myIndex = index;
+        //thisButton = selected[index];
     }
 
     public void Set(ItemSlot slot)
@@ -82,12 +83,27 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
             if (isShortKey)
             {
                 GameManager.instance.itemDragAndDropController.OnClickShortKey(inventory.slots[myIndex]);
+                HideDetail(InventoryPanel.instance.SelectedButtonNo);
+                InventoryPanel.instance.selected[InventoryPanel.instance.SelectedButtonNo] = false;
+                InventoryPanel.instance.ShowButtons(false, inventory.slots[InventoryPanel.instance.SelectedButtonNo]) ;
+
             }
             else
             {
                 GameManager.instance.itemDragAndDropController.OnClick(inventory.slots[myIndex]);
+                HideDetail(InventoryPanel.instance.SelectedButtonNo);
+                InventoryPanel.instance.selected[InventoryPanel.instance.SelectedButtonNo] = false;
+                InventoryPanel.instance.ShowButtons(false, inventory.slots[InventoryPanel.instance.SelectedButtonNo]);
             }
         }
+
+        //else if(eventData.button == PointerEventData.InputButton.Left)
+        //{
+        //    if (!isShortKey)
+        //    {
+        //        CheckingPress();
+        //    }
+        //}
 
             InventoryPanel.instance.Show();
     }
@@ -95,48 +111,90 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
 
     public void ButtonClicked(int buttonNo)
     {
-        if(selected == false)
+        if(InventoryPanel.instance.selected[buttonNo] == false)
         {
+                InventoryPanel.instance.SelectedButtonNo = buttonNo;
             if (inventory.slots[buttonNo].item != null)
             {
-                //itemImg.gameObject.SetActive(true);
-                //itemName.gameObject.SetActive(true);
-                //itemImg.sprite = inventory.slots[buttonNo].item.icon;
-                //itemName.text = inventory.slots[buttonNo].item.Name;
-                //selected = true;
-                InventoryPanel.instance.SelectedButtonNo = buttonNo;
+                //InventoryPanel.instance.SelectedButtonNo = buttonNo;
                 ShowDetail(buttonNo);
-                //InventoryPanel.instance.ShowButtons(true);
-                //InventoryPanel.instance.IsSelectedButton = selected;
+                //ShowDetail(buttonNo);
             }
 
             else
             {
-                //itemImg.sprite = null;
-                //itemName.text = "";
-                //itemImg.gameObject.SetActive(false);
-                //itemName.gameObject.SetActive(false);
-                //selected = false;
                 HideDetail(buttonNo);
-                //InventoryPanel.instance.ShowButtons(false);
             }
         }
 
         else
         {
-            //itemImg.sprite = null;
-            //itemName.text = "";
-            //itemImg.gameObject.SetActive(false);
-            //itemName.gameObject.SetActive(false);
-            //selected = false;
+            InventoryPanel.instance.SelectedButtonNo = -1;
+
             HideDetail(buttonNo);
+            //Debug.Log("11111111");
         }
+
+        //if(buttonNo != InventoryPanel.instance.SelectedButtonNo)
+        //{
+        //    InventoryPanel.instance.ShowButtons(false, inventory.slots[InventoryPanel.instance.SelectedButtonNo]);
+        //}
     }
 
     //void ThrowItem(int no)
     //{
 
     //}
+
+    public void CheckingPress(int no)
+    {
+        //selected[no] = !selected[no];
+        //for(int i = 0; i < selected.Length; i++)
+        //{
+        //    selected[i] = false;
+        //}
+        ////selected[no] = true;
+
+        ////thisButton = !thisButton;
+        //selected[no] = !selected[no];
+
+        if (InventoryPanel.instance.selected[no])
+        {
+
+            //if (inventory.slots[no].item != null)
+            //{
+            //    Debug.Log("Not null");
+            //    //ShowDetail(InventoryPanel.instance.SelectedButtonNo);
+            //    InventoryPanel.instance.ShowButtons(false, inventory.slots[no]);
+            //}
+            //else
+            //{
+            //    //HideDetail(InventoryPanel.instance.SelectedButtonNo);
+            //    Debug.Log("Null");
+            //    InventoryPanel.instance.ShowButtons(false, inventory.slots[no]);
+            //}
+
+            InventoryPanel.instance.selected[no] = false;
+            InventoryPanel.instance.ShowButtons(InventoryPanel.instance.selected[no], inventory.slots[no]);
+        }
+        else
+        {
+            for (int i = 0; i < InventoryPanel.instance.selected.Length; i++)
+            {
+                InventoryPanel.instance.selected[i] = false;
+            }
+            InventoryPanel.instance.selected[no] = true;
+            //HideDetail(InventoryPanel.instance.SelectedButtonNo);
+            if (inventory.slots[no].item != null)
+            {
+                InventoryPanel.instance.ShowButtons(InventoryPanel.instance.selected[no], inventory.slots[no]);
+            }
+            else
+            {
+                InventoryPanel.instance.ShowButtons(false, inventory.slots[no]);
+            }
+        }
+    }
 
     void ShowDetail(int no)
     {
@@ -148,10 +206,7 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
         itemName.text = inventory.slots[no].item.Name;
         itemFunction.text = inventory.slots[no].item.Function;
         itemHint.text = inventory.slots[no].item.Hint;
-        selected = true;
-        InventoryPanel.instance.ShowButtons(selected);
-
-        //InventoryPanel.instance.IsHideDetails = false;
+        //Debug.Log("selec: " + selected[no]);
     }
 
     public void HideDetail(int no)
@@ -164,8 +219,5 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
         itemName.gameObject.SetActive(false);
         itemFunction.gameObject.SetActive(false);
         itemHint.gameObject.SetActive(false);
-        selected = false;
-        //InventoryPanel.instance.ShowButtons(false);
-        //InventoryPanel.instance.IsHideDetails = true;
     }
 }
