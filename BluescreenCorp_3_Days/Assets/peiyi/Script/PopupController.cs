@@ -177,7 +177,9 @@ public class PopupController : MonoBehaviour
 
     public void OnClickBachHome()
     {
-        SceneManager.LoadScene(0);
+        MainPageButtonController.isBackMenu = true;
+        LoadingPageScripts.loadSceneNumber = 0;
+        SceneManager.LoadScene(2);
         Time.timeScale = 1;
     }
 
