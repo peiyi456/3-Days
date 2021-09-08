@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class Wandering : MonoBehaviour
 {
+    Animator animator;
+
     NavMeshAgent navMesh;
     public Transform WanderingArea;
     Vector3 Destination;
@@ -21,6 +23,7 @@ public class Wandering : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         player = GameManager.instance.player;
         navMesh = GetComponent<NavMeshAgent>();
         navMesh.updateRotation = false;
@@ -99,17 +102,20 @@ public class Wandering : MonoBehaviour
 
     IEnumerator WanderingFunc()
     {
-        
-            float dist = Vector3.Distance(this.transform.position, Destination);
 
-            while (dist >= 0.1f)
-            {
-                dist = Vector3.Distance(this.transform.position, Destination);
-                yield return null;
-            }
-            yield return new WaitForSeconds(3f);
-            isArrive = true;
-        
+        float dist = Vector3.Distance(this.transform.position, Destination);
+
+        while (dist >= 0.1f)
+        {
+            dist = Vector3.Distance(this.transform.position, Destination);
+            yield return null;
+        }
+
+        animator.SetBool("IsIdle", true);
+        yield return new WaitForSeconds(3f);
+        isArrive = true;
+        animator.SetBool("IsIdle", false);
+
     }
 
 
