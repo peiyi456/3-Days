@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CraftingItemSystem : MonoBehaviour
 {
     [Header("For shortkey tools used")]
-    [SerializeField] bool isAxe, isCampsite, isKnife, isSpear, isFishingRod, isTorch;
+    [SerializeField] bool isAxe, isCampsite, isKnife, isLance, isFishingRod, isTorch;
 
     [SerializeField] bool craft = false;
     [SerializeField] bool hasElement1, hasElement2, hasElement3;
@@ -18,14 +18,89 @@ public class CraftingItemSystem : MonoBehaviour
 
     [SerializeField] bool selected = false;
 
-    [SerializeField] Image/*[]*/ toolsButtonShortKeyImage;
+    //[SerializeField] Image/*[]*/ toolsButtonShortKeyImage;
 
     private void Update()
     {
+
+        checkingButtonInteractable();
         CanCraft(container);
     }
 
+    void checkingButtonInteractable()
+    {
+        if(isAxe)
+        {
+            if(GameManager.instance.hasAxe)
+            {
+                craftBttn.interactable = false;
+            }
+            else
+            {
+                craftBttn.interactable = true;
+            }
+        }
 
+        if (isCampsite)
+        {
+            if (GameManager.instance.hasCampsite)
+            {
+                craftBttn.interactable = false;
+            }
+            else
+            {
+                craftBttn.interactable = true;
+            }
+        }
+
+        if (isTorch)
+        {
+            if (GameManager.instance.hasTorch)
+            {
+                craftBttn.interactable = false;
+            }
+            else
+            {
+                craftBttn.interactable = true;
+            }
+        }
+
+        if (isFishingRod)
+        {
+            if (GameManager.instance.hasFishingRod)
+            {
+                craftBttn.interactable = false;
+            }
+            else
+            {
+                craftBttn.interactable = true;
+            }
+        }
+
+        if (isKnife)
+        {
+            if (GameManager.instance.hasKnife)
+            {
+                craftBttn.interactable = false;
+            }
+            else
+            {
+                craftBttn.interactable = true;
+            }
+        }
+
+        if (isLance)
+        {
+            if (GameManager.instance.hasLance)
+            {
+                craftBttn.interactable = false;
+            }
+            else
+            {
+                craftBttn.interactable = true;
+            }
+        }
+    }
 
     public void CanCraft(ItemContainer inventory)
     {
@@ -193,6 +268,15 @@ public class CraftingItemSystem : MonoBehaviour
                 }
             }
 
+            else
+            {
+                element2.sprite = null;
+                element2.gameObject.SetActive(false);
+
+                element3.sprite = null;
+                element3.gameObject.SetActive(false);
+            }
+
             if (recipe.elements.Count > 2)
             {
                 element3.sprite = recipe.elements[2].item.icon;
@@ -255,56 +339,33 @@ public class CraftingItemSystem : MonoBehaviour
 
     public void CraftAxe(/*Image img*/)
     {
-        if (isAxe)
-        {
-            if (GameManager.instance.hasAxe == false)
-            {
-                toolsButtonShortKeyImage.color = Color.white;
-                GameManager.instance.hasAxe = true;
-            }
-            else
-            {
-                craftBttn.interactable = false;
-            }
-        }
+        GameManager.instance.hasAxe = true;
+
         //if (isAxe)
         //{
         //    if (GameManager.instance.hasAxe == false)
         //    {
-        //        toolsButtonShortKeyImage.color = Color.white;
+        //        //toolsButtonShortKeyImage.color = Color.white;
         //        GameManager.instance.hasAxe = true;
-
-        //        for (int i = 0; i < container.slots.Count; i++)
-        //        {
-        //            if (container.slots[i].item == recipe.elements[0].item)
-        //            {
-        //                container.slots[i].itemCount -= recipe.elements[0].itemCount;
-        //            }
-
-        //            if (container.slots[i].item == recipe.elements[1].item)
-        //            {
-        //                container.slots[i].itemCount -= recipe.elements[1].itemCount;
-        //            }
-
-        //            if (recipe.elements.Count > 2)
-        //            {
-        //                if (container.slots[i].item == recipe.elements[2].item)
-        //                {
-        //                    container.slots[i].itemCount -= recipe.elements[2].itemCount;
-        //                }
-        //            }
-        //        }
         //    }
         //    else
         //    {
         //        craftBttn.interactable = false;
         //    }
         //}
-        //else if (isCampsite)
+
+
+
+    }
+
+    public void CraftCampsite()
+    {
+        GameManager.instance.hasCampsite = true;
+        //if (isCampsite)
         //{
         //    if (GameManager.instance.hasCampsite == false)
         //    {
-        //        toolsButtonShortKeyImage[1].color = Color.white;
+        //        //toolsButtonShortKeyImage.color = Color.white;
         //        GameManager.instance.hasCampsite = true;
         //    }
         //    else
@@ -312,11 +373,16 @@ public class CraftingItemSystem : MonoBehaviour
         //        craftBttn.interactable = false;
         //    }
         //}
-        //else if (isKnife)
+    }
+
+    public void CraftKnife()
+    {
+        GameManager.instance.hasKnife = true;
+        //if (isKnife)
         //{
         //    if (GameManager.instance.hasKnife == false)
         //    {
-        //        toolsButtonShortKeyImage[2].color = Color.white;
+        //        //toolsButtonShortKeyImage.color = Color.white;
         //        GameManager.instance.hasKnife = true;
         //    }
         //    else
@@ -324,98 +390,56 @@ public class CraftingItemSystem : MonoBehaviour
         //        craftBttn.interactable = false;
         //    }
         //}
-        //else if (isSpear)
+    }
+
+    public void CraftSpear()
+    {
+        GameManager.instance.hasLance = true;
+        //if (isLance)
         //{
-        //    if (GameManager.instance.hasSpear == false)
+        //    if (GameManager.instance.hasLance == false)
         //    {
-        //        toolsButtonShortKeyImage[3].color = Color.white;
-        //        GameManager.instance.hasSpear = true;
+        //        //toolsButtonShortKeyImage.color = Color.white;
+        //        GameManager.instance.hasLance = true;
         //    }
         //    else
         //    {
         //        craftBttn.interactable = false;
         //    }
         //}
-
-    }
-
-    public void CraftCampsite()
-    {
-        if (isCampsite)
-        {
-            if (GameManager.instance.hasCampsite == false)
-            {
-                toolsButtonShortKeyImage.color = Color.white;
-                GameManager.instance.hasCampsite = true;
-            }
-            else
-            {
-                craftBttn.interactable = false;
-            }
-        }
-    }
-
-    public void CraftKnife()
-    {
-        if (isKnife)
-        {
-            if (GameManager.instance.hasKnife == false)
-            {
-                toolsButtonShortKeyImage.color = Color.white;
-                GameManager.instance.hasKnife = true;
-            }
-            else
-            {
-                craftBttn.interactable = false;
-            }
-        }
-    }
-
-    public void CraftSpear()
-    {
-        if (isSpear)
-        {
-            if (GameManager.instance.hasLance == false)
-            {
-                toolsButtonShortKeyImage.color = Color.white;
-                GameManager.instance.hasLance = true;
-            }
-            else
-            {
-                craftBttn.interactable = false;
-            }
-        }
     }
 
     public void CraftFishingRod()
     {
-        if (isFishingRod)
-        {
-            if (GameManager.instance.hasFishingRod == false)
-            {
-                toolsButtonShortKeyImage.color = Color.white;
-                GameManager.instance.hasFishingRod = true;
-            }
-            else
-            {
-                craftBttn.interactable = false;
-            }
-        }
+        GameManager.instance.hasFishingRod = true;
+        //if (isFishingRod)
+        //{
+        //    if (GameManager.instance.hasFishingRod == false)
+        //    {
+        //        //toolsButtonShortKeyImage.color = Color.white;
+        //        GameManager.instance.hasFishingRod = true;
+        //    }
+        //    else
+        //    {
+        //        craftBttn.interactable = false;
+        //    }
+        //}
     }
 
     public void CraftTorch()
     {
-        if (isTorch)
-        {
-            if (GameManager.instance.hasTorch == false)
-            {
-                toolsButtonShortKeyImage.color = Color.white;
-                GameManager.instance.hasTorch = true;
-            }
-            else
-            {
-                craftBttn.interactable = false;
-            }
-        }
+        GameManager.instance.hasTorch = true;
+        //if (isTorch)
+        //{
+        //    if (GameManager.instance.hasTorch == false)
+        //    {
+        //        //toolsButtonShortKeyImage.color = Color.white;
+        //        GameManager.instance.hasTorch = true;
+        //    }
+        //    else
+        //    {
+        //        craftBttn.interactable = false;
+        //    }
+        //}
     }
 }

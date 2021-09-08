@@ -136,6 +136,7 @@ public class PlayerStatusManager : MonoBehaviour
             LoseCondition();
         }
 
+        
         //else
         //{
         //    startToCountDown = false;

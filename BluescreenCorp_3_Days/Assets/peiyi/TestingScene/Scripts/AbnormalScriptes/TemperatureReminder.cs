@@ -22,24 +22,37 @@ public class TemperatureReminder : MonoBehaviour
     {
         if (isColdReminder)
         {
-            if (TemperatureManager.instance.temperatureValue <= remindTemperature)
+            if (TorchFunction.isUse == true || CampFireInteract.isNearCampFire == true)
             {
-                if (theObject == null)
+                Debug.Log("Run here");
+                if (theObject != null)
                 {
-                    theObject = Instantiate(temperatureReminder, this.transform);
-                    theObject.name = abnormalName;
-                    TemperatureManager.instance.isCold = true;
-                    //theObject.transform.parent = this.transform;
-                    //outReminder = true;
+                    Destroy(theObject.gameObject);
+                    TemperatureManager.instance.isCold = false;
                 }
             }
 
             else
             {
-                if (theObject != null)
+                if (TemperatureManager.instance.temperatureValue <= remindTemperature)
                 {
-                    Destroy(theObject.gameObject);
-                    TemperatureManager.instance.isCold = false;
+                    if (theObject == null)
+                    {
+                        theObject = Instantiate(temperatureReminder, this.transform);
+                        theObject.name = abnormalName;
+                        TemperatureManager.instance.isCold = true;
+                        //theObject.transform.parent = this.transform;
+                        //outReminder = true;
+                    }
+                }
+
+                else
+                {
+                    if (theObject != null)
+                    {
+                        Destroy(theObject.gameObject);
+                        TemperatureManager.instance.isCold = false;
+                    }
                 }
             }
         }

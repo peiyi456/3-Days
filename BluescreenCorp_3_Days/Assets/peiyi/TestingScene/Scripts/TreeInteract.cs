@@ -43,14 +43,15 @@ public class TreeInteract : ToolHit
 
     private void Update()
     {
-        if(Vector3.Distance(this.transform.position, GameManager.instance.player.transform.position) < 4f)
+
+        if (ableToInteract)
         {
-            particleEffect.Play();
+            particleEffect.gameObject.SetActive(true);
         }
 
         else
         {
-            particleEffect.Stop();
+            particleEffect.gameObject.SetActive(false);
         }
     }
 

@@ -70,15 +70,16 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 7509860518518112746, guid: 7b717455af6e3cc4eab46e93170d2ba5,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.43, y: 7.7}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1303363716958473606
@@ -646,9 +647,10 @@ GameObject:
   - component: {fileID: 1785283678716579510}
   - component: {fileID: 3014931529015839459}
   - component: {fileID: 720962411194427719}
+  - component: {fileID: 1355900514342221226}
   m_Layer: 0
   m_Name: CampFire
-  m_TagString: Untagged
+  m_TagString: CampFire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -746,6 +748,22 @@ MonoBehaviour:
   Cooking: 0
   cookResult: {fileID: 0}
   cookItem: {fileID: 0}
+--- !u!58 &1355900514342221226
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2954565735209305468}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 3.83}
+  serializedVersion: 2
+  m_Radius: 7
 --- !u!1 &3162189260602510627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2336,7 +2354,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8936688069609977965}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 4.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1785283678716579510}

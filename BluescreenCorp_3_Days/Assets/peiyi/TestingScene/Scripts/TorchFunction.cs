@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class TorchFunction : MonoBehaviour
 {
+
     [SerializeField] GameObject Torch;
     [SerializeField] bool isNight;
-    [SerializeField] bool isUse;
+    public static bool isUse;
     [SerializeField] bool canDestroy;
+    [SerializeField] KeyCode key;
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +21,40 @@ public class TorchFunction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(DayTimeManager.instance.hours > 19 )
+        if(DayTimeManager.instance.hours > 18)
+        {
+            isNight = true;
+        }
+
+        else if (DayTimeManager.instance.hours >= 0 && DayTimeManager.instance.hours < 7 )
+        {
+            isNight = true;
+        }
+
+        else
+        {
+            isNight = false;
+
+            if(canDestroy == true)
+            {
+                GameManager.instance.hasTorch = false;
+                Torch.SetActive(false);
+                canDestroy = false;
+            }
+        }
+
+        if(isNight)
+        {
+            if(Input.GetKeyDown(key))
+            {
+                if (GameManager.instance.hasTorch)
+                {
+                    isUse = !isUse;
+                    Torch.SetActive(isUse);
+                    canDestroy = true;
+                }
+            }
+        }
+
     }
 }

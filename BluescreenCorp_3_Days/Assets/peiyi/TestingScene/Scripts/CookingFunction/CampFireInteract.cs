@@ -26,6 +26,7 @@ public class CampFireInteract : MonoBehaviour
     [Header("Checking Used")]
     public bool isPressButton;
     public bool Cooking;
+    public static bool isNearCampFire;
 
     public Item cookResult;
     public Item cookItem;
@@ -47,16 +48,6 @@ public class CampFireInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(isPressButton)
-        //{
-        //    Time.timeScale = 0;
-        //}
-
-        //else
-        //{
-        //    Time.timeScale = 1;
-        //}UI
-        //itemSlot = GameManager.instance.inventoryContainer.slots.Find(x => x.item == cookItem);
         if (Vector2.Distance(this.gameObject.transform.position, player.transform.position) < distance)
         {
             if (Cooking == false)
@@ -74,7 +65,7 @@ public class CampFireInteract : MonoBehaviour
             else
             {
                 //Cooking = false;
-                PopupMessage.SetActive(false) ;
+                PopupMessage.SetActive(false);
             }
 
         }
@@ -120,5 +111,23 @@ public class CampFireInteract : MonoBehaviour
         PlayerStatusManager.instance.PlayerStamina.value -= staminaUsed;
         SoundManager.instance.soundEffect.PlayOneShot(doneCookSoundEffect);
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            isNearCampFire = true;
+            
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            isNearCampFire = false;
+            
+        }
     }
 }

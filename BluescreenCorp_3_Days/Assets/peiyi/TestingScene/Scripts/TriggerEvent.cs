@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TriggerEvent : MonoBehaviour
 {
@@ -36,16 +37,6 @@ public class TriggerEvent : MonoBehaviour
                         GameManager.instance.hasCampsite = false;
                         camp1 = true;
                     }
-
-                    //else if(camp2 == false)
-                    //{
-                    //    doAction = false;
-                    //    Debug.Log("Put campsite at " + player.transform.position);
-                    //    spawnPrefab.GetComponent<SpriteRenderer>().sprite = campsiteSprite;
-                    //    GameObject campsite = Instantiate(spawnPrefab, new Vector2(player.transform.position.x, player.transform.position.y - 0.5f), Quaternion.identity);
-                    //    GameManager.instance.hasCampsite = false;
-                    //    camp2 = true;
-                    //}
                 }
             }
         }
@@ -55,21 +46,26 @@ public class TriggerEvent : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            //if(interactToTrigger)
-            //{
-                //Debug.Log("11");
-                //if (GameManager.instance.isPutCamp1 == false)
-                //{
-                    doAction = true;
-                //}
-            //}
-
-           // else
-            //{
-                //transfer to other position
-            //}
+            //CampFireInteract.isNearCampFire = true;
+            doAction = true;
+            if (camp1 == false)
+            {
+                GameManager.instance.TextReminder.GetComponentInChildren<TextMeshProUGUI>().text = "It seems like it is able to put a campsite here. You can craft a campsite and press 'P' to put it here.";
+                GameManager.instance.TextReminder.SetActive(true);
+            }
         }
     }
 
-
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            //CampFireInteract.isNearCampFire = false;
+            //if (camp1 == false)
+            //{
+            GameManager.instance.TextReminder.GetComponentInChildren<TextMeshProUGUI>().text = "It seems like it is able to put a campsite here. You can craft a campsite and press 'P' to put it here.";
+                GameManager.instance.TextReminder.SetActive(false);
+            //}
+        }
+    }
 }

@@ -15,7 +15,8 @@ public class CampsiteInteract : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        PopupMessage.GetComponentInChildren<TextMeshProUGUI>().text = "Do you want to sleep? \nPress '" + sleepKey + "' to sleep.";
+        //PopupMessage.GetComponentInChildren<TextMeshProUGUI>().text = "Do you want to sleep? \nPress '" + sleepKey + "' to sleep.";
+        GameManager.instance.TextReminder.GetComponentInChildren<TextMeshProUGUI>().text = "Do you want to sleep? Press '" + sleepKey + "' to sleep.";
     }
 
     // Update is called once per frame
@@ -27,7 +28,8 @@ public class CampsiteInteract : MonoBehaviour
             {
                 if (DayTimeManager.instance.sleepStatus == PlayerSleepingStatus.Wake)
                 {
-                    PopupMessage.SetActive(true);
+                    //PopupMessage.SetActive(true);
+                    GameManager.instance.TextReminder.SetActive(true);
                     if (Input.GetKeyDown(sleepKey))
                     {
                         Debug.Log("Sleep");
@@ -38,7 +40,7 @@ public class CampsiteInteract : MonoBehaviour
         }
         else
         {
-            PopupMessage.SetActive(false);
+            GameManager.instance.TextReminder.SetActive(false);
         }
     }
 }

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4268109219757390322}
   - component: {fileID: 1748129917130691213}
-  - component: {fileID: 6916298325735787366}
   m_Layer: 8
   m_Name: icon
   m_TagString: Tree
@@ -82,34 +81,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &6916298325735787366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 97228256703980772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aba94a02d4059c2408afbe7fc22b2389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemDropSound: {fileID: 0}
-  staminaUsed: 0
-  isFruitTree: 0
-  fruitsOnTree: []
-  ableToInteract: 0
-  cuttable: 1
-  iscuttableTree: 0
-  item:
-  - {fileID: 11400000, guid: 63f903534266fab47845640d3cfdf7b5, type: 2}
-  - {fileID: 11400000, guid: 771af6fc0066a96499a4fd3f3e65be83, type: 2}
-  spread: 5
-  itemCountInOneDrop: 1
-  dropCount: 5
-  time: 0
-  Slider: {fileID: 0}
-  particleEffect: {fileID: 0}
 --- !u!1 &1745216045819317029
 GameObject:
   m_ObjectHideFlags: 0
@@ -5188,8 +5159,9 @@ MonoBehaviour:
   iscuttableTree: 1
   item:
   - {fileID: 11400000, guid: 63f903534266fab47845640d3cfdf7b5, type: 2}
+  - {fileID: 11400000, guid: 946efc34c16752c44ba3bd6ec90c067f, type: 2}
   spread: 5
-  itemCountInOneDrop: 1
+  itemCountInOneDrop: 2
   dropCount: 5
   time: 0
   Slider: {fileID: 0}
