@@ -29,6 +29,8 @@ public class WinPageAnimation : MonoBehaviour
         {
             ObjectivesTextOfTheWinPage[i].text = ObjectivesTextOfTheMap[i].text;
         }
+
+        PlayerPrefs.SetInt("UNLOCK_MAP", 1);
     }
 
     // Update is called once per frame
@@ -52,6 +54,7 @@ public class WinPageAnimation : MonoBehaviour
             var sequence = DOTween.Sequence();
             sequence.Append(ObjectivesTextOfTheWinPage[0].DOColor(Color.yellow, colorSpeed));
             objectivesDone++;
+
         }
     }
 

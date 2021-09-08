@@ -90,6 +90,6 @@ public class CharacterController2D : MonoBehaviour
 
     public void PlayWalkSound()
     {
-        GameManager.instance.soundEffect.PlayOneShot(walkSound);
+        SoundManager.instance.soundEffect.PlayOneShot(walkSound);
     }
 }

@@ -116,7 +116,7 @@ public class CookingButtonFunction : MonoBehaviour
 
         ItemSpawnManager.instance.SpawnItem(position, cookResult, 1);
         
-        GameManager.instance.soundEffect.PlayOneShot(CampFireInteract.instace.doneCookSoundEffect);
+        SoundManager.instance.soundEffect.PlayOneShot(CampFireInteract.instace.doneCookSoundEffect);
 
     }
 }

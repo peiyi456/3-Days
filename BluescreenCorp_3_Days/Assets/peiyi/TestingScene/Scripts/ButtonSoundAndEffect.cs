@@ -23,7 +23,11 @@ public class ButtonSoundAndEffect : MonoBehaviour
 
     public void OnMouseEnterFunc(Button buttons)
     {
-        GameManager.instance.soundEffect.PlayOneShot(mouseEnterSound);
+        if (buttons.interactable)
+        {
+            SoundManager.instance.soundEffect.PlayOneShot(mouseEnterSound);
+        }
+
         if (buttons.GetComponentInChildren<TextMeshProUGUI>() != null)
         {
             buttons.GetComponentInChildren<TextMeshProUGUI>().color = Color.yellow;
@@ -41,6 +45,6 @@ public class ButtonSoundAndEffect : MonoBehaviour
 
     public void OnMouseClickFunc()
     {
-        GameManager.instance.soundEffect.PlayOneShot(mouseClickSound);
+        SoundManager.instance.soundEffect.PlayOneShot(mouseClickSound);
     }
 }

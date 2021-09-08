@@ -188,7 +188,7 @@ public class PopupController : MonoBehaviour
 
     public void OnMouseEnterFunc(Button buttons)
     {
-        GameManager.instance.soundEffect.PlayOneShot(mouseEnterSound);
+        SoundManager.instance.soundEffect.PlayOneShot(mouseEnterSound);
         buttons.GetComponentInChildren<TextMeshProUGUI>().color = Color.yellow;
     }
 
@@ -199,6 +199,6 @@ public class PopupController : MonoBehaviour
 
     public void OnMouseClickFunc()
     {
-        GameManager.instance.soundEffect.PlayOneShot(mouseClickSound);
+        SoundManager.instance.soundEffect.PlayOneShot(mouseClickSound);
     }
 }

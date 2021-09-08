@@ -118,7 +118,7 @@ public class CampFireInteract : MonoBehaviour
 
         ItemSpawnManager.instance.SpawnItem(position, cookResult, 1);
         PlayerStatusManager.instance.PlayerStamina.value -= staminaUsed;
-        GameManager.instance.soundEffect.PlayOneShot(doneCookSoundEffect);
+        SoundManager.instance.soundEffect.PlayOneShot(doneCookSoundEffect);
 
     }
 }

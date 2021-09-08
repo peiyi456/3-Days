@@ -124,7 +124,7 @@ public class InventoryPanel : MonoBehaviour
         if (isPressUse == false)
         {
             inventory.RemoveItem(inventory.slots[buttonNo].item, 1);
-            GameManager.instance.soundEffect.PlayOneShot(inventory.slots[buttonNo].item.soundEffect);
+            SoundManager.instance.soundEffect.PlayOneShot(inventory.slots[buttonNo].item.soundEffect);
             isPressUse = true;
             PlayerStatusManager.instance.PlayerFood.value += inventory.slots[buttonNo].item.FoodValue;
             PlayerStatusManager.instance.PlayerWater.value += inventory.slots[buttonNo].item.WaterValue;
