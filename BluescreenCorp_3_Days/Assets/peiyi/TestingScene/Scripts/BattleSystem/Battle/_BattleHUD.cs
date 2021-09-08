@@ -13,6 +13,7 @@ public class _BattleHUD : MonoBehaviour
 
     [SerializeField] Slider playerHP;
 
+
     public void SetData(_Units units)
     {
         _units = units;

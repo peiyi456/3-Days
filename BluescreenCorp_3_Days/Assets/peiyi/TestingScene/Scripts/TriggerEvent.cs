@@ -36,6 +36,7 @@ public class TriggerEvent : MonoBehaviour
                         GameObject campsite = Instantiate(spawnPrefab, new Vector2(player.transform.position.x, player.transform.position.y - 0.5f), Quaternion.identity);
                         GameManager.instance.hasCampsite = false;
                         camp1 = true;
+                        GameManager.instance.CampSetupNumber += 1;
                     }
                 }
             }

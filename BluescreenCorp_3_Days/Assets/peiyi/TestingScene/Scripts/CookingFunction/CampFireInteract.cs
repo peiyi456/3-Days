@@ -48,6 +48,11 @@ public class CampFireInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(CookingPanel.activeSelf == false)
+        {
+            isPressButton = false;
+        }
+
         if (Vector2.Distance(this.gameObject.transform.position, player.transform.position) < distance)
         {
             if (Cooking == false)

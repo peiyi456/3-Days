@@ -15,11 +15,11 @@ MonoBehaviour:
   Name: FishMeat_Cook
   stackable: 1
   icon: {fileID: 21300000, guid: a611b174be20acc4ca1e04c3290738f1, type: 3}
-  Function: 
-  Hint: 
+  Function: Smells good, beware of bones
+  Hint: Eat it to replesh food and water
   itemTypes: 0
-  FoodValue: 12
-  WaterValue: 8
-  HPValue: 3
+  FoodValue: 25
+  WaterValue: 20
+  HPValue: 4
   TemperatureValue: 0
   soundEffect: {fileID: 8300000, guid: 010a9187a3543a04684e3aa6526a46ef, type: 3}

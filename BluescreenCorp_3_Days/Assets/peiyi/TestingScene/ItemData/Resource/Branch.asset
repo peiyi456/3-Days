@@ -15,8 +15,8 @@ MonoBehaviour:
   Name: Branch
   stackable: 1
   icon: {fileID: 21300000, guid: 05e53ac616055e44a82a70dd1a8ffefb, type: 3}
-  Function: 
-  Hint: 
+  Function: It is fragile, but sharp. Careful when handle it
+  Hint: Can be use as crafting material
   itemTypes: 1
   FoodValue: 0
   WaterValue: 0

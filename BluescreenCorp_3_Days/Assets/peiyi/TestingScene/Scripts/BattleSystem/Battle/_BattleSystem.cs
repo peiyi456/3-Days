@@ -24,6 +24,8 @@ public class _BattleSystem : MonoBehaviour
     // Start is called before the first frame update
     public void StartBattle()
     {
+        playerHP = PlayerStatusManager.instance.PlayerHP;
+
         StartCoroutine(SetupBattle());
         currentAction = 0;
         currentMove = 0;

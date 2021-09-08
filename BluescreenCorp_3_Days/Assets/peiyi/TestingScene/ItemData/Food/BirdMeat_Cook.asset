@@ -15,11 +15,11 @@ MonoBehaviour:
   Name: BirdMeat_Cook
   stackable: 1
   icon: {fileID: 21300000, guid: 3311d24058ab47a4882a388764c511cb, type: 3}
-  Function: 
-  Hint: 
+  Function: Smells good after cooked, best food you can found
+  Hint: Eat it to replesh food and water
   itemTypes: 0
-  FoodValue: 5
-  WaterValue: 5
-  HPValue: 3
+  FoodValue: 40
+  WaterValue: 25
+  HPValue: 4
   TemperatureValue: 0
   soundEffect: {fileID: 8300000, guid: 010a9187a3543a04684e3aa6526a46ef, type: 3}

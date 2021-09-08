@@ -187,8 +187,10 @@ public class PlayerStatusManager : MonoBehaviour
     {
         if(PlayerFood.value <= 0 || PlayerWater.value <= 0 || PlayerStamina.value <= 0 || PlayerHP.value <= 0)
         {
-            losePage.SetActive(true);
-            Time.timeScale = 0;
+            //losePage.SetActive(true);
+            //Time.timeScale = 0;
+
+            StartCoroutine(LosePageOn(1.5f));
         }
     }
 
@@ -199,5 +201,12 @@ public class PlayerStatusManager : MonoBehaviour
         PlayerStamina.GetComponentInChildren<TextMeshProUGUI>().text = PlayerStamina.value + "/" + PlayerStamina.maxValue;
         PlayerHP.GetComponentInChildren<TextMeshProUGUI>().text = PlayerHP.value + "/" + PlayerHP.maxValue;
 
+    }
+
+    IEnumerator LosePageOn(float time)
+    {
+        losePage.SetActive(true);
+        yield return new WaitForSeconds(time);
+        Time.timeScale = 0;
     }
 }

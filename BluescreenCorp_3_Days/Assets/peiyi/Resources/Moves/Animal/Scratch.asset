@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveName: Scratch
   description: 
-  power: 3
+  power: 2
   accuracy: 0
   efficiency: 0

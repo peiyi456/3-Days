@@ -69,6 +69,7 @@ public class CameraFollow : MonoBehaviour
             {
                 if (Mathf.Abs(differenceX) >= maxObject.x)
                 {
+                    Debug.Log("Oi");
                     newPosition.x = Follow.x;
                 }
             }

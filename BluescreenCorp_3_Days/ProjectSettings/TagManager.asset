@@ -15,6 +15,7 @@ TagManager:
   - MangoTree
   - Tree
   - CampFire
+  - Cow
   layers:
   - Default
   - TransparentFX

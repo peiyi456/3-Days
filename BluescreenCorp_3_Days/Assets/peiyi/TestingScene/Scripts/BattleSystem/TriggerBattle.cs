@@ -67,7 +67,6 @@ public class TriggerBattle : MonoBehaviour
         {
             if (other.tag == units[i].Tag)
             {
-                Debug.Log("111");
                 GameManager.instance.thisAnimal = units[i];
                 GameManager.instance.enemyDropPosition = other.transform.position;
                 onTriggerBattle();

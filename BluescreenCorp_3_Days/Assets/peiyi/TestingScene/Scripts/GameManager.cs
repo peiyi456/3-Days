@@ -48,8 +48,8 @@ public class GameManager : MonoBehaviour
     public bool enemyFainted;
 
     [Header("Tools using checking")]
-    public bool isPutCamp1;
-    public bool isPutCamp2;
+    public int CampSetupNumber;
+
 
     [Header("Checking objectives")]
     public bool Objective1;

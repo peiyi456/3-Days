@@ -15,11 +15,11 @@ MonoBehaviour:
   Name: Meat_Uncook
   stackable: 1
   icon: {fileID: 21300000, guid: 9f48ec6292966b94982b94c9c47d4551, type: 3}
-  Function: 
-  Hint: 
+  Function: Its bloody, better not eat it raw
+  Hint: Eat it to replesh food but getting thirsty
   itemTypes: 0
-  FoodValue: 10
-  WaterValue: -2
-  HPValue: 2
+  FoodValue: 25
+  WaterValue: -10
+  HPValue: 3
   TemperatureValue: 0
   soundEffect: {fileID: 8300000, guid: 010a9187a3543a04684e3aa6526a46ef, type: 3}

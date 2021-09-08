@@ -15,10 +15,11 @@ MonoBehaviour:
   Name: Torch
   stackable: 0
   icon: {fileID: 7509860518518112746, guid: 7b717455af6e3cc4eab46e93170d2ba5, type: 3}
-  Function: 
-  Hint: 
+  Function: To light out surrounding when on night time
+  Hint: Only can use at night
   itemTypes: 2
   FoodValue: 0
   WaterValue: 0
   HPValue: 0
   TemperatureValue: 0
+  soundEffect: {fileID: 0}

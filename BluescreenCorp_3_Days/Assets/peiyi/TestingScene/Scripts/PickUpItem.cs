@@ -60,7 +60,7 @@ public class PickUpItem : MonoBehaviour
                 if (GameManager.instance.inventoryContainer != null)
                 {
                     GameManager.instance.inventoryContainer.AddItem(item, count);
-                    GameManager.instance.soundEffect.PlayOneShot(pickupSound);
+                    SoundManager.instance.soundEffect.PlayOneShot(pickupSound);
                 }
                 else
                 {

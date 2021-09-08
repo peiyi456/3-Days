@@ -14,6 +14,8 @@ public class MaintainStats : MonoBehaviour
     void Start()
     {
         objectiveText.text = Description;
+        FoodStat = PlayerStatusManager.instance.PlayerFood;
+        WaterStat = PlayerStatusManager.instance.PlayerWater;
     }
 
     // Update is called once per frame

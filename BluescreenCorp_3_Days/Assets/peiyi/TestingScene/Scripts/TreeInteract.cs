@@ -17,6 +17,7 @@ public class TreeInteract : ToolHit
 
     [Header("Checking for use axe to chop")]
     [SerializeField] bool iscuttableTree;
+    public GameObject reminder;
     //[SerializeField] GameObject pickUpDrop;
 
     [Header("Drop item details")]
@@ -43,7 +44,6 @@ public class TreeInteract : ToolHit
 
     private void Update()
     {
-
         if (ableToInteract)
         {
             particleEffect.gameObject.SetActive(true);
@@ -66,7 +66,13 @@ public class TreeInteract : ToolHit
         {
             if(GameManager.instance.hasAxe)
             {
+                reminder.SetActive(false);
                 DropItem();
+            }
+
+            else
+            {
+                StartCoroutine(ShowReminderText());
             }
         }
     }
@@ -154,5 +160,12 @@ public class TreeInteract : ToolHit
         }
         ableToInteract = true;
         dropCount = oriDropCount;
+    }
+
+    IEnumerator ShowReminderText()
+    {
+        reminder.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        reminder.SetActive(false);
     }
 }

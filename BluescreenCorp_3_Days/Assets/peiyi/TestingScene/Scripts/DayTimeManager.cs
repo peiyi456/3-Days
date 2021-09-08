@@ -36,7 +36,7 @@ public class DayTimeManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] TextMeshProUGUI dayText;
     [SerializeField] Light2D globalLight;
-    [SerializeField] Image DayNightPanel;
+    //[SerializeField] Image DayNightPanel;
 
     [SerializeField] GameObject winPage;
 
