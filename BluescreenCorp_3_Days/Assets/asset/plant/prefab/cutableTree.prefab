@@ -127,6 +127,7 @@ MonoBehaviour:
   spawnPrefab: {fileID: 0}
   pickUpObject: {fileID: 716102805806877556, guid: 9242fbfc1bccc1145845a0c6473c612d,
     type: 3}
+  ItemInOneDrop: 5
   spawnItem: {fileID: 11400000, guid: b827b883789c9f84e817baea35b49ab8, type: 2}
   respawnTime: 10800
   countDownTime: 0
@@ -5016,6 +5017,7 @@ MonoBehaviour:
   spawnPrefab: {fileID: 0}
   pickUpObject: {fileID: 716102805806877556, guid: 9242fbfc1bccc1145845a0c6473c612d,
     type: 3}
+  ItemInOneDrop: 5
   spawnItem: {fileID: 11400000, guid: b827b883789c9f84e817baea35b49ab8, type: 2}
   respawnTime: 10800
   countDownTime: 0

@@ -440,6 +440,7 @@ MonoBehaviour:
   FishingPanel: {fileID: 8868367815379437299}
   Fish: {fileID: 11400000, guid: 5909bf42fe023e9459dd67e15e4401bd, type: 2}
   sprite: {fileID: 0}
+  aduioClip: {fileID: 8300000, guid: 6542a23b66090ff409c74b0ffbf633b0, type: 3}
   FishingKey: 101
 --- !u!1 &3826500043725763212
 GameObject:

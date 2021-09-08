@@ -9,6 +9,7 @@ public class RandomSpawnItem : MonoBehaviour
 
     [Header("Assign value")]
     [SerializeField] GameObject pickUpObject;
+    [SerializeField] int ItemInOneDrop;
     [SerializeField] Item spawnItem;
     [SerializeField] float respawnTime;
     [SerializeField] float countDownTime;
@@ -21,7 +22,7 @@ public class RandomSpawnItem : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x, transform.position.y, GameManager.instance.zPositionForPickUp);
         Position = transform.position;
-        SpawnItemFunc(Position, spawnItem, 1);
+        SpawnItemFunc(Position, spawnItem, ItemInOneDrop);
         canRespawn = false;
         countDownTime = respawnTime;
     }
@@ -64,7 +65,7 @@ public class RandomSpawnItem : MonoBehaviour
     void SpawnItemFunc(Vector3 position, Item item, int count)
     {
         spawnPrefab = Instantiate(pickUpObject, position, Quaternion.identity);
-        spawnPrefab.transform.SetParent(transform);
+        //spawnPrefab.transform.SetParent(transform);
         spawnPrefab.GetComponent<PickUpItem>().Set(item, count);
 
     }

@@ -7,7 +7,6 @@ using TMPro;
 public class FishingSystem : MonoBehaviour
 {
     [Header("Check condition")]
-   // bool canFish;
     bool fishing;
     bool openPanel;
     [SerializeField] float distance;
@@ -19,6 +18,7 @@ public class FishingSystem : MonoBehaviour
     [SerializeField] GameObject FishingPanel;
     [SerializeField] Item Fish;
     [SerializeField] Sprite sprite;
+    [SerializeField] AudioClip aduioClip;
 
     [Header("Keycode")]
     [SerializeField] KeyCode FishingKey;
@@ -72,18 +72,19 @@ public class FishingSystem : MonoBehaviour
         {
             FishingPanel.SetActive(false);
             //GameManager.instance.inventoryContainer.RemoveItem(itemSlot.item, 1);
-            if (ProgressBar.GetComponentInChildren<Slider>().value > 0)
+            if (ProgressBar.GetComponentInChildren<Slider>().value < ProgressBar.GetComponentInChildren<Slider>().maxValue)
             {
-                ProgressBar.GetComponentInChildren<Slider>().value -= Time.deltaTime;
+                ProgressBar.GetComponentInChildren<Slider>().value += Time.deltaTime;
                 CharacterController2D.instance.stopMove = true;
             }
 
-            else if (ProgressBar.GetComponentInChildren<Slider>().value <= 0)
+            else if (ProgressBar.GetComponentInChildren<Slider>().value >= ProgressBar.GetComponentInChildren<Slider>().maxValue)
             {
+                SoundManager.instance.soundEffect.PlayOneShot(aduioClip);
                 GameManager.instance.inventoryContainer.AddItem(Fish, 1);
                 PlayerStatusManager.instance.PlayerStamina.value -= staminaUsed;
                 fishing = false;
-                ProgressBar.GetComponentInChildren<Slider>().value = ProgressBar.GetComponentInChildren<Slider>().maxValue;
+                ProgressBar.GetComponentInChildren<Slider>().value = 0;
                 CharacterController2D.instance.stopMove = false;
                 ProgressBar.SetActive(false);
             }
@@ -92,7 +93,7 @@ public class FishingSystem : MonoBehaviour
 
     private void OnDisable()
     {
-        ProgressBar.GetComponentInChildren<Slider>().value = ProgressBar.GetComponentInChildren<Slider>().maxValue;
+        ProgressBar.GetComponentInChildren<Slider>().value = 0;
     }
     //void SetupProgression()
     //{
