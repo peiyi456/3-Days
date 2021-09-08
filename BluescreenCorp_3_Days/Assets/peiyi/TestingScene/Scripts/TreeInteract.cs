@@ -33,6 +33,7 @@ public class TreeInteract : ToolHit
     [SerializeField] Slider Slider;
     bool doneProgress = true;
 
+    [SerializeField] ParticleSystem particleEffect;
 
     private void Start()
     {
@@ -42,7 +43,15 @@ public class TreeInteract : ToolHit
 
     private void Update()
     {
+        if(Vector3.Distance(this.transform.position, GameManager.instance.player.transform.position) < 4f)
+        {
+            particleEffect.Play();
+        }
 
+        else
+        {
+            particleEffect.Stop();
+        }
     }
 
     public override void Hit()

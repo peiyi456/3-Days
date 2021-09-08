@@ -101,6 +101,7 @@ MonoBehaviour:
   ttl: 10
   item: {fileID: 0}
   count: 5
+  PickUpKey: 101
 --- !u!1 &4406008180972749934
 GameObject:
   m_ObjectHideFlags: 0

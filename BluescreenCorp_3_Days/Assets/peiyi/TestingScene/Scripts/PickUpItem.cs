@@ -14,6 +14,8 @@ public class PickUpItem : MonoBehaviour
     public Item item;
     public int count = 1;
 
+    [SerializeField] KeyCode PickUpKey;
+
     private void Start()
     {
         player = GameManager.instance.player.transform;
@@ -52,7 +54,7 @@ public class PickUpItem : MonoBehaviour
         if (distance < pickUpDistance)
         {
             Debug.Log("Pick up");
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(PickUpKey))
             {
                 //*TODO* shoud be moved into specific controller rather than being checked here.
                 if (GameManager.instance.inventoryContainer != null)
