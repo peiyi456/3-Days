@@ -5043,6 +5043,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4679990810770192803}
   - component: {fileID: 3684222992760800842}
+  - component: {fileID: 8192967368473565413}
   m_Layer: 0
   m_Name: coconutTree
   m_TagString: Untagged
@@ -5117,4 +5118,35 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
+--- !u!60 &8192967368473565413
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8403857021576591243}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.53818804, y: 0.07820746}
+    oldSize: {x: 12.09, y: 19.41}
+    newSize: {x: 12.09, y: 19.41}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.36803246, y: -0.3927269}
+      - {x: -0.2929802, y: -0.36857605}
+      - {x: -0.811985, y: -0.25231934}
+      - {x: -0.7895107, y: 0.7027588}
+      - {x: 0.7758579, y: 0.71302795}
+      - {x: 0.8522854, y: -0.24249649}
