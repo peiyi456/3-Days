@@ -77816,11 +77816,6 @@ PrefabInstance:
       propertyPath: SleepingFadingPanel
       value: 
       objectReference: {fileID: 1545619343}
-    - target: {fileID: 6716677074067217538, guid: f810d4ad8070bd748ac88c89158fe907,
-        type: 3}
-      propertyPath: timeScale
-      value: 3000
-      objectReference: {fileID: 0}
     - target: {fileID: 6716677074067217542, guid: f810d4ad8070bd748ac88c89158fe907,
         type: 3}
       propertyPath: soundEffect
