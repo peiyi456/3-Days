@@ -72,7 +72,7 @@ public class PopupController : MonoBehaviour
     {
         //checkingPauseGame(isBookOpen);
         UIPopup();
-        //PauseResumeGame();
+        PauseResumeGame();
 
     }
 
@@ -104,8 +104,10 @@ public class PopupController : MonoBehaviour
             {
                 
                 isBookOpen = !isBookOpen;
+                //checkingPauseGame(isBookOpen);
                 if (isBookOpen)
                 {
+                    GameManager.instance.isPause = true;
                     RectTransform rt = Books.GetComponent<RectTransform>();
                     rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 0, rt.rect.width);
                     rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, rt.rect.height);
@@ -113,6 +115,8 @@ public class PopupController : MonoBehaviour
                 }
                 else
                 {
+                    GameManager.instance.isPause = false;
+
                     RectTransform rt = Books.GetComponent<RectTransform>();
                     rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 1920, rt.rect.width);
                     rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, rt.rect.height);
@@ -126,35 +130,53 @@ public class PopupController : MonoBehaviour
             {
                 if (isMapOpen == false)
                 {
+                    GameManager.instance.isPause = true;
+
                     isMapOpen = true;
                     MapPage.SetActive(isMapOpen);
+                    //checkingPauseGame(isMapOpen);
                 }
 
                 else
                 {
+                    GameManager.instance.isPause = false;
+
                     isMapOpen = false;
                     MapPage.SetActive(isMapOpen);
+                    //checkingPauseGame(isMapOpen);
                 }
             }
         }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Time.timeScale == 1)
+            if (!isPause)
+            {
+                if (Time.timeScale == 1)
+                {
+                    isPausePageOpen = true;
+                    PausePage.SetActive(isPausePageOpen);
+                    isPause = true;
+                    Time.timeScale = 0;
+                    Debug.Log("open");
+                }
+
+                else
+                {
+                    isPausePageOpen = false;
+                    PausePage.SetActive(isPausePageOpen);
+                    isPause = false;
+                    Time.timeScale = 1;
+                    Debug.Log("close");
+                }
+            }
+            else
             {
                 isPausePageOpen = true;
                 PausePage.SetActive(isPausePageOpen);
                 isPause = true;
                 Time.timeScale = 0;
                 Debug.Log("open");
-            }
-
-            else
-            {
-                isPausePageOpen = false;
-                PausePage.SetActive(isPausePageOpen);
-                isPause = false;
-                Time.timeScale = 1;
-                Debug.Log("close");
             }
             //checkingPauseGame(isPausePageOpen);
         }

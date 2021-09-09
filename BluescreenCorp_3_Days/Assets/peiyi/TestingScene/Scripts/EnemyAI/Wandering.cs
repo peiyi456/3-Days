@@ -38,8 +38,8 @@ public class Wandering : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (GameManager.instance.isPause == false)
-        //{
+        if (GameManager.instance.isPause == false)
+        {
             if (Vector2.Distance(this.transform.position, player.transform.position) <= distanceBtwPlayer)
             {
                 isSeek = true;
@@ -91,7 +91,7 @@ public class Wandering : MonoBehaviour
                 GetComponent<SpriteRenderer>().flipY = false;
             }
 
-        //}
+        }
     }
 
     private void OnEnable()

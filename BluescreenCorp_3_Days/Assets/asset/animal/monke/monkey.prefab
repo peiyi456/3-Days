@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 638785010793095277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.54, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 5768005696735794783}
@@ -110,7 +110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5768005696735794769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -43.37, y: 0.13, z: 0}
+  m_LocalPosition: {x: -43.37, y: 0, z: 0}
   m_LocalScale: {x: 0.36823, y: 0.36823, z: 0.36823}
   m_Children:
   - {fileID: 580449539444966149}
@@ -180,10 +180,10 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 2.06}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 4.34, y: 4.15}
     newSize: {x: 4.34, y: 4.15}
     adaptiveTilingThreshold: 0.5
@@ -399,7 +399,7 @@ Animator:
   m_GameObject: {fileID: 5768005696735794769}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 62dd8fa147e25d14c97fc5cc6e7a9e0b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 19d56b775f06dcb41923c0d1c90da314, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

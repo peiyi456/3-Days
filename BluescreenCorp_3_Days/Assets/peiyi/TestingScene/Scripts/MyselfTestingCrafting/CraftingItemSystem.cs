@@ -6,26 +6,126 @@ using UnityEngine.UI;
 public class CraftingItemSystem : MonoBehaviour
 {
     [Header("For shortkey tools used")]
-    [SerializeField] bool isAxe, isCampsite, isKnife, isLance, isFishingRod, isTorch;
+    public bool isAxe, isCampsite, isKnife, isLance, isFishingRod, isTorch;
 
     [SerializeField] bool craft = false;
     [SerializeField] bool hasElement1, hasElement2, hasElement3;
     [SerializeField] Image element1, element2, element3, output;
-    [SerializeField] Button craftBttn;
+    public Button craftBttn;
     [SerializeField] int CraftItemBttnNo;
     [SerializeField] CraftingItemRecipe recipe;
     [SerializeField] ItemContainer container;
 
     [SerializeField] bool selected = false;
 
+    [SerializeField] Button[] allCraftButton;
+    public bool PressButton;
     //[SerializeField] Image/*[]*/ toolsButtonShortKeyImage;
 
     private void Update()
     {
-
-        checkingButtonInteractable();
+        //craftBttn.gameObject.SetActive(false);
+        //checkingButtonInteractable();
         CanCraft(container);
     }
+
+    public void HideCraftButton(Button bttn)
+    {
+        for (int i = 0; i < allCraftButton.Length; i++)
+        {
+            allCraftButton[i].GetComponent<CraftingItemSystem>().craftBttn.gameObject.SetActive(false);
+            allCraftButton[i].GetComponent<CraftingItemSystem>().PressButton = false;
+            //allCraftButton[i].GetComponent<CraftingItemSystem>().PressButton = false;
+        }
+
+        bttn.GetComponent<CraftingItemSystem>().PressButton = !bttn.GetComponent<CraftingItemSystem>().PressButton;
+        bttn.GetComponent<CraftingItemSystem>().craftBttn.gameObject.SetActive(bttn.GetComponent<CraftingItemSystem>().PressButton);
+
+        if (bttn.GetComponent<CraftingItemSystem>().isAxe)
+        {
+            if (GameManager.instance.hasAxe)
+            {
+                craftBttn.gameObject.SetActive(false);
+                //craftBttn.interactable = false;
+            }
+            else
+            {
+                //craftBttn.interactable = true;
+                bttn.GetComponent<CraftingItemSystem>().craftBttn.gameObject.SetActive(bttn.GetComponent<CraftingItemSystem>().PressButton);
+            }
+        }
+
+        if (bttn.GetComponent<CraftingItemSystem>().isCampsite)
+        {
+            if (GameManager.instance.hasCampsite)
+            {
+                craftBttn.gameObject.SetActive(false);
+                //craftBttn.interactable = false;
+            }
+            else
+            {
+                //craftBttn.interactable = true;
+                bttn.GetComponent<CraftingItemSystem>().craftBttn.gameObject.SetActive(bttn.GetComponent<CraftingItemSystem>().PressButton);
+            }
+        }
+
+        if (bttn.GetComponent<CraftingItemSystem>().isTorch)
+        {
+            if (GameManager.instance.hasTorch)
+            {
+                craftBttn.gameObject.SetActive(false);
+                //craftBttn.interactable = false;
+            }
+            else
+            {
+                //craftBttn.interactable = true;
+                bttn.GetComponent<CraftingItemSystem>().craftBttn.gameObject.SetActive(bttn.GetComponent<CraftingItemSystem>().PressButton);
+            }
+        }
+
+        if (bttn.GetComponent<CraftingItemSystem>().isFishingRod)
+        {
+            if (GameManager.instance.hasFishingRod)
+            {
+                craftBttn.gameObject.SetActive(false);
+                //craftBttn.interactable = false;
+            }
+            else
+            {
+                //craftBttn.interactable = true;
+                bttn.GetComponent<CraftingItemSystem>().craftBttn.gameObject.SetActive(bttn.GetComponent<CraftingItemSystem>().PressButton);
+            }
+        }
+
+        if (bttn.GetComponent<CraftingItemSystem>().isKnife)
+        {
+            if (GameManager.instance.hasKnife)
+            {
+                craftBttn.gameObject.SetActive(false);
+                //craftBttn.interactable = false;
+            }
+            else
+            {
+                //craftBttn.interactable = true;
+                bttn.GetComponent<CraftingItemSystem>().craftBttn.gameObject.SetActive(bttn.GetComponent<CraftingItemSystem>().PressButton);
+            }
+        }
+
+        if (bttn.GetComponent<CraftingItemSystem>().isLance)
+        {
+            if (GameManager.instance.hasLance)
+            {
+                craftBttn.gameObject.SetActive(false);
+                //craftBttn.interactable = false;
+            }
+            else
+            {
+                //craftBttn.interactable = true;
+                bttn.GetComponent<CraftingItemSystem>().craftBttn.gameObject.SetActive(bttn.GetComponent<CraftingItemSystem>().PressButton);
+            }
+        }
+    }
+
 
     void checkingButtonInteractable()
     {
@@ -33,11 +133,13 @@ public class CraftingItemSystem : MonoBehaviour
         {
             if(GameManager.instance.hasAxe)
             {
+                craftBttn.gameObject.SetActive(false);
                 craftBttn.interactable = false;
             }
             else
             {
-                craftBttn.interactable = true;
+                //craftBttn.interactable = true;
+                craftBttn.gameObject.SetActive(true);
             }
         }
 
@@ -45,11 +147,13 @@ public class CraftingItemSystem : MonoBehaviour
         {
             if (GameManager.instance.hasCampsite)
             {
+                craftBttn.gameObject.SetActive(false);
                 craftBttn.interactable = false;
             }
             else
             {
-                craftBttn.interactable = true;
+                //craftBttn.interactable = true;
+                craftBttn.gameObject.SetActive(true);
             }
         }
 
@@ -57,11 +161,13 @@ public class CraftingItemSystem : MonoBehaviour
         {
             if (GameManager.instance.hasTorch)
             {
+                craftBttn.gameObject.SetActive(false);
                 craftBttn.interactable = false;
             }
             else
             {
-                craftBttn.interactable = true;
+                //craftBttn.interactable = true;
+                craftBttn.gameObject.SetActive(true);
             }
         }
 
@@ -69,11 +175,13 @@ public class CraftingItemSystem : MonoBehaviour
         {
             if (GameManager.instance.hasFishingRod)
             {
+                craftBttn.gameObject.SetActive(false);
                 craftBttn.interactable = false;
             }
             else
             {
-                craftBttn.interactable = true;
+                //craftBttn.interactable = true;
+                craftBttn.gameObject.SetActive(true);
             }
         }
 
@@ -81,11 +189,13 @@ public class CraftingItemSystem : MonoBehaviour
         {
             if (GameManager.instance.hasKnife)
             {
+                craftBttn.gameObject.SetActive(false);
                 craftBttn.interactable = false;
             }
             else
             {
-                craftBttn.interactable = true;
+                //craftBttn.interactable = true;
+                craftBttn.gameObject.SetActive(true);
             }
         }
 
@@ -93,11 +203,13 @@ public class CraftingItemSystem : MonoBehaviour
         {
             if (GameManager.instance.hasLance)
             {
+                craftBttn.gameObject.SetActive(false);
                 craftBttn.interactable = false;
             }
             else
             {
-                craftBttn.interactable = true;
+                //craftBttn.interactable = true;
+                craftBttn.gameObject.SetActive(true);
             }
         }
     }
@@ -183,7 +295,8 @@ public class CraftingItemSystem : MonoBehaviour
                 if (!craft)
                 {
                     craftBttn.interactable = true;
-                    output.color = Color.white;
+                    //checkingButtonInteractable();
+                    //output.color = Color.white;
                     this.craft = true;
                 }
             }
@@ -191,7 +304,7 @@ public class CraftingItemSystem : MonoBehaviour
             else
             {
                 //craftBttn.interactable = false;
-                output.color = Color.black;
+                //output.color = Color.black;
             }
         }
 
@@ -201,8 +314,9 @@ public class CraftingItemSystem : MonoBehaviour
             {
                 if (!craft)
                 {
+                    //checkingButtonInteractable();
                     craftBttn.interactable = true;
-                    output.color = Color.white;
+                    //output.color = Color.white;
                     this.craft = true;
                 }
             }
@@ -210,7 +324,7 @@ public class CraftingItemSystem : MonoBehaviour
             else
             {
                 //craftBttn.interactable = false;
-                output.color = Color.black;
+                //output.color = Color.black;
             }
         }
         else
@@ -219,8 +333,9 @@ public class CraftingItemSystem : MonoBehaviour
             {
                 if (!craft)
                 {
+                    //checkingButtonInteractable();
                     craftBttn.interactable = true;
-                    output.color = Color.white;
+                    //output.color = Color.white;
                     this.craft = true;
                 }
             }
@@ -228,7 +343,7 @@ public class CraftingItemSystem : MonoBehaviour
             else
             {
                 //craftBttn.interactable = false;
-                output.color = Color.black;
+                //output.color = Color.black;
             }
 
         }
@@ -237,8 +352,9 @@ public class CraftingItemSystem : MonoBehaviour
     public void ButtonClicked()
     {
         //CraftItemBttnNo = ButtonNo;
-        if(!selected)
+        if(!PressButton)
         {
+            checkingButtonInteractable();
             element1.gameObject.SetActive(true);
             element2.gameObject.SetActive(true);
             element3.gameObject.SetActive(true);
@@ -298,6 +414,7 @@ public class CraftingItemSystem : MonoBehaviour
             //element1.sprite = icon.sprite;
             //itemName.text = name;
             selected = true;
+            //craftBttn.gameObject.SetActive(true);
         }
         else
         {
@@ -307,6 +424,7 @@ public class CraftingItemSystem : MonoBehaviour
             output.gameObject.SetActive(false);
             craftBttn.gameObject.SetActive(false);
             selected = false;
+            craftBttn.gameObject.SetActive(false);
         }
     }
 
@@ -339,20 +457,22 @@ public class CraftingItemSystem : MonoBehaviour
 
     public void CraftAxe(/*Image img*/)
     {
-        GameManager.instance.hasAxe = true;
+        //GameManager.instance.hasAxe = true;
 
-        //if (isAxe)
-        //{
-        //    if (GameManager.instance.hasAxe == false)
-        //    {
-        //        //toolsButtonShortKeyImage.color = Color.white;
-        //        GameManager.instance.hasAxe = true;
-        //    }
-        //    else
-        //    {
-        //        craftBttn.interactable = false;
-        //    }
-        //}
+        if (isAxe)
+        {
+            if (GameManager.instance.hasAxe == false)
+            {
+                //toolsButtonShortKeyImage.color = Color.white;
+                GameManager.instance.hasAxe = true;
+                craftBttn.gameObject.SetActive(false);
+            }
+            else
+            {
+                //craftBttn.interactable = false;
+                craftBttn.gameObject.SetActive(false);
+            }
+        }
 
 
 
@@ -360,86 +480,96 @@ public class CraftingItemSystem : MonoBehaviour
 
     public void CraftCampsite()
     {
-        GameManager.instance.hasCampsite = true;
-        //if (isCampsite)
-        //{
-        //    if (GameManager.instance.hasCampsite == false)
-        //    {
-        //        //toolsButtonShortKeyImage.color = Color.white;
-        //        GameManager.instance.hasCampsite = true;
-        //    }
-        //    else
-        //    {
-        //        craftBttn.interactable = false;
-        //    }
-        //}
+        //GameManager.instance.hasCampsite = true;
+        if (isCampsite)
+        {
+            if (GameManager.instance.hasCampsite == false)
+            {
+                //toolsButtonShortKeyImage.color = Color.white;
+                GameManager.instance.hasCampsite = true;
+                craftBttn.gameObject.SetActive(false);
+            }
+            else
+            {
+                //craftBttn.interactable = false;
+                craftBttn.gameObject.SetActive(false);
+            }
+        }
     }
 
     public void CraftKnife()
     {
-        GameManager.instance.hasKnife = true;
-        //if (isKnife)
-        //{
-        //    if (GameManager.instance.hasKnife == false)
-        //    {
-        //        //toolsButtonShortKeyImage.color = Color.white;
-        //        GameManager.instance.hasKnife = true;
-        //    }
-        //    else
-        //    {
-        //        craftBttn.interactable = false;
-        //    }
-        //}
+        //GameManager.instance.hasKnife = true;
+        if (isKnife)
+        {
+            if (GameManager.instance.hasKnife == false)
+            {
+                //toolsButtonShortKeyImage.color = Color.white;
+                GameManager.instance.hasKnife = true;
+                craftBttn.gameObject.SetActive(false);
+            }
+            else
+            {
+                //craftBttn.interactable = false;
+                craftBttn.gameObject.SetActive(false);
+            }
+        }
     }
 
     public void CraftSpear()
     {
-        GameManager.instance.hasLance = true;
-        //if (isLance)
-        //{
-        //    if (GameManager.instance.hasLance == false)
-        //    {
-        //        //toolsButtonShortKeyImage.color = Color.white;
-        //        GameManager.instance.hasLance = true;
-        //    }
-        //    else
-        //    {
-        //        craftBttn.interactable = false;
-        //    }
-        //}
+        //GameManager.instance.hasLance = true;
+        if (isLance)
+        {
+            if (GameManager.instance.hasLance == false)
+            {
+                //toolsButtonShortKeyImage.color = Color.white;
+                GameManager.instance.hasLance = true;
+                craftBttn.gameObject.SetActive(false);
+            }
+            else
+            {
+                //craftBttn.interactable = false;
+                craftBttn.gameObject.SetActive(false);
+            }
+        }
     }
 
     public void CraftFishingRod()
     {
-        GameManager.instance.hasFishingRod = true;
-        //if (isFishingRod)
-        //{
-        //    if (GameManager.instance.hasFishingRod == false)
-        //    {
-        //        //toolsButtonShortKeyImage.color = Color.white;
-        //        GameManager.instance.hasFishingRod = true;
-        //    }
-        //    else
-        //    {
-        //        craftBttn.interactable = false;
-        //    }
-        //}
+        //GameManager.instance.hasFishingRod = true;
+        if (isFishingRod)
+        {
+            if (GameManager.instance.hasFishingRod == false)
+            {
+                //toolsButtonShortKeyImage.color = Color.white;
+                GameManager.instance.hasFishingRod = true;
+                craftBttn.gameObject.SetActive(false);
+            }
+            else
+            {
+                //craftBttn.interactable = false;
+                craftBttn.gameObject.SetActive(false);
+            }
+        }
     }
 
     public void CraftTorch()
     {
-        GameManager.instance.hasTorch = true;
-        //if (isTorch)
-        //{
-        //    if (GameManager.instance.hasTorch == false)
-        //    {
-        //        //toolsButtonShortKeyImage.color = Color.white;
-        //        GameManager.instance.hasTorch = true;
-        //    }
-        //    else
-        //    {
-        //        craftBttn.interactable = false;
-        //    }
-        //}
+        //GameManager.instance.hasTorch = true;
+        if (isTorch)
+        {
+            if (GameManager.instance.hasTorch == false)
+            {
+                //toolsButtonShortKeyImage.color = Color.white;
+                GameManager.instance.hasTorch = true;
+                craftBttn.gameObject.SetActive(false);
+            }
+            else
+            {
+                //craftBttn.interactable = false;
+                craftBttn.gameObject.SetActive(false);
+            }
+        }
     }
 }

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Monkey_Walk
+  m_Name: Cow_Idle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,17 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 7407bdd019670e64b91467dc7e9b44d0, type: 3}
+      value: {fileID: 8045352644699862293, guid: 4cc05992f1c8ccf4db7a6a3fed76b247,
+        type: 3}
+    - time: 0.13333334
+      value: {fileID: -5161485587923763618, guid: 4cc05992f1c8ccf4db7a6a3fed76b247,
+        type: 3}
+    - time: 0.28333333
+      value: {fileID: 8782650515238688336, guid: 4cc05992f1c8ccf4db7a6a3fed76b247,
+        type: 3}
+    - time: 0.41666666
+      value: {fileID: -1917398909374617629, guid: 4cc05992f1c8ccf4db7a6a3fed76b247,
+        type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -40,13 +50,16 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 7407bdd019670e64b91467dc7e9b44d0, type: 3}
+    - {fileID: 8045352644699862293, guid: 4cc05992f1c8ccf4db7a6a3fed76b247, type: 3}
+    - {fileID: -5161485587923763618, guid: 4cc05992f1c8ccf4db7a6a3fed76b247, type: 3}
+    - {fileID: 8782650515238688336, guid: 4cc05992f1c8ccf4db7a6a3fed76b247, type: 3}
+    - {fileID: -1917398909374617629, guid: 4cc05992f1c8ccf4db7a6a3fed76b247, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.016666668
+    m_StopTime: 0.43333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

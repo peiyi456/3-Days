@@ -32,7 +32,7 @@ public class CharacterController2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.timeScale == 1)
+        if (GameManager.instance.isPause == false)
         {
             if (stopMove == false)
             {

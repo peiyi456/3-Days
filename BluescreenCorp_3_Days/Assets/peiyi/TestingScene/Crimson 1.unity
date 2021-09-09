@@ -76672,6 +76672,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1390959335854843680, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390959335854843680, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390959335854843680, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390959335854843680, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1390959335933363132, guid: d388991b5783a0347a16e1c913ae6be4,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -76700,6 +76720,16 @@ PrefabInstance:
     - target: {fileID: 1390959335933363132, guid: d388991b5783a0347a16e1c913ae6be4,
         type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390959335933363133, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390959335933363133, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4368730915543008771, guid: d388991b5783a0347a16e1c913ae6be4,
@@ -77190,6 +77220,26 @@ PrefabInstance:
     - target: {fileID: 7035219838168122619, guid: d388991b5783a0347a16e1c913ae6be4,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035219838186816178, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035219838186816178, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035219838186816178, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035219838186816178, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7035219838626564325, guid: d388991b5783a0347a16e1c913ae6be4,
@@ -77205,6 +77255,86 @@ PrefabInstance:
     - target: {fileID: 7035219839214253605, guid: d388991b5783a0347a16e1c913ae6be4,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035219839521536210, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035219839521536210, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035219839521536210, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035219839521536210, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035219839557026949, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035219839557026949, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035219839557026949, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035219839557026949, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8291663050767573828, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8291663050767573828, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8291663050767573828, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8291663050767573828, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8291663050904569208, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8291663050904569208, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8291663050904569208, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8291663050904569208, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8291663050952900228, guid: d388991b5783a0347a16e1c913ae6be4,

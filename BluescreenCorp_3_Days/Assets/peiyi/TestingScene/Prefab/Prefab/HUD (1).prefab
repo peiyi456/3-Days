@@ -3289,6 +3289,11 @@ MonoBehaviour:
   recipe: {fileID: 11400000, guid: dc4bc305f3d5657489df90b23f3aeaf9, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
+  allCraftButton:
+  - {fileID: 1390959334600320454}
+  - {fileID: 1390959335933363133}
+  - {fileID: 1390959334679916950}
+  PressButton: 0
 --- !u!114 &1390959334441651920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3343,45 +3348,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1390959334636532102}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1390959334441651921}
+        m_MethodName: HideCraftButton
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7035219838546487380}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 7035219839305506124}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7035219838791903131}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1390959334441651920}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3960,45 +3932,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1390959334636532102}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1390959334600320453}
+        m_MethodName: HideCraftButton
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 7035219838546487380}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7035219839305506124}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7035219838791903131}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1390959334600320454}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4035,6 +3974,11 @@ MonoBehaviour:
   recipe: {fileID: 11400000, guid: fa4134144c1095647853d955ad53d466, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
+  allCraftButton:
+  - {fileID: 1390959334441651920}
+  - {fileID: 1390959335933363133}
+  - {fileID: 1390959334679916950}
+  PressButton: 0
 --- !u!1 &1390959334614526408
 GameObject:
   m_ObjectHideFlags: 0
@@ -4262,13 +4206,14 @@ GameObject:
   - component: {fileID: 1390959334636532122}
   - component: {fileID: 1390959334636532121}
   - component: {fileID: 1390959334636532120}
+  - component: {fileID: 2331962122403146666}
   m_Layer: 5
   m_Name: ForItem1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1390959334636532103
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4316,8 +4261,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b1f3bc1335c201d4daedb5c62c43b31c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4380,6 +4325,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2331962122403146666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390959334636532102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &1390959334666531253
 GameObject:
   m_ObjectHideFlags: 0
@@ -4784,7 +4742,7 @@ MonoBehaviour:
   isAxe: 0
   isCampsite: 0
   isKnife: 0
-  isLance: 0
+  isLance: 1
   isFishingRod: 0
   isTorch: 0
   craft: 0
@@ -4800,6 +4758,11 @@ MonoBehaviour:
   recipe: {fileID: 11400000, guid: 64956335eb781244687399b627bd34a6, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
+  allCraftButton:
+  - {fileID: 1390959334600320454}
+  - {fileID: 1390959334441651920}
+  - {fileID: 1390959335933363133}
+  PressButton: 0
 --- !u!114 &1390959334679916950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4854,49 +4817,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1390959334636532102}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1390959334679916951}
+        m_MethodName: HideCraftButton
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1390959334679916950}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7035219838546487380}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7035219839305506124}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7035219838791903131}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &1390959334692828435
 GameObject:
@@ -10873,7 +10803,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sound on
+  m_text: Sound Off
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c4e558b3770990419791780308ba3ec, type: 2}
   m_sharedMaterial: {fileID: -6926018026985170021, guid: 9c4e558b3770990419791780308ba3ec,
@@ -12058,6 +11988,11 @@ MonoBehaviour:
   recipe: {fileID: 11400000, guid: 1165df2936e43ad48a09f603ca216f0b, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
+  allCraftButton:
+  - {fileID: 1390959334600320454}
+  - {fileID: 1390959334441651920}
+  - {fileID: 1390959334679916950}
+  PressButton: 0
 --- !u!114 &1390959335933363133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12112,45 +12047,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1390959334636532102}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1390959335933363134}
+        m_MethodName: HideCraftButton
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7035219838546487380}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7035219839305506124}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 7035219838791903131}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1390959335933363133}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -21427,8 +21329,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b1f3bc1335c201d4daedb5c62c43b31c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -22602,8 +22504,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b1f3bc1335c201d4daedb5c62c43b31c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -23204,6 +23106,8 @@ MonoBehaviour:
   recipe: {fileID: 11400000, guid: 64956335eb781244687399b627bd34a6, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
+  allCraftButton: []
+  PressButton: 0
 --- !u!114 &7035219838293226392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24327,6 +24231,8 @@ MonoBehaviour:
   recipe: {fileID: 11400000, guid: fa4134144c1095647853d955ad53d466, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
+  allCraftButton: []
+  PressButton: 0
 --- !u!114 &7035219838536843184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24591,6 +24497,8 @@ MonoBehaviour:
   recipe: {fileID: 11400000, guid: 1165df2936e43ad48a09f603ca216f0b, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
+  allCraftButton: []
+  PressButton: 0
 --- !u!114 &7035219838537595239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24707,7 +24615,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7035219838546487384
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24755,8 +24663,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b1f3bc1335c201d4daedb5c62c43b31c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -26051,7 +25959,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7035219838791903130
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26099,8 +26007,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b1f3bc1335c201d4daedb5c62c43b31c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -27728,8 +27636,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b1f3bc1335c201d4daedb5c62c43b31c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -28491,6 +28399,8 @@ MonoBehaviour:
   recipe: {fileID: 11400000, guid: dc4bc305f3d5657489df90b23f3aeaf9, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
+  allCraftButton: []
+  PressButton: 0
 --- !u!1 &7035219839265526657
 GameObject:
   m_ObjectHideFlags: 0
@@ -28678,7 +28588,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7035219839305506160
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28726,8 +28636,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b1f3bc1335c201d4daedb5c62c43b31c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -29110,8 +29020,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b1f3bc1335c201d4daedb5c62c43b31c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -30670,6 +30580,8 @@ MonoBehaviour:
   recipe: {fileID: 11400000, guid: e306de82d68e20e44b4b1d0086bb5e3b, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
+  allCraftButton: []
+  PressButton: 0
 --- !u!1 &8291663050518413044
 GameObject:
   m_ObjectHideFlags: 0
@@ -33093,7 +33005,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Can be use as cut off tree vine
+  m_text: Can be use as a weapon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c4e558b3770990419791780308ba3ec, type: 2}
   m_sharedMaterial: {fileID: -6926018026985170021, guid: 9c4e558b3770990419791780308ba3ec,
@@ -34248,6 +34160,8 @@ MonoBehaviour:
   recipe: {fileID: 11400000, guid: e306de82d68e20e44b4b1d0086bb5e3b, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
+  allCraftButton: []
+  PressButton: 0
 --- !u!114 &8291663050731551376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41262,6 +41176,11 @@ MonoBehaviour:
   recipe: {fileID: 11400000, guid: d3644061a7ab66249a20893f712ea4b1, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
+  allCraftButton:
+  - {fileID: 8291663051203014199}
+  - {fileID: 8291663051443315021}
+  - {fileID: 8291663051523675199}
+  PressButton: 0
 --- !u!114 &8291663051174464499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41316,45 +41235,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8291663052573653612}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 8291663051174464498}
+        m_MethodName: HideCraftButton
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8291663052488740630}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 8291663050686965851}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8291663050485817893}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8291663051174464499}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -42201,49 +42087,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8291663052573653612}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 8291663051203014198}
+        m_MethodName: HideCraftButton
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8291663051203014199}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 8291663052488740630}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8291663050686965851}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8291663050485817893}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &8291663051203014198
 MonoBehaviour:
@@ -42276,6 +42129,11 @@ MonoBehaviour:
   recipe: {fileID: 11400000, guid: e10594a973e209441bfa26935bcc6090, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
+  allCraftButton:
+  - {fileID: 8291663051174464499}
+  - {fileID: 8291663051443315021}
+  - {fileID: 8291663051523675199}
+  PressButton: 0
 --- !u!1 &8291663051203120228
 GameObject:
   m_ObjectHideFlags: 0
@@ -42642,14 +42500,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.11395097, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5fb39bddd8fa85946ba6062e8d3895de, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b1f3bc1335c201d4daedb5c62c43b31c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -44769,6 +44627,8 @@ MonoBehaviour:
   recipe: {fileID: 11400000, guid: dc4bc305f3d5657489df90b23f3aeaf9, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
+  allCraftButton: []
+  PressButton: 0
 --- !u!1 &8291663051321737251
 GameObject:
   m_ObjectHideFlags: 0
@@ -47908,6 +47768,11 @@ MonoBehaviour:
   recipe: {fileID: 11400000, guid: b65fcfc0103efa6468bbf2f9dac44294, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
+  allCraftButton:
+  - {fileID: 8291663051203014199}
+  - {fileID: 8291663051174464499}
+  - {fileID: 8291663051523675199}
+  PressButton: 0
 --- !u!114 &8291663051443315021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47962,45 +47827,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8291663052573653612}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 8291663051443315020}
+        m_MethodName: HideCraftButton
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8291663052488740630}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8291663050686965851}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 8291663050485817893}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8291663051443315021}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -48968,6 +48800,11 @@ MonoBehaviour:
   recipe: {fileID: 11400000, guid: 63244bb8df0f42545b98c13b5ed33c80, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
+  allCraftButton:
+  - {fileID: 8291663051203014199}
+  - {fileID: 8291663051174464499}
+  - {fileID: 8291663051443315021}
+  PressButton: 0
 --- !u!114 &8291663051523675199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49022,49 +48859,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8291663052573653612}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 8291663051523675198}
+        m_MethodName: HideCraftButton
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8291663051523675199}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8291663052488740630}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8291663050686965851}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8291663050485817893}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &8291663051527392210
 GameObject:
@@ -50579,6 +50383,8 @@ MonoBehaviour:
   recipe: {fileID: 11400000, guid: e306de82d68e20e44b4b1d0086bb5e3b, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
+  allCraftButton: []
+  PressButton: 0
 --- !u!114 &8291663051609631405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51324,7 +51130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Looks weak but able to cut off something small
+  m_text: Looks weak but able to defend yourself
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c4e558b3770990419791780308ba3ec, type: 2}
   m_sharedMaterial: {fileID: -6926018026985170021, guid: 9c4e558b3770990419791780308ba3ec,
@@ -56351,6 +56157,8 @@ MonoBehaviour:
   recipe: {fileID: 11400000, guid: fa4134144c1095647853d955ad53d466, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
+  allCraftButton: []
+  PressButton: 0
 --- !u!114 &8291663051914880797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56615,6 +56423,8 @@ MonoBehaviour:
   recipe: {fileID: 0}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
+  allCraftButton: []
+  PressButton: 0
 --- !u!114 &8291663051919224078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62587,6 +62397,8 @@ MonoBehaviour:
   recipe: {fileID: 11400000, guid: 64956335eb781244687399b627bd34a6, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
+  allCraftButton: []
+  PressButton: 0
 --- !u!114 &8291663052219967077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64259,7 +64071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number: 2
-  animals: {fileID: 0}
+  animals: {fileID: 11400000, guid: eb54c10993261e14eaa168d1dcde8519, type: 2}
   animalButtonIcon: {fileID: 8291663051606495139}
   animalNameText: {fileID: 8291663050581601346}
   animalDetailsPic: {fileID: 8291663051712850283}
@@ -65466,6 +65278,8 @@ MonoBehaviour:
   recipe: {fileID: 11400000, guid: 1165df2936e43ad48a09f603ca216f0b, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
+  allCraftButton: []
+  PressButton: 0
 --- !u!114 &8291663052459289313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67931,14 +67745,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5fb39bddd8fa85946ba6062e8d3895de, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 8fcda7ed247b06e4f88a10d1f4a419aa, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
