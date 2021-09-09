@@ -5229,7 +5229,7 @@ MonoBehaviour:
   item:
   - {fileID: 11400000, guid: b285af44db52b6d4ba077308c536539c, type: 2}
   spread: 5
-  itemCountInOneDrop: 5
+  itemCountInOneDrop: 3
   dropCount: 1
   time: 172800
   Slider: {fileID: 0}

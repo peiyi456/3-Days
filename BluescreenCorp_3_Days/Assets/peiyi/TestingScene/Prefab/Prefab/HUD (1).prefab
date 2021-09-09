@@ -29304,7 +29304,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1390959334355659557}
-        m_MethodName: OnClickBachHome
+        m_MethodName: OnClickBackToHome
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39561,7 +39561,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 53063c168835457468d4fbaf8faba3ac, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -41391,10 +41391,10 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8291663051180464465}
         m_MethodName: ShowAnimalDetails
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8291663051180464466}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -41420,6 +41420,11 @@ MonoBehaviour:
   animalDetailsName: {fileID: 8291663051936815618}
   animalDetailsCharacteristics: {fileID: 8291663051233713810}
   animalDetailsAppearIn: {fileID: 8291663050717407788}
+  otherBttn:
+  - {fileID: 8291663051373036787}
+  - {fileID: 8291663052342505022}
+  - {fileID: 8291663052533562603}
+  press: 0
 --- !u!1 &8291663051184291099
 GameObject:
   m_ObjectHideFlags: 0
@@ -46257,10 +46262,10 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8291663051373036786}
         m_MethodName: ShowAnimalDetails
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8291663051373036787}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
@@ -46286,6 +46291,11 @@ MonoBehaviour:
   animalDetailsName: {fileID: 8291663051936815618}
   animalDetailsCharacteristics: {fileID: 8291663051233713810}
   animalDetailsAppearIn: {fileID: 8291663050717407788}
+  otherBttn:
+  - {fileID: 8291663051180464466}
+  - {fileID: 8291663052342505022}
+  - {fileID: 8291663052533562603}
+  press: 0
 --- !u!1 &8291663051374703411
 GameObject:
   m_ObjectHideFlags: 0
@@ -50171,7 +50181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 85ea587ed70ba31419b2d6e5c9ebf8d8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 56d78d5d491e615479e31234a48385d1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -64049,10 +64059,10 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8291663052342505021}
         m_MethodName: ShowAnimalDetails
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8291663052342505022}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
@@ -64078,6 +64088,11 @@ MonoBehaviour:
   animalDetailsName: {fileID: 8291663051936815618}
   animalDetailsCharacteristics: {fileID: 8291663051233713810}
   animalDetailsAppearIn: {fileID: 8291663050717407788}
+  otherBttn:
+  - {fileID: 8291663051180464466}
+  - {fileID: 8291663051373036787}
+  - {fileID: 8291663052533562603}
+  press: 0
 --- !u!1 &8291663052342693096
 GameObject:
   m_ObjectHideFlags: 0
@@ -65499,7 +65514,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1390959334355659557}
-        m_MethodName: OnClickBachHome
+        m_MethodName: OnClickBackToHome
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -66806,10 +66821,10 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8291663052533562602}
         m_MethodName: ShowAnimalDetails
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8291663052533562603}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
@@ -66835,6 +66850,11 @@ MonoBehaviour:
   animalDetailsName: {fileID: 8291663051936815618}
   animalDetailsCharacteristics: {fileID: 8291663051233713810}
   animalDetailsAppearIn: {fileID: 8291663050717407788}
+  otherBttn:
+  - {fileID: 8291663051180464466}
+  - {fileID: 8291663051373036787}
+  - {fileID: 8291663052342505022}
+  press: 0
 --- !u!1 &8291663052536643178
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,6 +25,8 @@ public class AnimalPageFunction : MonoBehaviour//, IPointerClickHandler
     [SerializeField] TextMeshProUGUI animalDetailsCharacteristics;
     [SerializeField] TextMeshProUGUI animalDetailsAppearIn;
 
+    [SerializeField] Button[] otherBttn;
+    public bool press;
 
     // Start is called before the first frame update
     void Start()
@@ -62,21 +64,46 @@ public class AnimalPageFunction : MonoBehaviour//, IPointerClickHandler
         }
     }
 
-    public void ShowAnimalDetails()
+    public void ShowAnimalDetails(Button bttn)
     {
+        for(int i = 0; i < otherBttn.Length; i++)
+        {
+            otherBttn[i].GetComponent<AnimalPageFunction>().press = false;
+        }
+
         if (animals != null)
         {
-            animalDetailsPic.gameObject.SetActive(true);
-            animalDetailsName.gameObject.SetActive(true);
-            animalDetailsCharacteristics.gameObject.SetActive(true);
-            animalDetailsAppearIn.gameObject.SetActive(true);
+            bttn.GetComponent<AnimalPageFunction>().press = !bttn.GetComponent<AnimalPageFunction>().press;
+            if (GameManager.instance.meetAnimal[number])
+            {
+                if (press)
+                {
+                    animalDetailsPic.gameObject.SetActive(true);
+                    animalDetailsName.gameObject.SetActive(true);
+                    animalDetailsCharacteristics.gameObject.SetActive(true);
+                    animalDetailsAppearIn.gameObject.SetActive(true);
 
-            animalDetailsPic.sprite = animals.UnitSprite;
-            animalDetailsName.text = animals.Name;
-            animalDetailsCharacteristics.text = animals.Characteristics;
-            animalDetailsAppearIn.text = animals.AppearIn;
+                    animalDetailsPic.sprite = animals.UnitSprite;
+                    animalDetailsName.text = animals.Name;
+                    animalDetailsCharacteristics.text = animals.Characteristics;
+                    animalDetailsAppearIn.text = animals.AppearIn;
+                }
 
-            Debug.Log("Button clicked = ");
+                else
+                {
+                    animalDetailsPic.gameObject.SetActive(false);
+                    animalDetailsName.gameObject.SetActive(false);
+                    animalDetailsCharacteristics.gameObject.SetActive(false);
+                    animalDetailsAppearIn.gameObject.SetActive(false);
+
+                    animalDetailsPic.sprite = null;
+                    animalDetailsName.text = "";
+                    animalDetailsCharacteristics.text = "";
+                    animalDetailsAppearIn.text = "";
+                }
+                Debug.Log("Button clicked = ");
+
+            }
         }
     }
 

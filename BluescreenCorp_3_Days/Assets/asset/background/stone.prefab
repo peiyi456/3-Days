@@ -146,10 +146,11 @@ MonoBehaviour:
   ableToInteract: 0
   cuttable: 1
   iscuttableTree: 0
+  reminder: {fileID: 0}
   item:
   - {fileID: 11400000, guid: 71ac0577db6fb6c41841de4671e6ff41, type: 2}
   spread: 0.7
-  itemCountInOneDrop: 5
+  itemCountInOneDrop: 2
   dropCount: 5
   time: 0
   Slider: {fileID: 0}

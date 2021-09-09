@@ -78,10 +78,10 @@ public class InventoryPanel : MonoBehaviour
                     Debug.Log("DDD");
                 }
 
-                //else
-                //{
-                //    UseButton.gameObject.SetActive(false);
-                //}
+                else
+                {
+                    UseButton.gameObject.SetActive(false);
+                }
             }
             else
             {
@@ -163,14 +163,11 @@ public class InventoryPanel : MonoBehaviour
         {
             if(inventory.slots[i].item == null || inventory.slots[i].itemCount <= 0)
             {
-                Debug.Log("11");
-                //buttons[i].Clean();
                 CleanButton(i);
                 inventory.slots[i].Clear();
             }
             else
             {
-                Debug.Log("22");
                 buttons[i].Set(inventory.slots[i]);
             }
         }

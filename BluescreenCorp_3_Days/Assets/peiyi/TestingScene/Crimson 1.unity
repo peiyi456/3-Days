@@ -10311,7 +10311,7 @@ MonoBehaviour:
   pickUpDrop: {fileID: 716102805806877556, guid: 9242fbfc1bccc1145845a0c6473c612d,
     type: 3}
   item: {fileID: 0}
-  itemCountInOneDrop: 1
+  itemCountInOneDrop: 2
 --- !u!1 &321124735
 GameObject:
   m_ObjectHideFlags: 0

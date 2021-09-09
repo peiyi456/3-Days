@@ -20,6 +20,7 @@ public class RandomSpawnItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ItemInOneDrop = 2;
         transform.position = new Vector3(transform.position.x, transform.position.y, GameManager.instance.zPositionForPickUp);
         Position = transform.position;
         SpawnItemFunc(Position, spawnItem, ItemInOneDrop);
