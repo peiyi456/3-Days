@@ -15309,6 +15309,7 @@ MonoBehaviour:
   spawnPrefab: {fileID: 2954565735209305468, guid: 816cde6ee845b4147b406db95d2e234c,
     type: 3}
   campsiteSprite: {fileID: 21300000, guid: 0705a20cc20c67945ae2b887454b768e, type: 3}
+  textReminder: {fileID: 8291663051558959369}
 --- !u!58 &513310578
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -76042,6 +76043,7 @@ MonoBehaviour:
   spawnPrefab: {fileID: 2954565735209305468, guid: 816cde6ee845b4147b406db95d2e234c,
     type: 3}
   campsiteSprite: {fileID: 21300000, guid: 0705a20cc20c67945ae2b887454b768e, type: 3}
+  textReminder: {fileID: 8291663051558959370}
 --- !u!58 &5519602562000366063
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -76093,6 +76095,7 @@ MonoBehaviour:
   player: {fileID: 0}
   spawnPrefab: {fileID: 0}
   campsiteSprite: {fileID: 0}
+  textReminder: {fileID: 0}
 --- !u!4 &5519602562161532834
 Transform:
   m_ObjectHideFlags: 0
@@ -77645,6 +77648,18 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: a1741a7c9fbb38e4ea0d8edd0bc0239a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d388991b5783a0347a16e1c913ae6be4, type: 3}
+--- !u!1 &8291663051558959369 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7408104671683391173, guid: d388991b5783a0347a16e1c913ae6be4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8291663051558959368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8291663051558959370 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1630645220697082607, guid: d388991b5783a0347a16e1c913ae6be4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8291663051558959368}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8427511437687275758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77816,6 +77831,11 @@ PrefabInstance:
       propertyPath: SleepingFadingPanel
       value: 
       objectReference: {fileID: 1545619343}
+    - target: {fileID: 6716677074067217538, guid: f810d4ad8070bd748ac88c89158fe907,
+        type: 3}
+      propertyPath: timeScale
+      value: 1500
+      objectReference: {fileID: 0}
     - target: {fileID: 6716677074067217542, guid: f810d4ad8070bd748ac88c89158fe907,
         type: 3}
       propertyPath: soundEffect

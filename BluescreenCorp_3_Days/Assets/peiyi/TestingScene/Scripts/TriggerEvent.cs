@@ -13,6 +13,8 @@ public class TriggerEvent : MonoBehaviour
     [SerializeField] GameObject spawnPrefab;
     [SerializeField] Sprite campsiteSprite;
 
+    [SerializeField] GameObject textReminder;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,21 @@ public class TriggerEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Vector2.Distance(player.transform.position, this.transform.position) < 10)
+        {
+            doAction = true;
+            if (camp1 == false)
+            {
+                textReminder.GetComponentInChildren<TextMeshProUGUI>().text = "It seems like it is able to put a campsite here. You can craft a campsite and press 'P' to put it here.";
+                GameManager.instance.TextReminder.SetActive(true);
+            }
+        }
+
+        else
+        {
+            GameManager.instance.TextReminder.SetActive(false);
+        }
+
         if(doAction)
         {
             if (Input.GetKey(keyCode))
@@ -43,30 +60,32 @@ public class TriggerEvent : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == "Player")
-        {
-            //CampFireInteract.isNearCampFire = true;
-            doAction = true;
-            if (camp1 == false)
-            {
-                GameManager.instance.TextReminder.GetComponentInChildren<TextMeshProUGUI>().text = "It seems like it is able to put a campsite here. You can craft a campsite and press 'P' to put it here.";
-                GameManager.instance.TextReminder.SetActive(true);
-            }
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if(collision.tag == "Player")
+    //    {
+    //        //CampFireInteract.isNearCampFire = true;
+    //        doAction = true;
+    //        if (camp1 == false)
+    //        {
+    //            GameManager.instance.TextReminder.GetComponentInChildren<TextMeshProUGUI>().text = "It seems like it is able to put a campsite here. You can craft a campsite and press 'P' to put it here.";
+    //            GameManager.instance.TextReminder.SetActive(true);
+    //        }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            //CampFireInteract.isNearCampFire = false;
-            //if (camp1 == false)
-            //{
-            GameManager.instance.TextReminder.GetComponentInChildren<TextMeshProUGUI>().text = "It seems like it is able to put a campsite here. You can craft a campsite and press 'P' to put it here.";
-                GameManager.instance.TextReminder.SetActive(false);
-            //}
-        }
-    }
+
+    //    }
+    //}
+
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if (collision.tag == "Player")
+    //    {
+    //        //CampFireInteract.isNearCampFire = false;
+    //        //if (camp1 == false)
+    //        //{
+    //        //GameManager.instance.TextReminder.GetComponentInChildren<TextMeshProUGUI>().text = "It seems like it is able to put a campsite here. You can craft a campsite and press 'P' to put it here.";
+    //            GameManager.instance.TextReminder.SetActive(false);
+    //        //}
+    //    }
+    //}
 }

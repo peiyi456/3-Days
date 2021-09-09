@@ -11,12 +11,14 @@ public class CampsiteInteract : MonoBehaviour
     [SerializeField] KeyCode sleepKey;
     CanSleepOrNot sleepStatus;
 
+    [SerializeField] GameObject TextReminder;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
         //PopupMessage.GetComponentInChildren<TextMeshProUGUI>().text = "Do you want to sleep? \nPress '" + sleepKey + "' to sleep.";
-        GameManager.instance.TextReminder.GetComponentInChildren<TextMeshProUGUI>().text = "Do you want to sleep? Press '" + sleepKey + "' to sleep.";
+        TextReminder.GetComponentInChildren<TextMeshProUGUI>().text = "Do you want to sleep? Press '" + sleepKey + "' to sleep.";
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class CampsiteInteract : MonoBehaviour
                 if (DayTimeManager.instance.sleepStatus == PlayerSleepingStatus.Wake)
                 {
                     //PopupMessage.SetActive(true);
-                    GameManager.instance.TextReminder.SetActive(true);
+                    TextReminder.SetActive(true);
                     if (Input.GetKeyDown(sleepKey))
                     {
                         Debug.Log("Sleep");
@@ -40,7 +42,7 @@ public class CampsiteInteract : MonoBehaviour
         }
         else
         {
-            GameManager.instance.TextReminder.SetActive(false);
+            TextReminder.SetActive(false);
         }
     }
 }
