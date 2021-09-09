@@ -15,11 +15,11 @@ MonoBehaviour:
   Name: Banana
   stackable: 1
   icon: {fileID: 21300000, guid: f7b5b0fe1a2af204eb1f6914323853db, type: 3}
-  Function: It is a yellow color fruits. Monkey loves to eat it.
-  Hint: 
+  Function: Looks juicy, can eat it raw
+  Hint: Eat it to replenish food and water
   itemTypes: 0
-  FoodValue: 15
-  WaterValue: 15
-  HPValue: 2
+  FoodValue: 20
+  WaterValue: 30
+  HPValue: 4
   TemperatureValue: 0
   soundEffect: {fileID: 8300000, guid: 2ce26bc9ab0d6bd4d92e1ba5779d5b87, type: 3}

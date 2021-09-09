@@ -21,7 +21,7 @@ public class TemperatureManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hoursNum = DayTimeManager.instance.hours - 1;
+        hoursNum = DayTimeManager.instance.hours;
     }
 
     // Update is called once per frame
@@ -45,7 +45,11 @@ public class TemperatureManager : MonoBehaviour
 
         else if(DayTimeManager.instance.hours == 12)
         {
-            temperatureValue = Random.Range(40, 43);
+            if (DayTimeManager.instance.hours > hoursNum)
+            {
+                temperatureValue = Random.Range(40, 43);
+                hoursNum = DayTimeManager.instance.hours;
+            }
         }
 
         else if(DayTimeManager.instance.hours >= 13 && DayTimeManager.instance.hours < 19)

@@ -16,8 +16,8 @@ MonoBehaviour:
   UnitName: Duck
   UnitTag: Duck
   dropItem: {fileID: 11400000, guid: 834130dc19cf48f439b1c8c112479ca9, type: 2}
-  characteristics: It is a duck
-  appearIn: xxx
+  characteristics: Common animals which appear around pond
+  appearIn: Near Pond
   unitSprite: {fileID: -7014647072283987094, guid: 7ec645021015c8f4e9769a155080abea,
     type: 3}
   maxHP: 8

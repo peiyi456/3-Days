@@ -16,8 +16,8 @@ MonoBehaviour:
   UnitName: Chicken
   UnitTag: Chicken
   dropItem: {fileID: 11400000, guid: 834130dc19cf48f439b1c8c112479ca9, type: 2}
-  characteristics: Chicken
-  appearIn: xxx
+  characteristics: Common animals which appear around bushed
+  appearIn: Forest
   unitSprite: {fileID: 8813184250309692743, guid: 410de1a2cc9d4fb448a215421253e4ac,
     type: 3}
   maxHP: 10

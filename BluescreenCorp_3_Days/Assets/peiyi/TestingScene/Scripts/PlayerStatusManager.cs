@@ -207,6 +207,6 @@ public class PlayerStatusManager : MonoBehaviour
     {
         losePage.SetActive(true);
         yield return new WaitForSeconds(time);
-        Time.timeScale = 0;
+        GameManager.instance.isPause = true;
     }
 }

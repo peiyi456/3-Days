@@ -16,7 +16,7 @@ MonoBehaviour:
   stackable: 1
   icon: {fileID: 21300000, guid: 9f48ec6292966b94982b94c9c47d4551, type: 3}
   Function: Its bloody, better not eat it raw
-  Hint: Eat it to replesh food but getting thirsty
+  Hint: Eat it to replenish food but getting thirsty
   itemTypes: 0
   FoodValue: 25
   WaterValue: -10

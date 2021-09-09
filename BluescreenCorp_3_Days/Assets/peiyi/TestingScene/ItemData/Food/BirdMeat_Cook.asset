@@ -16,7 +16,7 @@ MonoBehaviour:
   stackable: 1
   icon: {fileID: 21300000, guid: 3311d24058ab47a4882a388764c511cb, type: 3}
   Function: Smells good after cooked, best food you can found
-  Hint: Eat it to replesh food and water
+  Hint: Eat it to replenish food and water
   itemTypes: 0
   FoodValue: 40
   WaterValue: 25

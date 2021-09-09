@@ -42,6 +42,7 @@ public class CampFireInteract : MonoBehaviour
     void Start()
     {
         player = GameManager.instance.player;
+        ProgressBar.GetComponentInChildren<Slider>().value = 0;
         PopupMessage.GetComponentInChildren<TextMeshProUGUI>().text = "Press '" + keycode.ToString() + "' to cook";
     }
 
@@ -51,6 +52,11 @@ public class CampFireInteract : MonoBehaviour
         if(CookingPanel.activeSelf == false)
         {
             isPressButton = false;
+        }
+
+        else
+        {
+            GameManager.instance.TextReminder.SetActive(false);
         }
 
         if (Vector2.Distance(this.gameObject.transform.position, player.transform.position) < distance)
@@ -71,6 +77,8 @@ public class CampFireInteract : MonoBehaviour
             {
                 //Cooking = false;
                 PopupMessage.SetActive(false);
+                CookingPanel.SetActive(false);
+                isPressButton = false;
             }
 
         }
@@ -88,18 +96,21 @@ public class CampFireInteract : MonoBehaviour
         if (Cooking == true)
         {
             CookingPanel.SetActive(false);
+            PopupMessage.SetActive(false);
+                Debug.Log("GHe3");
             //GameManager.instance.inventoryContainer.RemoveItem(itemSlot.item, 1);
-            if (ProgressBar.GetComponentInChildren<Slider>().value > 0)
+            if (ProgressBar.GetComponentInChildren<Slider>().value < ProgressBar.GetComponentInChildren<Slider>().maxValue)
             {
-                ProgressBar.GetComponentInChildren<Slider>().value -= Time.deltaTime;
+                ProgressBar.GetComponentInChildren<Slider>().value += Time.deltaTime;
+                Debug.Log("GHe2");
             }
 
-            else if (ProgressBar.GetComponentInChildren<Slider>().value <= 0)
+            else if (ProgressBar.GetComponentInChildren<Slider>().value >= ProgressBar.GetComponentInChildren<Slider>().maxValue)
             {
                 dropCookedItem();
                 Cooking = false;
-                ProgressBar.GetComponentInChildren<Slider>().value = ProgressBar.GetComponentInChildren<Slider>().maxValue;
-                ProgressBar.SetActive(false);
+                ProgressBar.GetComponentInChildren<Slider>().value = 0;
+                Debug.Log("GHe");
             }
         }
     }
@@ -111,6 +122,7 @@ public class CampFireInteract : MonoBehaviour
         position.x += (spread * UnityEngine.Random.value - spread / 2) + 0.5f;
         position.y += (spread * UnityEngine.Random.value - spread / 2) + 0.5f;
         position.z = -36.34118f;
+        ProgressBar.SetActive(false);
 
         ItemSpawnManager.instance.SpawnItem(position, cookResult, 1);
         PlayerStatusManager.instance.PlayerStamina.value -= staminaUsed;

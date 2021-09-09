@@ -137,8 +137,8 @@ public class DayTimeManager : MonoBehaviour
         if(days > 3)
         {
             //GameManager.instance.isPause = true;
-            Time.timeScale = 0;
             winPage.gameObject.SetActive(true);
+            GameManager.instance.isPause = false;
         }
     }
 

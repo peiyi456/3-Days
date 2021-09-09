@@ -16,10 +16,12 @@ public class CookingButtonFunction : MonoBehaviour
 
     ItemSlot itemSlot;
 
+    [SerializeField] CampFireInteract campFireInteract;
+
     // Start is called before the first frame update
     void Start()
     {
-        progressBar = CampFireInteract.instace.ProgressBar.GetComponentInChildren<Slider>();
+        progressBar = campFireInteract.ProgressBar.GetComponentInChildren<Slider>();
         buttons.transform.GetChild(0).GetComponent<Image>().sprite = cookResult.icon;
         buttons.GetComponentInChildren<TextMeshProUGUI>().text = cookResult.Name;
     }
@@ -70,13 +72,14 @@ public class CookingButtonFunction : MonoBehaviour
     {
         if(CampFireInteract.instace.Cooking == false)
         {
-            CampFireInteract.instace.cookResult = cookResult;
+            campFireInteract.cookResult = cookResult;
             //CampFireInteract.instace.cookItem = cookItem;
-            CampFireInteract.instace.CookingPanel.SetActive(false);
-            CampFireInteract.instace.ProgressBar.SetActive(true);
+            campFireInteract.CookingPanel.SetActive(false);
+            campFireInteract.ProgressBar.SetActive(true);
+            Debug.Log("open");
             GameManager.instance.inventoryContainer.RemoveItem(itemSlot.item, 1);
             Debug.Log("1");
-            CampFireInteract.instace.Cooking = true;
+            campFireInteract.Cooking = true;
             //if (progressBar.value > progressBar.minValue)
             //{
             //    CampFireInteract.instace.Cooking = true;

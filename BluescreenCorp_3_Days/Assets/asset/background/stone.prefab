@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba94a02d4059c2408afbe7fc22b2389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDropSound: {fileID: 0}
+  itemDropSound: {fileID: 8300000, guid: 1ddb47c482bac2d49b4b86d1238284be, type: 3}
   staminaUsed: 5
   isFruitTree: 0
   fruitsOnTree: []

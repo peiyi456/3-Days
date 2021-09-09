@@ -16,7 +16,7 @@ MonoBehaviour:
   stackable: 1
   icon: {fileID: 21300000, guid: 9d648449b5d05a34fb4f122a378d2a9c, type: 3}
   Function: Its bloody and stinks, can eat it raw
-  Hint: Eat it to replesh food and water
+  Hint: Eat it to replenish food and water
   itemTypes: 0
   FoodValue: 18
   WaterValue: 9
