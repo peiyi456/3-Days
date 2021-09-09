@@ -6,10 +6,20 @@ using UnityEngine.SceneManagement;
 public class LoadingPageScripts : MonoBehaviour
 {
     public static int loadSceneNumber;
+    [SerializeField] GameObject KeyInstructionPage;
 
     // Start is called before the first frame update
     void Start()
     {
+        if(loadSceneNumber == 3 || loadSceneNumber ==4)
+        {
+            KeyInstructionPage.SetActive(true);
+        }
+        else
+        {
+            KeyInstructionPage.SetActive(false);
+        }
+
         Debug.Log("Run: " + Time.timeScale);
         Debug.Log(loadSceneNumber);
         StartCoroutine(ChangeScene());

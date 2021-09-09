@@ -15,6 +15,7 @@ public class MapChoosing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        fadeOut = false;
         original = testing.color.a;
         StartCoroutine(DoFade());
         //sceneName = loadingPage.name;

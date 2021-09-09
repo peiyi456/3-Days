@@ -79,11 +79,7 @@ public class DayTimeManager : MonoBehaviour
                     NextDay();
                 }
 
-                if (hours >= 22 && hours < 24)
-                {
-                    canSleep = CanSleepOrNot.CanSleep;
-                }
-                else if (hours >= 00 && hours < 02)
+                if (hours >= 00 && hours < 5)
                 {
                     canSleep = CanSleepOrNot.CanSleep;
                 }
