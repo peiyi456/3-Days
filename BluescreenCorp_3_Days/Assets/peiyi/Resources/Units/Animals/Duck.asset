@@ -20,6 +20,7 @@ MonoBehaviour:
   appearIn: Near Pond
   unitSprite: {fileID: -7014647072283987094, guid: 7ec645021015c8f4e9769a155080abea,
     type: 3}
+  rescalingUnitImageSize: 0.8
   maxHP: 8
   attack: 2
   unitTypes: 0

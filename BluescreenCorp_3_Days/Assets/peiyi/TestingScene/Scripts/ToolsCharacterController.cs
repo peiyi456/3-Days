@@ -77,6 +77,9 @@ public class ToolsCharacterController : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         TreeInteract checking = collision.gameObject.GetComponent<TreeInteract>();
-        checking.reminder.SetActive(false);
+        if (checking.iscuttableTree)
+        {
+            checking.reminder.SetActive(false);
+        }
     }
 }

@@ -12,7 +12,7 @@ public class PutAllCampsite : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        objectiveText.text = Description;
     }
 
     // Update is called once per frame

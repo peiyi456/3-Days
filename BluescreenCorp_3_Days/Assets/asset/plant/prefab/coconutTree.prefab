@@ -5044,6 +5044,7 @@ GameObject:
   - component: {fileID: 4679990810770192803}
   - component: {fileID: 3684222992760800842}
   - component: {fileID: 3133558404507253114}
+  - component: {fileID: 460520521042060931}
   m_Layer: 0
   m_Name: coconutTree
   m_TagString: Untagged
@@ -5118,7 +5119,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &3133558404507253114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5140,10 +5141,27 @@ MonoBehaviour:
   cuttable: 0
   iscuttableTree: 0
   reminder: {fileID: 0}
-  item: []
-  spread: 0.7
-  itemCountInOneDrop: 1
-  dropCount: 5
-  time: 0
+  item:
+  - {fileID: 11400000, guid: d3f3f57e831ff4e42ac0016ed270b8c4, type: 2}
+  spread: 5
+  itemCountInOneDrop: 3
+  dropCount: 1
+  time: 172800
   Slider: {fileID: 0}
-  particleEffect: {fileID: 0}
+  particleEffect: {fileID: 4700365162060462433}
+--- !u!58 &460520521042060931
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8403857021576591243}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.77}
+  serializedVersion: 2
+  m_Radius: 1

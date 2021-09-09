@@ -32,34 +32,42 @@ public class CharacterController2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.isPause == false)
+        if (Time.timeScale == 1)
         {
-            if (stopMove == false)
+            if (GameManager.instance.isPause == false)
             {
-                float horizontal = Input.GetAxisRaw("Horizontal");
-                float vertical = Input.GetAxisRaw("Vertical");
-
-                motionVector = new Vector2(
-                    horizontal,
-                    vertical
-                    );
-
-                animator.SetFloat("Horizontal", horizontal);
-                animator.SetFloat("Vertical", vertical);
-
-                moving = horizontal != 0 || vertical != 0;
-                animator.SetBool("Moving", moving);
-
-                if (horizontal != 0 || vertical != 0)
+                if (stopMove == false)
                 {
-                    lastMotionVector = new Vector2(
+                    float horizontal = Input.GetAxisRaw("Horizontal");
+                    float vertical = Input.GetAxisRaw("Vertical");
+
+                    motionVector = new Vector2(
                         horizontal,
                         vertical
-                        ).normalized;
+                        );
 
-                    animator.SetFloat("LastHorizontal", horizontal);
-                    animator.SetFloat("LastVertical", vertical);
+                    animator.SetFloat("Horizontal", horizontal);
+                    animator.SetFloat("Vertical", vertical);
+
+                    moving = horizontal != 0 || vertical != 0;
+                    animator.SetBool("Moving", moving);
+
+                    if (horizontal != 0 || vertical != 0)
+                    {
+                        lastMotionVector = new Vector2(
+                            horizontal,
+                            vertical
+                            ).normalized;
+
+                        animator.SetFloat("LastHorizontal", horizontal);
+                        animator.SetFloat("LastVertical", vertical);
+                    }
                 }
+            }
+            else
+            {
+                moving = false;
+                animator.SetBool("Moving", moving);
             }
         }
         else
@@ -90,6 +98,9 @@ public class CharacterController2D : MonoBehaviour
 
     public void PlayWalkSound()
     {
-        SoundManager.instance.soundEffect.PlayOneShot(walkSound);
+        if (GameManager.instance.isPause == false)
+        {
+            SoundManager.instance.soundEffect.PlayOneShot(walkSound);
+        }
     }
 }

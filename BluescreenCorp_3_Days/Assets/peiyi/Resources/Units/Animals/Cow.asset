@@ -19,6 +19,7 @@ MonoBehaviour:
   characteristics: An agreassive animals with deadly attack if make them angry
   appearIn: Forest
   unitSprite: {fileID: 21300000, guid: 39a6a211e874d594e8fb5287d5dd7471, type: 3}
+  rescalingUnitImageSize: 1.5
   maxHP: 20
   attack: 3
   unitTypes: 0

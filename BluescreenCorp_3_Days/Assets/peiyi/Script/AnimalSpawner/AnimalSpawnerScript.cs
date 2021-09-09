@@ -23,32 +23,32 @@ public class AnimalSpawnerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        nextSpawn = spawnRate;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > nextSpawn)
+        if (GameManager.instance.isPause == false)
         {
-
-
-            if (AnimalList.Count < MaxNo)
+            nextSpawn -= Time.deltaTime;
+            if (nextSpawn <= 0)
+                //if (Time.time > nextSpawn)
             {
-                Vector2 randomInCircle = new Vector2(WanderingArea.position.x, WanderingArea.position.y) + Random.insideUnitCircle * Radius;
-                //Vector3 Destination = new Vector3(randomInCiecle.x, randomInCiecle.y, 0f);
-                nextSpawn = Time.time + spawnRate;
-                //randX = Random.Range(minX, maxX);
-                //randY = Random.Range(minY, maxY);
-                //whereToSpawn = new Vector2(randX, randY);
-                GameObject spawnAnimal = Instantiate(animal, randomInCircle, Quaternion.identity) as GameObject;
-                spawnAnimal.transform.SetParent(this.transform, false);
-                AnimalList.Add(spawnAnimal);
-                No++;
+                if (AnimalList.Count < MaxNo)
+                {
+                    Vector2 randomInCircle = new Vector2(WanderingArea.position.x, WanderingArea.position.y) + Random.insideUnitCircle * Radius;
+                    //Vector3 Destination = new Vector3(randomInCiecle.x, randomInCiecle.y, 0f);
+                    nextSpawn = spawnRate;
+                    //randX = Random.Range(minX, maxX);
+                    //randY = Random.Range(minY, maxY);
+                    //whereToSpawn = new Vector2(randX, randY);
+                    GameObject spawnAnimal = Instantiate(animal, randomInCircle, Quaternion.identity) as GameObject;
+                    spawnAnimal.transform.SetParent(this.transform, false);
+                    AnimalList.Add(spawnAnimal);
+                    No++;
+                }
             }
-
-
-
         }
 
         for (int i = 0; i < AnimalList.Count; i++)
@@ -58,6 +58,5 @@ public class AnimalSpawnerScript : MonoBehaviour
                 AnimalList.RemoveAt(i);
             }
         }
-        //}
     }
 }

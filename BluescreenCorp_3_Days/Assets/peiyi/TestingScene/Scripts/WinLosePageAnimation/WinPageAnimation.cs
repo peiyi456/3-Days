@@ -36,14 +36,25 @@ public class WinPageAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(objectivesDone > 1)
+        if (MapChoosing.chooseMapNo == 1)
         {
-            PlayerPrefs.SetInt("UNLOCK_MAP", 1);
+            if (objectivesDone > 1)
+            {
+                PlayerPrefs.SetInt("UNLOCK_MAP", 1);
+            }
+
+            if (objectivesDone > PlayerPrefs.GetInt("BADGE_UNLOCK_MAP1"))
+            {
+                PlayerPrefs.SetInt("BADGE_UNLOCK_MAP1", objectivesDone);
+            }
         }
 
-        if(objectivesDone > PlayerPrefs.GetInt("BADGE_UNLOCK_MAP1"))
+        else if(MapChoosing.chooseMapNo == 2)
         {
-            PlayerPrefs.GetInt("BADGE_UNLOCK_MAP1", objectivesDone);
+            if (objectivesDone > PlayerPrefs.GetInt("BADGE_UNLOCK_MAP2"))
+            {
+                PlayerPrefs.SetInt("BADGE_UNLOCK_MAP2", objectivesDone);
+            }
         }
     }
 

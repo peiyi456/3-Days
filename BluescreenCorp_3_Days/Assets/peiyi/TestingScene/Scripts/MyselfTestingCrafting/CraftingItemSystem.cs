@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CraftingItemSystem : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class CraftingItemSystem : MonoBehaviour
     [SerializeField] bool craft = false;
     [SerializeField] bool hasElement1, hasElement2, hasElement3;
     [SerializeField] Image element1, element2, element3, output;
+    [SerializeField] TextMeshProUGUI element1Text, element2Text, element3Text;
     public Button craftBttn;
     [SerializeField] int CraftItemBttnNo;
     [SerializeField] CraftingItemRecipe recipe;
@@ -24,8 +26,6 @@ public class CraftingItemSystem : MonoBehaviour
 
     private void Update()
     {
-        //craftBttn.gameObject.SetActive(false);
-        //checkingButtonInteractable();
         CanCraft(container);
     }
 
@@ -361,7 +361,9 @@ public class CraftingItemSystem : MonoBehaviour
             output.gameObject.SetActive(true);
             craftBttn.gameObject.SetActive(true);
             element1.sprite = recipe.elements[0].item.icon;
+            element1Text.text = recipe.elements[0].itemCount.ToString();
             output.sprite = recipe.output.item.icon;
+
             if(hasElement1)
             {
                 element1.color = Color.white;
@@ -374,6 +376,8 @@ public class CraftingItemSystem : MonoBehaviour
             if (recipe.elements.Count > 1)
             {
                 element2.sprite = recipe.elements[1].item.icon;
+                element2Text.text = recipe.elements[1].itemCount.ToString();
+
                 if (hasElement2)
                 {
                     element2.color = Color.white;
@@ -389,13 +393,15 @@ public class CraftingItemSystem : MonoBehaviour
                 element2.sprite = null;
                 element2.gameObject.SetActive(false);
 
-                element3.sprite = null;
-                element3.gameObject.SetActive(false);
+                //element3.sprite = null;
+                //element3.gameObject.SetActive(false);
             }
 
             if (recipe.elements.Count > 2)
             {
                 element3.sprite = recipe.elements[2].item.icon;
+                element3Text.text = recipe.elements[2].itemCount.ToString();
+
                 if (hasElement3)
                 {
                     element3.color = Color.white;
@@ -425,6 +431,9 @@ public class CraftingItemSystem : MonoBehaviour
             craftBttn.gameObject.SetActive(false);
             selected = false;
             craftBttn.gameObject.SetActive(false);
+            element1Text.text = "";
+            element2Text.text = "";
+            element3Text.text = "";
         }
     }
 
@@ -440,32 +449,18 @@ public class CraftingItemSystem : MonoBehaviour
 
         }
 
-
-        //for (int i = 0; i < container.slots.Count; i++)
-        //{
-        //    for (int j = 0; j < recipe.elements.Count; j++)
-        //    {
-        //        //if (container.slots[i].item == recipe.elements[0].item)
-        //        //{
-        //        //    container.slots[i].itemCount -= recipe.elements[0].itemCount;
-        //        //}
-
-        //        //if (container.slots[i].item == recipe.elements[1].item)
-        //        //{
-        //        //    container.slots[i].itemCount -= recipe.elements[1].itemCount;
-        //        //}
-
-        //        if (container.slots[i].item == recipe.elements[j].item)
-        //        {
-        //            container.slots[i].itemCount -= recipe.elements[j].itemCount;
-        //        }
-        //    }
-        //}
         Debug.Log("Add: " + item);
         GameManager.instance.inventoryContainer.AddItem(item, 1);
         PlayerStatusManager.instance.PlayerStamina.value -= 10;
+        StartCoroutine(CraftingCDTime());
     }
 
+    IEnumerator CraftingCDTime()
+    {
+        craftBttn.interactable = false;
+        yield return new WaitForSeconds(2f);
+        craftBttn.interactable = true;
+    }
 
     public void CraftAxe(/*Image img*/)
     {

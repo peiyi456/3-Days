@@ -13,7 +13,7 @@ public class EndingEffect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(PlayFadeIn());
+        StartCoroutine(PlayWinningFadeIn());
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class EndingEffect : MonoBehaviour
         
     }
 
-    IEnumerator PlayFadeIn()
+    IEnumerator PlayWinningFadeIn()
     {
         SoundManager.instance.soundEffect.PlayOneShot(WinSound);
         yield return new WaitForSeconds(0.3f);
@@ -34,4 +34,5 @@ public class EndingEffect : MonoBehaviour
         WinPage.SetActive(true);
         //SceneManager.LoadScene(2);
     }
+
 }

@@ -21,7 +21,7 @@ public class TemperatureManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hoursNum = DayTimeManager.instance.hours;
+        hoursNum = DayTimeManager.instance.hours - 1;
     }
 
     // Update is called once per frame
@@ -32,50 +32,52 @@ public class TemperatureManager : MonoBehaviour
         //    hoursNum = 8;
         //    temperatureValue = Random.Range(36, 40);
         //}
-
-        if (DayTimeManager.instance.hours >= 7 && DayTimeManager.instance.hours < 12)
+        if (Time.timeScale == 1)
         {
-            if (DayTimeManager.instance.hours > hoursNum)
+            if (DayTimeManager.instance.hours >= 7 && DayTimeManager.instance.hours < 12)
             {
-                temperatureValue = Random.Range(36, 41);
-                //temperatureValue = 38;
-                hoursNum = DayTimeManager.instance.hours;
+                if (DayTimeManager.instance.hours > hoursNum)
+                {
+                    temperatureValue = Random.Range(36, 41);
+                    //temperatureValue = 38;
+                    hoursNum = DayTimeManager.instance.hours;
+                }
             }
-        }
 
-        else if(DayTimeManager.instance.hours == 12)
-        {
-            if (DayTimeManager.instance.hours > hoursNum)
+            else if (DayTimeManager.instance.hours == 12)
             {
-                temperatureValue = Random.Range(40, 43);
-                hoursNum = DayTimeManager.instance.hours;
+                if (DayTimeManager.instance.hours > hoursNum)
+                {
+                    temperatureValue = Random.Range(40, 43);
+                    hoursNum = DayTimeManager.instance.hours;
+                }
             }
-        }
 
-        else if(DayTimeManager.instance.hours >= 13 && DayTimeManager.instance.hours < 19)
-        {
-            if (DayTimeManager.instance.hours > hoursNum)
+            else if (DayTimeManager.instance.hours >= 13 && DayTimeManager.instance.hours < 19)
             {
-                temperatureValue = Random.Range(36, 41);
-                hoursNum = DayTimeManager.instance.hours;
+                if (DayTimeManager.instance.hours > hoursNum)
+                {
+                    temperatureValue = Random.Range(36, 41);
+                    hoursNum = DayTimeManager.instance.hours;
+                }
             }
-        }
 
-        else if(DayTimeManager.instance.hours >= 19 && DayTimeManager.instance.hours <= 23)
-        {
-            if (DayTimeManager.instance.hours > hoursNum)
+            else if (DayTimeManager.instance.hours >= 19 && DayTimeManager.instance.hours <= 23)
             {
-                temperatureValue = Random.Range(32, 36);
-                hoursNum = DayTimeManager.instance.hours;
+                if (DayTimeManager.instance.hours > hoursNum)
+                {
+                    temperatureValue = Random.Range(32, 36);
+                    hoursNum = DayTimeManager.instance.hours;
+                }
             }
-        }
 
-        else if(DayTimeManager.instance.hours >= 00 && DayTimeManager.instance.hours < 7)
-        {
-            if (DayTimeManager.instance.hours > hoursNum)
+            else if (DayTimeManager.instance.hours >= 00 && DayTimeManager.instance.hours < 7)
             {
-                temperatureValue = Random.Range(32, 36);
-                hoursNum = DayTimeManager.instance.hours;
+                if (DayTimeManager.instance.hours > hoursNum)
+                {
+                    temperatureValue = Random.Range(32, 36);
+                    hoursNum = DayTimeManager.instance.hours;
+                }
             }
         }
 

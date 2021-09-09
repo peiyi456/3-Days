@@ -16,7 +16,7 @@ public class TreeInteract : ToolHit
     [SerializeField] bool cuttable;
 
     [Header("Checking for use axe to chop")]
-    [SerializeField] bool iscuttableTree;
+    public bool iscuttableTree;
     public GameObject reminder;
     //[SerializeField] GameObject pickUpDrop;
 
@@ -44,6 +44,18 @@ public class TreeInteract : ToolHit
 
     private void Update()
     {
+        if(!cuttable)
+        {
+            reminder = null;
+        }
+        else
+        {
+            if(!iscuttableTree)
+            {
+                reminder = null;
+            }
+        }
+
         if (ableToInteract)
         {
             particleEffect.gameObject.SetActive(true);

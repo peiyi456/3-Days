@@ -17,6 +17,7 @@ public class _UnitsBase : ScriptableObject
     [SerializeField] string characteristics;
     [SerializeField] string appearIn;
     [SerializeField] Sprite unitSprite;
+    [SerializeField] float rescalingUnitImageSize;
 
 
     [Header("Base Stats")]
@@ -72,6 +73,11 @@ public class _UnitsBase : ScriptableObject
     public Sprite UnitSprite
     {
         get { return unitSprite; }
+    }
+
+    public float RescaleImage
+    {
+        get { return rescalingUnitImageSize; }
     }
 
     public int MaxHP

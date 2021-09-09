@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class PlayerStatusManager : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class PlayerStatusManager : MonoBehaviour
     {
         instance = this;
     }
+
+    [Header("Audio clip")]
+    [SerializeField] AudioClip loseSoundEffect;
 
     [Header("Player status bar")]
     public Slider PlayerHP;
@@ -42,6 +46,7 @@ public class PlayerStatusManager : MonoBehaviour
     [Header("Pages related to the player status")]
     [SerializeField] GameObject losePage;
     [SerializeField] GameObject lowHPEffect;
+    [SerializeField] Image FadeIn;
 
     private void Start()
     {
@@ -205,8 +210,22 @@ public class PlayerStatusManager : MonoBehaviour
 
     IEnumerator LosePageOn(float time)
     {
+        SoundManager.instance.soundEffect.PlayOneShot(loseSoundEffect);
+        FadeIn.gameObject.SetActive(true);
+        var sequence = DOTween.Sequence();
+        sequence.Append(FadeIn.DOFade(1f, 2f));
+        yield return new WaitForSeconds(2f);
         losePage.SetActive(true);
         yield return new WaitForSeconds(time);
         GameManager.instance.isPause = true;
+    }
+
+
+    public IEnumerator PlayLosingFadeIn()
+    {
+        FadeIn.gameObject.SetActive(true);
+        var sequence = DOTween.Sequence();
+        sequence.Append(FadeIn.DOFade(1f, 2f));
+        yield return new WaitForSeconds(2f);
     }
 }

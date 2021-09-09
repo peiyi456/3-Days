@@ -67,49 +67,52 @@ public class PopupController : MonoBehaviour
 
     void UIPopup()
     {
-        if (!isMapOpen)
+        if (Time.timeScale == 1)
         {
-            if (Input.GetKeyDown(KeyCode.B))
+            if (!isMapOpen)
             {
-                
-                isBookOpen = !isBookOpen;
-                if (isBookOpen)
+                if (Input.GetKeyDown(KeyCode.B))
                 {
-                    GameManager.instance.isPause = true;
-                    RectTransform rt = Books.GetComponent<RectTransform>();
-                    rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 0, rt.rect.width);
-                    rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, rt.rect.height);
 
-                }
-                else
-                {
-                    GameManager.instance.isPause = false;
+                    isBookOpen = !isBookOpen;
+                    if (isBookOpen)
+                    {
+                        GameManager.instance.isPause = true;
+                        RectTransform rt = Books.GetComponent<RectTransform>();
+                        rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 0, rt.rect.width);
+                        rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, rt.rect.height);
 
-                    RectTransform rt = Books.GetComponent<RectTransform>();
-                    rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 1920, rt.rect.width);
-                    rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, rt.rect.height);
+                    }
+                    else
+                    {
+                        GameManager.instance.isPause = false;
+
+                        RectTransform rt = Books.GetComponent<RectTransform>();
+                        rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 1920, rt.rect.width);
+                        rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, rt.rect.height);
+                    }
                 }
             }
-        }
 
-        if (!isBookOpen)
-        {
-            if (Input.GetKeyDown(KeyCode.M))
+            if (!isBookOpen)
             {
-                if (isMapOpen == false)
+                if (Input.GetKeyDown(KeyCode.M))
                 {
-                    GameManager.instance.isPause = true;
+                    if (isMapOpen == false)
+                    {
+                        GameManager.instance.isPause = true;
 
-                    isMapOpen = true;
-                    MapPage.SetActive(isMapOpen);
-                }
+                        isMapOpen = true;
+                        MapPage.SetActive(isMapOpen);
+                    }
 
-                else
-                {
-                    GameManager.instance.isPause = false;
+                    else
+                    {
+                        GameManager.instance.isPause = false;
 
-                    isMapOpen = false;
-                    MapPage.SetActive(isMapOpen);
+                        isMapOpen = false;
+                        MapPage.SetActive(isMapOpen);
+                    }
                 }
             }
         }

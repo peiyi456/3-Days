@@ -35,27 +35,16 @@ public class _BattleUnit : MonoBehaviour
 
             units = new _Units(_base);
 
-            Debug.Log(_base.name);
-            //if(isPlayerUnit)
-            //{
-            //    GetComponent<Image>
-            //}
-
             image.sprite = units.Base.UnitSprite;
 
             image.color = originalColor;
+            image.transform.localScale = new Vector3(units.Base.RescaleImage, units.Base.RescaleImage, 1);
             PlayEnterAnimation();
         }
 
         else
         {
             units = new _Units(_base);
-
-            //if(isPlayerUnit)
-            //{
-            //    GetComponent<Image>
-            //}
-
             image.sprite = units.Base.UnitSprite;
 
             image.color = originalColor;

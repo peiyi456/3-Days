@@ -20,6 +20,7 @@ MonoBehaviour:
   appearIn: Forest
   unitSprite: {fileID: 8813184250309692743, guid: 410de1a2cc9d4fb448a215421253e4ac,
     type: 3}
+  rescalingUnitImageSize: 0.8
   maxHP: 10
   attack: 2
   unitTypes: 0
