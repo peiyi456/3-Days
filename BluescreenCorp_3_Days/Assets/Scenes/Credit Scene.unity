@@ -551,8 +551,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirstUiCredit: {fileID: 1067635874}
   NextUiCredit: {fileID: 1138346942}
+  LastUICredit: {fileID: 1223853022}
   nextText: 0
-  checkPrevoius: 0
+  nextText2: 0
 --- !u!1 &1138346940
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +565,6 @@ GameObject:
   - component: {fileID: 1138346941}
   - component: {fileID: 1138346943}
   - component: {fileID: 1138346942}
-  - component: {fileID: 1138346944}
   m_Layer: 5
   m_Name: Role 1
   m_TagString: Untagged
@@ -712,22 +712,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138346940}
   m_CullTransparentMesh: 0
---- !u!114 &1138346944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138346940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bacbe4e4113feee40a3f73467eb2d8b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FirstUiCredit: {fileID: 0}
-  NextUiCredit: {fileID: 1223853022}
-  nextText: 0
-  checkPrevoius: 0
 --- !u!1 &1223853019
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,9 +768,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Game Designer
-
-    William Si Wei Ren
+  m_text: 'Thank You for Playing
 
 '
   m_isRightToLeft: 0
@@ -858,12 +840,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1223853022}
-    characterCount: 33
+    characterCount: 22
     spriteCount: 0
-    spaceCount: 6
-    wordCount: 6
+    spaceCount: 4
+    wordCount: 4
     linkCount: 0
-    lineCount: 2
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
