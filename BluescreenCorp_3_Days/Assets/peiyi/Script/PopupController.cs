@@ -33,6 +33,7 @@ public class PopupController : MonoBehaviour
     {
         Time.timeScale = 0;
         PausePage.SetActive(false);
+        PlayerNote.SetActive(true);
 
         isPause = false;
         isPausePageOpen = false;

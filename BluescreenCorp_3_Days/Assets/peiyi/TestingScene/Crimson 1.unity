@@ -75548,12 +75548,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 591a9bc8e2b67ff4c985d7559d67ed29, type: 3}
---- !u!1 &1347694175207982475 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7035219837488315523, guid: d388991b5783a0347a16e1c913ae6be4,
-    type: 3}
-  m_PrefabInstance: {fileID: 8291663051558959368}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1347694175394809919 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7035219837704106295, guid: d388991b5783a0347a16e1c913ae6be4,
@@ -77899,6 +77893,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8291663051558959368}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8291663051558959371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9184107854552593981, guid: d388991b5783a0347a16e1c913ae6be4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8291663051558959368}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8427511437687275758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78064,7 +78064,7 @@ PrefabInstance:
         type: 3}
       propertyPath: winPage
       value: 
-      objectReference: {fileID: 1347694175207982475}
+      objectReference: {fileID: 8291663051558959371}
     - target: {fileID: 6716677074067217538, guid: f810d4ad8070bd748ac88c89158fe907,
         type: 3}
       propertyPath: SleepingFadingPanel

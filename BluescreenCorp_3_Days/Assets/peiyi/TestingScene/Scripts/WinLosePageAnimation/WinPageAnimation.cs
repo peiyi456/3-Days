@@ -36,21 +36,21 @@ public class WinPageAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(GameManager.instance.Objective1 == true)
-        //{
-        //    if(isCount == false)
-        //    {
-        //        objectivesDone++;
-        //        isCount = true;
-        //    }
-        //}
+        if(objectivesDone > 1)
+        {
+            PlayerPrefs.SetInt("UNLOCK_MAP", 1);
+        }
+
+        if(objectivesDone > PlayerPrefs.GetInt("BADGE_UNLOCK_MAP1"))
+        {
+            PlayerPrefs.GetInt("BADGE_UNLOCK_MAP1", objectivesDone);
+        }
     }
 
     public void PlayObjectiveDoneAnimation_1()
     {
         if (GameManager.instance.Objective1 == true)
         {
-            Debug.Log("1111111");
             var sequence = DOTween.Sequence();
             sequence.Append(ObjectivesTextOfTheWinPage[0].DOColor(Color.yellow, colorSpeed));
             objectivesDone++;
@@ -62,7 +62,6 @@ public class WinPageAnimation : MonoBehaviour
     {
         if (GameManager.instance.Objective2 == true)
         {
-            Debug.Log("2222222");
             var sequence = DOTween.Sequence();
             sequence.Append(ObjectivesTextOfTheWinPage[1].DOColor(Color.yellow, colorSpeed));
             objectivesDone++;
@@ -73,7 +72,6 @@ public class WinPageAnimation : MonoBehaviour
     {
         if (GameManager.instance.Objective3 == true)
         {
-            Debug.Log("3333333");
             var sequence = DOTween.Sequence();
             sequence.Append(ObjectivesTextOfTheWinPage[2].DOColor(Color.yellow, colorSpeed));
             objectivesDone++;

@@ -15,6 +15,7 @@ public class MainPageButtonController : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         settingPanel.SetActive(false);
         //StartCoroutine(DoFade());
         if(isBackMenu)
@@ -69,5 +70,21 @@ public class MainPageButtonController : MonoBehaviour
             //FadeIn.gameObject.SetActive(false);
             SceneManager.LoadScene(2);
         }
+    }
+
+    public void OnClickCreditButton()
+    {
+        LoadingPageScripts.loadSceneNumber = 5;
+        StartCoroutine(PlayFadeIn());
+    }
+
+    IEnumerator PlayFadeIn()
+    {
+        FadeIn.gameObject.SetActive(true);
+        var sequence = DOTween.Sequence();
+        sequence.Append(FadeIn.DOFade(1f, 2f));
+        yield return new WaitForSeconds(2f);
+        //FadeIn.gameObject.SetActive(false);
+        SceneManager.LoadScene(2);
     }
 }

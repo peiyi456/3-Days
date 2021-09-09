@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -80841,6 +80841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseEnterSound: {fileID: 0}
   mouseClickSound: {fileID: 0}
+  PlayerNote: {fileID: 0}
   PausePage: {fileID: 0}
   SettingPage: {fileID: 0}
   volumeSlider: {fileID: 247890924}
@@ -97881,6 +97882,7 @@ MonoBehaviour:
     type: 3}
   campsiteSprite: {fileID: 21300000, guid: 0705a20cc20c67945ae2b887454b768e, type: 3}
   textReminder: {fileID: 0}
+  textReminderTxt: {fileID: 0}
 --- !u!58 &2030954241
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -102839,12 +102841,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 591a9bc8e2b67ff4c985d7559d67ed29, type: 3}
---- !u!1 &1347694175207982475 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7035219837488315523, guid: d388991b5783a0347a16e1c913ae6be4,
-    type: 3}
-  m_PrefabInstance: {fileID: 8291663051558959368}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1347694175394809919 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7035219837704106295, guid: d388991b5783a0347a16e1c913ae6be4,
@@ -103417,6 +103413,7 @@ MonoBehaviour:
     type: 3}
   campsiteSprite: {fileID: 21300000, guid: 0705a20cc20c67945ae2b887454b768e, type: 3}
   textReminder: {fileID: 0}
+  textReminderTxt: {fileID: 0}
 --- !u!58 &5519602562000366063
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -103469,6 +103466,7 @@ MonoBehaviour:
   spawnPrefab: {fileID: 0}
   campsiteSprite: {fileID: 0}
   textReminder: {fileID: 0}
+  textReminderTxt: {fileID: 0}
 --- !u!4 &5519602562161532834
 Transform:
   m_ObjectHideFlags: 0
@@ -104982,6 +104980,12 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: a1741a7c9fbb38e4ea0d8edd0bc0239a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d388991b5783a0347a16e1c913ae6be4, type: 3}
+--- !u!1 &8291663051558959369 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9184107854552593981, guid: d388991b5783a0347a16e1c913ae6be4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8291663051558959368}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8427511437687275758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105167,7 +105171,7 @@ PrefabInstance:
         type: 3}
       propertyPath: winPage
       value: 
-      objectReference: {fileID: 1347694175207982475}
+      objectReference: {fileID: 8291663051558959369}
     - target: {fileID: 6716677074067217538, guid: f810d4ad8070bd748ac88c89158fe907,
         type: 3}
       propertyPath: SleepingFadingPanel
