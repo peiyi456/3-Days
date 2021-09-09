@@ -6,6 +6,8 @@ using TMPro;
 
 public class CraftingItemSystem : MonoBehaviour
 {
+    [SerializeField] AudioClip craftSound;
+
     [Header("For shortkey tools used")]
     public bool isAxe, isCampsite, isKnife, isLance, isFishingRod, isTorch;
 
@@ -449,7 +451,7 @@ public class CraftingItemSystem : MonoBehaviour
 
         }
 
-        Debug.Log("Add: " + item);
+        SoundManager.instance.soundEffect.PlayOneShot(craftSound);
         GameManager.instance.inventoryContainer.AddItem(item, 1);
         PlayerStatusManager.instance.PlayerStamina.value -= 10;
         StartCoroutine(CraftingCDTime());
@@ -481,6 +483,7 @@ public class CraftingItemSystem : MonoBehaviour
             }
         }
         PlayerStatusManager.instance.PlayerStamina.value -= 10;
+        SoundManager.instance.soundEffect.PlayOneShot(craftSound);
 
 
 
@@ -505,6 +508,7 @@ public class CraftingItemSystem : MonoBehaviour
         }
 
         PlayerStatusManager.instance.PlayerStamina.value -= 10;
+        SoundManager.instance.soundEffect.PlayOneShot(craftSound);
 
     }
 
@@ -527,6 +531,7 @@ public class CraftingItemSystem : MonoBehaviour
         }
 
         PlayerStatusManager.instance.PlayerStamina.value -= 10;
+        SoundManager.instance.soundEffect.PlayOneShot(craftSound);
 
     }
 
@@ -549,6 +554,7 @@ public class CraftingItemSystem : MonoBehaviour
         }
 
         PlayerStatusManager.instance.PlayerStamina.value -= 10;
+        SoundManager.instance.soundEffect.PlayOneShot(craftSound);
 
     }
 
@@ -571,6 +577,7 @@ public class CraftingItemSystem : MonoBehaviour
         }
 
         PlayerStatusManager.instance.PlayerStamina.value -= 10;
+        SoundManager.instance.soundEffect.PlayOneShot(craftSound);
 
     }
 
@@ -593,6 +600,7 @@ public class CraftingItemSystem : MonoBehaviour
         }
 
         PlayerStatusManager.instance.PlayerStamina.value -= 10;
+        SoundManager.instance.soundEffect.PlayOneShot(craftSound);
 
     }
 }

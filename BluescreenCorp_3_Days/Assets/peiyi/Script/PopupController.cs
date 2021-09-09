@@ -121,22 +121,29 @@ public class PopupController : MonoBehaviour
         {
             if (!GameManager.instance.isPause)
             {
-                if (Time.timeScale == 1)
+                if (PlayerNote.activeSelf == false)
                 {
-                    isPausePageOpen = true;
-                    PausePage.SetActive(isPausePageOpen);
-                    isPause = true;
-                    Time.timeScale = 0;
-                    Debug.Log("open");
+                    if (Time.timeScale == 1)
+                    {
+                        isPausePageOpen = true;
+                        PausePage.SetActive(isPausePageOpen);
+                        isPause = true;
+                        Time.timeScale = 0;
+                    }
+
+                    else
+                    {
+                        isPausePageOpen = false;
+                        PausePage.SetActive(isPausePageOpen);
+                        isPause = false;
+                        Time.timeScale = 1;
+                    }
                 }
 
                 else
                 {
-                    isPausePageOpen = false;
+                    isPausePageOpen = !isPausePageOpen;
                     PausePage.SetActive(isPausePageOpen);
-                    isPause = false;
-                    Time.timeScale = 1;
-                    Debug.Log("close");
                 }
             }
 

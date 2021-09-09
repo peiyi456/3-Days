@@ -132,7 +132,7 @@ public class PlayerStatusManager : MonoBehaviour
                 timeForTemperature = DelayedTimeForTemperature;
             }
 
-            if(PlayerHP.value < 5)
+            if(PlayerHP.value < 10)
             {
                 lowHPEffect.SetActive(true);
             }
@@ -195,7 +195,7 @@ public class PlayerStatusManager : MonoBehaviour
             //losePage.SetActive(true);
             //Time.timeScale = 0;
 
-            StartCoroutine(LosePageOn(1.5f));
+            StartCoroutine(LosePageOn(3f));
         }
     }
 
