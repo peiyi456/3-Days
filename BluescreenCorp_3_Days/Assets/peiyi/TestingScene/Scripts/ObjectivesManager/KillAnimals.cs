@@ -18,8 +18,8 @@ public class KillAnimals : MonoBehaviour
 
     public int killAnimalNumber;
     [SerializeField] int targetTotalNumber;
-    [SerializeField] string target1;
-    [SerializeField] string target2;
+    //[SerializeField] string target1;
+    //[SerializeField] string target2;
 
 
     // Start is called before the first frame update
@@ -31,14 +31,6 @@ public class KillAnimals : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.thisAnimal.Name == target1 || GameManager.instance.thisAnimal.Name == target2)
-        {
-            if (GameManager.instance.enemyFainted == true)
-            {
-                killAnimalNumber += 1;
-            }
-        }
-
         if(killAnimalNumber >= targetTotalNumber)
         {
             objectiveText.fontStyle = FontStyles.Strikethrough | FontStyles.Bold | FontStyles.Italic;

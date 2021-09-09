@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: FishingRod
   stackable: 0
-  icon: {fileID: 21300000, guid: c868a1f7ee5b922449f3cec3a836181e, type: 3}
+  icon: {fileID: 21300000, guid: 3e388f2116608414cb07c9fb62f7c51a, type: 3}
   Function: A tool for you to catch fish near river
   Hint: Only can place in certain location.
   itemTypes: 2

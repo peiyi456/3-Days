@@ -90,6 +90,7 @@ public class _BattleSystem : MonoBehaviour
             PlayerStatusManager.instance.PlayerStamina.value -= 20f;
             GameManager.instance.enemyFainted = true;
             GameManager.instance.isPause = false;
+            KillAnimals.instance.killAnimalNumber += 1;
         }
         else
         {
