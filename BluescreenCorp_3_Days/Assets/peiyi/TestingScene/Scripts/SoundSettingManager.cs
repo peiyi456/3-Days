@@ -27,6 +27,7 @@ public class SoundSettingManager : MonoBehaviour
 
         // Get boolean using PlayerPrefs
         isSoundOn = PlayerPrefs.GetInt("isMute") == 1 ? true : false;
+        //muteUnmuteToggle.isOn = !isSoundOn;
         if (isSoundOn == false)
         {
             AudioListener.volume = 0;
@@ -79,6 +80,7 @@ public class SoundSettingManager : MonoBehaviour
             MuteUnmuteText.text = "Sound Off";
             PlayerPrefs.SetString("Sound On", "true");
             PlayerPrefs.SetInt("isMute", isSoundOn ? 1 : 0);
+            muteUnmuteToggle.isOn = false;
             isSoundOn = true;
         }
 
@@ -89,6 +91,7 @@ public class SoundSettingManager : MonoBehaviour
             PlayerPrefs.SetString("Sound On", "false");
             PlayerPrefs.SetInt("isMute", isSoundOn ? 1 : 0);
             isSoundOn = false;
+            muteUnmuteToggle.isOn = true;
         }
     }
 }

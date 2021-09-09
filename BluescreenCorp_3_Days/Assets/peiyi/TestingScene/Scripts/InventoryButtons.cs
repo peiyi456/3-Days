@@ -28,30 +28,24 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
 
     private void Start()
     {
-        //selected = false;
         bttn = GetComponent<Button>();
         inventory = GameManager.instance.inventoryContainer;
     }
 
     private void Update()
     {
-        //if(selected)
-        //{
-        //    if()
-        //}
+        
     }
 
     public void SetIndex(int index)
     {
         myIndex = index;
-        //thisButton = selected[index];
     }
 
     public void Set(ItemSlot slot)
     {
         icon.gameObject.SetActive(true);
         icon.sprite = slot.item.icon;
-        //name = slot.item.name;
 
         if(slot.item.stackable == true)
         {
@@ -70,14 +64,10 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
         icon.sprite = null;
         icon.gameObject.SetActive(false);
         noText.gameObject.SetActive(false);
-        //InventoryPanel.instance.ShowButtons(false);
-        //InventoryPanel.instance.IsHideDetails = true;
-        //HideDetail(myIndex);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        //ItemContainer inventory = GameManager.instance.inventoryContainer;
         if (eventData.button == PointerEventData.InputButton.Right)
         {
             if (isShortKey)
@@ -97,14 +87,6 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
             }
         }
 
-        //else if(eventData.button == PointerEventData.InputButton.Left)
-        //{
-        //    if (!isShortKey)
-        //    {
-        //        CheckingPress();
-        //    }
-        //}
-
             InventoryPanel.instance.Show();
     }
 
@@ -113,12 +95,10 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
     {
         if(InventoryPanel.instance.selected[buttonNo] == false)
         {
-                InventoryPanel.instance.SelectedButtonNo = buttonNo;
+            InventoryPanel.instance.SelectedButtonNo = buttonNo;
             if (inventory.slots[buttonNo].item != null)
             {
-                //InventoryPanel.instance.SelectedButtonNo = buttonNo;
                 ShowDetail(buttonNo);
-                //ShowDetail(buttonNo);
             }
 
             else
@@ -132,48 +112,13 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
             InventoryPanel.instance.SelectedButtonNo = -1;
 
             HideDetail(buttonNo);
-            //Debug.Log("11111111");
         }
-
-        //if(buttonNo != InventoryPanel.instance.SelectedButtonNo)
-        //{
-        //    InventoryPanel.instance.ShowButtons(false, inventory.slots[InventoryPanel.instance.SelectedButtonNo]);
-        //}
     }
-
-    //void ThrowItem(int no)
-    //{
-
-    //}
 
     public void CheckingPress(int no)
     {
-        //selected[no] = !selected[no];
-        //for(int i = 0; i < selected.Length; i++)
-        //{
-        //    selected[i] = false;
-        //}
-        ////selected[no] = true;
-
-        ////thisButton = !thisButton;
-        //selected[no] = !selected[no];
-
         if (InventoryPanel.instance.selected[no])
         {
-
-            //if (inventory.slots[no].item != null)
-            //{
-            //    Debug.Log("Not null");
-            //    //ShowDetail(InventoryPanel.instance.SelectedButtonNo);
-            //    InventoryPanel.instance.ShowButtons(false, inventory.slots[no]);
-            //}
-            //else
-            //{
-            //    //HideDetail(InventoryPanel.instance.SelectedButtonNo);
-            //    Debug.Log("Null");
-            //    InventoryPanel.instance.ShowButtons(false, inventory.slots[no]);
-            //}
-
             InventoryPanel.instance.selected[no] = false;
             InventoryPanel.instance.ShowButtons(InventoryPanel.instance.selected[no], inventory.slots[no]);
         }
@@ -184,7 +129,7 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
                 InventoryPanel.instance.selected[i] = false;
             }
             InventoryPanel.instance.selected[no] = true;
-            //HideDetail(InventoryPanel.instance.SelectedButtonNo);
+
             if (inventory.slots[no].item != null)
             {
                 InventoryPanel.instance.ShowButtons(InventoryPanel.instance.selected[no], inventory.slots[no]);

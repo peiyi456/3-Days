@@ -10,6 +10,8 @@ public class LoadingPageScripts : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Run: " + Time.timeScale);
+        Debug.Log(loadSceneNumber);
         StartCoroutine(ChangeScene());
     }
 
