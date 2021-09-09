@@ -20,7 +20,7 @@ public class SoundSettingManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
         string soundOn = PlayerPrefs.GetString("Sound On", "true");
         volumeSlider.value = PlayerPrefs.GetFloat(newVolume, 1);
         muteUnmuteToggle.isOn = PlayerPrefs.GetInt("isMute") == 1 ? true : false;

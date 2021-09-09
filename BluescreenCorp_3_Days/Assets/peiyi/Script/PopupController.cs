@@ -9,6 +9,8 @@ public class PopupController : MonoBehaviour
 {
     [SerializeField] AudioClip mouseEnterSound;
     [SerializeField] AudioClip mouseClickSound;
+
+    [SerializeField] GameObject PlayerNote;
     [SerializeField] GameObject PausePage;
     [SerializeField] GameObject SettingPage;
     [SerializeField] Slider volumeSlider;
@@ -19,9 +21,6 @@ public class PopupController : MonoBehaviour
     string newVolume = "VOLUME_SLIDER";
 
     [SerializeField] GameObject Books;
-    //[SerializeField] GameObject CharacterPage;
-    //[SerializeField] GameObject InventoryPage;
-    //[SerializeField] GameObject CraftingPage;
     [SerializeField] GameObject MapPage;
 
     bool isPause;
@@ -32,47 +31,18 @@ public class PopupController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //GameManager.instance.isPause = false;
-        Time.timeScale = 1;
+        Time.timeScale = 0;
         PausePage.SetActive(false);
-        //InventoryPage.SetActive(false);
-        //CharacterPage.SetActive(false);
+
         isPause = false;
         isPausePageOpen = false;
         isBookOpen = false;
-        ///This is use for volume setting part, but i not yet completed///
-        //string mute = PlayerPrefs.GetString("Sound Off", "true");
-        //volumeSlider.value = PlayerPrefs.GetFloat(newVolume, 1);
-
-        //// Get boolean using PlayerPrefs
-        //isMute = PlayerPrefs.GetInt("isMute") == 1 ? true : false;
-        //if (isMute == false)
-        //{
-        //    AudioListener.volume = 0;
-        //    MuteUnmuteText.text = "Sound On";
-        //    PlayerPrefs.SetString("Sound Off", "true");
-
-        //    //Save boolean using PlayerPrefs
-        //    PlayerPrefs.SetInt("isMute", isMute ? 1 : 0);
-        //    isMute = true;
-        //}
-
-        //else
-        //{
-        //    AudioListener.volume = volumeSlider.value;
-        //    MuteUnmuteText.text = "Sound Off";
-        //    PlayerPrefs.SetString("Sound Off", "false");
-        //    PlayerPrefs.SetInt("isMute", isMute ? 1 : 0);
-        //    isMute = false;
-        //}
     }
 
     // Update is called once per frame
     void Update()
     {
-        //checkingPauseGame(isBookOpen);
         UIPopup();
-        //PauseResumeGame();
 
     }
 
@@ -80,13 +50,11 @@ public class PopupController : MonoBehaviour
     {
         if (isPause == true)
         {
-            //GameManager.instance.isPause = true;
             Time.timeScale = 0;
         }
 
         else
         {
-            //GameManager.instance.isPause = false;
             Time.timeScale = 1;
         }
     }
@@ -104,7 +72,6 @@ public class PopupController : MonoBehaviour
             {
                 
                 isBookOpen = !isBookOpen;
-                //checkingPauseGame(isBookOpen);
                 if (isBookOpen)
                 {
                     GameManager.instance.isPause = true;
@@ -134,7 +101,6 @@ public class PopupController : MonoBehaviour
 
                     isMapOpen = true;
                     MapPage.SetActive(isMapOpen);
-                    //checkingPauseGame(isMapOpen);
                 }
 
                 else
@@ -143,7 +109,6 @@ public class PopupController : MonoBehaviour
 
                     isMapOpen = false;
                     MapPage.SetActive(isMapOpen);
-                    //checkingPauseGame(isMapOpen);
                 }
             }
         }
@@ -175,9 +140,7 @@ public class PopupController : MonoBehaviour
             {
                 isPausePageOpen = !isPausePageOpen;
                 PausePage.SetActive(isPausePageOpen);
-                //isPause = true;
             }
-            //checkingPauseGame(isPausePageOpen);
         }
 
     }
@@ -188,7 +151,6 @@ public class PopupController : MonoBehaviour
         Time.timeScale = 1;
         isPausePageOpen = false;
         PausePage.SetActive(isPausePageOpen);
-        //checkingPauseGame(isPausePageOpen);
     }
 
     public void OnClickSetting()
@@ -224,5 +186,11 @@ public class PopupController : MonoBehaviour
     public void OnMouseClickFunc()
     {
         SoundManager.instance.soundEffect.PlayOneShot(mouseClickSound);
+    }
+
+    public void OnClickStartTheGame()
+    {
+        PlayerNote.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 }

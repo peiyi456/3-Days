@@ -13,39 +13,51 @@ MonoBehaviour:
   m_Name: Inventory
   m_EditorClassIdentifier: 
   slots:
+  - item: {fileID: 11400000, guid: b827b883789c9f84e817baea35b49ab8, type: 2}
+    itemCount: 1
+    itemTypes: 1
+    isShortkey: 0
+  - item: {fileID: 11400000, guid: 946efc34c16752c44ba3bd6ec90c067f, type: 2}
+    itemCount: 3
+    itemTypes: 1
+    isShortkey: 0
+  - item: {fileID: 11400000, guid: 63f903534266fab47845640d3cfdf7b5, type: 2}
+    itemCount: 3
+    itemTypes: 1
+    isShortkey: 0
+  - item: {fileID: 0}
+    itemCount: 0
+    itemTypes: 2
+    isShortkey: 0
+  - item: {fileID: 11400000, guid: 9bfc157203899194ea30eaacb68d2304, type: 2}
+    itemCount: 1
+    itemTypes: 2
+    isShortkey: 0
+  - item: {fileID: 11400000, guid: 10a1eb881c03c0c4e996f271d31a65ba, type: 2}
+    itemCount: 4
+    itemTypes: 1
+    isShortkey: 0
+  - item: {fileID: 0}
+    itemCount: 0
+    itemTypes: 2
+    isShortkey: 0
+  - item: {fileID: 0}
+    itemCount: 0
+    itemTypes: 2
+    isShortkey: 0
+  - item: {fileID: 0}
+    itemCount: 0
+    itemTypes: 2
+    isShortkey: 0
   - item: {fileID: 0}
     itemCount: 0
     itemTypes: 1
+    isShortkey: 1
   - item: {fileID: 0}
     itemCount: 0
     itemTypes: 1
-  - item: {fileID: 0}
-    itemCount: 0
-    itemTypes: 0
-  - item: {fileID: 0}
-    itemCount: 0
-    itemTypes: 0
-  - item: {fileID: 0}
-    itemCount: 0
-    itemTypes: 0
-  - item: {fileID: 0}
-    itemCount: 0
-    itemTypes: 0
-  - item: {fileID: 0}
-    itemCount: 0
-    itemTypes: 0
-  - item: {fileID: 0}
-    itemCount: 0
-    itemTypes: 0
-  - item: {fileID: 0}
-    itemCount: 0
-    itemTypes: 0
+    isShortkey: 1
   - item: {fileID: 0}
     itemCount: 0
     itemTypes: 1
-  - item: {fileID: 0}
-    itemCount: 0
-    itemTypes: 1
-  - item: {fileID: 0}
-    itemCount: 0
-    itemTypes: 1
+    isShortkey: 1

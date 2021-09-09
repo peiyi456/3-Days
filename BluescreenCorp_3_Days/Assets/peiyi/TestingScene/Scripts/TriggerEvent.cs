@@ -14,6 +14,7 @@ public class TriggerEvent : MonoBehaviour
     [SerializeField] Sprite campsiteSprite;
 
     [SerializeField] GameObject textReminder;
+    [SerializeField] TextMeshProUGUI textReminderTxt;
 
     // Start is called before the first frame update
     void Start()
@@ -29,14 +30,14 @@ public class TriggerEvent : MonoBehaviour
             doAction = true;
             if (camp1 == false)
             {
-                textReminder.GetComponentInChildren<TextMeshProUGUI>().text = "It seems like it is able to put a campsite here. You can craft a campsite and press 'P' to put it here.";
-                GameManager.instance.TextReminder.SetActive(true);
+                textReminderTxt.text = "It seems like it is able to put a campsite here. You can craft a campsite and press 'P' to put it here.";
+                textReminder.SetActive(true);
             }
         }
 
         else
         {
-            GameManager.instance.TextReminder.SetActive(false);
+            textReminder.SetActive(false);
         }
 
         if(doAction)

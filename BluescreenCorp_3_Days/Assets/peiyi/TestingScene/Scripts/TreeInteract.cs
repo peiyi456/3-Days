@@ -57,22 +57,30 @@ public class TreeInteract : ToolHit
 
     public override void Hit()
     {
-        if (!iscuttableTree)
+        if (!cuttable)
         {
             DropItem();
         }
 
         else
         {
-            if(GameManager.instance.hasAxe)
+            if (iscuttableTree)
             {
-                reminder.SetActive(false);
-                DropItem();
+                if (GameManager.instance.hasAxe)
+                {
+                    reminder.SetActive(false);
+                    DropItem();
+                }
+
+                else
+                {
+                    StartCoroutine(ShowReminderText());
+                }
             }
 
             else
             {
-                StartCoroutine(ShowReminderText());
+                DropItem();
             }
         }
     }

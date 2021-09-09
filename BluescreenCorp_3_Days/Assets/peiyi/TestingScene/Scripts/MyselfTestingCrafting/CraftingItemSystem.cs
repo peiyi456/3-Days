@@ -288,7 +288,7 @@ public class CraftingItemSystem : MonoBehaviour
 
         }
 
-        if (recipe.elements.Count < 2)
+        if (recipe.elements.Count == 1)
         {
             if (hasElement1 == true)
             {
@@ -303,12 +303,12 @@ public class CraftingItemSystem : MonoBehaviour
 
             else
             {
-                //craftBttn.interactable = false;
+                craftBttn.interactable = false;
                 //output.color = Color.black;
             }
         }
 
-        else if (recipe.elements.Count < 3)
+        else if (recipe.elements.Count == 2)
         {
             if (hasElement1 == true && hasElement2 == true)
             {
@@ -323,7 +323,7 @@ public class CraftingItemSystem : MonoBehaviour
 
             else
             {
-                //craftBttn.interactable = false;
+                craftBttn.interactable = false;
                 //output.color = Color.black;
             }
         }
@@ -342,7 +342,7 @@ public class CraftingItemSystem : MonoBehaviour
 
             else
             {
-                //craftBttn.interactable = false;
+                craftBttn.interactable = false;
                 //output.color = Color.black;
             }
 
@@ -430,28 +430,40 @@ public class CraftingItemSystem : MonoBehaviour
 
     public void CraftItem(Item item)
     {
-        for (int i = 0; i < container.slots.Count; i++)
+        for(int i = 0; i < recipe.elements.Count; i++)
         {
-            for (int j = 0; j < recipe.elements.Count; j++)
+            ItemSlot itemSlot = container.slots.Find(x => x.item == recipe.elements[i].item);
+            if(itemSlot != null)
             {
-                //if (container.slots[i].item == recipe.elements[0].item)
-                //{
-                //    container.slots[i].itemCount -= recipe.elements[0].itemCount;
-                //}
-
-                //if (container.slots[i].item == recipe.elements[1].item)
-                //{
-                //    container.slots[i].itemCount -= recipe.elements[1].itemCount;
-                //}
-
-                if (container.slots[i].item == recipe.elements[j].item)
-                {
-                    container.slots[i].itemCount -= recipe.elements[j].itemCount;
-                }
+                container.RemoveItem(recipe.elements[i].item, recipe.elements[i].itemCount);
             }
+
         }
 
+
+        //for (int i = 0; i < container.slots.Count; i++)
+        //{
+        //    for (int j = 0; j < recipe.elements.Count; j++)
+        //    {
+        //        //if (container.slots[i].item == recipe.elements[0].item)
+        //        //{
+        //        //    container.slots[i].itemCount -= recipe.elements[0].itemCount;
+        //        //}
+
+        //        //if (container.slots[i].item == recipe.elements[1].item)
+        //        //{
+        //        //    container.slots[i].itemCount -= recipe.elements[1].itemCount;
+        //        //}
+
+        //        if (container.slots[i].item == recipe.elements[j].item)
+        //        {
+        //            container.slots[i].itemCount -= recipe.elements[j].itemCount;
+        //        }
+        //    }
+        //}
+        Debug.Log("Add: " + item);
         GameManager.instance.inventoryContainer.AddItem(item, 1);
+        PlayerStatusManager.instance.PlayerStamina.value -= 10;
     }
 
 
@@ -473,6 +485,7 @@ public class CraftingItemSystem : MonoBehaviour
                 craftBttn.gameObject.SetActive(false);
             }
         }
+        PlayerStatusManager.instance.PlayerStamina.value -= 10;
 
 
 
@@ -495,6 +508,9 @@ public class CraftingItemSystem : MonoBehaviour
                 craftBttn.gameObject.SetActive(false);
             }
         }
+
+        PlayerStatusManager.instance.PlayerStamina.value -= 10;
+
     }
 
     public void CraftKnife()
@@ -514,6 +530,9 @@ public class CraftingItemSystem : MonoBehaviour
                 craftBttn.gameObject.SetActive(false);
             }
         }
+
+        PlayerStatusManager.instance.PlayerStamina.value -= 10;
+
     }
 
     public void CraftSpear()
@@ -533,6 +552,9 @@ public class CraftingItemSystem : MonoBehaviour
                 craftBttn.gameObject.SetActive(false);
             }
         }
+
+        PlayerStatusManager.instance.PlayerStamina.value -= 10;
+
     }
 
     public void CraftFishingRod()
@@ -552,6 +574,9 @@ public class CraftingItemSystem : MonoBehaviour
                 craftBttn.gameObject.SetActive(false);
             }
         }
+
+        PlayerStatusManager.instance.PlayerStamina.value -= 10;
+
     }
 
     public void CraftTorch()
@@ -571,5 +596,8 @@ public class CraftingItemSystem : MonoBehaviour
                 craftBttn.gameObject.SetActive(false);
             }
         }
+
+        PlayerStatusManager.instance.PlayerStamina.value -= 10;
+
     }
 }

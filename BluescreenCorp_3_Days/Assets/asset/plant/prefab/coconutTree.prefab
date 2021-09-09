@@ -128,7 +128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1739315499869687288
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5043,6 +5043,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4679990810770192803}
   - component: {fileID: 3684222992760800842}
+  - component: {fileID: 3133558404507253114}
   m_Layer: 0
   m_Name: coconutTree
   m_TagString: Untagged
@@ -5118,3 +5119,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3133558404507253114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8403857021576591243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba94a02d4059c2408afbe7fc22b2389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDropSound: {fileID: 8300000, guid: e835621a99dc4cc4884777cae8ac385f, type: 3}
+  staminaUsed: 5
+  isFruitTree: 1
+  fruitsOnTree:
+  - {fileID: 6890956049124607926}
+  ableToInteract: 0
+  cuttable: 0
+  iscuttableTree: 0
+  reminder: {fileID: 0}
+  item: []
+  spread: 0.7
+  itemCountInOneDrop: 1
+  dropCount: 5
+  time: 0
+  Slider: {fileID: 0}
+  particleEffect: {fileID: 0}

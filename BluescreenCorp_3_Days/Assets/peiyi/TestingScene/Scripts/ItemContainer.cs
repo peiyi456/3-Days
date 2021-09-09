@@ -11,6 +11,7 @@ public class ItemSlot
     public Item item;
     public int itemCount;
     public ItemTypes itemTypes;
+    public bool isShortkey;
 
     public void Copy(ItemSlot slot)
     {
@@ -57,8 +58,28 @@ public class ItemContainer : ScriptableObject , IItemContainer
                 itemSlot = slots.Find(x => x.item == null);
                 if(itemSlot != null)
                 {
-                    itemSlot.item = item;
-                    itemSlot.itemCount = count;
+                    if (itemSlot.isShortkey == false)
+                    {
+                        itemSlot.item = item;
+                        itemSlot.itemCount = count;
+                        itemSlot.itemTypes = item.itemTypes;
+
+                        if (item.itemTypes == ItemTypes.Food)
+                        {
+                            CollectTargetItem.instance.currentCollectAmount += count;
+                        }
+                    }
+
+                    else
+                    {
+                        if (item.itemTypes == ItemTypes.Food)
+                        {
+                            itemSlot.item = item;
+                            itemSlot.itemCount = count;
+                            itemSlot.itemTypes = item.itemTypes;
+                        }
+
+                    }
 
                     if (item.itemTypes == ItemTypes.Food)
                     {
@@ -67,14 +88,19 @@ public class ItemContainer : ScriptableObject , IItemContainer
                 }
             }
         }
+
         else
         {
             //add non stackable item to ours item container
             ItemSlot itemSlot = slots.Find(x => x.item == null);
             if(itemSlot != null)
             {
-                itemSlot.item = item;
-                
+                if (itemSlot.isShortkey == false)
+                {
+                    itemSlot.item = item;
+                    itemSlot.itemCount = count;
+                    itemSlot.itemTypes = item.itemTypes;
+                }
             }
         }
 
