@@ -62,7 +62,7 @@ public class CharacterController2D : MonoBehaviour
                         animator.SetFloat("LastHorizontal", horizontal);
                         animator.SetFloat("LastVertical", vertical);
                     }
-                }
+                }   
             }
             else
             {
@@ -91,6 +91,11 @@ public class CharacterController2D : MonoBehaviour
             rb2D.velocity = motionVector * speed;
         }
         else
+        {
+            rb2D.velocity = Vector2.zero;
+        }
+
+        if(stopMove)
         {
             rb2D.velocity = Vector2.zero;
         }

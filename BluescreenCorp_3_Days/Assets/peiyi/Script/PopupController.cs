@@ -73,8 +73,8 @@ public class PopupController : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.B))
                 {
-
                     isBookOpen = !isBookOpen;
+                    CharacterController2D.instance.stopMove = isBookOpen;
                     if (isBookOpen)
                     {
                         GameManager.instance.isPause = true;
@@ -103,6 +103,7 @@ public class PopupController : MonoBehaviour
                         GameManager.instance.isPause = true;
 
                         isMapOpen = true;
+                        CharacterController2D.instance.stopMove = isMapOpen;
                         MapPage.SetActive(isMapOpen);
                     }
 
@@ -111,6 +112,7 @@ public class PopupController : MonoBehaviour
                         GameManager.instance.isPause = false;
 
                         isMapOpen = false;
+                        CharacterController2D.instance.stopMove = isMapOpen;
                         MapPage.SetActive(isMapOpen);
                     }
                 }
