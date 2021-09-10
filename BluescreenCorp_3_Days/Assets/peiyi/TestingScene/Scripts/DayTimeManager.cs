@@ -43,6 +43,11 @@ public class DayTimeManager : MonoBehaviour
     [SerializeField] Image SleepingFadingPanel;
     [SerializeField] float fadeSpeed;
 
+    bool isChgMusic;
+
+    [SerializeField] AudioClip winReminder;
+    bool isPlay;
+
     float Hours
     {
         get { return time / 3600f; }
@@ -60,6 +65,28 @@ public class DayTimeManager : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.instance.isPause)
+        {
+            if (TorchFunction.isNight)
+            {
+                if (SoundManager.instance.BGM.isPlaying)
+                {
+                    SoundManager.instance.BGM.Stop();
+                    //SoundManager.instance.BGM.clip = SoundManager.instance.NightBGMMusic;
+                    SoundManager.instance.BGM2.Play();
+                }
+            }
+            else
+            {
+                if (SoundManager.instance.BGM2.isPlaying)
+                {
+                    SoundManager.instance.BGM2.Stop();
+                    //SoundManager.instance.BGM.clip = SoundManager.instance.NightBGMMusic;
+                    SoundManager.instance.BGM.Play();
+                }
+            }
+        }
+
         if (Time.timeScale == 1)
         {
             if (GameManager.instance.isPause == false)
@@ -132,9 +159,15 @@ public class DayTimeManager : MonoBehaviour
     {
         if(days > 3)
         {
+            if(isPlay == false)
+            {
+                SoundManager.instance.soundEffect.PlayOneShot(winReminder);
+                isPlay = true;
+            }
             //GameManager.instance.isPause = true;
             winPage.gameObject.SetActive(true);
             GameManager.instance.isPause = false;
+
         }
     }
 

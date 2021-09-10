@@ -7,6 +7,7 @@ using UnityEngine;
 public class TriggerBattle : MonoBehaviour
 {
     public event Action onTriggerBattle;
+    [SerializeField] AudioClip battleTrigger;
 
     //public GameObject playerObj, animalObj;
     //Collider2D playerCol, animalCol;
@@ -67,6 +68,7 @@ public class TriggerBattle : MonoBehaviour
         {
             if (GameManager.instance.isPause == false)
             {
+
                 for (int i = 0; i < units.Count; i++)
                 {
                     if (other.tag == units[i].Tag)
@@ -89,6 +91,15 @@ public class TriggerBattle : MonoBehaviour
                             GameManager.instance.meetAnimal[j] = true;
                         }
                     }
+                }
+
+                if (TorchFunction.isNight)
+                {
+                    SoundManager.instance.BGM2.Stop();
+                }
+                else
+                {
+                    SoundManager.instance.BGM.Stop();
                 }
             }
         }

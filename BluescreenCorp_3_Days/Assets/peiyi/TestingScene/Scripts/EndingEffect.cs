@@ -24,6 +24,8 @@ public class EndingEffect : MonoBehaviour
 
     IEnumerator PlayWinningFadeIn()
     {
+        SoundManager.instance.BGM.Stop();
+        SoundManager.instance.BGM2.Stop();
         SoundManager.instance.soundEffect.PlayOneShot(WinSound);
         yield return new WaitForSeconds(0.3f);
         FadeIn.gameObject.SetActive(true);

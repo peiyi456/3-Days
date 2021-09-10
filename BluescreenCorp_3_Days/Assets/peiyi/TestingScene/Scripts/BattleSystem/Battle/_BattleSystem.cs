@@ -8,6 +8,7 @@ public enum _BattleState { Start, PlayerAction, PlayerMove, EnemyMove, Busy, Run
 
 public class _BattleSystem : MonoBehaviour
 {
+    //[SerializeField] AudioSource audioSource;
     [SerializeField] Slider playerHP;
     [SerializeField] _BattleUnit playerUnit;
     [SerializeField] _BattleUnit enemyUnit;
@@ -24,6 +25,7 @@ public class _BattleSystem : MonoBehaviour
     // Start is called before the first frame update
     public void StartBattle()
     {
+        //audioSource.Play();
         playerHP = PlayerStatusManager.instance.PlayerHP;
 
         StartCoroutine(SetupBattle());

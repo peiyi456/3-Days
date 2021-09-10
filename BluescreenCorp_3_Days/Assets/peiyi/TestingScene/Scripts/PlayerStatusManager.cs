@@ -21,8 +21,8 @@ public class PlayerStatusManager : MonoBehaviour
         instance = this;
     }
 
-    [Header("Audio clip")]
-    [SerializeField] AudioClip loseSoundEffect;
+    //[Header("Audio clip")]
+    //[SerializeField] AudioClip loseSoundEffect;
 
     [Header("Player status bar")]
     public Slider PlayerHP;
@@ -210,11 +210,11 @@ public class PlayerStatusManager : MonoBehaviour
 
     IEnumerator LosePageOn(float time)
     {
-        SoundManager.instance.soundEffect.PlayOneShot(loseSoundEffect);
+        //SoundManager.instance.soundEffect.PlayOneShot(loseSoundEffect);
         FadeIn.gameObject.SetActive(true);
         var sequence = DOTween.Sequence();
         sequence.Append(FadeIn.DOFade(1f, 2f));
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         losePage.SetActive(true);
         yield return new WaitForSeconds(time);
         GameManager.instance.isPause = true;

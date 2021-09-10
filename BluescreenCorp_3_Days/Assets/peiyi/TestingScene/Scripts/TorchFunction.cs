@@ -6,7 +6,7 @@ public class TorchFunction : MonoBehaviour
 {
 
     [SerializeField] GameObject Torch;
-    [SerializeField] bool isNight;
+    public static bool isNight;
     public static bool isUse;
     [SerializeField] bool canDestroy;
     [SerializeField] KeyCode key;
@@ -26,7 +26,7 @@ public class TorchFunction : MonoBehaviour
             isNight = true;
         }
 
-        else if (DayTimeManager.instance.hours >= 0 && DayTimeManager.instance.hours < 7 )
+        else if (DayTimeManager.instance.hours >= 0 && DayTimeManager.instance.hours < 5 )
         {
             isNight = true;
         }

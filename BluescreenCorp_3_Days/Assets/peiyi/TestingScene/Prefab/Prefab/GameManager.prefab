@@ -76,8 +76,7 @@ MonoBehaviour:
   enemyDropPosition: {x: 0, y: 0, z: 0}
   thisAnimal: {fileID: 0}
   enemyFainted: 0
-  isPutCamp1: 0
-  isPutCamp2: 0
+  CampSetupNumber: 0
   Objective1: 0
   Objective2: 0
   Objective3: 0
@@ -98,6 +97,7 @@ MonoBehaviour:
     item: {fileID: 0}
     itemCount: 0
     itemTypes: 0
+    isShortkey: 0
   dragItemIcon: {fileID: 0}
 --- !u!114 &6716677074067217539
 MonoBehaviour:
@@ -197,7 +197,6 @@ MonoBehaviour:
   timeText: {fileID: 0}
   dayText: {fileID: 0}
   globalLight: {fileID: 0}
-  DayNightPanel: {fileID: 0}
   winPage: {fileID: 0}
   SleepingFadingPanel: {fileID: 0}
   fadeSpeed: 5
@@ -273,6 +272,7 @@ MonoBehaviour:
   timeForStats: 0
   DelayedTimeForTemperature: 60
   DelayedTimeForStats: 60
+  loseSoundEffect: {fileID: 8300000, guid: 7266aa658adc0004dabe3858b57f101c, type: 3}
   PlayerHP: {fileID: 0}
   PlayerStamina: {fileID: 0}
   PlayerFood: {fileID: 0}
@@ -288,6 +288,7 @@ MonoBehaviour:
   staminaAddValue: 35
   losePage: {fileID: 0}
   lowHPEffect: {fileID: 0}
+  FadeIn: {fileID: 0}
 --- !u!114 &8725368026206192744
 MonoBehaviour:
   m_ObjectHideFlags: 0
