@@ -45,6 +45,9 @@ public class DayTimeManager : MonoBehaviour
 
     bool isChgMusic;
 
+    [SerializeField] AudioClip winReminder;
+    bool isPlay;
+
     float Hours
     {
         get { return time / 3600f; }
@@ -156,9 +159,15 @@ public class DayTimeManager : MonoBehaviour
     {
         if(days > 3)
         {
+            if(isPlay == false)
+            {
+                SoundManager.instance.soundEffect.PlayOneShot(winReminder);
+                isPlay = true;
+            }
             //GameManager.instance.isPause = true;
             winPage.gameObject.SetActive(true);
             GameManager.instance.isPause = false;
+
         }
     }
 

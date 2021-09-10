@@ -954,6 +954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9287238f5eb3647b6e9a17a77049cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battleTrigger: {fileID: 8300000, guid: d0acebae4779c7345aa9b60824ac393a, type: 3}
   animalTag: []
   units: []
 --- !u!82 &3073415190477408163

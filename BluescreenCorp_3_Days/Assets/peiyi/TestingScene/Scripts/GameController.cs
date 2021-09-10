@@ -37,6 +37,8 @@ public class GameController : MonoBehaviour
         battleSystem.gameObject.SetActive(false);
         worldCamera.gameObject.SetActive(true);
         worldScene.gameObject.SetActive(true);
+
+
         //GameManager.instance.isPause = false;
     }
 
@@ -45,6 +47,8 @@ public class GameController : MonoBehaviour
     {
         if(state == GameState.FreeRoam)
         {
+            
+
             //triggerBattle.HandleUpdate();
             //GameManager.instance.isPause = false;
         }
