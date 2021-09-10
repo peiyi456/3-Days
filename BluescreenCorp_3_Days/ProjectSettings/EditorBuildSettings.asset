@@ -18,8 +18,8 @@ EditorBuildSettings:
     path: Assets/peiyi/TestingScene/Crimson 1.unity
     guid: f9d159658ae4aef4f8d3029c800089c3
   - enabled: 1
-    path: Assets/Scenes/Lvl2.unity
-    guid: df81679b9d9d6024289f9ce3f73513d1
+    path: Assets/peiyi/TestingScene/Crimson 2.unity
+    guid: d1858d1b1f8fc2845999eacfb78056ef
   - enabled: 1
     path: Assets/Scenes/Credit Scene.unity
     guid: 5928f616bd1d42243a187213ace91ad2
