@@ -22,6 +22,7 @@ public class TriggerEvent : MonoBehaviour
     void Start()
     {
         player = GameManager.instance.player;
+        textReminderTxt = textReminder.GetComponentInChildren<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -34,10 +35,6 @@ public class TriggerEvent : MonoBehaviour
             {
                 textReminderTxt.text = "It seems like it is able to put a campsite here. You can craft a campsite and press 'P' to put it here.";
                 textReminder.SetActive(true);
-            }
-            else
-            {
-                textReminder.SetActive(false);
             }
         }
 
@@ -59,6 +56,7 @@ public class TriggerEvent : MonoBehaviour
                         spawnPrefab.GetComponent<SpriteRenderer>().sprite = campsiteSprite;
                         GameObject campsite = Instantiate(spawnPrefab, new Vector2(player.transform.position.x, player.transform.position.y - 0.5f), Quaternion.identity);
                         GameManager.instance.hasCampsite = false;
+                        textReminder.SetActive(false);
                         camp1 = true;
                         GameManager.instance.CampSetupNumber += 1;
                     }

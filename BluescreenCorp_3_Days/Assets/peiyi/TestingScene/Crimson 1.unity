@@ -15307,7 +15307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a1d2f3a58772648a2fd6b7e59bdced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  putCampsiteSound: {fileID: 0}
+  putCampsiteSound: {fileID: 8300000, guid: 2fe435cfe0603f147861be7940934dd5, type: 3}
   interactToTrigger: 1
   keyCode: 112
   doAction: 0
@@ -76182,7 +76182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a1d2f3a58772648a2fd6b7e59bdced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  putCampsiteSound: {fileID: 0}
+  putCampsiteSound: {fileID: 8300000, guid: 2fe435cfe0603f147861be7940934dd5, type: 3}
   interactToTrigger: 1
   keyCode: 112
   doAction: 0
