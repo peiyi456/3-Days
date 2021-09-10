@@ -4698,6 +4698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 8300000, guid: 877897fa3737d1b4ba8ac16d8b8a2dc0, type: 3}
   isAxe: 1
   isCampsite: 0
   isKnife: 0
@@ -5386,6 +5387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 8300000, guid: 877897fa3737d1b4ba8ac16d8b8a2dc0, type: 3}
   isAxe: 0
   isCampsite: 1
   isKnife: 0
@@ -6173,6 +6175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 8300000, guid: 877897fa3737d1b4ba8ac16d8b8a2dc0, type: 3}
   isAxe: 0
   isCampsite: 0
   isKnife: 0
@@ -13251,6 +13254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 8300000, guid: 877897fa3737d1b4ba8ac16d8b8a2dc0, type: 3}
   isAxe: 0
   isCampsite: 0
   isKnife: 1
@@ -17524,7 +17528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WinSound: {fileID: 0}
   FadeIn: {fileID: 1146771562353291907}
-  WinPage: {fileID: 7035219837488315523}
+  WinPage: {fileID: 1390959334071149358}
 --- !u!1 &3691182257052957945
 GameObject:
   m_ObjectHideFlags: 0
@@ -30567,6 +30571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 0}
   isAxe: 0
   isCampsite: 0
   isKnife: 0
@@ -31695,6 +31700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 0}
   isAxe: 0
   isCampsite: 1
   isKnife: 0
@@ -31964,6 +31970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 0}
   isAxe: 0
   isCampsite: 0
   isKnife: 1
@@ -35893,6 +35900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 0}
   isAxe: 1
   isCampsite: 0
   isKnife: 0
@@ -39958,6 +39966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 0}
   isAxe: 0
   isCampsite: 0
   isKnife: 0
@@ -43227,6 +43236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 0}
   isAxe: 0
   isCampsite: 0
   isKnife: 0
@@ -50245,6 +50255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 8300000, guid: 877897fa3737d1b4ba8ac16d8b8a2dc0, type: 3}
   isAxe: 0
   isCampsite: 0
   isKnife: 0
@@ -51206,6 +51217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 8300000, guid: 877897fa3737d1b4ba8ac16d8b8a2dc0, type: 3}
   isAxe: 0
   isCampsite: 0
   isKnife: 0
@@ -53706,6 +53718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 0}
   isAxe: 1
   isCampsite: 0
   isKnife: 0
@@ -56855,6 +56868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 8300000, guid: 877897fa3737d1b4ba8ac16d8b8a2dc0, type: 3}
   isAxe: 0
   isCampsite: 0
   isKnife: 0
@@ -57916,6 +57930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 8300000, guid: 877897fa3737d1b4ba8ac16d8b8a2dc0, type: 3}
   isAxe: 0
   isCampsite: 0
   isKnife: 0
@@ -59528,6 +59543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 0}
   isAxe: 0
   isCampsite: 0
   isKnife: 0
@@ -64991,6 +65007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 0}
   isAxe: 0
   isCampsite: 1
   isKnife: 0
@@ -65260,6 +65277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 0}
   isAxe: 0
   isCampsite: 0
   isKnife: 0
@@ -71237,6 +71255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 0}
   isAxe: 0
   isCampsite: 0
   isKnife: 0
@@ -74127,6 +74146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 0}
   isAxe: 0
   isCampsite: 0
   isKnife: 1

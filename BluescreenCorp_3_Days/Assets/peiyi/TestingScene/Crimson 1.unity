@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -15301,6 +15301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a1d2f3a58772648a2fd6b7e59bdced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  putCampsiteSound: {fileID: 0}
   interactToTrigger: 1
   keyCode: 112
   doAction: 0
@@ -59316,6 +59317,133 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1547128514}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1548970987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1548970988}
+  - component: {fileID: 1548970989}
+  m_Layer: 0
+  m_Name: SoundEffectForWater
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1548970988
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548970987}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 100.1, y: 16.1, z: -130.70544}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1861214675}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1548970989
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548970987}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 825178b33a7627e4089d0493214ef1ce, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 11.96
+  MaxDistance: 45
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1549209125
 GameObject:
   m_ObjectHideFlags: 0
@@ -67695,6 +67823,7 @@ Transform:
   - {fileID: 792746371}
   - {fileID: 1549267213}
   - {fileID: 902273358}
+  - {fileID: 1548970988}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -76031,6 +76160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a1d2f3a58772648a2fd6b7e59bdced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  putCampsiteSound: {fileID: 0}
   interactToTrigger: 1
   keyCode: 112
   doAction: 0
@@ -76085,6 +76215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a1d2f3a58772648a2fd6b7e59bdced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  putCampsiteSound: {fileID: 0}
   interactToTrigger: 1
   keyCode: 49
   doAction: 0
@@ -77439,6 +77570,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5725492455312278008, guid: d388991b5783a0347a16e1c913ae6be4,
+        type: 3}
+      propertyPath: WinSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7266aa658adc0004dabe3858b57f101c, type: 3}
     - target: {fileID: 6235651054366145456, guid: d388991b5783a0347a16e1c913ae6be4,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -78179,13 +78315,13 @@ PrefabInstance:
       objectReference: {fileID: 845918446}
     - target: {fileID: 8725368026206192753, guid: f810d4ad8070bd748ac88c89158fe907,
         type: 3}
-      propertyPath: loseSoundEffect
-      value: 
-      objectReference: {fileID: 8300000, guid: c291b6e4ef7b7a143aee3544d7a6e3db, type: 3}
-    - target: {fileID: 8725368026206192753, guid: f810d4ad8070bd748ac88c89158fe907,
-        type: 3}
       propertyPath: FadeIn
       value: 
       objectReference: {fileID: 8291663051558959372}
+    - target: {fileID: 8725368026206192753, guid: f810d4ad8070bd748ac88c89158fe907,
+        type: 3}
+      propertyPath: loseSoundEffect
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f810d4ad8070bd748ac88c89158fe907, type: 3}

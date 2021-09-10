@@ -43,6 +43,8 @@ public class DayTimeManager : MonoBehaviour
     [SerializeField] Image SleepingFadingPanel;
     [SerializeField] float fadeSpeed;
 
+    bool isChgMusic;
+
     float Hours
     {
         get { return time / 3600f; }
@@ -60,6 +62,28 @@ public class DayTimeManager : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.instance.isPause)
+        {
+            if (TorchFunction.isNight)
+            {
+                if (SoundManager.instance.BGM.isPlaying)
+                {
+                    SoundManager.instance.BGM.Stop();
+                    //SoundManager.instance.BGM.clip = SoundManager.instance.NightBGMMusic;
+                    SoundManager.instance.BGM2.Play();
+                }
+            }
+            else
+            {
+                if (SoundManager.instance.BGM2.isPlaying)
+                {
+                    SoundManager.instance.BGM2.Stop();
+                    //SoundManager.instance.BGM.clip = SoundManager.instance.NightBGMMusic;
+                    SoundManager.instance.BGM.Play();
+                }
+            }
+        }
+
         if (Time.timeScale == 1)
         {
             if (GameManager.instance.isPause == false)

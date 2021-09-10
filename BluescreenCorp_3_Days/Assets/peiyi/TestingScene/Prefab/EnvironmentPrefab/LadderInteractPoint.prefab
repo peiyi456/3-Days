@@ -700,7 +700,8 @@ MonoBehaviour:
   ProgressBar: {fileID: 0}
   LadderPanel: {fileID: 2232641648072759472}
   Ladder: {fileID: 11400000, guid: 9bfc157203899194ea30eaacb68d2304, type: 2}
-  aduioClip: {fileID: 0}
+  setupSoundEffect: {fileID: 8300000, guid: d48c9fbbe86f0874387f486e2dd55798, type: 3}
+  climbSoundEffect: {fileID: 8300000, guid: 14e24421157dd4e4bb385df225e34eb3, type: 3}
   LadderGameObject: {fileID: 2232641646302629471}
   climbUpPoint: {fileID: 2232641646746233263}
   climbDownPoint: {fileID: 2232641646099652677}

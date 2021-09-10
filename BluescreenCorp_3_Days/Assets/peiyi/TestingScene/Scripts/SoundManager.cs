@@ -14,7 +14,11 @@ public class SoundManager : MonoBehaviour
     [Header("Sound Manager")]
     public AudioSource soundEffect;
     public AudioSource BGM;
+    public AudioSource BGM2;
 
+    [Header("BGM")]
+    public AudioClip DayBGMMusic;
+    public AudioClip NightBGMMusic;
 
     // Start is called before the first frame update
     void Start()

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class LadderInteract : MonoBehaviour
@@ -9,6 +10,7 @@ public class LadderInteract : MonoBehaviour
     public bool Setup;
     public bool ClimbDown;
     public bool hasLadder;
+    bool isPlaying;
 
     [SerializeField] float distance;
 
@@ -19,7 +21,8 @@ public class LadderInteract : MonoBehaviour
     [SerializeField] GameObject LadderPanel;
     [SerializeField] Item Ladder;
     //[SerializeField] Sprite sprite;
-    [SerializeField] AudioClip aduioClip;
+    [SerializeField] AudioClip setupSoundEffect;
+    [SerializeField] AudioClip climbSoundEffect;
     [SerializeField] GameObject LadderGameObject;
     [SerializeField] GameObject climbUpPoint;
     [SerializeField] GameObject climbDownPoint;
@@ -32,7 +35,7 @@ public class LadderInteract : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        ProgressBar = GameManager.instance.playerLoadingBar;
     }
 
     // Update is called once per frame
@@ -51,6 +54,8 @@ public class LadderInteract : MonoBehaviour
 
                     if (GameManager.instance.inventoryContainer.slots.Find(x => x.item == Ladder) != null)
                     {
+                        isPlaying = true;
+                        SoundManager.instance.soundEffect.PlayOneShot(setupSoundEffect);
                         LadderGameObject.SetActive(true);
                         //ItemSlot itemSlot = GameManager.instance.inventoryContainer.slots.Find(x => x.item == Ladder);
                         PlayerStatusManager.instance.PlayerStamina.value -= 10;
@@ -76,6 +81,7 @@ public class LadderInteract : MonoBehaviour
 
                     if(Input.GetKeyDown(LadderKey))
                     {
+                        SoundManager.instance.soundEffect.PlayOneShot(climbSoundEffect);
                         GameManager.instance.player.transform.position = climbDownPoint.transform.position;
                         ClimbDown = true;
                     }
@@ -96,6 +102,7 @@ public class LadderInteract : MonoBehaviour
 
                     if (Input.GetKeyDown(LadderKey))
                     {
+                        SoundManager.instance.soundEffect.PlayOneShot(climbSoundEffect);
                         GameManager.instance.player.transform.position = climbUpPoint.transform.position;
                         ClimbDown = false;
                     }
@@ -109,6 +116,8 @@ public class LadderInteract : MonoBehaviour
             }
             
         }
+
+        //PlayProgressBar();
     }
 
     void UpdateText()
@@ -137,5 +146,29 @@ public class LadderInteract : MonoBehaviour
                 LadderPanel.GetComponentInChildren<TextMeshProUGUI>().text = "You can craft a ladder to climb down.";
             }
         }
+    }
+
+    void PlayProgressBar()
+    {
+        if (isPlaying)
+        {
+            ProgressBar.SetActive(true);
+            if (ProgressBar.GetComponentInChildren<Slider>().value < ProgressBar.GetComponentInChildren<Slider>().maxValue)
+            {
+                ProgressBar.GetComponentInChildren<Slider>().value += Time.deltaTime * 3f;
+                CharacterController2D.instance.stopMove = true;
+            }
+
+            else if (ProgressBar.GetComponentInChildren<Slider>().value >= ProgressBar.GetComponentInChildren<Slider>().maxValue)
+            {
+                isPlaying = false;
+                ProgressBar.SetActive(false);
+            }
+        }
+    }
+
+    private void OnDisable()
+    {
+        ProgressBar.GetComponentInChildren<Slider>().value = 0;
     }
 }

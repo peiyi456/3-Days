@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1162,6 +1162,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891119900}
   m_CullTransparentMesh: 0
+--- !u!1 &918459996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 918459998}
+  - component: {fileID: 918459997}
+  m_Layer: 0
+  m_Name: Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &918459997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918459996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2bd5f59cf5ed8f42a90ba3bbef1cb60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvl2Button: {fileID: 2092209964}
+--- !u!4 &918459998
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918459996}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -221.6729, y: 35.555588, z: -167.04662}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &962481994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,13 +1681,13 @@ MonoBehaviour:
 
     Objective:
 
-    1.Achieve minimum
-    110 stats in Food & Water before finishing the game
+    1.Maintain minimum
+    110 stats in Food & Water
 
     2.Kill at least 5 animals
 
-    3.Set
-    up 2 campsites before finishing the game'
+    3.Set up 2 campsites
+    before finishing the game'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f832bc08a6643f4a89eb6a8ae4decd3, type: 2}
   m_sharedMaterial: {fileID: -7327705891325386781, guid: 3f832bc08a6643f4a89eb6a8ae4decd3,
@@ -2379,7 +2423,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "        Gunung Tahan, Perak\nObjective:\n1. Achieve minimum 100 stats
+  m_text: "        Gunung Tahan, Perak\nObjective:\n1. Maintain minimum 100 stats
     in Food & Water \n2.Craft 1 Blunt Knife and Blunt Axe\n3.Having 5 food on your
     back pad before finishing the game"
   m_isRightToLeft: 0

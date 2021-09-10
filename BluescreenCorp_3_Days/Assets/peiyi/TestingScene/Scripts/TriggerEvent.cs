@@ -5,6 +5,8 @@ using TMPro;
 
 public class TriggerEvent : MonoBehaviour
 {
+    [SerializeField] AudioClip putCampsiteSound;
+
     [SerializeField] bool interactToTrigger;
     [SerializeField] KeyCode keyCode;
     [SerializeField] bool doAction = false;
@@ -33,6 +35,10 @@ public class TriggerEvent : MonoBehaviour
                 textReminderTxt.text = "It seems like it is able to put a campsite here. You can craft a campsite and press 'P' to put it here.";
                 textReminder.SetActive(true);
             }
+            else
+            {
+                textReminder.SetActive(false);
+            }
         }
 
         else
@@ -48,8 +54,8 @@ public class TriggerEvent : MonoBehaviour
                 {
                     if (camp1 == false)
                     {
+                        SoundManager.instance.soundEffect.PlayOneShot(putCampsiteSound);
                         doAction = false;
-                        Debug.Log("Put campsite at " + player.transform.position);
                         spawnPrefab.GetComponent<SpriteRenderer>().sprite = campsiteSprite;
                         GameObject campsite = Instantiate(spawnPrefab, new Vector2(player.transform.position.x, player.transform.position.y - 0.5f), Quaternion.identity);
                         GameManager.instance.hasCampsite = false;
