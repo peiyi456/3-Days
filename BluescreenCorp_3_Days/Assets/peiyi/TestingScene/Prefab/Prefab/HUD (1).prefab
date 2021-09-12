@@ -37898,8 +37898,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1390959334600320453}
-        m_MethodName: CraftCampsite
+      - m_Target: {fileID: 1390959334441651921}
+        m_MethodName: CraftAxe
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39287,8 +39287,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1390959334600320453}
-        m_MethodName: CraftCampsite
+      - m_Target: {fileID: 1390959334679916951}
+        m_MethodName: CraftSpear
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -41990,8 +41990,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1390959334600320453}
-        m_MethodName: CraftCampsite
+      - m_Target: {fileID: 1390959335933363134}
+        m_MethodName: CraftKnife
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -46180,12 +46180,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1390959334600320453}
-        m_MethodName: CraftCampsite
-        m_Mode: 1
+      - m_Target: {fileID: 8291663051523675198}
+        m_MethodName: CraftItem
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 10a1eb881c03c0c4e996f271d31a65ba,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -48540,12 +48541,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1390959334600320453}
-        m_MethodName: CraftCampsite
-        m_Mode: 1
+      - m_Target: {fileID: 8291663051443315020}
+        m_MethodName: CraftItem
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 9bfc157203899194ea30eaacb68d2304,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -82112,8 +82114,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1390959334600320453}
-        m_MethodName: CraftCampsite
+      - m_Target: {fileID: 8291663051174464498}
+        m_MethodName: CraftTorch
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -84028,8 +84030,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1390959334600320453}
-        m_MethodName: CraftCampsite
+      - m_Target: {fileID: 8291663051203014198}
+        m_MethodName: CraftFishingRod
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
