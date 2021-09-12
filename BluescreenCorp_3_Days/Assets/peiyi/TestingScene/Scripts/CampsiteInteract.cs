@@ -39,6 +39,12 @@ public class CampsiteInteract : MonoBehaviour
                     }
                 }
             }
+
+            else
+            {
+                TextReminder.GetComponentInChildren<TextMeshProUGUI>().text = "You are able to sleep from 00:00 until 04:50";
+                TextReminder.SetActive(true);
+            }
         }
         else
         {

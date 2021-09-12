@@ -13,7 +13,7 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
     public TextMeshProUGUI noText;
     //[SerializeField] string name;
 
-    [SerializeField] int myIndex;
+    public int myIndex;
 
     public Image itemImg;
     public TextMeshProUGUI itemName;
@@ -23,6 +23,8 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
     public bool IsThrow = false;
 
     [SerializeField] Button bttn;
+    public GameObject Highlight;
+    public GameObject Highlight2;
 
     public bool isShortKey;
 
@@ -60,7 +62,6 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
 
     public void Clean()
     {
-        Debug.Log("00");
         icon.sprite = null;
         icon.gameObject.SetActive(false);
         noText.gameObject.SetActive(false);
@@ -83,6 +84,7 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
                 GameManager.instance.itemDragAndDropController.OnClick(inventory.slots[myIndex]);
                 HideDetail(InventoryPanel.instance.SelectedButtonNo);
                 InventoryPanel.instance.selected[InventoryPanel.instance.SelectedButtonNo] = false;
+                InventoryPanel.instance.buttons[InventoryPanel.instance.SelectedButtonNo].GetComponent<InventoryButtons>().Highlight2.SetActive(false);
                 InventoryPanel.instance.ShowButtons(false, inventory.slots[InventoryPanel.instance.SelectedButtonNo]);
             }
         }
@@ -111,6 +113,7 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
         {
             InventoryPanel.instance.SelectedButtonNo = -1;
 
+            //InventoryPanel.instance.buttons[buttonNo].GetComponent<InventoryButtons>().Highlight2.SetActive(false);
             HideDetail(buttonNo);
         }
     }
@@ -120,12 +123,14 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
         if (InventoryPanel.instance.selected[no])
         {
             InventoryPanel.instance.selected[no] = false;
+            InventoryPanel.instance.buttons[no].GetComponent<InventoryButtons>().Highlight2.SetActive(false);
             InventoryPanel.instance.ShowButtons(InventoryPanel.instance.selected[no], inventory.slots[no]);
         }
         else
         {
-            for (int i = 0; i < InventoryPanel.instance.selected.Length; i++)
+            for (int i = 0; i < InventoryPanel.instance.selected.Length - 3; i++)
             {
+                InventoryPanel.instance.buttons[i].GetComponent<InventoryButtons>().Highlight2.SetActive(false);
                 InventoryPanel.instance.selected[i] = false;
             }
             InventoryPanel.instance.selected[no] = true;
@@ -133,9 +138,11 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
             if (inventory.slots[no].item != null)
             {
                 InventoryPanel.instance.ShowButtons(InventoryPanel.instance.selected[no], inventory.slots[no]);
+                InventoryPanel.instance.buttons[no].GetComponent<InventoryButtons>().Highlight2.SetActive(true);
             }
             else
             {
+                InventoryPanel.instance.buttons[no].GetComponent<InventoryButtons>().Highlight2.SetActive(false);
                 InventoryPanel.instance.ShowButtons(false, inventory.slots[no]);
             }
         }
@@ -164,5 +171,13 @@ public class InventoryButtons : MonoBehaviour, IPointerClickHandler
         itemName.gameObject.SetActive(false);
         itemFunction.gameObject.SetActive(false);
         itemHint.gameObject.SetActive(false);
+    }
+
+    public void HightlightBox(int no)
+    {
+        if (inventory.slots[no].item != null)
+        {
+            Highlight.SetActive(true);
+        }
     }
 }

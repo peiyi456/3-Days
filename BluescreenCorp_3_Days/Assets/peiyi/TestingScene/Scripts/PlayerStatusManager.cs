@@ -194,7 +194,8 @@ public class PlayerStatusManager : MonoBehaviour
         {
             //losePage.SetActive(true);
             //Time.timeScale = 0;
-
+            GameManager.instance.player.gameObject.SetActive(false);
+            GameManager.instance.player.SetActive(false);
             StartCoroutine(LosePageOn(3f));
         }
     }

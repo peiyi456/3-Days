@@ -17,6 +17,8 @@ public class InventoryPanel : MonoBehaviour
     public Button ThrowButton;
     public Button UseButton;
     public bool isPressUse;
+
+    public GameObject ReminderText;
     //public bool IsThrow;
 
     private void Awake()
@@ -194,4 +196,18 @@ public class InventoryPanel : MonoBehaviour
     //    }
 
     //}
+
+    public IEnumerator AppearReminder()
+    {
+        ReminderText.SetActive(true);
+        yield return new WaitForSeconds(2.0f);
+        ReminderText.SetActive(false);
+
+    }
+
+    public void StartCall()
+    {
+        StartCoroutine(AppearReminder());
+        Debug.Log("Callll");
+    }
 }

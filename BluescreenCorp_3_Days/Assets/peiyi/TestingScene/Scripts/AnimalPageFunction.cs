@@ -28,6 +28,9 @@ public class AnimalPageFunction : MonoBehaviour//, IPointerClickHandler
     [SerializeField] Button[] otherBttn;
     public bool press;
 
+    public GameObject Highlight;
+    public GameObject Highlight2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,9 +61,19 @@ public class AnimalPageFunction : MonoBehaviour//, IPointerClickHandler
         {
             if (GameManager.instance.meetAnimal[number] == true)
             {
+                GetComponent<Button>().interactable = true;
                 animalButtonIcon.color = new Color(255f, 255f, 255f, 255f);
                 animalNameText.gameObject.SetActive(true);
             }
+
+            else
+            {
+                GetComponent<Button>().interactable = false;
+            }
+        }
+        else
+        {
+            GetComponent<Button>().interactable = false;
         }
     }
 
@@ -69,6 +82,7 @@ public class AnimalPageFunction : MonoBehaviour//, IPointerClickHandler
         for(int i = 0; i < otherBttn.Length; i++)
         {
             otherBttn[i].GetComponent<AnimalPageFunction>().press = false;
+            otherBttn[i].GetComponent<AnimalPageFunction>().Highlight2.SetActive(otherBttn[i].GetComponent<AnimalPageFunction>().press);
         }
 
         if (animals != null)
@@ -78,6 +92,7 @@ public class AnimalPageFunction : MonoBehaviour//, IPointerClickHandler
             {
                 if (press)
                 {
+                    bttn.GetComponent<AnimalPageFunction>().Highlight2.SetActive(true);
                     animalDetailsPic.gameObject.SetActive(true);
                     animalDetailsName.gameObject.SetActive(true);
                     animalDetailsCharacteristics.gameObject.SetActive(true);
@@ -91,6 +106,7 @@ public class AnimalPageFunction : MonoBehaviour//, IPointerClickHandler
 
                 else
                 {
+                    bttn.GetComponent<AnimalPageFunction>().Highlight2.SetActive(false);
                     animalDetailsPic.gameObject.SetActive(false);
                     animalDetailsName.gameObject.SetActive(false);
                     animalDetailsCharacteristics.gameObject.SetActive(false);
@@ -105,6 +121,21 @@ public class AnimalPageFunction : MonoBehaviour//, IPointerClickHandler
 
             }
         }
+    }
+
+    public void HightlightBox()
+    {
+        if (number < GameManager.instance.meetAnimal.Length)
+        {
+            if (GameManager.instance.meetAnimal[number])
+            {
+                Highlight.SetActive(true);
+            }
+        }
+        //else
+        //{
+        //    Highlight.SetActive(false);
+        //}
     }
 
     //public void OnPointerClick(PointerEventData eventData)

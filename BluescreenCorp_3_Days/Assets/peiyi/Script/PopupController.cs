@@ -9,6 +9,7 @@ public class PopupController : MonoBehaviour
 {
     [SerializeField] AudioClip mouseEnterSound;
     [SerializeField] AudioClip mouseClickSound;
+    [SerializeField] AudioClip openBookMapSound;
 
     [SerializeField] GameObject PlayerNote;
     [SerializeField] GameObject PausePage;
@@ -75,6 +76,7 @@ public class PopupController : MonoBehaviour
                 {
                     isBookOpen = !isBookOpen;
                     CharacterController2D.instance.stopMove = isBookOpen;
+                    SoundManager.instance.soundEffect.PlayOneShot(openBookMapSound);
                     if (isBookOpen)
                     {
                         GameManager.instance.isPause = true;
@@ -100,6 +102,7 @@ public class PopupController : MonoBehaviour
                 {
                     if (isMapOpen == false)
                     {
+                        SoundManager.instance.soundEffect.PlayOneShot(openBookMapSound);
                         GameManager.instance.isPause = true;
 
                         isMapOpen = true;
@@ -109,6 +112,7 @@ public class PopupController : MonoBehaviour
 
                     else
                     {
+                        SoundManager.instance.soundEffect.PlayOneShot(openBookMapSound);
                         GameManager.instance.isPause = false;
 
                         isMapOpen = false;

@@ -200,6 +200,7 @@ MonoBehaviour:
   winPage: {fileID: 0}
   SleepingFadingPanel: {fileID: 0}
   fadeSpeed: 5
+  winReminder: {fileID: 0}
 --- !u!114 &6716677074067217549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +273,6 @@ MonoBehaviour:
   timeForStats: 0
   DelayedTimeForTemperature: 60
   DelayedTimeForStats: 60
-  loseSoundEffect: {fileID: 8300000, guid: 7266aa658adc0004dabe3858b57f101c, type: 3}
   PlayerHP: {fileID: 0}
   PlayerStamina: {fileID: 0}
   PlayerFood: {fileID: 0}
@@ -285,7 +285,7 @@ MonoBehaviour:
   foodDeductValue_Cold: 15
   waterDeductValue: 50
   waterDeductValue_Hot: 15
-  staminaAddValue: 35
+  staminaAddValue: 20
   losePage: {fileID: 0}
   lowHPEffect: {fileID: 0}
   FadeIn: {fileID: 0}

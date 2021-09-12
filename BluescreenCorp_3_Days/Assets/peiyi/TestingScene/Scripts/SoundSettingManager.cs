@@ -23,7 +23,7 @@ public class SoundSettingManager : MonoBehaviour
         //Time.timeScale = 1;
         string soundOn = PlayerPrefs.GetString("Sound On", "true");
         volumeSlider.value = PlayerPrefs.GetFloat(newVolume, 1);
-        muteUnmuteToggle.isOn = PlayerPrefs.GetInt("isMute") == 1 ? true : false;
+        muteUnmuteToggle.isOn = PlayerPrefs.GetInt("isMute", 0) == 1 ? true : false;
 
         // Get boolean using PlayerPrefs
         isSoundOn = PlayerPrefs.GetInt("isMute") == 1 ? true : false;

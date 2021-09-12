@@ -24,6 +24,10 @@ public class CraftingItemSystem : MonoBehaviour
 
     [SerializeField] Button[] allCraftButton;
     public bool PressButton;
+
+    public GameObject Highlight;
+    public GameObject Highlight2;
+
     //[SerializeField] Image/*[]*/ toolsButtonShortKeyImage;
 
     private void Update()
@@ -35,6 +39,7 @@ public class CraftingItemSystem : MonoBehaviour
     {
         for (int i = 0; i < allCraftButton.Length; i++)
         {
+            allCraftButton[i].GetComponent<CraftingItemSystem>().Highlight2.SetActive(false);
             allCraftButton[i].GetComponent<CraftingItemSystem>().craftBttn.gameObject.SetActive(false);
             allCraftButton[i].GetComponent<CraftingItemSystem>().PressButton = false;
             //allCraftButton[i].GetComponent<CraftingItemSystem>().PressButton = false;
@@ -42,6 +47,7 @@ public class CraftingItemSystem : MonoBehaviour
 
         bttn.GetComponent<CraftingItemSystem>().PressButton = !bttn.GetComponent<CraftingItemSystem>().PressButton;
         bttn.GetComponent<CraftingItemSystem>().craftBttn.gameObject.SetActive(bttn.GetComponent<CraftingItemSystem>().PressButton);
+        bttn.GetComponent<CraftingItemSystem>().Highlight2.SetActive(bttn.GetComponent<CraftingItemSystem>().PressButton);
 
         if (bttn.GetComponent<CraftingItemSystem>().isAxe)
         {
@@ -356,6 +362,9 @@ public class CraftingItemSystem : MonoBehaviour
         //CraftItemBttnNo = ButtonNo;
         if(!PressButton)
         {
+            element1Text.text = "";
+            element2Text.text = "";
+            element3Text.text = "";
             checkingButtonInteractable();
             element1.gameObject.SetActive(true);
             element2.gameObject.SetActive(true);
@@ -441,20 +450,95 @@ public class CraftingItemSystem : MonoBehaviour
 
     public void CraftItem(Item item)
     {
-        for(int i = 0; i < recipe.elements.Count; i++)
+        if (recipe.output.item.stackable)
         {
-            ItemSlot itemSlot = container.slots.Find(x => x.item == recipe.elements[i].item);
-            if(itemSlot != null)
+            ItemSlot itemSlot = GameManager.instance.inventoryContainer.slots.Find(x => x.item == recipe.output.item);
+            if (itemSlot != null)
             {
-                container.RemoveItem(recipe.elements[i].item, recipe.elements[i].itemCount);
+                for (int i = 0; i < recipe.elements.Count; i++)
+                {
+                    ItemSlot itemSlots = container.slots.Find(x => x.item == recipe.elements[i].item);
+                    if (itemSlots != null)
+                    {
+                        container.RemoveItem(recipe.elements[i].item, recipe.elements[i].itemCount);
+                    }
+
+                }
+
+                SoundManager.instance.soundEffect.PlayOneShot(craftSound);
+                GameManager.instance.inventoryContainer.AddItem(item, 1);
+                PlayerStatusManager.instance.PlayerStamina.value -= 10;
+                StartCoroutine(CraftingCDTime());
             }
 
+            else
+            {
+                ItemSlot itemSlotsss = GameManager.instance.inventoryContainer.slots.Find(x => x.item == null);
+                if (itemSlotsss != null)
+                {
+                    if (itemSlotsss.isShortkey == false)
+                    {
+                        for (int i = 0; i < recipe.elements.Count; i++)
+                        {
+                            ItemSlot itemSlots = container.slots.Find(x => x.item == recipe.elements[i].item);
+                            if (itemSlots != null)
+                            {
+                                container.RemoveItem(recipe.elements[i].item, recipe.elements[i].itemCount);
+                            }
+
+                        }
+
+                        SoundManager.instance.soundEffect.PlayOneShot(craftSound);
+                        GameManager.instance.inventoryContainer.AddItem(item, 1);
+                        PlayerStatusManager.instance.PlayerStamina.value -= 10;
+                        StartCoroutine(CraftingCDTime());
+                    }
+
+                    else
+                    {
+                        StartCoroutine(InventoryPanel.instance.AppearReminder());
+                    }
+                }
+
+                
+            }
         }
 
-        SoundManager.instance.soundEffect.PlayOneShot(craftSound);
-        GameManager.instance.inventoryContainer.AddItem(item, 1);
-        PlayerStatusManager.instance.PlayerStamina.value -= 10;
-        StartCoroutine(CraftingCDTime());
+        else
+        {
+            ItemSlot itemSlot = GameManager.instance.inventoryContainer.slots.Find(x => x.item == null);
+            if (itemSlot != null)
+            {
+                if (itemSlot.isShortkey == false)
+                {
+                    for (int i = 0; i < recipe.elements.Count; i++)
+                    {
+                        ItemSlot itemSlots = container.slots.Find(x => x.item == recipe.elements[i].item);
+                        if (itemSlots != null)
+                        {
+                            container.RemoveItem(recipe.elements[i].item, recipe.elements[i].itemCount);
+                        }
+
+                    }
+                    SoundManager.instance.soundEffect.PlayOneShot(craftSound);
+                    GameManager.instance.inventoryContainer.AddItem(item, 1);
+                    PlayerStatusManager.instance.PlayerStamina.value -= 10;
+                    StartCoroutine(CraftingCDTime());
+                    Debug.Log("111");
+                }
+
+                else
+                {
+                    StartCoroutine(InventoryPanel.instance.AppearReminder());
+                }
+            }
+        }
+
+        ItemSlot itemSlotss = container.slots.Find(x => x.item == null);
+        //if (itemSlotss == null)
+        //{
+        //    StartCoroutine(InventoryPanel.instance.AppearReminder());
+        //}
     }
 
     IEnumerator CraftingCDTime()
@@ -602,5 +686,14 @@ public class CraftingItemSystem : MonoBehaviour
         PlayerStatusManager.instance.PlayerStamina.value -= 10;
         SoundManager.instance.soundEffect.PlayOneShot(craftSound);
 
+    }
+
+    public void HightlightBox(Button bttn)
+    {
+        for(int i = 0; i < allCraftButton.Length; i++)
+        {
+            allCraftButton[i].GetComponent<CraftingItemSystem>().Highlight.SetActive(false);
+        }
+        bttn.GetComponent<CraftingItemSystem>().Highlight.SetActive(true);
     }
 }

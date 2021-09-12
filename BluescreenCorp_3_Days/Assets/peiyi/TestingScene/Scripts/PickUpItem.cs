@@ -59,14 +59,53 @@ public class PickUpItem : MonoBehaviour
                 //*TODO* shoud be moved into specific controller rather than being checked here.
                 if (GameManager.instance.inventoryContainer != null)
                 {
-                    GameManager.instance.inventoryContainer.AddItem(item, count);
-                    SoundManager.instance.soundEffect.PlayOneShot(pickupSound);
+                    ItemSlot itemSlot = GameManager.instance.inventoryContainer.slots.Find(x => x.item == item);
+                    if (itemSlot != null)
+                    {
+                        GameManager.instance.inventoryContainer.AddItem(item, count);
+                        SoundManager.instance.soundEffect.PlayOneShot(pickupSound);
+                        Destroy(gameObject);
+
+                    }
+
+                    else
+                    {
+                        ItemSlot itemSlotsss = GameManager.instance.inventoryContainer.slots.Find(x => x.item == null);
+                        if (itemSlotsss != null)
+                        {
+                            if (itemSlotsss.isShortkey == false)
+                            {
+                                GameManager.instance.inventoryContainer.AddItem(item, count);
+                                SoundManager.instance.soundEffect.PlayOneShot(pickupSound);
+                                Destroy(gameObject);
+                            }
+
+                            else
+                            {
+                                if(item.itemTypes == ItemTypes.Food)
+                                {
+                                    GameManager.instance.inventoryContainer.AddItem(item, count);
+                                    SoundManager.instance.soundEffect.PlayOneShot(pickupSound);
+                                    Destroy(gameObject);
+                                }
+
+                                else
+                                {
+                                    StartCoroutine(InventoryPanel.instance.AppearReminder());
+                                }
+                            }
+                        }
+
+                        else
+                        {
+                            StartCoroutine(InventoryPanel.instance.AppearReminder());
+                        }
+                    }
                 }
                 else
                 {
                     Debug.LogWarning("No inventory container attached to the game manager");
                 }
-                Destroy(gameObject);
             }
         }
     }

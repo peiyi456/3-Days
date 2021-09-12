@@ -165,6 +165,7 @@ public class DayTimeManager : MonoBehaviour
                 isPlay = true;
             }
             //GameManager.instance.isPause = true;
+            GameManager.instance.player.SetActive(false);
             winPage.gameObject.SetActive(true);
             GameManager.instance.isPause = false;
 
