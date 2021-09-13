@@ -53,6 +53,7 @@ public class MapChoosing : MonoBehaviour
 
     public void SelectedMap(int sceneChg)
     {
+        chooseMapNo = sceneChg;
         LoadingPageScripts.loadSceneNumber = sceneChg + 2;
         StartCoroutine(DoFade());
     }

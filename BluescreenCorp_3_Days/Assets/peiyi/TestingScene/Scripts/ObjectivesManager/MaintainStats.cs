@@ -9,6 +9,7 @@ public class MaintainStats : MonoBehaviour
     [SerializeField] string Description;
     [SerializeField] Slider FoodStat, WaterStat;
     [SerializeField] TextMeshProUGUI objectiveText;
+    [SerializeField] float maintainValue;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,7 @@ public class MaintainStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(FoodStat.value > 100 && WaterStat.value > 100)
+        if(FoodStat.value > maintainValue && WaterStat.value > maintainValue)
         {
             objectiveText.fontStyle = FontStyles.Strikethrough | FontStyles.Bold | FontStyles.Italic;
             objectiveText.color = Color.blue;

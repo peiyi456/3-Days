@@ -7,6 +7,7 @@ using TMPro;
 
 public class WinPageAnimation : MonoBehaviour
 {
+    [SerializeField] Button button;
     [SerializeField] Image badgeImage;
     [SerializeField] Sprite bronze;
     [SerializeField] Sprite silver;
@@ -20,7 +21,9 @@ public class WinPageAnimation : MonoBehaviour
     [SerializeField] int objectivesDone = 0;
     [SerializeField] bool isCount = false;
     [SerializeField] bool isPlay = false;
-    
+
+    int number;
+    int number2;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +33,11 @@ public class WinPageAnimation : MonoBehaviour
             ObjectivesTextOfTheWinPage[i].text = ObjectivesTextOfTheMap[i].text;
         }
 
-        PlayerPrefs.SetInt("UNLOCK_MAP", 1);
+        //PlayerPrefs.SetInt("UNLOCK_MAP", 1);
+        number = PlayerPrefs.GetInt("BADGE_UNLOCK_MAP1");
+        number2 = PlayerPrefs.GetInt("BADGE_UNLOCK_MAP2");
+        //PlayerPrefs.SetInt("BADGE_UNLOCK_MAP2", 0);
+        //PlayerPrefs.SetInt("BADGE_UNLOCK_MAP1", 0);
     }
 
     // Update is called once per frame
@@ -43,15 +50,16 @@ public class WinPageAnimation : MonoBehaviour
                 PlayerPrefs.SetInt("UNLOCK_MAP", 1);
             }
 
-            if (objectivesDone > PlayerPrefs.GetInt("BADGE_UNLOCK_MAP1"))
+            if (objectivesDone > number)
             {
                 PlayerPrefs.SetInt("BADGE_UNLOCK_MAP1", objectivesDone);
+                Debug.Log("123");
             }
         }
 
         else if(MapChoosing.chooseMapNo == 2)
         {
-            if (objectivesDone > PlayerPrefs.GetInt("BADGE_UNLOCK_MAP2"))
+            if (objectivesDone > number2)
             {
                 PlayerPrefs.SetInt("BADGE_UNLOCK_MAP2", objectivesDone);
             }
@@ -97,7 +105,7 @@ public class WinPageAnimation : MonoBehaviour
             var sequence = DOTween.Sequence();
             sequence.Append(badgeImage.rectTransform.DOScale(new Vector3(3, 3, 1), scaleSpeed * 0.5f));
             sequence.Append(badgeImage.rectTransform.DOScale(new Vector3(1, 1, 1), scaleSpeed * 0.5f));
-            objectivesDone++;
+            //objectivesDone++;
         }
 
         else if (objectivesDone == 2)
@@ -106,7 +114,7 @@ public class WinPageAnimation : MonoBehaviour
             var sequence = DOTween.Sequence();
             sequence.Append(badgeImage.rectTransform.DOScale(new Vector3(3, 3, 1), scaleSpeed * 0.5f));
             sequence.Append(badgeImage.rectTransform.DOScale(new Vector3(1, 1, 1), scaleSpeed * 0.5f));
-            objectivesDone++;
+            //objectivesDone++;
         }
 
         else if(objectivesDone == 3)
@@ -115,7 +123,14 @@ public class WinPageAnimation : MonoBehaviour
             var sequence = DOTween.Sequence();
             sequence.Append(badgeImage.rectTransform.DOScale(new Vector3(3, 3, 1), scaleSpeed * 0.5f));
             sequence.Append(badgeImage.rectTransform.DOScale(new Vector3(1, 1, 1), scaleSpeed * 0.5f));
-            objectivesDone++;
+           // objectivesDone++;
         }
+    }
+
+    public void PlayButtonAnimation()
+    {
+        var sequence = DOTween.Sequence();
+        sequence.Append(button.transform.DOScale(new Vector3(2, 2, 1), scaleSpeed * 0.5f));
+        sequence.Append(button.transform.DOScale(new Vector3(1, 1, 1), scaleSpeed * 0.5f));
     }
 }

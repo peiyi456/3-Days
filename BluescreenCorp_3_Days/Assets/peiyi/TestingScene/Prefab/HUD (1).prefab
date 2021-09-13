@@ -321,9 +321,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHP: 0
+  isStamina: 0
+  StartCountDown: 0
+  time: 0
   DelayedTime: 3
   maxStatsValue: 40
   _statBars: {fileID: 1347694174103063783}
+  deductValue: 0
   StatsWord: {fileID: 0}
   loseValue: 0
   isTemperature: 0
@@ -1303,22 +1307,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 0}
   isAxe: 0
   isCampsite: 1
   isKnife: 0
-  isSpear: 0
+  isLance: 0
+  isFishingRod: 0
+  isTorch: 0
   craft: 0
   hasElement1: 0
   hasElement2: 0
+  hasElement3: 0
   element1: {fileID: 1347694175946284502}
   element2: {fileID: 1347694175315410223}
+  element3: {fileID: 0}
   output: {fileID: 1347694175845548753}
+  element1Text: {fileID: 0}
+  element2Text: {fileID: 0}
+  element3Text: {fileID: 0}
   craftBttn: {fileID: 1347694175475036925}
   CraftItemBttnNo: 0
   recipe: {fileID: 11400000, guid: fa4134144c1095647853d955ad53d466, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
-  toolsButtonShortKeyImage: {fileID: 1237237304983387626}
+  allCraftButton: []
+  PressButton: 0
+  Highlight: {fileID: 0}
+  Highlight2: {fileID: 0}
 --- !u!114 &1347694174201890722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1564,22 +1579,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 0}
   isAxe: 0
   isCampsite: 0
   isKnife: 1
-  isSpear: 0
+  isLance: 0
+  isFishingRod: 0
+  isTorch: 0
   craft: 0
   hasElement1: 0
   hasElement2: 0
+  hasElement3: 0
   element1: {fileID: 1347694175946284502}
   element2: {fileID: 1347694175315410223}
+  element3: {fileID: 0}
   output: {fileID: 1347694175845548753}
+  element1Text: {fileID: 0}
+  element2Text: {fileID: 0}
+  element3Text: {fileID: 0}
   craftBttn: {fileID: 1347694175910823613}
   CraftItemBttnNo: 0
   recipe: {fileID: 11400000, guid: 1165df2936e43ad48a09f603ca216f0b, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
-  toolsButtonShortKeyImage: {fileID: 1237237306207496164}
+  allCraftButton: []
+  PressButton: 0
+  Highlight: {fileID: 0}
+  Highlight2: {fileID: 0}
 --- !u!114 &1347694174203167093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4899,22 +4925,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 0}
   isAxe: 1
   isCampsite: 0
   isKnife: 0
-  isSpear: 0
+  isLance: 0
+  isFishingRod: 0
+  isTorch: 0
   craft: 0
   hasElement1: 0
   hasElement2: 0
+  hasElement3: 0
   element1: {fileID: 1347694175946284502}
   element2: {fileID: 1347694175315410223}
+  element3: {fileID: 0}
   output: {fileID: 1347694175845548753}
+  element1Text: {fileID: 0}
+  element2Text: {fileID: 0}
+  element3Text: {fileID: 0}
   craftBttn: {fileID: 1347694174702300528}
   CraftItemBttnNo: 0
   recipe: {fileID: 11400000, guid: dc4bc305f3d5657489df90b23f3aeaf9, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
-  toolsButtonShortKeyImage: {fileID: 1237237304999354357}
+  allCraftButton: []
+  PressButton: 0
+  Highlight: {fileID: 0}
+  Highlight2: {fileID: 0}
 --- !u!1 &1347694174828003966
 GameObject:
   m_ObjectHideFlags: 0
@@ -8851,9 +8888,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHP: 0
+  isStamina: 0
+  StartCountDown: 0
+  time: 0
   DelayedTime: 4
   maxStatsValue: 40
   _statBars: {fileID: 1347694175794482265}
+  deductValue: 0
   StatsWord: {fileID: 0}
   loseValue: 0
   isTemperature: 0
@@ -9896,22 +9937,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 0}
   isAxe: 0
   isCampsite: 0
   isKnife: 0
-  isSpear: 1
+  isLance: 0
+  isFishingRod: 0
+  isTorch: 0
   craft: 0
   hasElement1: 0
   hasElement2: 0
+  hasElement3: 0
   element1: {fileID: 1347694175946284502}
   element2: {fileID: 1347694175315410223}
+  element3: {fileID: 0}
   output: {fileID: 1347694175845548753}
+  element1Text: {fileID: 0}
+  element2Text: {fileID: 0}
+  element3Text: {fileID: 0}
   craftBttn: {fileID: 1347694174979677697}
   CraftItemBttnNo: 0
   recipe: {fileID: 11400000, guid: 64956335eb781244687399b627bd34a6, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
-  toolsButtonShortKeyImage: {fileID: 1237237305209285458}
+  allCraftButton: []
+  PressButton: 0
+  Highlight: {fileID: 0}
+  Highlight2: {fileID: 0}
 --- !u!114 &1347694176058313610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12632,9 +12684,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHP: 0
+  isStamina: 0
+  StartCountDown: 0
+  time: 0
   DelayedTime: 5
   maxStatsValue: 40
   _statBars: {fileID: 6943505780355686469}
+  deductValue: 0
   StatsWord: {fileID: 6943505780811116905}
   loseValue: 0
   isTemperature: 0
@@ -12897,9 +12953,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHP: 1
+  isStamina: 0
+  StartCountDown: 0
+  time: 0
   DelayedTime: 4
   maxStatsValue: 40
   _statBars: {fileID: 6943505780385438579}
+  deductValue: 0
   StatsWord: {fileID: 6943505781453858856}
   loseValue: 0
   isTemperature: 0
@@ -14441,9 +14501,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHP: 1
+  isStamina: 0
+  StartCountDown: 0
+  time: 0
   DelayedTime: 5
   maxStatsValue: 140
   _statBars: {fileID: 6943505780632378540}
+  deductValue: 0
   StatsWord: {fileID: 6943505782102628841}
   loseValue: 0
   isTemperature: 0
@@ -14898,9 +14962,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHP: 0
+  isStamina: 0
+  StartCountDown: 0
+  time: 0
   DelayedTime: 5
   maxStatsValue: 50
   _statBars: {fileID: 6943505780708110793}
+  deductValue: 0
   StatsWord: {fileID: 6943505782192213042}
   loseValue: 10
   isTemperature: 1
@@ -15008,9 +15076,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHP: 1
+  isStamina: 0
+  StartCountDown: 0
+  time: 0
   DelayedTime: 0
   maxStatsValue: 40
   _statBars: {fileID: 6943505780709933599}
+  deductValue: 0
   StatsWord: {fileID: 6943505780684052886}
   loseValue: 0
   isTemperature: 0
@@ -15429,9 +15501,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHP: 1
+  isStamina: 0
+  StartCountDown: 0
+  time: 0
   DelayedTime: 4
   maxStatsValue: 140
   _statBars: {fileID: 6943505780757774040}
+  deductValue: 0
   StatsWord: {fileID: 6943505781575868477}
   loseValue: 0
   isTemperature: 0
@@ -18342,22 +18418,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 0}
   isAxe: 0
   isCampsite: 0
   isKnife: 1
-  isSpear: 0
+  isLance: 0
+  isFishingRod: 0
+  isTorch: 0
   craft: 0
   hasElement1: 0
   hasElement2: 0
+  hasElement3: 0
   element1: {fileID: 6943505780742251108}
   element2: {fileID: 6943505781465486387}
+  element3: {fileID: 0}
   output: {fileID: 6943505780905661965}
+  element1Text: {fileID: 0}
+  element2Text: {fileID: 0}
+  element3Text: {fileID: 0}
   craftBttn: {fileID: 1347694174777632097}
   CraftItemBttnNo: 0
   recipe: {fileID: 11400000, guid: 1165df2936e43ad48a09f603ca216f0b, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
-  toolsButtonShortKeyImage: {fileID: 1237237306207496164}
+  allCraftButton: []
+  PressButton: 0
+  Highlight: {fileID: 0}
+  Highlight2: {fileID: 0}
 --- !u!114 &6943505781140257711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18622,6 +18709,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6340946bdc6288948a4988780f101dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pausePage: {fileID: 0}
+  losePage: {fileID: 0}
+  winPage: {fileID: 0}
   pageStatus: {fileID: 6943505781599727931}
   pageInventory: {fileID: 6943505781702230158}
   pageCrafting: {fileID: 876359880495342552}
@@ -20806,6 +20896,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6340946bdc6288948a4988780f101dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pausePage: {fileID: 0}
+  losePage: {fileID: 0}
+  winPage: {fileID: 0}
   pageStatus: {fileID: 6943505781952424939}
   pageInventory: {fileID: 6943505782251158707}
   pageCrafting: {fileID: 6943505781007118428}
@@ -21549,9 +21642,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHP: 0
+  isStamina: 0
+  StartCountDown: 0
+  time: 0
   DelayedTime: 0
   maxStatsValue: 0
   _statBars: {fileID: 0}
+  deductValue: 0
   StatsWord: {fileID: 0}
   loseValue: 0
   isTemperature: 0
@@ -21966,6 +22063,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f0ec012bb709f419c80692e6c7b7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseEnterSound: {fileID: 0}
+  mouseClickSound: {fileID: 0}
+  openBookMapSound: {fileID: 0}
+  PlayerNote: {fileID: 0}
   PausePage: {fileID: 6943505780288241978}
   SettingPage: {fileID: 6943505781868317095}
   volumeSlider: {fileID: 6943505781078616696}
@@ -22648,6 +22749,13 @@ MonoBehaviour:
   - {fileID: 7810786720771203546}
   - {fileID: 7810786721995246487}
   - {fileID: 7810786721901691801}
+  selected: 
+  IsSelectedButton: 0
+  SelectedButtonNo: 0
+  ThrowButton: {fileID: 0}
+  UseButton: {fileID: 0}
+  isPressUse: 0
+  ReminderText: {fileID: 0}
 --- !u!1 &6943505781713652254
 GameObject:
   m_ObjectHideFlags: 0
@@ -23581,22 +23689,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 0}
   isAxe: 0
   isCampsite: 1
   isKnife: 0
-  isSpear: 0
+  isLance: 0
+  isFishingRod: 0
+  isTorch: 0
   craft: 0
   hasElement1: 0
   hasElement2: 0
+  hasElement3: 0
   element1: {fileID: 6943505780742251108}
   element2: {fileID: 6943505781465486387}
+  element3: {fileID: 0}
   output: {fileID: 6943505780905661965}
+  element1Text: {fileID: 0}
+  element2Text: {fileID: 0}
+  element3Text: {fileID: 0}
   craftBttn: {fileID: 1347694174194241609}
   CraftItemBttnNo: 0
   recipe: {fileID: 11400000, guid: fa4134144c1095647853d955ad53d466, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
-  toolsButtonShortKeyImage: {fileID: 1237237304983387626}
+  allCraftButton: []
+  PressButton: 0
+  Highlight: {fileID: 0}
+  Highlight2: {fileID: 0}
 --- !u!114 &6943505781824599746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24070,9 +24189,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHP: 1
+  isStamina: 0
+  StartCountDown: 0
+  time: 0
   DelayedTime: 3
   maxStatsValue: 40
   _statBars: {fileID: 6943505781859195439}
+  deductValue: 0
   StatsWord: {fileID: 6943505780559147568}
   loseValue: 0
   isTemperature: 0
@@ -25271,22 +25394,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 0}
   isAxe: 1
   isCampsite: 0
   isKnife: 0
-  isSpear: 0
+  isLance: 0
+  isFishingRod: 0
+  isTorch: 0
   craft: 0
   hasElement1: 0
   hasElement2: 0
+  hasElement3: 0
   element1: {fileID: 6943505780742251108}
   element2: {fileID: 6943505781465486387}
+  element3: {fileID: 0}
   output: {fileID: 6943505780905661965}
+  element1Text: {fileID: 0}
+  element2Text: {fileID: 0}
+  element3Text: {fileID: 0}
   craftBttn: {fileID: 6943505781898086794}
   CraftItemBttnNo: 0
   recipe: {fileID: 11400000, guid: dc4bc305f3d5657489df90b23f3aeaf9, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
-  toolsButtonShortKeyImage: {fileID: 1237237304999354357}
+  allCraftButton: []
+  PressButton: 0
+  Highlight: {fileID: 0}
+  Highlight2: {fileID: 0}
 --- !u!1 &6943505781949105422
 GameObject:
   m_ObjectHideFlags: 0
@@ -26374,22 +26508,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e14ca47aad58743aab5d6d7429b85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftSound: {fileID: 0}
   isAxe: 0
   isCampsite: 0
   isKnife: 0
-  isSpear: 1
+  isLance: 0
+  isFishingRod: 0
+  isTorch: 0
   craft: 0
   hasElement1: 0
   hasElement2: 0
+  hasElement3: 0
   element1: {fileID: 6943505780742251108}
   element2: {fileID: 6943505781465486387}
+  element3: {fileID: 0}
   output: {fileID: 6943505780905661965}
+  element1Text: {fileID: 0}
+  element2Text: {fileID: 0}
+  element3Text: {fileID: 0}
   craftBttn: {fileID: 1347694174217363339}
   CraftItemBttnNo: 0
   recipe: {fileID: 11400000, guid: 64956335eb781244687399b627bd34a6, type: 2}
   container: {fileID: 11400000, guid: 74bce5f73e38f3c4ba20d52515c00f8a, type: 2}
   selected: 0
-  toolsButtonShortKeyImage: {fileID: 1237237305209285458}
+  allCraftButton: []
+  PressButton: 0
+  Highlight: {fileID: 0}
+  Highlight2: {fileID: 0}
 --- !u!114 &6943505782125234564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28629,6 +28774,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2d93952b01a8dd4d81b7c966798cc3f, type: 3}
+--- !u!224 &5742439178818601907 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6702137672753095821, guid: b2d93952b01a8dd4d81b7c966798cc3f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1347694174382778174}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7810786720771203546 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9139639371779344100, guid: b2d93952b01a8dd4d81b7c966798cc3f,
@@ -28641,12 +28792,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff9a01467998484e84238853024504b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &5742439178818601907 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6702137672753095821, guid: b2d93952b01a8dd4d81b7c966798cc3f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1347694174382778174}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1347694174445486871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28806,12 +28951,6 @@ PrefabInstance:
       objectReference: {fileID: 7254851834556442118}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2d93952b01a8dd4d81b7c966798cc3f, type: 3}
---- !u!224 &5742439178748684186 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6702137672753095821, guid: b2d93952b01a8dd4d81b7c966798cc3f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1347694174445486871}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7810786720835356147 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9139639371779344100, guid: b2d93952b01a8dd4d81b7c966798cc3f,
@@ -28824,6 +28963,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff9a01467998484e84238853024504b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &5742439178748684186 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6702137672753095821, guid: b2d93952b01a8dd4d81b7c966798cc3f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1347694174445486871}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1347694174482543973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29160,6 +29305,12 @@ PrefabInstance:
       objectReference: {fileID: 7254851834556442118}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2d93952b01a8dd4d81b7c966798cc3f, type: 3}
+--- !u!224 &5742439178552304603 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6702137672753095821, guid: b2d93952b01a8dd4d81b7c966798cc3f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1347694174649141078}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7810786720500564402 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9139639371779344100, guid: b2d93952b01a8dd4d81b7c966798cc3f,
@@ -29172,12 +29323,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff9a01467998484e84238853024504b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &5742439178552304603 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6702137672753095821, guid: b2d93952b01a8dd4d81b7c966798cc3f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1347694174649141078}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1347694174944286250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29324,18 +29469,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1347694174944286250}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1237237306207496164 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 259085004707017166, guid: da45859e353ec3b49b3131d1fb819552,
-    type: 3}
-  m_PrefabInstance: {fileID: 1347694174944286250}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1347694175185125268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29637,6 +29770,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2d93952b01a8dd4d81b7c966798cc3f, type: 3}
+--- !u!224 &5742439179819344368 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6702137672753095821, guid: b2d93952b01a8dd4d81b7c966798cc3f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1347694175513789821}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7810786721901691801 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9139639371779344100, guid: b2d93952b01a8dd4d81b7c966798cc3f,
@@ -29649,12 +29788,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff9a01467998484e84238853024504b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &5742439179819344368 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6702137672753095821, guid: b2d93952b01a8dd4d81b7c966798cc3f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1347694175513789821}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1347694175671831923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29779,6 +29912,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2d93952b01a8dd4d81b7c966798cc3f, type: 3}
+--- !u!224 &5742439179980007934 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6702137672753095821, guid: b2d93952b01a8dd4d81b7c966798cc3f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1347694175671831923}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7810786721995246487 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9139639371779344100, guid: b2d93952b01a8dd4d81b7c966798cc3f,
@@ -29791,12 +29930,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff9a01467998484e84238853024504b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &5742439179980007934 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6702137672753095821, guid: b2d93952b01a8dd4d81b7c966798cc3f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1347694175671831923}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1347694175739551303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30310,12 +30443,6 @@ PrefabInstance:
       objectReference: {fileID: 7254851834556442118}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2d93952b01a8dd4d81b7c966798cc3f, type: 3}
---- !u!224 &5742439179715624244 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6702137672753095821, guid: b2d93952b01a8dd4d81b7c966798cc3f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1347694175944579513}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7810786721731125085 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9139639371779344100, guid: b2d93952b01a8dd4d81b7c966798cc3f,
@@ -30328,6 +30455,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff9a01467998484e84238853024504b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &5742439179715624244 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6702137672753095821, guid: b2d93952b01a8dd4d81b7c966798cc3f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1347694175944579513}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1347694176056877721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30645,18 +30778,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da45859e353ec3b49b3131d1fb819552, type: 3}
---- !u!114 &1237237305209285458 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 259085004707017166, guid: da45859e353ec3b49b3131d1fb819552,
-    type: 3}
-  m_PrefabInstance: {fileID: 1347694176093690524}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &5742439179323407889 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6702137672753095821, guid: da45859e353ec3b49b3131d1fb819552,
@@ -30828,18 +30949,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da45859e353ec3b49b3131d1fb819552, type: 3}
---- !u!114 &1237237304983387626 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 259085004707017166, guid: da45859e353ec3b49b3131d1fb819552,
-    type: 3}
-  m_PrefabInstance: {fileID: 1347694176133991460}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &5742439179500021929 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6702137672753095821, guid: da45859e353ec3b49b3131d1fb819552,
@@ -31011,18 +31120,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da45859e353ec3b49b3131d1fb819552, type: 3}
---- !u!114 &1237237304999354357 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 259085004707017166, guid: da45859e353ec3b49b3131d1fb819552,
-    type: 3}
-  m_PrefabInstance: {fileID: 1347694176152071739}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &5742439179516512950 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6702137672753095821, guid: da45859e353ec3b49b3131d1fb819552,

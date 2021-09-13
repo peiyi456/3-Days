@@ -22,14 +22,14 @@ public class PutAllCampsite : MonoBehaviour
         {
             objectiveText.fontStyle = FontStyles.Strikethrough | FontStyles.Bold | FontStyles.Italic;
             objectiveText.color = Color.blue;
-            GameManager.instance.Objective1 = true;
+            GameManager.instance.Objective2 = true;
         }
 
         else
         {
             objectiveText.fontStyle = FontStyles.Bold | FontStyles.Italic;
             objectiveText.color = Color.black;
-            GameManager.instance.Objective1 = false;
+            GameManager.instance.Objective2 = false;
         }
     }
 }
